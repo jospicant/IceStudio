@@ -12,48 +12,87 @@
     "graph": {
       "blocks": [
         {
-          "id": "b428c685-7d68-495d-bf05-2a67f5af271d",
+          "id": "6aca6e89-f85a-4916-9784-17e15369a0dc",
+          "type": "basic.constant",
+          "data": {
+            "name": "Random",
+            "value": "18343",
+            "local": false
+          },
+          "position": {
+            "x": 64,
+            "y": 136
+          }
+        },
+        {
+          "id": "ce3ce464-80ae-4416-a4bf-4edf12965524",
           "type": "basic.code",
           "data": {
-            "code": "\n// blocking assignement (=) vs non-blocking assignements.\n// blocking assignement is exactly like an assignement in any\n// imperative programming language ( C,C++,C#,java)\n\n// non-blocking; the RHS (Right hand side) of the assignement is \n// evaluated inmediately but the actual update of the LHS (Left hand side)\n// register is delayed until the end of the time-step (the end of always).\n\nlocalparam a=1'b0;    // a=0;\nlocalparam b=1'b1;    // b=1;\nlocalparam c=1'b0;    // c=0;\nlocalparam d=1'b1;    // c=1;\n\nreg e,f,g,h;\nreg a1=a,b1=b,c1=c,d1=d; \n\n//This \"always\" with blocking assignement values a1,b1 don't swap \n\nalways @(posedge clk)\nbegin             // origin a1=0 b1=1;\n   a1 = b1;      // a1 = 1\n   b1 = a1;      // b1 = 1\n   e  <= b1;      // e = 1  //show result in e,f ouputs\n   f  <= a1;      // f = 1\n   // I'll need a temp variable if I want to swap continuosly values a and b\nend\n\n// This \"always\" with non-blocking assignements\n// g and h swap his values continuosly ( c1 swap d1 )\n\nalways @(posedge clk)\nbegin \n   c1 <= d1;\n   d1 <= c1;\n   g  <= d1;  \n   h  <= c1;  // Show result in g,h outputs\nend\n\n",
+            "code": "//module(clk,in_data,out_data);\n\n//parameter BITS=8;\n//parameter STAGES=4;\n\n//input clk;\n//input [7:0]  in_data;\n//output [3:0] out_data;\n\nreg [7:0] ffs [3:0];\n\ninteger i;\nalways @(posedge clk)\nbegin\n    ffs[0] <= in_data;\n    for (i=1; i<4; i=i+1)\n        ffs[i] <= ffs[i-1];\nend\n\nassign out_data = ffs[3];\n\n//endmodule",
             "params": [],
             "ports": {
               "in": [
+                {
+                  "name": "in_data",
+                  "range": "[7:0]",
+                  "size": 8
+                },
                 {
                   "name": "clk"
                 }
               ],
               "out": [
                 {
-                  "name": "e"
-                },
-                {
-                  "name": "f"
-                },
-                {
-                  "name": "g"
-                },
-                {
-                  "name": "h"
+                  "name": "out_data",
+                  "range": "[3:0]",
+                  "size": 4
                 }
               ]
             }
           },
           "position": {
             "x": 320,
-            "y": 128
+            "y": 184
           },
           "size": {
-            "width": 736,
-            "height": 592
+            "width": 640,
+            "height": 416
           }
         },
         {
-          "id": "387d1fcc-e2e3-4696-8de0-502b059b440a",
+          "id": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
+          "type": "bc94db150c63b110cba6b4f0163c9ebcfff92e02",
+          "position": {
+            "x": 64,
+            "y": 256
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "40722afc-ce42-4299-893a-690eaea36618",
           "type": "basic.output",
           "data": {
             "name": "out",
+            "range": "[3:0]",
             "pins": [
+              {
+                "index": "3",
+                "name": "D4",
+                "value": "96"
+              },
+              {
+                "index": "2",
+                "name": "D3",
+                "value": "97"
+              },
+              {
+                "index": "1",
+                "name": "D2",
+                "value": "98"
+              },
               {
                 "index": "0",
                 "name": "D1",
@@ -63,142 +102,220 @@
             "virtual": false
           },
           "position": {
-            "x": 1176,
-            "y": 168
+            "x": 1088,
+            "y": 312
           }
         },
         {
-          "id": "05c4cf28-2997-4687-aa46-41442a45e83d",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D2",
-                "value": "98"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1184,
-            "y": 320
-          }
-        },
-        {
-          "id": "ae5ec4f4-659a-4d78-94b8-ba5fc87886ef",
+          "id": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
           "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
           "position": {
-            "x": 152,
-            "y": 392
+            "x": 16,
+            "y": 464
           },
           "size": {
             "width": 96,
             "height": 64
-          }
-        },
-        {
-          "id": "4df3f614-580f-46ef-a068-1bcdd37744e9",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D3",
-                "value": "97"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1184,
-            "y": 464
-          }
-        },
-        {
-          "id": "227a31a7-0971-4e96-bd0a-4a63479fe4e7",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D4",
-                "value": "96"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1200,
-            "y": 616
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "e"
+            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
+            "port": "out_data"
           },
           "target": {
-            "block": "387d1fcc-e2e3-4696-8de0-502b059b440a",
+            "block": "40722afc-ce42-4299-893a-690eaea36618",
             "port": "in"
-          }
+          },
+          "size": 4
         },
         {
           "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "f"
+            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
+            "port": "b56955ad-2193-4c4c-a65f-4adab8810a90"
           },
           "target": {
-            "block": "05c4cf28-2997-4687-aa46-41442a45e83d",
-            "port": "in"
-          }
+            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
+            "port": "in_data"
+          },
+          "size": 8
         },
         {
           "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "g"
-          },
-          "target": {
-            "block": "4df3f614-580f-46ef-a068-1bcdd37744e9",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "h"
-          },
-          "target": {
-            "block": "227a31a7-0971-4e96-bd0a-4a63479fe4e7",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "ae5ec4f4-659a-4d78-94b8-ba5fc87886ef",
+            "block": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
             "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
           },
           "target": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
+            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
             "port": "clk"
+          }
+        },
+        {
+          "source": {
+            "block": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
+            "port": "503c8237-b25a-477a-bf15-8d8b1573b678"
+          },
+          "vertices": [
+            {
+              "x": 72,
+              "y": 392
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "6aca6e89-f85a-4916-9784-17e15369a0dc",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
+            "port": "9666115a-aff5-4be6-ab10-caf2d924bc47"
           }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -57,
-        "y": -102
+        "x": 89,
+        "y": -70
       },
       "zoom": 1
     }
   },
   "dependencies": {
+    "bc94db150c63b110cba6b4f0163c9ebcfff92e02": {
+      "package": {
+        "name": "Random Number",
+        "version": "1.0",
+        "description": "Generate a Pseudo Random Number ",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "9666115a-aff5-4be6-ab10-caf2d924bc47",
+              "type": "basic.constant",
+              "data": {
+                "name": "Random_Sum",
+                "value": "",
+                "local": false
+              },
+              "position": {
+                "x": 576,
+                "y": 88
+              }
+            },
+            {
+              "id": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+              "type": "basic.code",
+              "data": {
+                "code": "\n// To generate pseudoaleatory numbers\n// each posedge clock ,output number changes\n// pseudo-Randomly in function of Random_Sum\n// parameter\n\n\nreg[7:0] num=0;\n\nlocalparam x = Random_Sum;\n\nalways @(posedge clk)\n num <= num + x;",
+                "params": [
+                  {
+                    "name": "Random_Sum"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "num",
+                      "range": "[7:0]",
+                      "size": 8
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 376,
+                "y": 200
+              },
+              "size": {
+                "width": 496,
+                "height": 272
+              }
+            },
+            {
+              "id": "503c8237-b25a-477a-bf15-8d8b1573b678",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": false
+              },
+              "position": {
+                "x": 200,
+                "y": 304
+              }
+            },
+            {
+              "id": "b56955ad-2193-4c4c-a65f-4adab8810a90",
+              "type": "basic.output",
+              "data": {
+                "name": "Num",
+                "range": "[7:0]",
+                "size": 8
+              },
+              "position": {
+                "x": 968,
+                "y": 304
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "9666115a-aff5-4be6-ab10-caf2d924bc47",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+                "port": "Random_Sum"
+              }
+            },
+            {
+              "source": {
+                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+                "port": "num"
+              },
+              "target": {
+                "block": "b56955ad-2193-4c4c-a65f-4adab8810a90",
+                "port": "in"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "503c8237-b25a-477a-bf15-8d8b1573b678",
+                "port": "out"
+              },
+              "target": {
+                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+                "port": "clk"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 12.604,
+            "y": -16.8818
+          },
+          "zoom": 1.0512
+        }
+      }
+    },
     "7c0ae704fe4f7176c6e19f8639bc59e42c836297": {
       "package": {
         "name": "Bomba_x1",

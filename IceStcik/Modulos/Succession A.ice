@@ -12,188 +12,176 @@
     "graph": {
       "blocks": [
         {
-          "id": "b428c685-7d68-495d-bf05-2a67f5af271d",
+          "id": "aa01ff3f-cce4-4db0-a1e3-0426748602f4",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "range": "[0:15]",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D1",
+                "value": "99"
+              },
+              {
+                "index": "1",
+                "name": "D2",
+                "value": "98"
+              },
+              {
+                "index": "2",
+                "name": "D3",
+                "value": "97"
+              },
+              {
+                "index": "3",
+                "name": "D4",
+                "value": "96"
+              },
+              {
+                "index": "4",
+                "name": "D5",
+                "value": "95"
+              },
+              {
+                "index": "5",
+                "name": "PMOD1",
+                "value": "78"
+              },
+              {
+                "index": "6",
+                "name": "PMOD2",
+                "value": "79"
+              },
+              {
+                "index": "7",
+                "name": "PMOD3",
+                "value": "80"
+              },
+              {
+                "index": "8",
+                "name": "PMOD4",
+                "value": "81"
+              },
+              {
+                "index": "9",
+                "name": "PMOD7",
+                "value": "87"
+              },
+              {
+                "index": "10",
+                "name": "PMOD8",
+                "value": "88"
+              },
+              {
+                "index": "11",
+                "name": "PMOD9",
+                "value": "90"
+              },
+              {
+                "index": "12",
+                "name": "PMOD10",
+                "value": "91"
+              },
+              {
+                "index": "13",
+                "name": "TR3",
+                "value": "112"
+              },
+              {
+                "index": "14",
+                "name": "TR4",
+                "value": "113"
+              },
+              {
+                "index": "15",
+                "name": "TR5",
+                "value": "114"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1184,
+            "y": 104
+          }
+        },
+        {
+          "id": "3215e9dc-4cc6-4ea0-97ea-83881fd7efec",
           "type": "basic.code",
           "data": {
-            "code": "\n// blocking assignement (=) vs non-blocking assignements.\n// blocking assignement is exactly like an assignement in any\n// imperative programming language ( C,C++,C#,java)\n\n// non-blocking; the RHS (Right hand side) of the assignement is \n// evaluated inmediately but the actual update of the LHS (Left hand side)\n// register is delayed until the end of the time-step (the end of always).\n\nlocalparam a=1'b0;    // a=0;\nlocalparam b=1'b1;    // b=1;\nlocalparam c=1'b0;    // c=0;\nlocalparam d=1'b1;    // c=1;\n\nreg e,f,g,h;\nreg a1=a,b1=b,c1=c,d1=d; \n\n//This \"always\" with blocking assignement values a1,b1 don't swap \n\nalways @(posedge clk)\nbegin             // origin a1=0 b1=1;\n   a1 = b1;      // a1 = 1\n   b1 = a1;      // b1 = 1\n   e  <= b1;      // e = 1  //show result in e,f ouputs\n   f  <= a1;      // f = 1\n   // I'll need a temp variable if I want to swap continuosly values a and b\nend\n\n// This \"always\" with non-blocking assignements\n// g and h swap his values continuosly ( c1 swap d1 )\n\nalways @(posedge clk)\nbegin \n   c1 <= d1;\n   d1 <= c1;\n   g  <= d1;  \n   h  <= c1;  // Show result in g,h outputs\nend\n\n",
+            "code": "//    Maths.  Succession\n// We are going to generate a \"Math Sucesion\"\n// Example Succession = 2*n+1;\n// Where n=0,1,2,....to infinite o the Succession have a\n// Saturation o converge to a value\n\nreg out;\n\nalways @(posedge clk)\n out <=2*n+3;",
             "params": [],
             "ports": {
               "in": [
+                {
+                  "name": "n",
+                  "range": "[15:0]",
+                  "size": 16
+                },
                 {
                   "name": "clk"
                 }
               ],
               "out": [
                 {
-                  "name": "e"
-                },
-                {
-                  "name": "f"
-                },
-                {
-                  "name": "g"
-                },
-                {
-                  "name": "h"
+                  "name": "out",
+                  "range": "[15:0]",
+                  "size": 16
                 }
               ]
             }
           },
           "position": {
-            "x": 320,
-            "y": 128
+            "x": 408,
+            "y": 136
           },
           "size": {
-            "width": 736,
-            "height": 592
+            "width": 624,
+            "height": 480
           }
         },
         {
-          "id": "387d1fcc-e2e3-4696-8de0-502b059b440a",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D1",
-                "value": "99"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1176,
-            "y": 168
-          }
-        },
-        {
-          "id": "05c4cf28-2997-4687-aa46-41442a45e83d",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D2",
-                "value": "98"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1184,
-            "y": 320
-          }
-        },
-        {
-          "id": "ae5ec4f4-659a-4d78-94b8-ba5fc87886ef",
+          "id": "039b2c5d-914a-48d7-a35b-3d6621443277",
           "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
           "position": {
-            "x": 152,
-            "y": 392
+            "x": 112,
+            "y": 464
           },
           "size": {
             "width": 96,
             "height": 64
-          }
-        },
-        {
-          "id": "4df3f614-580f-46ef-a068-1bcdd37744e9",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D3",
-                "value": "97"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1184,
-            "y": 464
-          }
-        },
-        {
-          "id": "227a31a7-0971-4e96-bd0a-4a63479fe4e7",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D4",
-                "value": "96"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1200,
-            "y": 616
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "e"
-          },
-          "target": {
-            "block": "387d1fcc-e2e3-4696-8de0-502b059b440a",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "f"
-          },
-          "target": {
-            "block": "05c4cf28-2997-4687-aa46-41442a45e83d",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "g"
-          },
-          "target": {
-            "block": "4df3f614-580f-46ef-a068-1bcdd37744e9",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
-            "port": "h"
-          },
-          "target": {
-            "block": "227a31a7-0971-4e96-bd0a-4a63479fe4e7",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "ae5ec4f4-659a-4d78-94b8-ba5fc87886ef",
+            "block": "039b2c5d-914a-48d7-a35b-3d6621443277",
             "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
           },
           "target": {
-            "block": "b428c685-7d68-495d-bf05-2a67f5af271d",
+            "block": "3215e9dc-4cc6-4ea0-97ea-83881fd7efec",
             "port": "clk"
           }
+        },
+        {
+          "source": {
+            "block": "3215e9dc-4cc6-4ea0-97ea-83881fd7efec",
+            "port": "out"
+          },
+          "target": {
+            "block": "aa01ff3f-cce4-4db0-a1e3-0426748602f4",
+            "port": "in"
+          },
+          "size": 16
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -57,
-        "y": -102
+        "x": 52,
+        "y": -28
       },
       "zoom": 1
     }
