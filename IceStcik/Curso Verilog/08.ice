@@ -15,7 +15,7 @@
           "id": "6292839d-b23d-4016-9466-f3cbae586b33",
           "type": "basic.code",
           "data": {
-            "code": "\n// Synchronous logic ( With Reset Synchronous).\n// This kind of logic only must contain a clock within her list\n\nreg y,y1;\n\nalways @(posedge clk)\nbegin\n    if(reset)\n        y<=0;\n    else\n        y<=y+1;\nend\n\n// Synchronous logic ( With Reset ASynchronous).\n\nalways @(posedge clk, posedge reset)\nbegin\n    if(reset)\n        y1<=0;\n    else\n        y1<=y1+1;\nend\n",
+            "code": "\n// Synchronous logic ( With Reset Synchronous).\n// This kind of logic only must contain a clock within her list\n\nreg y,y1;\n\nalways @(posedge clk)  // only clk inside her list\nbegin\n    if(reset)\n        y<=0;\n    else\n        y<=y+1;\nend\n\n// Synchronous logic ( With Reset ASynchronous).\n\nalways @(posedge clk, posedge reset)\nbegin\n    if(reset)\n        y1<=0;\n    else\n        y1<=y1+1;\nend\n",
             "params": [],
             "ports": {
               "in": [

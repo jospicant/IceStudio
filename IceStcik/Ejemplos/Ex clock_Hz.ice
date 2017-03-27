@@ -15,8 +15,8 @@
           "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
           "type": "basic.constant",
           "data": {
-            "name": "T_sg",
-            "value": "4",
+            "name": "T_Hz",
+            "value": "1",
             "local": false
           },
           "position": {
@@ -45,8 +45,8 @@
           }
         },
         {
-          "id": "8dd10f3e-c606-4844-85f8-a2442f98192d",
-          "type": "3128151b411ed203c57ec6862c5e65e5809bd11f",
+          "id": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
+          "type": "d624f12138d30e557267db6c35a445f9147a5c1a",
           "position": {
             "x": 368,
             "y": 192
@@ -71,7 +71,7 @@
             "virtual": false
           },
           "position": {
-            "x": 616,
+            "x": 560,
             "y": 192
           }
         },
@@ -79,7 +79,7 @@
           "id": "1a3b7d39-ee00-40f5-b6b5-e85d89968935",
           "type": "basic.info",
           "data": {
-            "info": "\nf_input = 12 MHz internal frequecy of FPGA\n\nf_output = It is configurable, here T_sg=4  \n           T=  2 sg ON and 2 sg OFF."
+            "info": "\nf_input = 12 MHz internal frequecy of FPGA\n\nf_output = It is configurable, T period = 1 Hz"
           },
           "position": {
             "x": 200,
@@ -94,12 +94,12 @@
       "wires": [
         {
           "source": {
-            "block": "6a9606ff-7390-4254-9e94-d33071df353d",
-            "port": "out"
+            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
+            "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
           },
           "target": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
-            "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
+            "block": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
+            "port": "in"
           }
         },
         {
@@ -108,18 +108,18 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
+            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
             "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
           }
         },
         {
           "source": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
-            "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
+            "block": "6a9606ff-7390-4254-9e94-d33071df353d",
+            "port": "out"
           },
           "target": {
-            "block": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
-            "port": "in"
+            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
+            "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
           }
         }
       ]
@@ -133,7 +133,7 @@
     }
   },
   "dependencies": {
-    "3128151b411ed203c57ec6862c5e65e5809bd11f": {
+    "d624f12138d30e557267db6c35a445f9147a5c1a": {
       "package": {
         "name": "clock",
         "version": "1.0",
@@ -148,23 +148,23 @@
               "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
               "type": "basic.constant",
               "data": {
-                "name": "T_sg",
+                "name": "Hz",
                 "value": "",
                 "local": false
               },
               "position": {
                 "x": 616,
-                "y": -80
+                "y": -72
               }
             },
             {
               "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_sg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
-                    "name": "T_sg"
+                    "name": "Hz"
                   }
                 ],
                 "ports": {
@@ -216,16 +216,6 @@
           "wires": [
             {
               "source": {
-                "block": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "T_sg"
-              }
-            },
-            {
-              "source": {
                 "block": "f54545c4-308e-4787-8383-c79146f70ab8",
                 "port": "clk"
               },
@@ -242,6 +232,16 @@
               "target": {
                 "block": "f54545c4-308e-4787-8383-c79146f70ab8",
                 "port": "i_clock"
+              }
+            },
+            {
+              "source": {
+                "block": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
+                "port": "Hz"
               }
             }
           ]

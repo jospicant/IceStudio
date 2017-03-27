@@ -12,60 +12,87 @@
     "graph": {
       "blocks": [
         {
-          "id": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-          "type": "basic.code",
-          "data": {
-            "code": "//Asynchronous or latched logic.\n//the sensitivity list must contain all expressions that are used within the always block\n\nreg y1;\n\n//Asinchronous. A event/change in  a,b or operation generate a  change at the outpuy y1\nalways @* //  * means all expressions within the always block\nbegin\n    if(operation)\n        y1 <=a | b;\n    else\n        y1<= 0;\nend\n\n//latch.  If all ways aren't completed ----> generate a latch.\n//this option is not good and syntesis tool could generate a error \n/*\nalways @* //  * means all expressions within the always block\nbegin\n    if(operation)\n        y2 <=a | b;\n   \nend\n*/\n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "a"
-                },
-                {
-                  "name": "b"
-                },
-                {
-                  "name": "operation"
-                }
-              ],
-              "out": [
-                {
-                  "name": "y1"
-                },
-                {
-                  "name": "y2"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 176,
-            "y": -24
-          },
-          "size": {
-            "width": 960,
-            "height": 496
-          }
-        },
-        {
-          "id": "7569e2fa-9355-48e6-a060-65f967227d79",
-          "type": "b734f60cce5a9de8621cbbd63cf95b689e40512c",
-          "position": {
-            "x": -8,
-            "y": 24
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "64863e83-dd70-47e3-80e1-e1ab80518539",
+          "id": "6eadad5c-b70d-4b2c-ad68-fa014e38b14d",
           "type": "basic.output",
           "data": {
             "name": "out",
+            "range": "[15:0]",
             "pins": [
+              {
+                "index": "15",
+                "name": "TR5",
+                "value": "114"
+              },
+              {
+                "index": "14",
+                "name": "TR4",
+                "value": "113"
+              },
+              {
+                "index": "13",
+                "name": "TR3",
+                "value": "112"
+              },
+              {
+                "index": "12",
+                "name": "PMOD10",
+                "value": "91"
+              },
+              {
+                "index": "11",
+                "name": "PMOD9",
+                "value": "90"
+              },
+              {
+                "index": "10",
+                "name": "PMOD8",
+                "value": "88"
+              },
+              {
+                "index": "9",
+                "name": "PMOD7",
+                "value": "87"
+              },
+              {
+                "index": "8",
+                "name": "PMOD4",
+                "value": "81"
+              },
+              {
+                "index": "7",
+                "name": "PMOD3",
+                "value": "80"
+              },
+              {
+                "index": "6",
+                "name": "PMOD2",
+                "value": "79"
+              },
+              {
+                "index": "5",
+                "name": "PMOD1",
+                "value": "78"
+              },
+              {
+                "index": "4",
+                "name": "TR9",
+                "value": "118"
+              },
+              {
+                "index": "3",
+                "name": "D4",
+                "value": "96"
+              },
+              {
+                "index": "2",
+                "name": "D3",
+                "value": "97"
+              },
+              {
+                "index": "1",
+                "name": "D2",
+                "value": "98"
+              },
               {
                 "index": "0",
                 "name": "D1",
@@ -75,173 +102,160 @@
             "virtual": false
           },
           "position": {
-            "x": 1192,
-            "y": 72
+            "x": 1144,
+            "y": 32
           }
         },
         {
-          "id": "fe979ec4-c9f6-4a82-8187-8a92fcc182da",
+          "id": "5ec22501-6048-4770-891c-4277dc036b78",
+          "type": "basic.code",
+          "data": {
+            "code": " \n// Factorial(n)\n// Factorial(7)=7*6*5*4*3*2*1\n\nwire[2:0] temp;\nreg load=1;\nreg[2:0] num;\nreg[15:0] factorial=1;\nreg End=0;\n\nassign temp = n;\n\nalways @(posedge clk)\nbegin \n  if (load)      // Charge the value only one time\n  begin          //solo carga la primera vez\n   num <= temp;\n   load <=0;\n  end\n  else  \n      begin\n        if(num > 1)\n           begin\n               num <=num-1;\n               factorial <= factorial*num;\n               \n           end\n        if (num == 1)\n           End <=1;\n            \n      end\nend\n\n\n\n\n",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "n",
+                  "range": "[2:0]",
+                  "size": 3
+                },
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "factorial",
+                  "range": "[15:0]",
+                  "size": 16
+                },
+                {
+                  "name": "End"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 408,
+            "y": 184
+          },
+          "size": {
+            "width": 592,
+            "height": 480
+          }
+        },
+        {
+          "id": "921370be-cc2b-4196-b821-8536e2a497f8",
+          "type": "basic.code",
+          "data": {
+            "code": "\nassign cte=7;",
+            "params": [],
+            "ports": {
+              "in": [],
+              "out": [
+                {
+                  "name": "cte",
+                  "range": "[2:0]",
+                  "size": 3
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 72,
+            "y": 240
+          },
+          "size": {
+            "width": 192,
+            "height": 128
+          }
+        },
+        {
+          "id": "2c8d8cee-ac2f-4904-a7b8-145f56f831b0",
+          "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
+          "position": {
+            "x": 120,
+            "y": 512
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "ed4e8d87-c65a-4541-b4cd-28521688b9d6",
           "type": "basic.output",
           "data": {
             "name": "out",
             "pins": [
               {
                 "index": "0",
-                "name": "D2",
-                "value": "98"
+                "name": "D5",
+                "value": "95"
               }
             ],
             "virtual": false
           },
           "position": {
-            "x": 1184,
-            "y": 320
-          }
-        },
-        {
-          "id": "2a2e588a-233c-4576-a020-14ce1eacc146",
-          "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
-          "position": {
-            "x": -16,
-            "y": 360
-          },
-          "size": {
-            "width": 96,
-            "height": 64
+            "x": 1144,
+            "y": 608
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-            "port": "y1"
+            "block": "5ec22501-6048-4770-891c-4277dc036b78",
+            "port": "factorial"
           },
           "target": {
-            "block": "64863e83-dd70-47e3-80e1-e1ab80518539",
+            "block": "6eadad5c-b70d-4b2c-ad68-fa014e38b14d",
             "port": "in"
-          }
+          },
+          "size": 16
         },
         {
           "source": {
-            "block": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-            "port": "y2"
+            "block": "921370be-cc2b-4196-b821-8536e2a497f8",
+            "port": "cte"
           },
           "target": {
-            "block": "fe979ec4-c9f6-4a82-8187-8a92fcc182da",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "7569e2fa-9355-48e6-a060-65f967227d79",
-            "port": "3d584b0a-29eb-47af-8c43-c0822282ef05"
+            "block": "5ec22501-6048-4770-891c-4277dc036b78",
+            "port": "n"
           },
-          "target": {
-            "block": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-            "port": "a"
-          }
+          "size": 3
         },
         {
           "source": {
-            "block": "7569e2fa-9355-48e6-a060-65f967227d79",
-            "port": "3d584b0a-29eb-47af-8c43-c0822282ef05"
-          },
-          "target": {
-            "block": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-            "port": "b"
-          }
-        },
-        {
-          "source": {
-            "block": "2a2e588a-233c-4576-a020-14ce1eacc146",
+            "block": "2c8d8cee-ac2f-4904-a7b8-145f56f831b0",
             "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
           },
           "target": {
-            "block": "eba878db-d058-4ded-90a7-793ffbc98c3a",
-            "port": "operation"
+            "block": "5ec22501-6048-4770-891c-4277dc036b78",
+            "port": "clk"
+          }
+        },
+        {
+          "source": {
+            "block": "5ec22501-6048-4770-891c-4277dc036b78",
+            "port": "End"
+          },
+          "target": {
+            "block": "ed4e8d87-c65a-4541-b4cd-28521688b9d6",
+            "port": "in"
           }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 88.2,
-        "y": 103.1
+        "x": 144.1268,
+        "y": 3.0754
       },
-      "zoom": 0.9208
+      "zoom": 0.8472
     }
   },
   "dependencies": {
-    "b734f60cce5a9de8621cbbd63cf95b689e40512c": {
-      "package": {
-        "name": "1",
-        "version": "0.1",
-        "description": "Un bit constante a 1",
-        "author": "Jesus Arroyo",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2233.632%22%20height=%2269.34%22%20viewBox=%220%200%2031.530464%2065.006656%22%3E%3Cpath%20d=%22M3.517%2012.015L19%200l12.53%202.863-10.012%2043.262-9.746-2.227%207.7-34.532L8.03%2016.38z%22%20fill=%22#00f%22%20fill-rule=%22evenodd%22/%3E%3Cpath%20d=%22M17.593%2043.464l7.822%2010.472-6.56%207.919%202.27%202.043M15.985%2043.719l-4.542%2010.473-10.345%202.043.757%203.32%22%20fill=%22none%22%20stroke=%22#00f%22%20stroke-width=%222.196%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3C/svg%3E"
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
-              "type": "basic.code",
-              "data": {
-                "code": "//-- Bit constante a 1\nassign q = 1'b1;\n\n",
-                "params": [],
-                "ports": {
-                  "in": [],
-                  "out": [
-                    {
-                      "name": "q"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 168,
-                "y": 112
-              },
-              "size": {
-                "width": 256,
-                "height": 160
-              }
-            },
-            {
-              "id": "3d584b0a-29eb-47af-8c43-c0822282ef05",
-              "type": "basic.output",
-              "data": {
-                "name": ""
-              },
-              "position": {
-                "x": 512,
-                "y": 160
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
-                "port": "q"
-              },
-              "target": {
-                "block": "3d584b0a-29eb-47af-8c43-c0822282ef05",
-                "port": "in"
-              }
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": 0,
-            "y": 0
-          },
-          "zoom": 1
-        }
-      }
-    },
     "7c0ae704fe4f7176c6e19f8639bc59e42c836297": {
       "package": {
         "name": "Bomba_x1",

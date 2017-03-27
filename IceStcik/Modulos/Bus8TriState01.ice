@@ -12,11 +12,47 @@
     "graph": {
       "blocks": [
         {
-          "id": "f977b675-5a43-4e17-9385-9579db0f3301",
+          "id": "00a2fc3f-7c72-4163-91ca-9775daac8040",
           "type": "basic.input",
           "data": {
             "name": "In",
+            "range": "[7:0]",
             "pins": [
+              {
+                "index": "7",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "6",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "4",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "3",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": "0"
+              },
               {
                 "index": "0",
                 "name": "",
@@ -35,12 +71,14 @@
           "id": "aed97f5e-976b-4315-ac73-5f38afa2752f",
           "type": "basic.code",
           "data": {
-            "code": "\nassign OUT=(EN)? IN:1'bz;",
+            "code": "\nassign OUT=(EN)? IN:8'bz;",
             "params": [],
             "ports": {
               "in": [
                 {
-                  "name": "IN"
+                  "name": "IN",
+                  "range": "[7:0]",
+                  "size": 8
                 },
                 {
                   "name": "EN"
@@ -48,7 +86,9 @@
               ],
               "out": [
                 {
-                  "name": "OUT"
+                  "name": "OUT",
+                  "range": "[7:0]",
+                  "size": 8
                 }
               ]
             }
@@ -63,11 +103,47 @@
           }
         },
         {
-          "id": "da53b263-b29f-4c41-859d-fca08b80c03d",
+          "id": "81e3f71f-38b7-4616-af9c-f67d124e53c6",
           "type": "basic.output",
           "data": {
             "name": "Out",
+            "range": "[7:0]",
             "pins": [
+              {
+                "index": "7",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "6",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "4",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "3",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": "0"
+              },
               {
                 "index": "0",
                 "name": "",
@@ -115,23 +191,25 @@
         },
         {
           "source": {
-            "block": "aed97f5e-976b-4315-ac73-5f38afa2752f",
-            "port": "OUT"
-          },
-          "target": {
-            "block": "da53b263-b29f-4c41-859d-fca08b80c03d",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "f977b675-5a43-4e17-9385-9579db0f3301",
+            "block": "00a2fc3f-7c72-4163-91ca-9775daac8040",
             "port": "out"
           },
           "target": {
             "block": "aed97f5e-976b-4315-ac73-5f38afa2752f",
             "port": "IN"
-          }
+          },
+          "size": 8
+        },
+        {
+          "source": {
+            "block": "aed97f5e-976b-4315-ac73-5f38afa2752f",
+            "port": "OUT"
+          },
+          "target": {
+            "block": "81e3f71f-38b7-4616-af9c-f67d124e53c6",
+            "port": "in"
+          },
+          "size": 8
         }
       ]
     },
