@@ -15,22 +15,22 @@
           "id": "a0f8c6fa-51b9-4f3d-9ccd-aa640450316f",
           "type": "basic.info",
           "data": {
-            "info": "\nExample V1.0 for a DC Motor:\n\nUsing 12MHz and a 10bits counter we could obtain a PWM frequency = 11.72Khz\na PWM will hold the same period ( 85,33 microseconds ) but a difference dutty in function a configurable\nAdjust value.\n\n               Adjust=0000 0000 0000 0000 pwm = Always off\n               Adjsut= 0000 0000 0000 1111 pwm = a bit On  a lot Off\n               Adjust= 1000 0000 0000 0000 pwm = 50% dutty\n               Adjust= 1111 1111 1111 1111 pwm = 100% on\n\n               \n"
+            "info": "\nExample V1.0 for a DC Motor:\n\nUsing 12MHz and a 9bits counter we could obtain a PWM frequency = 23,43Khz\na PWM will hold the same period ( 85,33 microseconds ) but a difference dutty in function a configurable\nAdjust value.\n\n               Adjust=0000 0000 0000 0000 pwm = Always off\n               Adjsut= 0000 0000 0000 1111 pwm = a bit On  a lot Off\n               Adjust= 1000 0000 0000 0000 pwm = 50% dutty\n               Adjust= 1111 1111 1111 1111 pwm = 100% on\n\nOutputs a,b are for control direction of the motor if you use a L298 as driver DC Motor\n        a=0 b=1 The Motor turn in one direction \n        a=1 b=0 The Motor Will turn in reverse direction\n\n               \n"
           },
           "position": {
             "x": -760,
-            "y": -176
+            "y": -240
           },
           "size": {
-            "width": 960,
-            "height": 240
+            "width": 944,
+            "height": 304
           }
         },
         {
           "id": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
           "type": "basic.code",
           "data": {
-            "code": "\nreg Adjust;\nreg[3:0] state=0;\n\nalways @(posedge clk)\nbegin\n    case (state)\n        0:Adjust <=10'd0;\n        1:Adjust <=10'd50;\n        2:Adjust <=10'd128;\n        3:Adjust <=10'd192;\n        4:Adjust <=10'd256;\n        5:Adjust <=10'd320;\n        6:Adjust <=10'd384;\n        7:Adjust <=10'd448;\n        8:Adjust <=10'd512;\n        9:Adjust <=10'd576;\n        10:Adjust <=10'd640;\n        11:Adjust <=10'd704;\n        12:Adjust <=10'd768;\n        13:Adjust <=10'd832;\n        14:Adjust <=10'd896; \n        15:Adjust <=10'd1000;\n        default: Adjust <=10'd512;\n    endcase\n    \nend\n\nalways @(negedge clk)\n    state <= state+1;\n\n",
+            "code": "\nreg Adjust;\nreg[3:0] state=0;\n\nalways @(posedge clk)\nbegin\n    case (state)\n        0:Adjust <=9'd0;\n        1:Adjust <=9'd20;\n        2:Adjust <=9'd40;\n        3:Adjust <=9'd60;\n        4:Adjust <=9'd70;\n        5:Adjust <=9'd80;\n        6:Adjust <=9'd90;\n        7:Adjust <=9'd100;\n        8:Adjust <=9'd150;\n        9:Adjust <=9'd200;\n        10:Adjust <=9'd250;\n        11:Adjust <=9'd300;\n        12:Adjust <=9'd350;\n        13:Adjust <=9'd400;\n        14:Adjust <=9'd450; \n        15:Adjust <=9'd500;\n        default: Adjust <=9'd300;\n    endcase\n    \nend\n\nalways @(negedge clk)\n    state <= state+1;\n\nassign a=0;  //L293 direccion 01  un sentido\nassign b=1;  //               10  en otro",
             "params": [],
             "ports": {
               "in": [
@@ -41,8 +41,14 @@
               "out": [
                 {
                   "name": "Adjust",
-                  "range": "[9:0]",
-                  "size": 10
+                  "range": "[8:0]",
+                  "size": 9
+                },
+                {
+                  "name": "a"
+                },
+                {
+                  "name": "b"
                 }
               ]
             }
@@ -61,7 +67,7 @@
           "type": "basic.constant",
           "data": {
             "name": "T_msg",
-            "value": "5000",
+            "value": "1000",
             "local": false
           },
           "position": {
@@ -102,10 +108,10 @@
           }
         },
         {
-          "id": "4abce545-092b-4682-90f8-41bf9446974e",
-          "type": "5b89caf91ec6e2482f5ec80644d6756505ca84b5",
+          "id": "481ee553-ff3f-46c6-9e2d-a5c3785f8a6e",
+          "type": "f12957e50ca62692e9305d5fbb914b6819609750",
           "position": {
-            "x": 904,
+            "x": 920,
             "y": 224
           },
           "size": {
@@ -130,6 +136,44 @@
           "position": {
             "x": 1080,
             "y": 224
+          }
+        },
+        {
+          "id": "876d5860-a679-4a33-b83a-7de51e6c6dc5",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD2",
+                "value": "79"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1088,
+            "y": 328
+          }
+        },
+        {
+          "id": "5fa1448d-2ad5-4b07-af3a-b4b0d5b8469e",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD3",
+                "value": "80"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1088,
+            "y": 408
           }
         }
       ],
@@ -166,7 +210,33 @@
         },
         {
           "source": {
-            "block": "4abce545-092b-4682-90f8-41bf9446974e",
+            "block": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
+            "port": "a"
+          },
+          "target": {
+            "block": "876d5860-a679-4a33-b83a-7de51e6c6dc5",
+            "port": "in"
+          },
+          "vertices": [
+            {
+              "x": 816,
+              "y": 336
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
+            "port": "b"
+          },
+          "target": {
+            "block": "5fa1448d-2ad5-4b07-af3a-b4b0d5b8469e",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "481ee553-ff3f-46c6-9e2d-a5c3785f8a6e",
             "port": "b6f10815-dfe4-4b20-9ca4-5ff526c981c5"
           },
           "target": {
@@ -180,17 +250,17 @@
             "port": "Adjust"
           },
           "target": {
-            "block": "4abce545-092b-4682-90f8-41bf9446974e",
-            "port": "c32a9a45-9e8c-4d24-953b-9c94b31af75b"
+            "block": "481ee553-ff3f-46c6-9e2d-a5c3785f8a6e",
+            "port": "9e0353f9-0b41-4d55-97b8-5df4d902ed28"
           },
-          "size": 10
+          "size": 9
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 540.3667,
-        "y": 163.9966
+        "x": 539.3666,
+        "y": 178.9966
       },
       "zoom": 0.6874
     }
@@ -318,9 +388,9 @@
         }
       }
     },
-    "5b89caf91ec6e2482f5ec80644d6756505ca84b5": {
+    "f12957e50ca62692e9305d5fbb914b6819609750": {
       "package": {
-        "name": "PWM 10bits",
+        "name": "PWM 9bits",
         "version": "1.0",
         "description": "PWM. Adjust = Adjust value",
         "author": "José Picó",
@@ -333,14 +403,14 @@
               "id": "17174045-a45c-4f73-8dd4-50651082b454",
               "type": "basic.code",
               "data": {
-                "code": "//PWM is based in a counter +  a comparator\n// the system count and if the count is\n// less than Adjust value then pwm=1\n// if the count is bigger than Adjust value \n// then pwm=0\n\nreg [9:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n    d <= d+1;        // Counter\n    \n    if (d < Adjust)  // Comparator\n      pwm <= 1;      // High value\n    else\n      pwm <= 0;      // Low value\n      \nend\n\n",
+                "code": "//PWM is based in a counter +  a comparator\n// the system count and if the count is\n// less than Adjust value then pwm=1\n// if the count is bigger than Adjust value \n// then pwm=0\n\nreg [8:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n    d <= d+1;        // Counter\n    \n    if (d < Adjust)  // Comparator\n      pwm <= 1;      // High value\n    else\n      pwm <= 0;      // Low value\n      \nend\n\n",
                 "params": [],
                 "ports": {
                   "in": [
                     {
                       "name": "Adjust",
-                      "range": "[9:0]",
-                      "size": 10
+                      "range": "[8:0]",
+                      "size": 9
                     },
                     {
                       "name": "clk"
@@ -363,13 +433,13 @@
               }
             },
             {
-              "id": "c32a9a45-9e8c-4d24-953b-9c94b31af75b",
+              "id": "9e0353f9-0b41-4d55-97b8-5df4d902ed28",
               "type": "basic.input",
               "data": {
                 "name": "Adjust",
-                "range": "[9:0]",
+                "range": "[8:0]",
                 "clock": false,
-                "size": 10
+                "size": 9
               },
               "position": {
                 "x": 16,
@@ -423,14 +493,14 @@
             },
             {
               "source": {
-                "block": "c32a9a45-9e8c-4d24-953b-9c94b31af75b",
+                "block": "9e0353f9-0b41-4d55-97b8-5df4d902ed28",
                 "port": "out"
               },
               "target": {
                 "block": "17174045-a45c-4f73-8dd4-50651082b454",
                 "port": "Adjust"
               },
-              "size": 10
+              "size": 9
             }
           ]
         },

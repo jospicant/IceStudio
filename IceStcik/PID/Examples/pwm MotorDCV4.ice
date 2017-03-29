@@ -15,22 +15,22 @@
           "id": "a0f8c6fa-51b9-4f3d-9ccd-aa640450316f",
           "type": "basic.info",
           "data": {
-            "info": "\nExample V1.0 for a DC Motor:\n\nUsing 12MHz and a 10bits counter we could obtain a PWM frequency = 11.72Khz\na PWM will hold the same period ( 85,33 microseconds ) but a difference dutty in function a configurable\nAdjust value.\n\n               Adjust=0000 0000 0000 0000 pwm = Always off\n               Adjsut= 0000 0000 0000 1111 pwm = a bit On  a lot Off\n               Adjust= 1000 0000 0000 0000 pwm = 50% dutty\n               Adjust= 1111 1111 1111 1111 pwm = 100% on\n\n               \n"
+            "info": "\nExample V1.0 for a DC Motor:\n\nUsing 12MHz and a 10bits counter we could obtain a PWM frequency = 11.72Khz\na PWM will hold the same period ( 85,33 microseconds ) but a difference dutty in function a configurable\nAdjust value.\n\n               Adjust=0000 0000 0000 0000 pwm = Always off\n               Adjsut= 0000 0000 0000 1111 pwm = a bit On  a lot Off\n               Adjust= 1000 0000 0000 0000 pwm = 50% dutty\n               Adjust= 1111 1111 1111 1111 pwm = 100% on\n\nOutputs a,b are for control direction of the motor if you use a L298 as driver DC Motor\n        a=0 b=1 The Motor turn in one direction \n        a=1 b=0 The Motor Will turn in reverse direction\n\n               \n"
           },
           "position": {
             "x": -760,
-            "y": -176
+            "y": -240
           },
           "size": {
-            "width": 960,
-            "height": 240
+            "width": 944,
+            "height": 304
           }
         },
         {
           "id": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
           "type": "basic.code",
           "data": {
-            "code": "\nreg Adjust;\nreg[3:0] state=0;\n\nalways @(posedge clk)\nbegin\n    case (state)\n        0:Adjust <=10'd0;\n        1:Adjust <=10'd50;\n        2:Adjust <=10'd128;\n        3:Adjust <=10'd192;\n        4:Adjust <=10'd256;\n        5:Adjust <=10'd320;\n        6:Adjust <=10'd384;\n        7:Adjust <=10'd448;\n        8:Adjust <=10'd512;\n        9:Adjust <=10'd576;\n        10:Adjust <=10'd640;\n        11:Adjust <=10'd704;\n        12:Adjust <=10'd768;\n        13:Adjust <=10'd832;\n        14:Adjust <=10'd896; \n        15:Adjust <=10'd1000;\n        default: Adjust <=10'd512;\n    endcase\n    \nend\n\nalways @(negedge clk)\n    state <= state+1;\n\n",
+            "code": "\nreg Adjust;\nreg[3:0] state=0;\n\nalways @(posedge clk)\nbegin\n    case (state)\n        0:Adjust <=10'd0;\n        1:Adjust <=10'd50;\n        2:Adjust <=10'd128;\n        3:Adjust <=10'd192;\n        4:Adjust <=10'd256;\n        5:Adjust <=10'd320;\n        6:Adjust <=10'd384;\n        7:Adjust <=10'd448;\n        8:Adjust <=10'd512;\n        9:Adjust <=10'd576;\n        10:Adjust <=10'd640;\n        11:Adjust <=10'd704;\n        12:Adjust <=10'd768;\n        13:Adjust <=10'd832;\n        14:Adjust <=10'd896; \n        15:Adjust <=10'd1000;\n        default: Adjust <=10'd512;\n    endcase\n    \nend\n\nalways @(negedge clk)\n    state <= state+1;\n\nassign a=0;  //L293 direccion 01  un sentido\nassign b=1;  //               10  en otro",
             "params": [],
             "ports": {
               "in": [
@@ -43,6 +43,12 @@
                   "name": "Adjust",
                   "range": "[9:0]",
                   "size": 10
+                },
+                {
+                  "name": "a"
+                },
+                {
+                  "name": "b"
                 }
               ]
             }
@@ -61,7 +67,7 @@
           "type": "basic.constant",
           "data": {
             "name": "T_msg",
-            "value": "5000",
+            "value": "1000",
             "local": false
           },
           "position": {
@@ -131,6 +137,44 @@
             "x": 1080,
             "y": 224
           }
+        },
+        {
+          "id": "876d5860-a679-4a33-b83a-7de51e6c6dc5",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD2",
+                "value": "79"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1088,
+            "y": 328
+          }
+        },
+        {
+          "id": "5fa1448d-2ad5-4b07-af3a-b4b0d5b8469e",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD3",
+                "value": "80"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1088,
+            "y": 408
+          }
         }
       ],
       "wires": [
@@ -184,13 +228,39 @@
             "port": "c32a9a45-9e8c-4d24-953b-9c94b31af75b"
           },
           "size": 10
+        },
+        {
+          "source": {
+            "block": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
+            "port": "a"
+          },
+          "target": {
+            "block": "876d5860-a679-4a33-b83a-7de51e6c6dc5",
+            "port": "in"
+          },
+          "vertices": [
+            {
+              "x": 816,
+              "y": 336
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "ebbeb5cf-34b6-4b9f-a080-380fce930f7d",
+            "port": "b"
+          },
+          "target": {
+            "block": "5fa1448d-2ad5-4b07-af3a-b4b0d5b8469e",
+            "port": "in"
+          }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 540.3667,
-        "y": 163.9966
+        "x": 539.3666,
+        "y": 178.9966
       },
       "zoom": 0.6874
     }
