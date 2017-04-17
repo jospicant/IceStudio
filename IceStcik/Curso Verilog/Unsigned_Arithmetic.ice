@@ -12,59 +12,40 @@
     "graph": {
       "blocks": [
         {
-          "id": "6aca6e89-f85a-4916-9784-17e15369a0dc",
+          "id": "e69005d0-b80c-45e7-8bb2-5aa895bac57f",
+          "type": "basic.info",
+          "data": {
+            "info": "\n \"reg\" type is interpreted as an unsigned number and an \"integer\" type is interpreted as a signed number in Ca2.\n Then to synthesize an unsigned arithmetic operator, the reg type is used. To get a signed arithmetic operator, the \n integer type is used.\n ",
+            "readonly": false
+          },
+          "position": {
+            "x": 280,
+            "y": 56
+          },
+          "size": {
+            "width": 1024,
+            "height": 112
+          }
+        },
+        {
+          "id": "1101a216-0461-4ba9-a5c4-6765431dfeb9",
           "type": "basic.constant",
           "data": {
-            "name": "Random",
-            "value": "18343",
+            "name": "num1",
+            "value": "2",
             "local": false
           },
           "position": {
-            "x": 64,
-            "y": 136
+            "x": 104,
+            "y": 120
           }
         },
         {
-          "id": "ce3ce464-80ae-4416-a4bf-4edf12965524",
-          "type": "basic.code",
-          "data": {
-            "code": "//module(clk,in_data,out_data);\n\n//parameter BITS=8;\n//parameter STAGES=4;\n\n//input clk;\n//input [7:0]  in_data;\n//output [3:0] out_data;\n\nreg [7:0] ffs [3:0];\n\ninteger i;\nalways @(posedge clk)\nbegin\n    ffs[0] <= in_data;\n    for (i=1; i<4; i=i+1)\n        ffs[i] <= ffs[i-1];\nend\n\nassign out_data = ffs[3];\n\n//endmodule",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "in_data",
-                  "range": "[7:0]",
-                  "size": 8
-                },
-                {
-                  "name": "clk"
-                }
-              ],
-              "out": [
-                {
-                  "name": "out_data",
-                  "range": "[3:0]",
-                  "size": 4
-                }
-              ]
-            }
-          },
+          "id": "4abb780b-0910-471b-bf1d-35524f829119",
+          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
           "position": {
-            "x": 320,
-            "y": 184
-          },
-          "size": {
-            "width": 640,
-            "height": 416
-          }
-        },
-        {
-          "id": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
-          "type": "bc94db150c63b110cba6b4f0163c9ebcfff92e02",
-          "position": {
-            "x": 64,
-            "y": 256
+            "x": 104,
+            "y": 248
           },
           "size": {
             "width": 96,
@@ -72,7 +53,47 @@
           }
         },
         {
-          "id": "40722afc-ce42-4299-893a-690eaea36618",
+          "id": "b1351e95-e488-4677-81c1-9d96f89698e8",
+          "type": "basic.code",
+          "data": {
+            "code": "\nreg[3:0] res;\n\nalways @(posedge clk)\nres <=a+b;",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "a",
+                  "range": "[3:0]",
+                  "size": 4
+                },
+                {
+                  "name": "b",
+                  "range": "[3:0]",
+                  "size": 4
+                },
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "res",
+                  "range": "[3:0]",
+                  "size": 4
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 464,
+            "y": 288
+          },
+          "size": {
+            "width": 336,
+            "height": 160
+          }
+        },
+        {
+          "id": "a1af1ab1-11d8-4423-83e7-2e9b63b54748",
           "type": "basic.output",
           "data": {
             "name": "out",
@@ -102,16 +123,41 @@
             "virtual": false
           },
           "position": {
-            "x": 1088,
-            "y": 312
+            "x": 928,
+            "y": 288
           }
         },
         {
-          "id": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
+          "id": "8a00bb2d-e215-463a-a43a-e962bedda099",
+          "type": "basic.constant",
+          "data": {
+            "name": "num2",
+            "value": "1",
+            "local": false
+          },
+          "position": {
+            "x": 104,
+            "y": 328
+          }
+        },
+        {
+          "id": "2f483c37-6e62-4d82-ba2f-2fed70d29506",
+          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
+          "position": {
+            "x": 104,
+            "y": 448
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "4eed839a-2706-45f8-8a60-946d0e7f74e4",
           "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
           "position": {
-            "x": 16,
-            "y": 464
+            "x": 104,
+            "y": 544
           },
           "size": {
             "width": 96,
@@ -122,78 +168,95 @@
       "wires": [
         {
           "source": {
-            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
-            "port": "out_data"
+            "block": "4eed839a-2706-45f8-8a60-946d0e7f74e4",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
           },
           "target": {
-            "block": "40722afc-ce42-4299-893a-690eaea36618",
+            "block": "b1351e95-e488-4677-81c1-9d96f89698e8",
+            "port": "clk"
+          }
+        },
+        {
+          "source": {
+            "block": "b1351e95-e488-4677-81c1-9d96f89698e8",
+            "port": "res"
+          },
+          "target": {
+            "block": "a1af1ab1-11d8-4423-83e7-2e9b63b54748",
             "port": "in"
           },
           "size": 4
         },
         {
           "source": {
-            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
-            "port": "b56955ad-2193-4c4c-a65f-4adab8810a90"
+            "block": "4abb780b-0910-471b-bf1d-35524f829119",
+            "port": "14ec4c22-849d-4c9b-a10d-a75d27daaa61"
           },
           "target": {
-            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
-            "port": "in_data"
+            "block": "b1351e95-e488-4677-81c1-9d96f89698e8",
+            "port": "a"
           },
-          "size": 8
+          "vertices": [
+            {
+              "x": 296,
+              "y": 304
+            }
+          ],
+          "size": 4
         },
         {
           "source": {
-            "block": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
-            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+            "block": "2f483c37-6e62-4d82-ba2f-2fed70d29506",
+            "port": "14ec4c22-849d-4c9b-a10d-a75d27daaa61"
           },
           "target": {
-            "block": "ce3ce464-80ae-4416-a4bf-4edf12965524",
-            "port": "clk"
+            "block": "b1351e95-e488-4677-81c1-9d96f89698e8",
+            "port": "b"
+          },
+          "vertices": [
+            {
+              "x": 304,
+              "y": 424
+            }
+          ],
+          "size": 4
+        },
+        {
+          "source": {
+            "block": "1101a216-0461-4ba9-a5c4-6765431dfeb9",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "4abb780b-0910-471b-bf1d-35524f829119",
+            "port": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc"
           }
         },
         {
           "source": {
-            "block": "a17d5246-7c31-4024-bdec-b12f22ad4c91",
-            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
-          },
-          "target": {
-            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
-            "port": "503c8237-b25a-477a-bf15-8d8b1573b678"
-          },
-          "vertices": [
-            {
-              "x": 72,
-              "y": 392
-            }
-          ]
-        },
-        {
-          "source": {
-            "block": "6aca6e89-f85a-4916-9784-17e15369a0dc",
+            "block": "8a00bb2d-e215-463a-a43a-e962bedda099",
             "port": "constant-out"
           },
           "target": {
-            "block": "5d5bccb3-3e11-4eec-9ba3-3d9d30d4ad2d",
-            "port": "9666115a-aff5-4be6-ab10-caf2d924bc47"
+            "block": "2f483c37-6e62-4d82-ba2f-2fed70d29506",
+            "port": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc"
           }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 89,
-        "y": -70
+        "x": 0,
+        "y": 0
       },
       "zoom": 1
     }
   },
   "dependencies": {
-    "bc94db150c63b110cba6b4f0163c9ebcfff92e02": {
+    "656d05d360d34a4625d8c3bde3788dd70399ca12": {
       "package": {
-        "name": "Random Number",
+        "name": "4 bits constante",
         "version": "1.0",
-        "description": "Generate a Pseudo Random Number ",
+        "description": "Constante 4 bits",
         "author": "José Picó",
         "image": ""
       },
@@ -201,118 +264,92 @@
         "graph": {
           "blocks": [
             {
-              "id": "9666115a-aff5-4be6-ab10-caf2d924bc47",
+              "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
               "type": "basic.constant",
               "data": {
-                "name": "Random_Sum",
+                "name": "numero",
                 "value": "",
                 "local": false
               },
               "position": {
-                "x": 576,
-                "y": 88
+                "x": 448,
+                "y": 72
               }
             },
             {
-              "id": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+              "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
               "type": "basic.code",
               "data": {
-                "code": "\n// To generate pseudoaleatory numbers\n// each posedge clock ,output number changes\n// pseudo-Randomly in function of Random_Sum\n// parameter\n\n\nreg[7:0] num=0;\n\nlocalparam x = Random_Sum;\n\nalways @(posedge clk)\n num <= num + x;",
+                "code": "\nassign num=n;",
                 "params": [
                   {
-                    "name": "Random_Sum"
+                    "name": "n"
                   }
                 ],
                 "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    }
-                  ],
+                  "in": [],
                   "out": [
                     {
                       "name": "num",
-                      "range": "[7:0]",
-                      "size": 8
+                      "range": "[3:0]",
+                      "size": 4
                     }
                   ]
                 }
               },
               "position": {
-                "x": 376,
-                "y": 200
+                "x": 384,
+                "y": 184
               },
               "size": {
-                "width": 496,
-                "height": 272
+                "width": 224,
+                "height": 80
               }
             },
             {
-              "id": "503c8237-b25a-477a-bf15-8d8b1573b678",
-              "type": "basic.input",
-              "data": {
-                "name": "clk",
-                "clock": false
-              },
-              "position": {
-                "x": 200,
-                "y": 304
-              }
-            },
-            {
-              "id": "b56955ad-2193-4c4c-a65f-4adab8810a90",
+              "id": "14ec4c22-849d-4c9b-a10d-a75d27daaa61",
               "type": "basic.output",
               "data": {
-                "name": "Num",
-                "range": "[7:0]",
-                "size": 8
+                "name": "Const",
+                "range": "[3:0]",
+                "size": 4
               },
               "position": {
-                "x": 968,
-                "y": 304
+                "x": 768,
+                "y": 192
               }
             }
           ],
           "wires": [
             {
               "source": {
-                "block": "9666115a-aff5-4be6-ab10-caf2d924bc47",
+                "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
                 "port": "constant-out"
               },
               "target": {
-                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
-                "port": "Random_Sum"
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+                "port": "n"
               }
             },
             {
               "source": {
-                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
                 "port": "num"
               },
               "target": {
-                "block": "b56955ad-2193-4c4c-a65f-4adab8810a90",
+                "block": "14ec4c22-849d-4c9b-a10d-a75d27daaa61",
                 "port": "in"
               },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "503c8237-b25a-477a-bf15-8d8b1573b678",
-                "port": "out"
-              },
-              "target": {
-                "block": "94078c1a-e2de-4647-9a09-d980a81fff9b",
-                "port": "clk"
-              }
+              "size": 4
             }
           ]
         },
         "state": {
           "pan": {
-            "x": 12.604,
-            "y": -16.8818
+            "x": 0,
+            "y": 0
           },
-          "zoom": 1.0512
+          "zoom": 1
         }
       }
     },

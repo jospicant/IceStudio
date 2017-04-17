@@ -42,16 +42,16 @@
             "virtual": false
           },
           "position": {
-            "x": 600,
-            "y": -56
+            "x": 616,
+            "y": -40
           }
         },
         {
-          "id": "e10e276f-e545-4408-9da3-dcbf51422d15",
-          "type": "70fb77cd011dc2941d26c29dc9d10ebab9fbff6e",
+          "id": "a9ffe5e7-8924-4b10-acf9-fcce1191d275",
+          "type": "a2a56724c2ae58818d26246db07ef3c7129b9aa3",
           "position": {
-            "x": 360,
-            "y": 8
+            "x": 376,
+            "y": 24
           },
           "size": {
             "width": 96,
@@ -62,8 +62,8 @@
           "id": "dd8f0644-543e-4061-9cb9-d4d61c9a366d",
           "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
           "position": {
-            "x": 152,
-            "y": 24
+            "x": 128,
+            "y": 40
           },
           "size": {
             "width": 96,
@@ -74,7 +74,17 @@
       "wires": [
         {
           "source": {
-            "block": "e10e276f-e545-4408-9da3-dcbf51422d15",
+            "block": "dd8f0644-543e-4061-9cb9-d4d61c9a366d",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "a9ffe5e7-8924-4b10-acf9-fcce1191d275",
+            "port": "b6e945d8-e761-4a4e-a078-580f2614f39e"
+          }
+        },
+        {
+          "source": {
+            "block": "a9ffe5e7-8924-4b10-acf9-fcce1191d275",
             "port": "7cdf5cdd-8015-4d4a-adf7-d3fbfc8035fe"
           },
           "target": {
@@ -85,43 +95,33 @@
         },
         {
           "source": {
-            "block": "e10e276f-e545-4408-9da3-dcbf51422d15",
+            "block": "a9ffe5e7-8924-4b10-acf9-fcce1191d275",
             "port": "686be9f6-ba25-4e71-9c55-0c499e5c799c"
           },
           "target": {
-            "block": "e10e276f-e545-4408-9da3-dcbf51422d15",
+            "block": "a9ffe5e7-8924-4b10-acf9-fcce1191d275",
             "port": "0c4978c8-0d9e-4a32-a6db-8bdaf223f8c1"
           },
           "vertices": [
             {
-              "x": 384,
-              "y": 120
+              "x": 312,
+              "y": 128
             }
           ],
           "size": 4
-        },
-        {
-          "source": {
-            "block": "dd8f0644-543e-4061-9cb9-d4d61c9a366d",
-            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
-          },
-          "target": {
-            "block": "e10e276f-e545-4408-9da3-dcbf51422d15",
-            "port": "b6e945d8-e761-4a4e-a078-580f2614f39e"
-          }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 70.6209,
-        "y": 327.6652
+        "x": 295,
+        "y": 285.5
       },
-      "zoom": 1.3909
+      "zoom": 1
     }
   },
   "dependencies": {
-    "70fb77cd011dc2941d26c29dc9d10ebab9fbff6e": {
+    "a2a56724c2ae58818d26246db07ef3c7129b9aa3": {
       "package": {
         "name": "Register 4 bits",
         "version": "v1.0",
@@ -168,7 +168,7 @@
                 "y": 208
               },
               "size": {
-                "width": 320,
+                "width": 304,
                 "height": 176
               }
             },
@@ -273,10 +273,10 @@
         },
         "state": {
           "pan": {
-            "x": -673,
-            "y": -228
+            "x": -246,
+            "y": -13.5
           },
-          "zoom": 1.9375
+          "zoom": 1
         }
       }
     },
