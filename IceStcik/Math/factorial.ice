@@ -75,8 +75,8 @@
               },
               {
                 "index": "4",
-                "name": "TR9",
-                "value": "118"
+                "name": "D5",
+                "value": "95"
               },
               {
                 "index": "3",
@@ -95,8 +95,8 @@
               },
               {
                 "index": "0",
-                "name": "D1",
-                "value": "99"
+                "name": "TR6",
+                "value": "115"
               }
             ],
             "virtual": false
@@ -110,7 +110,7 @@
           "id": "5ec22501-6048-4770-891c-4277dc036b78",
           "type": "basic.code",
           "data": {
-            "code": " \n// Factorial(n)\n// Factorial(7)=7*6*5*4*3*2*1\n\nwire[2:0] temp;\nreg load=1;\nreg[2:0] num;\nreg[15:0] factorial=1;\nreg End=0;\n\nassign temp = n;\n\nalways @(posedge clk)\nbegin \n  if (load)      // Charge the value only one time\n  begin          //solo carga la primera vez\n   num <= temp;\n   load <=0;\n  end\n  else  \n      begin\n        if(num > 1)\n           begin\n               num <=num-1;\n               factorial <= factorial*num;\n               \n           end\n        if (num == 1)\n           End <=1;\n            \n      end\nend\n\n\n\n\n",
+            "code": " \n// Factorial(n)\n// Factorial(7)=7*6*5*4*3*2*1\n\nwire[2:0] temp;  // \nreg load=1;      // registro  para configurar carga inicial\nreg[2:0] num;    //\nreg[15:0] factorial=1;\nreg End=0;      //indicar fin de la operación\n\nassign temp = n;\n\nalways @(posedge clk)\nbegin \n  if (load)      // Charge the value only one time\n  begin          //solo carga la primera vez\n   num <= temp;\n   load <=0;\n  end\n  else  \n      begin\n        if(num > 1)\n           begin\n               num <=num-1;\n               factorial <= factorial*num;\n               \n           end\n        if (num == 1)\n           End <=1;\n            \n      end\nend\n\n\n\n\n",
             "params": [],
             "ports": {
               "in": [
@@ -190,8 +190,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "D5",
-                "value": "95"
+                "name": "D1",
+                "value": "99"
               }
             ],
             "virtual": false
@@ -249,10 +249,10 @@
     },
     "state": {
       "pan": {
-        "x": 144.1268,
-        "y": 3.0754
+        "x": 64.725,
+        "y": 9.45
       },
-      "zoom": 0.8472
+      "zoom": 0.9547
     }
   },
   "dependencies": {

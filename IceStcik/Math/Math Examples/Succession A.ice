@@ -110,7 +110,7 @@
           "id": "3215e9dc-4cc6-4ea0-97ea-83881fd7efec",
           "type": "basic.code",
           "data": {
-            "code": "//    Maths.  Succession\n// We are going to generate a \"Math Sucesion\"\n// Example Succession = 2*n+3*(n-1)+1;\n// Where n=0,1,2,....to infinite \n// \n\nreg out;\n\nalways @(posedge clk)\n out <=2*n+3*(n+1)+1;",
+            "code": "//    Maths.  Succession\n// We are going to generate a \"Math Sucesion\"\n// Example Succession = 2*n+3*(n-1)+1;\n// Where n=0,1,2,....to 2^16-1\n// \n\nreg out;\n\nalways @(posedge clk)\n out <=2*n+3*(n+1)+1;",
             "params": [],
             "ports": {
               "in": [
@@ -219,10 +219,10 @@
     },
     "state": {
       "pan": {
-        "x": 52,
-        "y": -28
+        "x": 40,
+        "y": 36.925
       },
-      "zoom": 1
+      "zoom": 0.6531
     }
   },
   "dependencies": {
