@@ -1,9 +1,9 @@
 {
   "version": "1.1",
   "package": {
-    "name": "4 bits constante",
+    "name": "3 bits constant",
     "version": "1.0",
-    "description": "Constante 4 bits",
+    "description": "Constante 3 bits",
     "author": "José Picó",
     "image": ""
   },
@@ -111,8 +111,8 @@
     },
     "state": {
       "pan": {
-        "x": -166,
-        "y": 114.5
+        "x": -170,
+        "y": 126.5
       },
       "zoom": 1
     }

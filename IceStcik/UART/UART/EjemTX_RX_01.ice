@@ -12,90 +12,39 @@
     "graph": {
       "blocks": [
         {
-          "id": "ad0ec6ac-6c38-4695-8a99-76caab377380",
+          "id": "de05ba06-ec5d-4658-b60f-3e932ad89f44",
           "type": "basic.info",
           "data": {
-            "info": "\nYou can configure differents Bauds.\nYou can use a terminal program as \"Tera Term ( Windows)\" to capture data to a terminal of you PC.\nThis example send a character \"K\" continuosly each t miliseconds.\n",
+            "info": "\nUso módulo Rx y  módulo de Tx \npara por patilla PMOD1 de mi icestick recibir los datos serie que introduzco por teclado desde\nun terminal (en mi caso usando Teraterm ) estos datos cuando se han terminado de recibir\npor módulo Rx generan una señal  Rx_Ready a nivel alto indicando al módulo de Tx que el dato\nestá listo de forma que toma este dato y lo envia de nuevo al terminal Teraterm usando la patilla\nPMOD2 de icestick.",
             "readonly": false
           },
           "position": {
-            "x": -56,
-            "y": -88
+            "x": -280,
+            "y": -392
           },
           "size": {
             "width": 928,
-            "height": 112
+            "height": 160
           }
         },
         {
-          "id": "83e10845-927c-4756-afa3-2c3b9b099580",
-          "type": "basic.code",
-          "data": {
-            "code": "\nassign q=\"K\";",
-            "params": [],
-            "ports": {
-              "in": [],
-              "out": [
-                {
-                  "name": "q",
-                  "range": "[7:0]",
-                  "size": 8
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": -64,
-            "y": 80
-          },
-          "size": {
-            "width": 400,
-            "height": 144
-          }
-        },
-        {
-          "id": "a5bc016a-d21b-4216-a34c-98de1f78dc42",
+          "id": "e1b2f1ff-a2a8-48fd-8fa1-36325cbe377c",
           "type": "basic.constant",
           "data": {
             "name": "Baud",
-            "value": "115200",
+            "value": "9600",
             "local": false
           },
           "position": {
-            "x": 544,
-            "y": 120
+            "x": -16,
+            "y": -216
           }
         },
         {
-          "id": "c59d7e07-ff1b-41d9-93b4-4646d8bd439d",
-          "type": "basic.constant",
+          "id": "fce57f92-347c-4e1c-8182-41b7817dd6a6",
+          "type": "basic.input",
           "data": {
-            "name": "t",
-            "value": "2000",
-            "local": false
-          },
-          "position": {
-            "x": 144,
-            "y": 232
-          }
-        },
-        {
-          "id": "d7a8a499-3a96-4d26-9a44-649f5a8cc938",
-          "type": "b5390ad427a44ba66c02aab0c3d494962b93a213",
-          "position": {
-            "x": 544,
-            "y": 264
-          },
-          "size": {
-            "width": 96,
-            "height": 96
-          }
-        },
-        {
-          "id": "2aff1a3d-7cc4-4561-8f37-15b6bea9cfab",
-          "type": "basic.output",
-          "data": {
-            "name": "tx",
+            "name": "Rx",
             "pins": [
               {
                 "index": "0",
@@ -103,131 +52,313 @@
                 "value": "78"
               }
             ],
-            "virtual": false
-          },
-          "position": {
-            "x": 768,
-            "y": 280
-          }
-        },
-        {
-          "id": "2053b125-80b6-4a34-bc25-dfee50b040c4",
-          "type": "basic.input",
-          "data": {
-            "name": "in",
-            "pins": [
-              {
-                "index": "0",
-                "name": "CLK",
-                "value": "21"
-              }
-            ],
             "virtual": false,
             "clock": false
           },
           "position": {
-            "x": -144,
-            "y": 352
+            "x": -264,
+            "y": -72
           }
         },
         {
-          "id": "43b4ac36-1443-4eb7-8a5b-707d053266d8",
-          "type": "d1516ec7c09c7d4b838508bea1ff8aa17259d7c1",
+          "id": "c680eb16-ec55-4386-b734-d648f9906a4b",
+          "type": "50cc0c92d66beaaf169b0b20be8c8804a15d565d",
           "position": {
-            "x": 144,
-            "y": 352
+            "x": -16,
+            "y": -56
           },
           "size": {
             "width": 96,
             "height": 64
+          }
+        },
+        {
+          "id": "80e360bc-69c9-4208-8821-8138f738d993",
+          "type": "b5390ad427a44ba66c02aab0c3d494962b93a213",
+          "position": {
+            "x": 272,
+            "y": -56
+          },
+          "size": {
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "id": "42e66ae7-13df-4f89-aafc-046f2329eaa8",
+          "type": "basic.output",
+          "data": {
+            "name": "Tx",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD2",
+                "value": "79"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 488,
+            "y": -40
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "2053b125-80b6-4a34-bc25-dfee50b040c4",
-            "port": "out"
+            "block": "c680eb16-ec55-4386-b734-d648f9906a4b",
+            "port": "862d55e1-b602-41dc-9ba6-3b051a5224bd"
           },
           "target": {
-            "block": "43b4ac36-1443-4eb7-8a5b-707d053266d8",
-            "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
-          }
+            "block": "80e360bc-69c9-4208-8821-8138f738d993",
+            "port": "9b21e2d2-2046-4f28-a959-6ee791306f55"
+          },
+          "size": 8
         },
         {
           "source": {
-            "block": "c59d7e07-ff1b-41d9-93b4-4646d8bd439d",
-            "port": "constant-out"
+            "block": "c680eb16-ec55-4386-b734-d648f9906a4b",
+            "port": "8c154b3b-ec54-4b42-b9e9-1e9ccedec231"
           },
           "target": {
-            "block": "43b4ac36-1443-4eb7-8a5b-707d053266d8",
-            "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
-          }
-        },
-        {
-          "source": {
-            "block": "a5bc016a-d21b-4216-a34c-98de1f78dc42",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "d7a8a499-3a96-4d26-9a44-649f5a8cc938",
-            "port": "771af36f-69e4-4c92-b5a6-011ac3f40b63"
-          }
-        },
-        {
-          "source": {
-            "block": "d7a8a499-3a96-4d26-9a44-649f5a8cc938",
-            "port": "f94e9bf7-c3f9-4692-9ab4-dbb2d17778e6"
-          },
-          "target": {
-            "block": "2aff1a3d-7cc4-4561-8f37-15b6bea9cfab",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "43b4ac36-1443-4eb7-8a5b-707d053266d8",
-            "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
-          },
-          "target": {
-            "block": "d7a8a499-3a96-4d26-9a44-649f5a8cc938",
+            "block": "80e360bc-69c9-4208-8821-8138f738d993",
             "port": "a698bb36-8a21-4dc1-9efd-22ace04c8580"
+          }
+        },
+        {
+          "source": {
+            "block": "e1b2f1ff-a2a8-48fd-8fa1-36325cbe377c",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "c680eb16-ec55-4386-b734-d648f9906a4b",
+            "port": "bcc0fd49-ae0b-4ab3-b44b-4890a2d6d043"
+          }
+        },
+        {
+          "source": {
+            "block": "e1b2f1ff-a2a8-48fd-8fa1-36325cbe377c",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "80e360bc-69c9-4208-8821-8138f738d993",
+            "port": "771af36f-69e4-4c92-b5a6-011ac3f40b63"
           },
           "vertices": [
             {
-              "x": 352,
-              "y": 368
+              "x": 272,
+              "y": -128
             }
           ]
         },
         {
           "source": {
-            "block": "83e10845-927c-4756-afa3-2c3b9b099580",
-            "port": "q"
+            "block": "fce57f92-347c-4e1c-8182-41b7817dd6a6",
+            "port": "out"
           },
           "target": {
-            "block": "d7a8a499-3a96-4d26-9a44-649f5a8cc938",
-            "port": "9b21e2d2-2046-4f28-a959-6ee791306f55"
+            "block": "c680eb16-ec55-4386-b734-d648f9906a4b",
+            "port": "780b4715-287f-4be0-9bd7-0441cc110db6"
+          }
+        },
+        {
+          "source": {
+            "block": "80e360bc-69c9-4208-8821-8138f738d993",
+            "port": "f94e9bf7-c3f9-4692-9ab4-dbb2d17778e6"
           },
-          "vertices": [
-            {
-              "x": 384,
-              "y": 216
-            }
-          ],
-          "size": 8
+          "target": {
+            "block": "42e66ae7-13df-4f89-aafc-046f2329eaa8",
+            "port": "in"
+          }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 327,
-        "y": 181.5
+        "x": 530,
+        "y": 423.5
       },
       "zoom": 1
     }
   },
   "dependencies": {
+    "50cc0c92d66beaaf169b0b20be8c8804a15d565d": {
+      "package": {
+        "name": "RS232_RX",
+        "version": "1.0",
+        "description": "Module RX",
+        "author": "Inspired in Clifford example",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "bcc0fd49-ae0b-4ab3-b44b-4890a2d6d043",
+              "type": "basic.constant",
+              "data": {
+                "name": "Baud",
+                "value": "",
+                "local": false
+              },
+              "position": {
+                "x": 624,
+                "y": -128
+              }
+            },
+            {
+              "id": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+              "type": "basic.code",
+              "data": {
+                "code": "\n    reg LED1,LED2,LED3,LED4,LED5;\n\n\tparameter integer BAUD_RATE = Baud;             //Velocidad del canal\n\tparameter integer CLOCK_FREQ_HZ = 12000000;     // Frecuencia \n\t\n\t//Cuantos ciclos de reloj a 12MHz tengo que contar para medir \n\t//medio ciclo de la velocidad en baudios configurada\n\t//Ejem: para una velocidad de 9600 baudios\n\t//necesitaré 12000000/(2*9600) = 625 ciclos de reloj para encontrarme\n\t//a mitad del periodo de 9600Baudios\n\t\n\tlocalparam integer HALF_PERIOD = CLOCK_FREQ_HZ / (2 * BAUD_RATE);\n\n\treg [7:0] buffer;  //Buffer donde guardar el dato recibido\n\treg datoRx;\n\treg buffer_valid=0; //Saber si el buffer está libre\n\t                    //inicialmente buffer sin datos disponibles\n\t\n\t\n\n\treg [$clog2(3*HALF_PERIOD):0] cycle_cnt;  //Calculo cuantos ciclos\n\t//hay que contar para medir 3 medios periodos\n\t\n\treg [3:0] bit_cnt = 0; //Contar el número de bits recibidos del dato\n\t                 \n\treg recv = 0;          \n\n\talways @(posedge clk) begin\n\t\t//buffer_valid <= 0;   //De inicio Buffer no está disponible (cargado)\n\t\tif (!recv) begin     //Si aun no se ha recibido nada\n\t\t\tif (!RX) begin   //Si se detecta bit de start 0\n\t\t\t    buffer_valid <= 0;   //De inicio Buffer no está disponible (cargado)\n\t\t\t\tcycle_cnt <= HALF_PERIOD;//Cargo para detectar medio periodo\n\t\t\t\tbit_cnt <= 0;  //empiezo con la cuenta de los datos\n\t\t\t\trecv <= 1; //Se ha iniciado la recepción\n\t\t\tend\n\t\tend else begin  //Si ya se ha iniciado la recepción\n\t\t    //Si se ha contado 1 periodo se resetea la cuenta\n\t\t\tif (cycle_cnt == 2*HALF_PERIOD) begin\n\t\t\t\tcycle_cnt <= 0;\n\t\t\t\tbit_cnt <= bit_cnt + 1;\n\t\t\t\tif (bit_cnt == 9) begin //Si ya se han contado los 9 bits\n\t\t\t\t\tbuffer_valid <= 1;  //El dato está en el buffer listo\n\t\t\t\t\trecv <= 0;          //Se indica fin de la recepción\n\t\t\t\t//Si aún no se han obtenido los 9 bits\n\t\t\t\tend else begin\n\t\t\t\t\tbuffer <= {RX, buffer[7:1]};\n\t\t\t\tend\n\t\t\tend else begin\n\t\t\t\tcycle_cnt <= cycle_cnt + 1;\n\t\t\tend\n\t\tend\n\tend\n\n\talways @(posedge clk) begin\n\t\tif (buffer_valid) begin\n\t\t\t datoRx <=buffer;\n\t\tend\n\tend\n\n\t// assign TX = RX;\n\t\n\tassign Rx_Ready=buffer_valid;\n",
+                "params": [
+                  {
+                    "name": "Baud"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "RX"
+                    },
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "datoRx",
+                      "range": "[7:0]",
+                      "size": 8
+                    },
+                    {
+                      "name": "Rx_Ready"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 312,
+                "y": 56
+              },
+              "size": {
+                "width": 720,
+                "height": 560
+              }
+            },
+            {
+              "id": "780b4715-287f-4be0-9bd7-0441cc110db6",
+              "type": "basic.input",
+              "data": {
+                "name": "Rx",
+                "clock": false
+              },
+              "position": {
+                "x": 128,
+                "y": 168
+              }
+            },
+            {
+              "id": "862d55e1-b602-41dc-9ba6-3b051a5224bd",
+              "type": "basic.output",
+              "data": {
+                "name": "datoRx",
+                "range": "[7:0]",
+                "size": 8
+              },
+              "position": {
+                "x": 1152,
+                "y": 168
+              }
+            },
+            {
+              "id": "4b7e0445-c8e9-4bad-b64f-97dbf8d4cff7",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": true
+              },
+              "position": {
+                "x": 120,
+                "y": 448
+              }
+            },
+            {
+              "id": "8c154b3b-ec54-4b42-b9e9-1e9ccedec231",
+              "type": "basic.output",
+              "data": {
+                "name": "Rx_Ready"
+              },
+              "position": {
+                "x": 1144,
+                "y": 448
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "780b4715-287f-4be0-9bd7-0441cc110db6",
+                "port": "out"
+              },
+              "target": {
+                "block": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+                "port": "RX"
+              }
+            },
+            {
+              "source": {
+                "block": "4b7e0445-c8e9-4bad-b64f-97dbf8d4cff7",
+                "port": "out"
+              },
+              "target": {
+                "block": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "bcc0fd49-ae0b-4ab3-b44b-4890a2d6d043",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+                "port": "Baud"
+              }
+            },
+            {
+              "source": {
+                "block": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+                "port": "datoRx"
+              },
+              "target": {
+                "block": "862d55e1-b602-41dc-9ba6-3b051a5224bd",
+                "port": "in"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "3b8f4b76-43c6-4a36-b035-2d637e97787f",
+                "port": "Rx_Ready"
+              },
+              "target": {
+                "block": "8c154b3b-ec54-4b42-b9e9-1e9ccedec231",
+                "port": "in"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 129.2742,
+            "y": 145.1183
+          },
+          "zoom": 0.8212
+        }
+      }
+    },
     "b5390ad427a44ba66c02aab0c3d494962b93a213": {
       "package": {
         "name": "TX module v2",
@@ -1242,128 +1373,6 @@
           "pan": {
             "x": 217.4768,
             "y": 203.1959
-          },
-          "zoom": 0.7408
-        }
-      }
-    },
-    "d1516ec7c09c7d4b838508bea1ff8aa17259d7c1": {
-      "package": {
-        "name": "clock",
-        "version": "1.0",
-        "description": "Configurable signal clock ( miliSeconds)",
-        "author": "jospicant",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20width=%22507%22%20height=%22160%22%20viewBox=%220%200%20507%20160%22%3E%3Cimage%20width=%22507%22%20height=%22160%22%20preserveAspectRatio=%22none%22%20xlink:href=%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfsAAACgCAYAAAALtcVSAAAABHNCSVQICAgIfAhkiAAAC0tJREFU%20eJzt3W2SqrwWhuGVU3s0yXiS6RCmQ8aTTGedH218BVHBLyDeV1Wq9gaMaVr7MR+IUVUBAADt+t/W%20DQAAAJ9F2AMA0DjCHgCAxhH2AAA0jrAHAKBxhD0AAI0j7AEAaBxhDwBA4wh7AE9LKalzTo0x5xJC%202OSbuqZtCSFoKeWqLcaYt7bv3fUBn0DYA3hKjFFDCBJjFFU1qmpyziLyF4BzQfvNtlhrxTkn32wH%20sFeGr8sF8AxjjOacxVprpvtSShpCEFW92vdupRR1zslcW0IImlIatcMYo+9s17vrAz6Bnj2A1UII%202nXdbNCLiHjvjfdeYowf703EGOVWW4ZhMKdjvtarKaVojPGrIxvAI4Q9gNVyzhJCuHuM915SSiIi%204pzTEMJobt8YoymlUSDGGEf7l4T0o7aoqokx3u15P3re6f5b6xLqKEMp5eYHIWATqkqhUCiryt+f%20juXHiYhaazXnfH5c13V6Wc8wDGqt1enju667+1xL23Lr+K7rRs+bc9bL5320v9Y3DIOKiHrvV7WH%20QvlGYc4ewGpL56nrcbeOv9zunNOU0qhHvGTuf+2c+fT4ubUHtYeuquZWu0T+piuMMToMg4QQxFor%20OWd69Ngdwh7Aap8I+3uXsL0S9nXuvIb1XNjfa9uj+mu7rbVSSpldKAhsjTl7AKud5uPv9hRijOq9%20X1Wvni6bm5ZX2uKckxjjqnas1XWd5JzPl/sBu7P1PAKFQjleqfPWS/ffOvZy+3ROv9bzaM6+zpXP%207ZuuC5hri7VWh2HQaZ11nl5Ertplrb2as7/8uR+1mUL5dtm8ARQK5ZilBuk0KOe2Lwn7uhDuMliX%20Bqf3/uo5azumj5+2pR5Xn7cGdq1rukBvevyt+rb+/VAol2XzBlAolOOW2gMWkXOZW42+JOxV/wvK%20Wtb0kKdtmeux32rLo+e93D+td66+etzWvx8KpRYW6AEA0DgW6AEA0DjCHgCAxhH2AAA0jrAHAKBx%20hD0AAI0j7AEAaBxhDwBA4wh7AAAaR9gD+BhjjM6VRzfRWfsce6oH2CPCHsDLYoznoAwhjEJTJ3ew%20q/d+f1fg64p72S91Gfx8CEALCHsALwshnP/96Hay3nszDMPHbzv7ipzz7L+BoyLsAbzs8h7uS+7n%207r03pZS3PPflqMK7DMNw/jdhjxYQ9gBedjmUvmRYvZRyFdAxxtG8/jTEnXMaY1TnnBpjtNbR9/1V%20/Y/qCiGM9jvndPL488/gvX/7NAHwbf+2bgCA31JKUe+9dF133pZS0pTS6IPCaa5ca/CWUiSlJCkl%20sdbeDOAY46iuUoqeRhs0xmhijJpzPu9PKenlNATQpK3vsUuhUNotcnGPeLlzv3hrreacR9uGYVC5%20uFe8zNw3fm67iFzVlXM+1zW3f/pcFEprhfvZA/gYY4zqgmH9eyve6+Nv1TXd/ui4pfUALWEYH8Au%20ELTA57BAD8DmrLVXi/ZKKVcL65bWNb2GP6Wk1tq7+59oNnAYhD2AzXnvxXs/Cvwll/DdqiuEcK6r%20lKIhhPN1/d770TX+dT/QMobxAWzutOL+vGpeRKTrutElcK/WVS+hq/sv1wlcXhkAtIgFegAANI5h%20fAAAGkfYAwDQOMIeAIDGEfYAADSOsAcAoHGEPQAAjSPsAQBoHGEPAEDjCHsAABpH2AN4qJSi925D%20i9tijOqc49xhU4Q9AACNI+wBfNT01rVHc/T2AyKEPYAPSCmpc06NMfrsrWr3wnsvxhgNISj3vcdR%20EfYA3iKlpCEEPQWjlFJG+zZs2luklCSEQPDjkAh7AE8rpWiM8RzwKaXZ42KM323YhxH8OBrCHsBq%20NeCdc9L3/dbN2RTBjyP4t3UDAByHc04vh+cxllKqoxvqvRfv/dZNAkSEsAfwBaUU4Tp9YDuEPYDF%20cs5G5G8Yf+3wfc75I236tDVXE9TevPfe1G05Zz7kYHOEPYDVYowmxiilFB2G4eG8vbVWrLXm7kE7%20Za29O3UxF/DA3rBAD8DTrLUmxmhU1QzDcHOOurXV+N57GYZBTj+3Ieixd4Q9gLfw3pthGM7Bb60d%207duwaW9BwOPIGMYH8Hbee1N7+Uf/utmU0mGnIICKnj2Ajzp6UB69/YAIYQ8AQPMIewAAGkfYAwDQ%20uJcX6NXFN8xrAW27XF2P5Y5+i1+0wai+tlC2fgWmqhL2AADs0EvD+DHGQ19SAwDAL3hqGP+X7nxl%20jFHv/W6HMPu+l67rJMa4m5GV+vroum7rpsyq91yv3/O+B/W75vd8zkopuxvB4/25Hu/P9fb8/lx6%20vp6es69vrl8I/Zzzrm/isdffQX0R7s0ez1dtE+dsPd6fz+G1ttye35+Lz5eqvlRERP+qea2evRYR%200Zzzbn++Pbav6zq11u6qTXtv3+nOaLtq0xHat8fX/97bt8fX/97bt9fX/5rzxaV3AAA0jrAHAKBx%20hD0AAI0j7AEAaBxhDwBA4wh7AAAaR9gDANA4wh4AgMa9fNc73dnXZwIAgDF69gAANI6wBwCgcYQ9%20AACNI+wBAGgcYQ8AQOMIewAAGkfYAwDQOMIeAIDGEfYAADSOsAcAoHGEPQAAjSPsAQBoHGEPAEDj%20CHsAABpH2AMA0DjCHgCAxhH2AAA0jrAHAKBxhD0AAI0j7AEAaBxhDwBA4wh7AAAa93TYhxDUGKPG%20GHXOaYxR39kwAADwHv+eeZBzTksp5/+XUqTveyml6DAM5m2tAwAAL1vds08paSlFrLWiqkZVTdd1%20dZ+UUujhAwCwI8+EvYiIxBjP22KM58C/3A4AALb3dNh770fD9SGE0X4AALAPb1uNb61lrh4AgB3i%200jsAABr31Gr8d2NR32tyziIiuzmHpRS5vFpjb04LSXf1ujv9DtEg3p/4JOfcouPeHvbW2tWP8d7v%20+sXnvd/1H+O6XgLL1Nfa0jcJ8Aren/gk773x3j88bnXYe+9nF+GllLTuXyvnzHz/k1SVc7cS52y9%20epWNMWY3PdRqzx/Gea2t1/e9iOzztXZkRnXd+UwpaQhBhmEYrcgPIWhKiRc30ChjjO4tVE9Bz9+c%20hsQYNaW0uyu7jv5aWx32In/foCfyN/dprTUxRu37XrqukxjjYU8GAAAtemrOPudsQgh6mvNUa+1V%20Tx8AAOzDUz17AABwHFxnDwBA4wh7AAAaR9gDANA4wh4AgMYR9gAANI6wBwCgcYQ9AACNI+wBAGgc%20YQ8AQOMIewAAGkfYAwDQOMIeAIDGEfYAADTu58PeOafGmLslxqgiIsYYbhEIADgcbnE7YYxRVTVb%20twMAgHf5+Z49js8YoyEETSnxyRUAZhD2K9Th/CVKKQTPF9SATylJCOEc/Jx/APgPYb9C3/ej/zvn%20NIRwNccfQlDnnEzn/KsY4+yaAKyXUprdVs8/5xYACPuXlFJERERVjaqanLOIiFhrz9uGYRh9SEgp%20aUrpvF9VTd/3q0YN8J+5sL/U970YY9Q5R/AD+Fks0Ju4t0Bvum/u2EfbnHOaUhJr7fmYlJKGEISF%20ges9c4WE974WzjeAn0DYT3w67O+F0ythn1LSGOOzDz+sOrryLIIfwC/4t3UDftEnevA555eD7xel%20lOpUgHZdJzFGQh9Ac5iz/zJr7dVK/VIK88kb8t7LMAwEPYBmEfZfVoeNLwPfOfdyvTFGc7no71fK%20K7+HYRjktIjSMIwPoGUM43/Zqfeop4BXERGGj7/DWivee841gJ/DAj0c2pLV+HyYAvDrGMbHoXnv%20Z7d3XSc5Z1FVQ9AD+HX07HF4tXfPZXQAMI85exxeznn0JUUAgDF69gAANI45ewAAGkfYAwDQOMIe%20AIDGEfYAADSOsAcAoHGEPQAAjSPsAQBoHGEPAEDjCHsAABr3f/DH4URdhOWHAAAAAElFTkSuQmCC%22/%3E%3C/svg%3E"
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-              "type": "basic.constant",
-              "data": {
-                "name": "T_ms",
-                "value": "",
-                "local": false
-              },
-              "position": {
-                "x": 616,
-                "y": -80
-              }
-            },
-            {
-              "id": "f54545c4-308e-4787-8383-c79146f70ab8",
-              "type": "basic.code",
-              "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_msg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
-                "params": [
-                  {
-                    "name": "T_msg"
-                  }
-                ],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "i_clock"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "clk"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 336,
-                "y": 48
-              },
-              "size": {
-                "width": 656,
-                "height": 528
-              }
-            },
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "f_input",
-                "clock": false
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "clk"
-              },
-              "target": {
-                "block": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-                "port": "out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "i_clock"
-              }
-            },
-            {
-              "source": {
-                "block": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "T_msg"
-              }
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": -60.5232,
-            "y": 79.1959
           },
           "zoom": 0.7408
         }

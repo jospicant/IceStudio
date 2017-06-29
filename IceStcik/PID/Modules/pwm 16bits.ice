@@ -15,7 +15,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "//PWM is based in a counter +  a comparator\n// the system count and if the count is\n// less than Adjust value then pwm=1\n// if the count is bigger than Adjust value \n// then pwm=0\n\nreg [9:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n    d <= d+1;        // Counter\n    \n    if (d < Adjust)  // Comparator\n      pwm <= 1;      // High value\n    else\n      pwm <= 0;      // Low value\n      \nend\n\n",
+            "code": "//PWM is based in a counter +  a comparator\n// the system count and if the count is\n// less than Adjust value then pwm=1\n// if the count is bigger than Adjust value \n// then pwm=0\n\nreg [15:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n    d <= d+1;        // Counter\n    \n    if (d < Adjust)  // Comparator\n      pwm <= 1;      // High value\n    else\n      pwm <= 0;      // Low value\n      \nend\n\n",
             "params": [],
             "ports": {
               "in": [
@@ -216,10 +216,10 @@
     },
     "state": {
       "pan": {
-        "x": 20.7111,
-        "y": -88.5
+        "x": 135,
+        "y": -14.5
       },
-      "zoom": 1.2056
+      "zoom": 1
     }
   },
   "dependencies": {}

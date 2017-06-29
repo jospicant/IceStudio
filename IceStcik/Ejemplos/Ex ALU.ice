@@ -254,34 +254,6 @@
         },
         {
           "source": {
-            "block": "27115f04-3ed4-463e-8ab8-81b1ce4540e4",
-            "port": "7f98d7d3-1dea-4411-8679-9397c8401927"
-          },
-          "target": {
-            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
-            "port": "0056b803-732d-434e-9215-77c4e64792ad"
-          },
-          "size": 16
-        },
-        {
-          "source": {
-            "block": "f24c0eb2-e310-46e7-ba7e-69b2f5d1ba6c",
-            "port": "7f98d7d3-1dea-4411-8679-9397c8401927"
-          },
-          "target": {
-            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
-            "port": "d8ebc5e6-3574-46bf-8641-257679eecde3"
-          },
-          "vertices": [
-            {
-              "x": 472,
-              "y": 360
-            }
-          ],
-          "size": 16
-        },
-        {
-          "source": {
             "block": "4f65fbb1-330b-4d16-8bdf-7e442e8d30df",
             "port": "constant-out"
           },
@@ -334,23 +306,6 @@
         },
         {
           "source": {
-            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
-            "port": "7b6331d4-26ce-4355-8597-96a154594816"
-          },
-          "target": {
-            "block": "7753b4af-9e68-490c-b458-9762418e509e",
-            "port": "in"
-          },
-          "vertices": [
-            {
-              "x": 824,
-              "y": 216
-            }
-          ],
-          "size": 16
-        },
-        {
-          "source": {
             "block": "314ae471-dc12-4f20-9ec4-2b68f3f4db5d",
             "port": "o"
           },
@@ -358,6 +313,16 @@
             "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
             "port": "f2bcf2b5-aa00-4ec2-877a-7b68c63c0305"
           },
+          "vertices": [
+            {
+              "x": 728,
+              "y": 88
+            },
+            {
+              "x": 488,
+              "y": 128
+            }
+          ],
           "size": 3
         },
         {
@@ -395,13 +360,84 @@
               "y": 104
             }
           ]
+        },
+        {
+          "source": {
+            "block": "27115f04-3ed4-463e-8ab8-81b1ce4540e4",
+            "port": "7f98d7d3-1dea-4411-8679-9397c8401927"
+          },
+          "target": {
+            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
+            "port": "0056b803-732d-434e-9215-77c4e64792ad"
+          },
+          "size": 16
+        },
+        {
+          "source": {
+            "block": "f24c0eb2-e310-46e7-ba7e-69b2f5d1ba6c",
+            "port": "7f98d7d3-1dea-4411-8679-9397c8401927"
+          },
+          "target": {
+            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
+            "port": "d8ebc5e6-3574-46bf-8641-257679eecde3"
+          },
+          "vertices": [
+            {
+              "x": 480,
+              "y": 328
+            }
+          ],
+          "size": 16
+        },
+        {
+          "source": {
+            "block": "dd4b8f97-2596-4344-9ec1-ff1da46b346e",
+            "port": "7b6331d4-26ce-4355-8597-96a154594816"
+          },
+          "target": {
+            "block": "7753b4af-9e68-490c-b458-9762418e509e",
+            "port": "in"
+          },
+          "vertices": [
+            {
+              "x": 848,
+              "y": 264
+            }
+          ],
+          "size": 16
+        },
+        {
+          "source": {
+            "block": "1ca04f63-245c-4785-aeea-dcf1ed508bd6",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "f24c0eb2-e310-46e7-ba7e-69b2f5d1ba6c",
+            "port": "1131d05a-0312-427c-98bb-72230e09415a"
+          }
+        },
+        {
+          "source": {
+            "block": "1ca04f63-245c-4785-aeea-dcf1ed508bd6",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "27115f04-3ed4-463e-8ab8-81b1ce4540e4",
+            "port": "1131d05a-0312-427c-98bb-72230e09415a"
+          },
+          "vertices": [
+            {
+              "x": 264,
+              "y": 224
+            }
+          ]
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -1,
-        "y": 0
+        "x": 147,
+        "y": 51
       },
       "zoom": 1
     }
