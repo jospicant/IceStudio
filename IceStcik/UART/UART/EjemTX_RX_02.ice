@@ -15,8 +15,8 @@
           "id": "de05ba06-ec5d-4658-b60f-3e932ad89f44",
           "type": "basic.info",
           "data": {
-            "info": "\nUso módulo Rx y  módulo de Tx \npara por patilla PMOD1 de mi icestick recibir los datos serie que introduzco por teclado desde\nun terminal (en mi caso usando Teraterm ) estos datos cuando se han terminado de recibir\npor módulo Rx generan una señal  Rx_Ready a nivel alto indicando al módulo de Tx que el dato\nestá listo de forma que toma este dato y lo envia de nuevo al terminal Teraterm usando la patilla\nPMOD2 de icestick.",
-            "readonly": false
+            "info": "\nUso módulo Rx y  módulo de Tx.\nPor la patilla PMOD1 de la icestick se reciben los datos serie que se introducen por teclado desde\nun terminal (por ejemplo Teraterm), estos datos cuando se han terminado de recibir\npor módulo Rx generan una señal  Rx_Ready a nivel alto indicando al módulo de Tx que el dato\nestá listo de forma que toma este dato y lo envia de nuevo al terminal serie (Teraterm) usando la patilla\nPMOD2 de icestick.",
+            "readonly": true
           },
           "position": {
             "x": -280,
@@ -165,7 +165,7 @@
     "state": {
       "pan": {
         "x": 507,
-        "y": 545.5
+        "y": 565.5
       },
       "zoom": 1
     }

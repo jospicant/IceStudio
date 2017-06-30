@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 16bits",
+    "name": "Counter 4 bits",
     "version": "1.0",
     "description": "0,1,2,3...n (16 bits)",
     "author": "José Picó",
@@ -15,7 +15,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 16 bits counter\n\nreg [4:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
+            "code": "// 16 bits counter\n\nreg [3:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
             "params": [],
             "ports": {
               "in": [
@@ -26,8 +26,8 @@
               "out": [
                 {
                   "name": "d",
-                  "range": "[4:0]",
-                  "size": 5
+                  "range": "[3:0]",
+                  "size": 4
                 }
               ]
             }
@@ -62,17 +62,12 @@
           }
         },
         {
-          "id": "352d956f-c80f-4034-ad5c-e67d1dcdecda",
+          "id": "baf5ba13-84cb-4728-ba3e-d5d3afe9f0f2",
           "type": "basic.output",
           "data": {
             "name": "out",
-            "range": "[4:0]",
+            "range": "[3:0]",
             "pins": [
-              {
-                "index": "4",
-                "name": "",
-                "value": "0"
-              },
               {
                 "index": "3",
                 "name": "",
@@ -119,10 +114,10 @@
             "port": "d"
           },
           "target": {
-            "block": "352d956f-c80f-4034-ad5c-e67d1dcdecda",
+            "block": "baf5ba13-84cb-4728-ba3e-d5d3afe9f0f2",
             "port": "in"
           },
-          "size": 5
+          "size": 4
         }
       ]
     },

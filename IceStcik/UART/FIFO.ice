@@ -12,10 +12,26 @@
     "graph": {
       "blocks": [
         {
+          "id": "c1d9112b-a151-4a76-b543-1718245ca834",
+          "type": "basic.info",
+          "data": {
+            "info": "\nStatus = En pruebas ",
+            "readonly": false
+          },
+          "position": {
+            "x": 552,
+            "y": -56
+          },
+          "size": {
+            "width": 272,
+            "height": 64
+          }
+        },
+        {
           "id": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
           "type": "basic.code",
           "data": {
-            "code": "/*\nmodule FIFO (\nData_out, // salida FIFO\nData_in, // entrada FIFO\nstack_empty, // se pone a uno cuando la pila esta vacia\nstack_full, // se pone a uno cuando la pila está llena\nclk, rst, // reloj y reset externos\nwrite, // escritura en la pila\nread // lectura de la pila\n); */\n\n//parameter stack_width = 12; // anchura de la pila y datos\n//parameter stack_heigth = 8; // altura de la pila, número de palabras\n\nparameter stack_ptr_width = 3;// anchura dirección\n\n//output [stack_width -1:0] Data_out;\n//input [stack_width -1:0] Data_in;\n\n\nreg [stack_ptr_width -1:0] read_ptr, write_ptr; // punteros de lectura y escritura\nreg [stack_ptr_width :0] diff_ptr; // diferencia entre los punteros de lectura y escritura. Sirve para determinar\n// las condiciones de llena y vacia\n//reg [stack_width -1:0] Data_out;\n//reg [stack_width -1:0] stack [stack_heigth-1:0]; // array de memoria;\n\nreg[7:0] Data_out,Data_in;\nreg[7:0] stack[7:0]; // array de memoria;\n\n\nassign stack_empty = (diff_ptr == 0) ? 1'b1: 1'b0;\n//assign stack_full = (diff_ptr == stack_height) ? 1'b1: 1'b0;\nassign stack_full = (diff_ptr == 8) ? 1'b1: 1'b0;\n\nalways @ (posedge clk or posedge rst) begin: data_transfer    //Movimiento de los datos \nif (rst) Data_out = 0;                        //Si se produce un reset se pone la salida a 0\nelse if ((read)&& (!write)&&(!stack_empty))   // Si digo de leer y la pila no está vacia\nData_out <= stack[read_ptr];                  // leo la posición donde está el puntero de lectura\nelse if ((write)&&(!read)&&(!stack_full))     // Si digo de escribir y la pila no está llena\nstack[write_ptr] <= Data_in;                  // Escribo en la posición donde indica el puntero de escritura\nend // data_transfer\n\nalways @ (posedge clk or posedge rst) begin: update_stack_ptrs  //Actualización de los punteros de lectura-escritura\nif (rst) \nbegin\nread_ptr <= 0;     // Si se produce un reset se actualizan todos los punteros \nwrite_ptr <= 0;\ndiff_ptr <= 0;\nend\nelse\nif ((write)&&(!read)&&(!stack_full))   // Si  hay orden de escribir y la pila no está llena\nbegin\nwrite_ptr = write_ptr + 1;             //aumento el puntero de escritura\ndiff_ptr <= diff_ptr + 1;              //aumento la diferencia en uno entre el puntero de lectura-escritura\nend\nelse if ((read)&& (!write)&&(!stack_empty))   // Si hay orden de lectura y la pila no está vacia\nbegin\nread_ptr <= read_ptr + 1;                     //aumento el puntero de lectura\ndiff_ptr <= diff_ptr -1;                      //disminuyo en uno la diferencia entre punteros de lectura-escritura\nend\nend //update_stack_ptrs\n",
+            "code": "/*\nmodule FIFO (\nData_out, // salida FIFO\nData_in, // entrada FIFO\nstack_empty, // se pone a uno cuando la pila esta vacia\nstack_full, // se pone a uno cuando la pila está llena\nclk, rst, // reloj y reset externos\nwrite, // escritura en la pila\nread // lectura de la pila\n); */\n\n//parameter stack_width = 12; // anchura de la pila y datos\n//parameter stack_heigth = 8; // altura de la pila, número de palabras\n\nparameter stack_ptr_width = 3;// anchura dirección\n\n//output [stack_width -1:0] Data_out;\n//input [stack_width -1:0] Data_in;\n\n\nreg [stack_ptr_width -1:0] read_ptr, write_ptr; // punteros de lectura y escritura\nreg [stack_ptr_width :0] diff_ptr; // diferencia entre los punteros de lectura y escritura. Sirve para determinar\n// las condiciones de llena y vacia\n//reg [stack_width -1:0] Data_out;\n//reg [stack_width -1:0] stack [stack_heigth-1:0]; // array de memoria;\n\nreg[7:0] Data_Out;\nreg[7:0] stack[7:0]; // array de memoria;\n\n\nassign stack_empty = (diff_ptr == 0) ? 1'b1: 1'b0;\n//assign stack_full = (diff_ptr == stack_height) ? 1'b1: 1'b0;\nassign stack_full = (diff_ptr == 8) ? 1'b1: 1'b0;\n\nalways @ (posedge clk or posedge rst) begin: data_transfer    //Movimiento de los datos \nif (rst) Data_Out = 0;                        //Si se produce un reset se pone la salida a 0\nelse if ((read)&& (!write)&&(!stack_empty))   // Si digo de leer y la pila no está vacia\nData_Out <= stack[read_ptr];                  // leo la posición donde está el puntero de lectura\nelse if ((write)&&(!read)&&(!stack_full))     // Si digo de escribir y la pila no está llena\nstack[write_ptr] <= Data_In;                  // Escribo en la posición donde indica el puntero de escritura\nend // data_transfer\n\nalways @ (posedge clk or posedge rst) begin: update_stack_ptrs  //Actualización de los punteros de lectura-escritura\nif (rst) \nbegin\nread_ptr <= 0;     // Si se produce un reset se actualizan todos los punteros \nwrite_ptr <= 0;\ndiff_ptr <= 0;\nend\nelse\nif ((write)&&(!read)&&(!stack_full))   // Si  hay orden de escribir y la pila no está llena\nbegin\nwrite_ptr = write_ptr + 1;             //aumento el puntero de escritura\ndiff_ptr <= diff_ptr + 1;              //aumento la diferencia en uno entre el puntero de lectura-escritura\nend\nelse if ((read)&& (!write)&&(!stack_empty))   // Si hay orden de lectura y la pila no está vacia\nbegin\nread_ptr <= read_ptr + 1;                     //aumento el puntero de lectura\ndiff_ptr <= diff_ptr -1;                      //disminuyo en uno la diferencia entre punteros de lectura-escritura\nend\nend //update_stack_ptrs\n",
             "params": [],
             "ports": {
               "in": [
@@ -294,17 +310,6 @@
       "wires": [
         {
           "source": {
-            "block": "2d42f2aa-c9d5-4b7a-b382-b8d05bc9ff8f",
-            "port": "out"
-          },
-          "target": {
-            "block": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
-            "port": "Data_In"
-          },
-          "size": 8
-        },
-        {
-          "source": {
             "block": "c1baec4c-bc39-4c4e-830e-6cc19eb5e446",
             "port": "out"
           },
@@ -346,17 +351,6 @@
         {
           "source": {
             "block": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
-            "port": "Data_Out"
-          },
-          "target": {
-            "block": "98fbb2b3-3520-48e3-8e2d-437ebc034387",
-            "port": "in"
-          },
-          "size": 8
-        },
-        {
-          "source": {
-            "block": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
             "port": "stack_empty"
           },
           "target": {
@@ -373,15 +367,37 @@
             "block": "c583abef-936a-401e-afbf-68e3d04019cc",
             "port": "in"
           }
+        },
+        {
+          "source": {
+            "block": "2d42f2aa-c9d5-4b7a-b382-b8d05bc9ff8f",
+            "port": "out"
+          },
+          "target": {
+            "block": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
+            "port": "Data_In"
+          },
+          "size": 8
+        },
+        {
+          "source": {
+            "block": "c7912a5e-b20f-4a1d-a718-07fc7c6de3dd",
+            "port": "Data_Out"
+          },
+          "target": {
+            "block": "98fbb2b3-3520-48e3-8e2d-437ebc034387",
+            "port": "in"
+          },
+          "size": 8
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 253.8207,
-        "y": 177.6949
+        "x": 67.8503,
+        "y": 66.9973
       },
-      "zoom": 0.6336
+      "zoom": 0.8703
     }
   },
   "dependencies": {}

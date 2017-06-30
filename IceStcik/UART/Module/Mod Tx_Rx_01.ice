@@ -12,6 +12,22 @@
     "graph": {
       "blocks": [
         {
+          "id": "4ce94541-ba7f-4cb4-8c9a-7f7dd1f197da",
+          "type": "basic.info",
+          "data": {
+            "info": "\nStatus = Checked ",
+            "readonly": false
+          },
+          "position": {
+            "x": 320,
+            "y": -320
+          },
+          "size": {
+            "width": 176,
+            "height": 64
+          }
+        },
+        {
           "id": "e1b2f1ff-a2a8-48fd-8fa1-36325cbe377c",
           "type": "basic.constant",
           "data": {

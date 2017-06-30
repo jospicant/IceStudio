@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 16bits",
+    "name": "Counter 8 bits",
     "version": "1.0",
     "description": "0,1,2,3...n (8 bits)",
     "author": "José Picó",
@@ -143,8 +143,8 @@
     },
     "state": {
       "pan": {
-        "x": 17,
-        "y": 41
+        "x": -10,
+        "y": 74.5
       },
       "zoom": 1
     }
