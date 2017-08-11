@@ -1,0 +1,206 @@
+{
+  "version": "1.1",
+  "package": {
+    "name": "Counter 8bits",
+    "version": "1.0",
+    "description": "0,1,2,3...n (16 bits)",
+    "author": "José Picó",
+    "image": ""
+  },
+  "design": {
+    "board": "icestick",
+    "graph": {
+      "blocks": [
+        {
+          "id": "c706887a-8da8-44c7-b0db-54e8253492a6",
+          "type": "basic.constant",
+          "data": {
+            "name": "From",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 352,
+            "y": 16
+          }
+        },
+        {
+          "id": "62f511ed-60b3-4e40-b599-2d0ad501d5ed",
+          "type": "basic.constant",
+          "data": {
+            "name": "To",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 536,
+            "y": 24
+          }
+        },
+        {
+          "id": "17174045-a45c-4f73-8dd4-50651082b454",
+          "type": "basic.code",
+          "data": {
+            "code": "// 8 bits counter\n\nreg [7:0] d = From;\n\nalways @(posedge clk)\nif (d < To)\n  d <= d + 1;\nelse\n  d <= From;\n  \n",
+            "params": [
+              {
+                "name": "From"
+              },
+              {
+                "name": "To"
+              }
+            ],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "d",
+                  "range": "[7:0]",
+                  "size": 8
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 304,
+            "y": 136
+          },
+          "size": {
+            "width": 368,
+            "height": 224
+          }
+        },
+        {
+          "id": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
+          "type": "basic.input",
+          "data": {
+            "name": "clk",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true,
+            "clock": false
+          },
+          "position": {
+            "x": 40,
+            "y": 216
+          }
+        },
+        {
+          "id": "80953a5b-f7ea-40a2-8593-fa9128ae78e5",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "range": "[7:0]",
+            "pins": [
+              {
+                "index": "7",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "6",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "4",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "3",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true
+          },
+          "position": {
+            "x": 800,
+            "y": 216
+          }
+        }
+      ],
+      "wires": [
+        {
+          "source": {
+            "block": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
+            "port": "out"
+          },
+          "target": {
+            "block": "17174045-a45c-4f73-8dd4-50651082b454",
+            "port": "clk"
+          }
+        },
+        {
+          "source": {
+            "block": "c706887a-8da8-44c7-b0db-54e8253492a6",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "17174045-a45c-4f73-8dd4-50651082b454",
+            "port": "From"
+          }
+        },
+        {
+          "source": {
+            "block": "62f511ed-60b3-4e40-b599-2d0ad501d5ed",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "17174045-a45c-4f73-8dd4-50651082b454",
+            "port": "To"
+          }
+        },
+        {
+          "source": {
+            "block": "17174045-a45c-4f73-8dd4-50651082b454",
+            "port": "d"
+          },
+          "target": {
+            "block": "80953a5b-f7ea-40a2-8593-fa9128ae78e5",
+            "port": "in"
+          },
+          "size": 8
+        }
+      ]
+    },
+    "state": {
+      "pan": {
+        "x": 0.9346,
+        "y": 98.8925
+      },
+      "zoom": 0.9766
+    }
+  },
+  "dependencies": {}
+}
