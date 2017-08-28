@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 4 bits",
+    "name": "Counter 3 bits",
     "version": "1.0",
     "description": "0,1,2,3...n (3 bits)",
     "author": "José Picó",
@@ -32,17 +32,12 @@
           }
         },
         {
-          "id": "2656f527-d4a6-425d-af0f-2263fd153beb",
+          "id": "8b44dd4f-f9be-47f7-9e54-cd9b74d90e5a",
           "type": "basic.output",
           "data": {
             "name": "out",
-            "range": "[3:0]",
+            "range": "[2:0]",
             "pins": [
-              {
-                "index": "3",
-                "name": "",
-                "value": "0"
-              },
               {
                 "index": "2",
                 "name": "",
@@ -70,7 +65,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 4 bits counter\n\nreg [3:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
+            "code": "// 3 bits counter\n\nreg [2:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
             "params": [],
             "ports": {
               "in": [
@@ -81,8 +76,8 @@
               "out": [
                 {
                   "name": "d",
-                  "range": "[3:0]",
-                  "size": 4
+                  "range": "[2:0]",
+                  "size": 3
                 }
               ]
             }
@@ -114,10 +109,10 @@
             "port": "d"
           },
           "target": {
-            "block": "2656f527-d4a6-425d-af0f-2263fd153beb",
+            "block": "8b44dd4f-f9be-47f7-9e54-cd9b74d90e5a",
             "port": "in"
           },
-          "size": 4
+          "size": 3
         }
       ]
     },

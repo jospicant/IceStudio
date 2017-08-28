@@ -12,81 +12,6 @@
     "graph": {
       "blocks": [
         {
-          "id": "b9e825df-53f1-40c2-a6c5-f7b7e62d75a8",
-          "type": "basic.constant",
-          "data": {
-            "name": "n1",
-            "value": "3",
-            "local": false
-          },
-          "position": {
-            "x": 136,
-            "y": 24
-          }
-        },
-        {
-          "id": "0ca2d94c-0fdb-4048-ab6a-68ad80ab9423",
-          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
-          "position": {
-            "x": 136,
-            "y": 152
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "54448033-5104-4dcf-a5b7-9127ca5b24cd",
-          "type": "basic.code",
-          "data": {
-            "code": "\n\nalways @(a or b)\n\nbegin:LABEL_A\n// A Sequential block requires a label if local\n//declarations are present\n\ninteger a1,b1; //integer 32 bits signed\na1 <= a;\nb1 <= b;\nd <= a+b;\n\nend",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "a",
-                  "range": "[3:0]",
-                  "size": 4
-                },
-                {
-                  "name": "b",
-                  "range": "[3:0]",
-                  "size": 4
-                }
-              ],
-              "out": [
-                {
-                  "name": "d",
-                  "range": "[3:0]",
-                  "size": 4
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 392,
-            "y": 184
-          },
-          "size": {
-            "width": 512,
-            "height": 320
-          }
-        },
-        {
-          "id": "9061a4dc-1a14-4da3-a2a6-88fc5620116b",
-          "type": "basic.constant",
-          "data": {
-            "name": "n2",
-            "value": "-5",
-            "local": false
-          },
-          "position": {
-            "x": 144,
-            "y": 256
-          }
-        },
-        {
           "id": "6b02e85c-448c-40a4-a2a3-05c1c65c33a7",
           "type": "basic.output",
           "data": {
@@ -119,6 +44,81 @@
           "position": {
             "x": 1008,
             "y": 264
+          }
+        },
+        {
+          "id": "b9e825df-53f1-40c2-a6c5-f7b7e62d75a8",
+          "type": "basic.constant",
+          "data": {
+            "name": "n1",
+            "value": "3",
+            "local": false
+          },
+          "position": {
+            "x": 136,
+            "y": 24
+          }
+        },
+        {
+          "id": "9061a4dc-1a14-4da3-a2a6-88fc5620116b",
+          "type": "basic.constant",
+          "data": {
+            "name": "n2",
+            "value": "-5",
+            "local": false
+          },
+          "position": {
+            "x": 144,
+            "y": 256
+          }
+        },
+        {
+          "id": "0ca2d94c-0fdb-4048-ab6a-68ad80ab9423",
+          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
+          "position": {
+            "x": 136,
+            "y": 152
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "54448033-5104-4dcf-a5b7-9127ca5b24cd",
+          "type": "basic.code",
+          "data": {
+            "code": "\n\nalways @(a or b)\n\nbegin:LABEL_A\n// A Sequential block requires a label if local\n//declarations are present\n\ninteger a1,b1,d; //integer 32 bits signed\na1 <= a;\nb1 <= b;\nd <= a+b;\n\nend",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "a",
+                  "range": "[3:0]",
+                  "size": 4
+                },
+                {
+                  "name": "b",
+                  "range": "[3:0]",
+                  "size": 4
+                }
+              ],
+              "out": [
+                {
+                  "name": "d",
+                  "range": "[3:0]",
+                  "size": 4
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 392,
+            "y": 184
+          },
+          "size": {
+            "width": 512,
+            "height": 320
           }
         },
         {
