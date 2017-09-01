@@ -15,7 +15,7 @@
           "id": "c4334e14-46e8-48cd-bfdf-6251ef30b673",
           "type": "basic.input",
           "data": {
-            "name": "in_P",
+            "name": "e",
             "range": "[7:0]",
             "pins": [
               {
@@ -71,7 +71,7 @@
           "id": "aa357364-47a3-408e-941c-c4415e85057e",
           "type": "basic.output",
           "data": {
-            "name": "out_P",
+            "name": "P",
             "range": "[15:0]",
             "pins": [
               {
@@ -282,8 +282,8 @@
     },
     "state": {
       "pan": {
-        "x": -13,
-        "y": 45.5
+        "x": -246,
+        "y": -17.5
       },
       "zoom": 1
     }

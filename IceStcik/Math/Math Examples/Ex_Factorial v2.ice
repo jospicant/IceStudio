@@ -12,35 +12,6 @@
     "graph": {
       "blocks": [
         {
-          "id": "2251d40f-11c0-4c7d-9ac4-9bd8c77c4e0b",
-          "type": "basic.info",
-          "data": {
-            "info": "\nEn pruebas.\nOjo con el Start\n",
-            "readonly": false
-          },
-          "position": {
-            "x": 464,
-            "y": 32
-          },
-          "size": {
-            "width": 272,
-            "height": 128
-          }
-        },
-        {
-          "id": "94986bce-7e47-44e8-94d4-f0be9d956a50",
-          "type": "basic.constant",
-          "data": {
-            "name": "Num",
-            "value": "4",
-            "local": false
-          },
-          "position": {
-            "x": 248,
-            "y": 64
-          }
-        },
-        {
           "id": "ad690522-44e8-41a6-9415-ba680c4109c3",
           "type": "basic.output",
           "data": {
@@ -96,6 +67,67 @@
           }
         },
         {
+          "id": "91294342-13b3-45e1-82af-e79de43bbb66",
+          "type": "basic.output",
+          "data": {
+            "name": "Done",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D5",
+                "value": "95"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 776,
+            "y": 336
+          }
+        },
+        {
+          "id": "94986bce-7e47-44e8-94d4-f0be9d956a50",
+          "type": "basic.constant",
+          "data": {
+            "name": "Num",
+            "value": "3",
+            "local": false
+          },
+          "position": {
+            "x": 248,
+            "y": 64
+          }
+        },
+        {
+          "id": "dc9ca304-5b78-41da-98dd-6f15a4f272ce",
+          "type": "basic.constant",
+          "data": {
+            "name": "t",
+            "value": "1",
+            "local": false
+          },
+          "position": {
+            "x": 248,
+            "y": 280
+          }
+        },
+        {
+          "id": "2251d40f-11c0-4c7d-9ac4-9bd8c77c4e0b",
+          "type": "basic.info",
+          "data": {
+            "info": "\nEn pruebas.\nOjo con el Start\n",
+            "readonly": false
+          },
+          "position": {
+            "x": 464,
+            "y": 32
+          },
+          "size": {
+            "width": 272,
+            "height": 128
+          }
+        },
+        {
           "id": "fda663c4-1c9d-40b8-a31b-23b06820bfdf",
           "type": "a2e3db339c3ff6c3363694ef82663e0ac566ffe5",
           "position": {
@@ -117,38 +149,6 @@
           "size": {
             "width": 96,
             "height": 96
-          }
-        },
-        {
-          "id": "dc9ca304-5b78-41da-98dd-6f15a4f272ce",
-          "type": "basic.constant",
-          "data": {
-            "name": "t",
-            "value": "1",
-            "local": false
-          },
-          "position": {
-            "x": 248,
-            "y": 280
-          }
-        },
-        {
-          "id": "91294342-13b3-45e1-82af-e79de43bbb66",
-          "type": "basic.output",
-          "data": {
-            "name": "Done",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D5",
-                "value": "95"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 776,
-            "y": 336
           }
         },
         {
@@ -259,8 +259,8 @@
     },
     "state": {
       "pan": {
-        "x": 0,
-        "y": 0
+        "x": 143,
+        "y": 81.5
       },
       "zoom": 1
     }
