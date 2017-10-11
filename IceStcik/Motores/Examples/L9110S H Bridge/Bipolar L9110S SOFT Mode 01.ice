@@ -125,7 +125,7 @@
           "type": "basic.constant",
           "data": {
             "name": "Speed",
-            "value": "500",
+            "value": "200",
             "local": false
           },
           "position": {
@@ -391,10 +391,10 @@
     },
     "state": {
       "pan": {
-        "x": 151,
-        "y": -90.5
+        "x": 20.5581,
+        "y": -70.6938
       },
-      "zoom": 1
+      "zoom": 0.8101
     }
   },
   "dependencies": {
