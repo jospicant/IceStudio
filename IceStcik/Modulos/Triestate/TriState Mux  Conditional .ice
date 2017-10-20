@@ -32,37 +32,6 @@
           }
         },
         {
-          "id": "aed97f5e-976b-4315-ac73-5f38afa2752f",
-          "type": "basic.code",
-          "data": {
-            "code": "\nassign OUT=(EN)? IN:1'bz;",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "IN"
-                },
-                {
-                  "name": "EN"
-                }
-              ],
-              "out": [
-                {
-                  "name": "OUT"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 568,
-            "y": 224
-          },
-          "size": {
-            "width": 336,
-            "height": 80
-          }
-        },
-        {
           "id": "da53b263-b29f-4c41-859d-fca08b80c03d",
           "type": "basic.output",
           "data": {
@@ -99,6 +68,53 @@
           "position": {
             "x": 368,
             "y": 328
+          }
+        },
+        {
+          "id": "aed97f5e-976b-4315-ac73-5f38afa2752f",
+          "type": "basic.code",
+          "data": {
+            "code": "\nassign OUT=(EN)? IN:1'bz;",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "IN"
+                },
+                {
+                  "name": "EN"
+                }
+              ],
+              "out": [
+                {
+                  "name": "OUT"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 568,
+            "y": 224
+          },
+          "size": {
+            "width": 336,
+            "height": 80
+          }
+        },
+        {
+          "id": "c2ab66fa-5e6d-4549-acf4-4c976ca7b499",
+          "type": "basic.info",
+          "data": {
+            "info": "\nStatus: Checked OK",
+            "readonly": false
+          },
+          "position": {
+            "x": 416,
+            "y": 80
+          },
+          "size": {
+            "width": 192,
+            "height": 64
           }
         }
       ],
@@ -137,10 +153,10 @@
     },
     "state": {
       "pan": {
-        "x": -221.0278,
-        "y": -21.2882
+        "x": -266,
+        "y": -21.5
       },
-      "zoom": 0.9204
+      "zoom": 1
     }
   },
   "dependencies": {}

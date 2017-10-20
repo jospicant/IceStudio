@@ -12,42 +12,6 @@
     "graph": {
       "blocks": [
         {
-          "id": "17174045-a45c-4f73-8dd4-50651082b454",
-          "type": "basic.code",
-          "data": {
-            "code": "// 4 bits counter, Enable and Rese\n\nreg [4:0] d = 0;\n\nalways @(posedge clk,posedge Reset)\nbegin\n    if(Reset)\n      d<=0;\n    else\n    begin\n     if(Enable)\n      d<=d+1;\n     else\n      d<=d;\n    end\n    \n      \nend\n  \n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "Reset"
-                },
-                {
-                  "name": "Enable"
-                }
-              ],
-              "out": [
-                {
-                  "name": "d",
-                  "range": "[4:0]",
-                  "size": 5
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 96,
-            "y": 8
-          },
-          "size": {
-            "width": 656,
-            "height": 320
-          }
-        },
-        {
           "id": "65fa4acd-dc76-4cac-b314-773693086549",
           "type": "basic.input",
           "data": {
@@ -146,6 +110,42 @@
             "x": -88,
             "y": 240
           }
+        },
+        {
+          "id": "17174045-a45c-4f73-8dd4-50651082b454",
+          "type": "basic.code",
+          "data": {
+            "code": "// 4 bits counter, Enable and Reset\n\nreg [4:0] d = 0;\n\nalways @(posedge clk,posedge Reset)\nbegin\n    if(Reset)\n      d<=0;\n    else\n    begin\n     if(Enable)\n      d<=d+1;\n     else\n      d<=d;\n    end\n    \n      \nend\n  \n",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "Reset"
+                },
+                {
+                  "name": "Enable"
+                }
+              ],
+              "out": [
+                {
+                  "name": "d",
+                  "range": "[4:0]",
+                  "size": 5
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 96,
+            "y": 8
+          },
+          "size": {
+            "width": 656,
+            "height": 320
+          }
         }
       ],
       "wires": [
@@ -194,10 +194,10 @@
     },
     "state": {
       "pan": {
-        "x": 247,
-        "y": 133.5
+        "x": 110.1985,
+        "y": 148.4847
       },
-      "zoom": 1
+      "zoom": 0.7977
     }
   },
   "dependencies": {}

@@ -32,37 +32,6 @@
           }
         },
         {
-          "id": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
-          "type": "basic.code",
-          "data": {
-            "code": "\nbufif1 buffer1(Out,In,Enable);",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "In"
-                },
-                {
-                  "name": "Enable"
-                }
-              ],
-              "out": [
-                {
-                  "name": "Out"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 480,
-            "y": 184
-          },
-          "size": {
-            "width": 368,
-            "height": 80
-          }
-        },
-        {
           "id": "019473e4-7e83-4203-ae69-b77e8a4aab5e",
           "type": "basic.output",
           "data": {
@@ -85,7 +54,7 @@
           "id": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
           "type": "basic.input",
           "data": {
-            "name": "Enable",
+            "name": "En1",
             "pins": [
               {
                 "index": "0",
@@ -99,6 +68,37 @@
           "position": {
             "x": 280,
             "y": 240
+          }
+        },
+        {
+          "id": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
+          "type": "basic.code",
+          "data": {
+            "code": "\nbufif1 buffer1(Out,In,En1);",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "In"
+                },
+                {
+                  "name": "En1"
+                }
+              ],
+              "out": [
+                {
+                  "name": "Out"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 480,
+            "y": 184
+          },
+          "size": {
+            "width": 368,
+            "height": 80
           }
         }
       ],
@@ -115,16 +115,6 @@
         },
         {
           "source": {
-            "block": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
-            "port": "out"
-          },
-          "target": {
-            "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
-            "port": "Enable"
-          }
-        },
-        {
-          "source": {
             "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
             "port": "Out"
           },
@@ -132,13 +122,23 @@
             "block": "019473e4-7e83-4203-ae69-b77e8a4aab5e",
             "port": "in"
           }
+        },
+        {
+          "source": {
+            "block": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
+            "port": "out"
+          },
+          "target": {
+            "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
+            "port": "En1"
+          }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 0,
-        "y": 0
+        "x": -202,
+        "y": 58.5
       },
       "zoom": 1
     }
