@@ -118,12 +118,12 @@
           "id": "5a9818c4-24e3-448c-9667-40d2b2faf439",
           "type": "basic.info",
           "data": {
-            "info": "Ejemplo NE555 en configuración como ASTABLE.",
-            "readonly": false
+            "info": " Ejemplo NE555 en configuración como ASTABLE.",
+            "readonly": true
           },
           "position": {
-            "x": 440,
-            "y": 8
+            "x": 120,
+            "y": -24
           },
           "size": {
             "width": 480,
@@ -306,10 +306,10 @@
     },
     "state": {
       "pan": {
-        "x": 132.3909,
-        "y": 96.5222
+        "x": 73.9062,
+        "y": 91.2031
       },
-      "zoom": 0.7959
+      "zoom": 0.8477
     }
   },
   "dependencies": {

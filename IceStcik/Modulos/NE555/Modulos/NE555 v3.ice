@@ -27,8 +27,104 @@
             "clock": true
           },
           "position": {
-            "x": 304,
-            "y": 40
+            "x": -248,
+            "y": -104
+          }
+        },
+        {
+          "id": "3988034f-8468-442a-ae3e-4b97e4d270bc",
+          "type": "basic.input",
+          "data": {
+            "name": "Control",
+            "range": "[15:0]",
+            "pins": [
+              {
+                "index": "15",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "14",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "13",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "12",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "11",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "10",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "9",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "8",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "7",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "6",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "4",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "3",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true,
+            "clock": false
+          },
+          "position": {
+            "x": -248,
+            "y": 72
           }
         },
         {
@@ -123,7 +219,7 @@
             "clock": false
           },
           "position": {
-            "x": -40,
+            "x": -248,
             "y": 216
           }
         },
@@ -257,7 +353,7 @@
             "clock": false
           },
           "position": {
-            "x": -32,
+            "x": -248,
             "y": 448
           }
         },
@@ -277,7 +373,7 @@
             "clock": false
           },
           "position": {
-            "x": -32,
+            "x": -248,
             "y": 520
           }
         },
@@ -290,20 +386,8 @@
             "local": false
           },
           "position": {
-            "x": -16,
+            "x": 24,
             "y": -40
-          }
-        },
-        {
-          "id": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-          "type": "fcb8adf01a58a54d8a21b3ff107b891448d652c2",
-          "position": {
-            "x": -16,
-            "y": 72
-          },
-          "size": {
-            "width": 96,
-            "height": 64
           }
         },
         {
@@ -346,15 +430,15 @@
           "id": "a2c68a7b-7dc0-46d7-8f94-f14c59ea8c07",
           "type": "basic.info",
           "data": {
-            "info": "1/3 Vcc       Trigger\n",
+            "info": "1/3 Vcc   Trigger\n",
             "readonly": true
           },
           "position": {
-            "x": 232,
+            "x": 256,
             "y": 408
           },
           "size": {
-            "width": 240,
+            "width": 176,
             "height": 32
           }
         },
@@ -362,15 +446,15 @@
           "id": "bbecaa09-8e05-47bc-8b83-a6e27d50c683",
           "type": "basic.info",
           "data": {
-            "info": "2/3 Vcc       Trigger x2\n",
+            "info": "2/3 Vcc  (Trigger x2)+ Control\n",
             "readonly": true
           },
           "position": {
-            "x": 232,
+            "x": 248,
             "y": 288
           },
           "size": {
-            "width": 272,
+            "width": 304,
             "height": 32
           }
         },
@@ -378,16 +462,16 @@
           "id": "56a0e822-190f-4c9d-9259-35643e45aae4",
           "type": "basic.info",
           "data": {
-            "info": "En un Ne555 Analógico tenemos una \ntensión de alimentación Vcc y un divisor\nde tensión con el cual aplicamos una tensión\nde 1/3 Vcc en entrada + del comparador 1\ny 2/3 Vcc en la entrada - del comparador 2.\n\nAquí aplicamos el simil digital (divisor de V\ncon dos resistencias de igual valor )\nconfigurando mediante \"Trigger\" el valor\nde 1/3 Vcc y  \"Trigger x 2\" el valor de 2/3 Vcc.\n\n Ejemplo: Si \"Trigger\" = 10      => 1/3 Vcc\n             \"Trigger x 2 \" = 20 => 2/3 Vcc\n                      ",
+            "info": "En un Ne555 Analógico tenemos una \ntensión de alimentación Vcc y un divisor\nde tensión con el cual aplicamos una tensión\nde 1/3 Vcc en entrada + del comparador 1\ny 2/3 Vcc en la entrada - del comparador 2.\n\nAquí aplicamos el simil digital (divisor de V\ncon dos resistencias de igual valor )\nconfigurando mediante \"Trigger\" el valor\nde 1/3 Vcc y  \"Trigger x 2\" el valor de 2/3 Vcc.\n\n Ejemplo: Si \"Trigger\" = 10                => 1/3 Vcc\n             \"(Trigger x 2)+Control \" = 20 => 2/3 Vcc + VControl\n                      ",
             "readonly": true
           },
           "position": {
-            "x": 784,
-            "y": -40
+            "x": 736,
+            "y": -88
           },
           "size": {
-            "width": 480,
-            "height": 288
+            "width": 624,
+            "height": 272
           }
         },
         {
@@ -421,19 +505,53 @@
             "width": 64,
             "height": 32
           }
+        },
+        {
+          "id": "3d8c1342-1efb-445e-8e06-f131ec666486",
+          "type": "basic.info",
+          "data": {
+            "info": "\nMediante la señal de \"control\" se\npuede aumentar la tensión de umbral THRESHOLD.\n (Trigger x 2 + Control)",
+            "readonly": true
+          },
+          "position": {
+            "x": -408,
+            "y": -16
+          },
+          "size": {
+            "width": 448,
+            "height": 112
+          }
+        },
+        {
+          "id": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+          "type": "6179c27f46d2936acc9b11b7aa065a1450eb3917",
+          "position": {
+            "x": 24,
+            "y": 72
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "eed2bd15-0422-4846-89af-fdaf01bbc79c",
+          "type": "basic.info",
+          "data": {
+            "info": "DISCH: 0 Debe activar descarga del Cond Externo (Contador)\n       1 Debe activar Carga del Cond. Externo (Contador)\n       \n       El Equivalente del Condensador digital se puede\n       realizar con un contador Up-Down (Carga-Descarga)",
+            "readonly": false
+          },
+          "position": {
+            "x": 800,
+            "y": 424
+          },
+          "size": {
+            "width": 512,
+            "height": 128
+          }
         }
       ],
       "wires": [
-        {
-          "source": {
-            "block": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2"
-          }
-        },
         {
           "source": {
             "block": "dba5917b-3904-4ace-a10e-12910bce6a84",
@@ -452,7 +570,13 @@
           "target": {
             "block": "c766d843-ebca-4010-b720-962ef099c08b",
             "port": "input-clk"
-          }
+          },
+          "vertices": [
+            {
+              "x": 720,
+              "y": 32
+            }
+          ]
         },
         {
           "source": {
@@ -473,23 +597,6 @@
             "block": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4",
             "port": "in"
           }
-        },
-        {
-          "source": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "d0b4b4e5-f4fc-472d-82b7-6e422228f077"
-          },
-          "target": {
-            "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
-            "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
-          },
-          "vertices": [
-            {
-              "x": 200,
-              "y": 216
-            }
-          ],
-          "size": 16
         },
         {
           "source": {
@@ -520,23 +627,6 @@
         },
         {
           "source": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "e2762678-de79-45f9-8bb2-7242058bb44b"
-          },
-          "target": {
-            "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
-            "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
-          },
-          "vertices": [
-            {
-              "x": 176,
-              "y": 232
-            }
-          ],
-          "size": 16
-        },
-        {
-          "source": {
             "block": "72682d1d-d946-4bc1-910c-9d9b42e1205d",
             "port": "out"
           },
@@ -561,164 +651,77 @@
               "y": 400
             }
           ]
+        },
+        {
+          "source": {
+            "block": "3988034f-8468-442a-ae3e-4b97e4d270bc",
+            "port": "out"
+          },
+          "target": {
+            "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+            "port": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc"
+          },
+          "size": 16
+        },
+        {
+          "source": {
+            "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+            "port": "e2762678-de79-45f9-8bb2-7242058bb44b"
+          },
+          "target": {
+            "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
+            "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
+          },
+          "vertices": [
+            {
+              "x": 200,
+              "y": 312
+            }
+          ],
+          "size": 16
+        },
+        {
+          "source": {
+            "block": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+            "port": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2"
+          }
+        },
+        {
+          "source": {
+            "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+            "port": "d0b4b4e5-f4fc-472d-82b7-6e422228f077"
+          },
+          "target": {
+            "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
+            "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
+          },
+          "vertices": [
+            {
+              "x": 232,
+              "y": 200
+            },
+            {
+              "x": 232,
+              "y": 232
+            }
+          ],
+          "size": 16
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 72,
-        "y": 63.1666
+        "x": 340.4615,
+        "y": 168.7579
       },
-      "zoom": 0.9792
+      "zoom": 0.7364
     }
   },
   "dependencies": {
-    "fcb8adf01a58a54d8a21b3ff107b891448d652c2": {
-      "package": {
-        "name": "Triggers NE555",
-        "version": "1.0",
-        "description": "Simular Triggers de 2/3 Vcc y  1/3 Vcc",
-        "author": "José Picó",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
-              "type": "basic.output",
-              "data": {
-                "name": "Trigger2",
-                "range": "[15:0]",
-                "size": 16
-              },
-              "position": {
-                "x": 872,
-                "y": 224
-              }
-            },
-            {
-              "id": "e2762678-de79-45f9-8bb2-7242058bb44b",
-              "type": "basic.output",
-              "data": {
-                "name": "Trigger1",
-                "range": "[15:0]",
-                "size": 16
-              },
-              "position": {
-                "x": 872,
-                "y": 344
-              }
-            },
-            {
-              "id": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
-              "type": "basic.constant",
-              "data": {
-                "name": "Trigger",
-                "value": "20000",
-                "local": false
-              },
-              "position": {
-                "x": 480,
-                "y": 64
-              }
-            },
-            {
-              "id": "451264f2-540c-4969-8734-20d58349dab2",
-              "type": "basic.info",
-              "data": {
-                "info": "\nComo salidas de 16 bits (2^16= 65536 [0..65535]) y como usaré\ncontadores de 16 bits para simular los condensadores que se añaden al NE555 \nno debo superar 32767 por que si no, el contador nunca podrá superar al segundo\ntrigger.",
-                "readonly": false
-              },
-              "position": {
-                "x": 272,
-                "y": -72
-              },
-              "size": {
-                "width": 704,
-                "height": 128
-              }
-            },
-            {
-              "id": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-              "type": "basic.code",
-              "data": {
-                "code": "\nlocalparam t1=Trigger,t2=Trigger*2; \n\nassign Trigger1=t1;\nassign Trigger2=t2;\n\n\n",
-                "params": [
-                  {
-                    "name": "Trigger"
-                  }
-                ],
-                "ports": {
-                  "in": [],
-                  "out": [
-                    {
-                      "name": "Trigger2",
-                      "range": "[15:0]",
-                      "size": 16
-                    },
-                    {
-                      "name": "Trigger1",
-                      "range": "[15:0]",
-                      "size": 16
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 312,
-                "y": 192
-              },
-              "size": {
-                "width": 432,
-                "height": 240
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger"
-              }
-            },
-            {
-              "source": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger1"
-              },
-              "target": {
-                "block": "e2762678-de79-45f9-8bb2-7242058bb44b",
-                "port": "in"
-              },
-              "size": 16
-            },
-            {
-              "source": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger2"
-              },
-              "target": {
-                "block": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
-                "port": "in"
-              },
-              "size": 16
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": 67,
-            "y": 165.5
-          },
-          "zoom": 1
-        }
-      }
-    },
     "7d0f82789eaec41d0715012cadf06a18c97dc71f": {
       "package": {
         "name": "Flip-flop RS completo",
@@ -1038,6 +1041,183 @@
           "pan": {
             "x": -14,
             "y": 26.5
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "6179c27f46d2936acc9b11b7aa065a1450eb3917": {
+      "package": {
+        "name": "Triggers NE555",
+        "version": "1.0",
+        "description": "Simular Triggers de 2/3 Vcc y  1/3 Vcc",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
+              "type": "basic.output",
+              "data": {
+                "name": "Trigger2",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 872,
+                "y": 224
+              }
+            },
+            {
+              "id": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc",
+              "type": "basic.input",
+              "data": {
+                "name": "Control",
+                "range": "[15:0]",
+                "clock": false,
+                "size": 16
+              },
+              "position": {
+                "x": 88,
+                "y": 280
+              }
+            },
+            {
+              "id": "e2762678-de79-45f9-8bb2-7242058bb44b",
+              "type": "basic.output",
+              "data": {
+                "name": "Trigger1",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 872,
+                "y": 344
+              }
+            },
+            {
+              "id": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
+              "type": "basic.constant",
+              "data": {
+                "name": "Trigger",
+                "value": "20000",
+                "local": false
+              },
+              "position": {
+                "x": 480,
+                "y": 64
+              }
+            },
+            {
+              "id": "451264f2-540c-4969-8734-20d58349dab2",
+              "type": "basic.info",
+              "data": {
+                "info": "\nComo salidas de 16 bits (2^16= 65536 [0..65535]) y como usaré\ncontadores de 16 bits para simular los condensadores que se añaden al NE555 \nno debo superar 32767 por que si no, el contador nunca podrá superar al segundo\ntrigger.\nAñado una tensión de control ( con signo ) con la cual podría variar\nla tensión umbral de THRESHOLD del Ne555",
+                "readonly": false
+              },
+              "position": {
+                "x": 240,
+                "y": -136
+              },
+              "size": {
+                "width": 656,
+                "height": 176
+              }
+            },
+            {
+              "id": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+              "type": "basic.code",
+              "data": {
+                "code": "\nwire signed[15:0] q=Control;\n\nlocalparam t1=Trigger,t2=Trigger*2; \n\n\nassign Trigger1=t1;\nassign Trigger2=t2+q;\n\n\n",
+                "params": [
+                  {
+                    "name": "Trigger"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "Control",
+                      "range": "[15:0]",
+                      "size": 16
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "Trigger2",
+                      "range": "[15:0]",
+                      "size": 16
+                    },
+                    {
+                      "name": "Trigger1",
+                      "range": "[15:0]",
+                      "size": 16
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 312,
+                "y": 192
+              },
+              "size": {
+                "width": 432,
+                "height": 240
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger"
+              }
+            },
+            {
+              "source": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger1"
+              },
+              "target": {
+                "block": "e2762678-de79-45f9-8bb2-7242058bb44b",
+                "port": "in"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger2"
+              },
+              "target": {
+                "block": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
+                "port": "in"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc",
+                "port": "out"
+              },
+              "target": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Control"
+              },
+              "size": 16
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 163,
+            "y": 197.5
           },
           "zoom": 1
         }

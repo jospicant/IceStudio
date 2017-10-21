@@ -1,305 +1,86 @@
 {
   "version": "1.1",
   "package": {
-    "name": "NE555 v2",
-    "version": "1.0",
-    "description": "NE555 en versión digital",
-    "author": "José Picó",
+    "name": "",
+    "version": "",
+    "description": "",
+    "author": "",
     "image": ""
   },
   "design": {
-    "board": "icestick",
+    "board": "iCE40-HX8K",
     "graph": {
       "blocks": [
         {
-          "id": "f278b99e-314b-4463-8589-554daa98d341",
-          "type": "basic.input",
-          "data": {
-            "name": "clk",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": true
-          },
-          "position": {
-            "x": 304,
-            "y": 40
-          }
-        },
-        {
-          "id": "dadfac33-4280-4bcf-80e5-83a671f14a57",
-          "type": "basic.input",
-          "data": {
-            "name": "THRES",
-            "range": "[15:0]",
-            "pins": [
-              {
-                "index": "15",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "14",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "13",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "12",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "11",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "10",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "9",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "8",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "7",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "6",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "5",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "4",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "3",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": -40,
-            "y": 216
-          }
-        },
-        {
-          "id": "10955a62-4d6b-49bf-b16c-bcbd9a53d099",
+          "id": "f2a4bb47-46f3-4cb9-9394-ad36bb78d6f4",
           "type": "basic.output",
           "data": {
-            "name": "DISCH",
+            "name": "out",
             "pins": [
               {
                 "index": "0",
-                "name": "",
-                "value": "0"
+                "name": "LED1",
+                "value": "B4"
               }
             ],
-            "virtual": true
+            "virtual": false
           },
           "position": {
-            "x": 992,
-            "y": 264
+            "x": 1000,
+            "y": 56
           }
         },
         {
-          "id": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4",
+          "id": "5618d832-c594-4b65-a176-3d23758bca11",
           "type": "basic.output",
           "data": {
-            "name": "Out",
+            "name": "out",
             "pins": [
               {
                 "index": "0",
-                "name": "",
-                "value": "0"
+                "name": "LED0",
+                "value": "B5"
               }
             ],
-            "virtual": true
+            "virtual": false
           },
           "position": {
-            "x": 992,
-            "y": 328
+            "x": 1008,
+            "y": 368
           }
         },
         {
-          "id": "72682d1d-d946-4bc1-910c-9d9b42e1205d",
-          "type": "basic.input",
-          "data": {
-            "name": "TRIG",
-            "range": "[15:0]",
-            "pins": [
-              {
-                "index": "15",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "14",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "13",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "12",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "11",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "10",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "9",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "8",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "7",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "6",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "5",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "4",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "3",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": "0"
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": -32,
-            "y": 448
-          }
-        },
-        {
-          "id": "dba5917b-3904-4ace-a10e-12910bce6a84",
-          "type": "basic.input",
-          "data": {
-            "name": "RESET",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": -32,
-            "y": 520
-          }
-        },
-        {
-          "id": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
+          "id": "36d27a85-6764-4d96-9b99-61e0096efee5",
           "type": "basic.constant",
           "data": {
-            "name": "Trigger",
-            "value": "10",
+            "name": "Control",
+            "value": "-2",
             "local": false
           },
           "position": {
-            "x": -16,
-            "y": -40
+            "x": 184,
+            "y": -112
           }
         },
         {
-          "id": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-          "type": "fcb8adf01a58a54d8a21b3ff107b891448d652c2",
+          "id": "8978b58e-6791-46fa-987b-efd54811fe17",
+          "type": "basic.constant",
+          "data": {
+            "name": "Trigger",
+            "value": "5",
+            "local": false
+          },
           "position": {
-            "x": -16,
-            "y": 72
+            "x": 736,
+            "y": 136
+          }
+        },
+        {
+          "id": "dfcbf9b0-b7c3-4580-a134-d442da1a89a9",
+          "type": "862d2a36c72ddee13ea44bf906fe1b60efa90941",
+          "position": {
+            "x": 496,
+            "y": 424
           },
           "size": {
             "width": 96,
@@ -307,23 +88,11 @@
           }
         },
         {
-          "id": "c766d843-ebca-4010-b720-962ef099c08b",
-          "type": "7d0f82789eaec41d0715012cadf06a18c97dc71f",
+          "id": "9c21490a-1778-49e9-be8d-4752bc8c25b2",
+          "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
           "position": {
-            "x": 784,
-            "y": 264
-          },
-          "size": {
-            "width": 96,
-            "height": 128
-          }
-        },
-        {
-          "id": "19e12d86-3baa-4c22-802e-9111c08a7582",
-          "type": "cccb5f2b7776604a6af0828da14ca16a3a723154",
-          "position": {
-            "x": 560,
-            "y": 432
+            "x": 8,
+            "y": 256
           },
           "size": {
             "width": 96,
@@ -331,334 +100,524 @@
           }
         },
         {
-          "id": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
-          "type": "cccb5f2b7776604a6af0828da14ca16a3a723154",
-          "position": {
-            "x": 552,
-            "y": 232
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "a2c68a7b-7dc0-46d7-8f94-f14c59ea8c07",
+          "id": "7aeab2a5-b970-4660-95bf-a7e9c7309420",
           "type": "basic.info",
           "data": {
-            "info": "1/3 Vcc       Trigger\n",
+            "info": "Contador UpDown.\nEquivale a Carga-\nDescarga un Condesador.\nInicio en 5 para que\nno pierda t en cargar hasta\n5 ya que el ciclo de carga-\ndescarga lo hace entre 5 y 10",
             "readonly": true
           },
           "position": {
-            "x": 232,
-            "y": 408
+            "x": 304,
+            "y": 96
           },
           "size": {
-            "width": 240,
-            "height": 32
+            "width": 320,
+            "height": 144
           }
         },
         {
-          "id": "bbecaa09-8e05-47bc-8b83-a6e27d50c683",
+          "id": "5a9818c4-24e3-448c-9667-40d2b2faf439",
           "type": "basic.info",
           "data": {
-            "info": "2/3 Vcc       Trigger x2\n",
+            "info": " Ejemplo NE555 en configuración como ASTABLE.",
             "readonly": true
           },
           "position": {
-            "x": 232,
-            "y": 288
-          },
-          "size": {
-            "width": 272,
-            "height": 32
-          }
-        },
-        {
-          "id": "56a0e822-190f-4c9d-9259-35643e45aae4",
-          "type": "basic.info",
-          "data": {
-            "info": "En un Ne555 Analógico tenemos una \ntensión de alimentación Vcc y un divisor\nde tensión con el cual aplicamos una tensión\nde 1/3 Vcc en entrada + del comparador 1\ny 2/3 Vcc en la entrada - del comparador 2.\n\nAquí aplicamos el simil digital (divisor de V\ncon dos resistencias de igual valor )\nconfigurando mediante \"Trigger\" el valor\nde 1/3 Vcc y  \"Trigger x 2\" el valor de 2/3 Vcc.\n\n Ejemplo: Si \"Trigger\" = 10      => 1/3 Vcc\n             \"Trigger x 2 \" = 20 => 2/3 Vcc\n                      ",
-            "readonly": true
-          },
-          "position": {
-            "x": 784,
-            "y": -40
+            "x": 808,
+            "y": 0
           },
           "size": {
             "width": 480,
-            "height": 288
-          }
-        },
-        {
-          "id": "18da2321-1523-4e9a-8382-fd203b80aecf",
-          "type": "basic.info",
-          "data": {
-            "info": "1",
-            "readonly": true
-          },
-          "position": {
-            "x": 592,
-            "y": 392
-          },
-          "size": {
-            "width": 64,
             "height": 32
           }
         },
         {
-          "id": "b5813742-c0f4-4bcf-afe2-12931a028ab7",
+          "id": "89e5f73d-7b97-4a29-a540-840bcb6830cf",
           "type": "basic.info",
           "data": {
-            "info": "2",
+            "info": "Con Trigger configuramos los valores de \ndisparo de los 2 comparadores. En Este\ncaso un comparador tendrá el umbral en 5\ny el otro en 5*2=10",
+            "readonly": false
+          },
+          "position": {
+            "x": 840,
+            "y": 136
+          },
+          "size": {
+            "width": 368,
+            "height": 112
+          }
+        },
+        {
+          "id": "7a8cd324-ca86-4bb8-9d32-9e13321c2768",
+          "type": "basic.info",
+          "data": {
+            "info": "La señal UpDown nos Gobierna Cuando el Condensador ( Contador ) Carga\no Descarga.\n ",
             "readonly": true
           },
           "position": {
-            "x": 584,
-            "y": 192
+            "x": 336,
+            "y": 504
           },
           "size": {
-            "width": 64,
-            "height": 32
+            "width": 624,
+            "height": 64
+          }
+        },
+        {
+          "id": "87d153df-771d-454f-af19-d64f921b9407",
+          "type": "basic.info",
+          "data": {
+            "info": "\nSalida ASTABLE.\nInicialmente el Condensador\n(Contador) está cargado a 5 de forma\nque entrará en un proceso cíclico\nde carga hasta 10 y descarga hasta 5\ncreando así un ASTABLE.\n\nAquí estamos consiguiendo un ASTABLE\nen base a un divisor de reloj (corazón)",
+            "readonly": false
+          },
+          "position": {
+            "x": 1112,
+            "y": 288
+          },
+          "size": {
+            "width": 384,
+            "height": 208
+          }
+        },
+        {
+          "id": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+          "type": "68421b20df074eab6816990fc7c412f405dde9e1",
+          "position": {
+            "x": 352,
+            "y": 272
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+          "type": "292d8f0fc505d3089319b79751f6b637bf628c8b",
+          "position": {
+            "x": 736,
+            "y": 280
+          },
+          "size": {
+            "width": 96,
+            "height": 160
+          }
+        },
+        {
+          "id": "e648880a-e55d-4cd9-8284-5e7109e5b8cf",
+          "type": "1fd50aa8caccd0ab3c116052dc37a926d5d29c78",
+          "position": {
+            "x": 184,
+            "y": 8
+          },
+          "size": {
+            "width": 96,
+            "height": 64
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
+            "block": "9c21490a-1778-49e9-be8d-4752bc8c25b2",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "f2a4bb47-46f3-4cb9-9394-ad36bb78d6f4",
+            "port": "in"
+          },
+          "vertices": [
+            {
+              "x": 136,
+              "y": 176
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "9c21490a-1778-49e9-be8d-4752bc8c25b2",
+            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+          },
+          "target": {
+            "block": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+            "port": "21b5d14a-3d4d-45b5-b68e-62d72b01440f"
+          }
+        },
+        {
+          "source": {
+            "block": "8978b58e-6791-46fa-987b-efd54811fe17",
             "port": "constant-out"
           },
           "target": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2"
+            "block": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+            "port": "63bc2d1a-c45d-483b-afd7-af4bdec12283"
           }
         },
         {
           "source": {
-            "block": "dba5917b-3904-4ace-a10e-12910bce6a84",
-            "port": "out"
+            "block": "8978b58e-6791-46fa-987b-efd54811fe17",
+            "port": "constant-out"
           },
           "target": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "input-rst"
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7"
           }
         },
         {
           "source": {
-            "block": "f278b99e-314b-4463-8589-554daa98d341",
-            "port": "out"
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4"
           },
           "target": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "input-clk"
-          }
-        },
-        {
-          "source": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "215cac53-baac-4871-a582-15f5139e23b2"
-          },
-          "target": {
-            "block": "10955a62-4d6b-49bf-b16c-bcbd9a53d099",
+            "block": "5618d832-c594-4b65-a176-3d23758bca11",
             "port": "in"
           }
         },
         {
           "source": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "3a4e890e-c1b1-47b6-bd3b-b27e26605f35"
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "10955a62-4d6b-49bf-b16c-bcbd9a53d099"
           },
           "target": {
-            "block": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "d0b4b4e5-f4fc-472d-82b7-6e422228f077"
-          },
-          "target": {
-            "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
-            "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
+            "block": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+            "port": "6236d616-9fd4-4be8-8407-15d06fc81e61"
           },
           "vertices": [
             {
-              "x": 200,
-              "y": 216
+              "x": 592,
+              "y": 600
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "dfcbf9b0-b7c3-4580-a134-d442da1a89a9",
+            "port": "19c8f68d-5022-487f-9ab0-f0a3cd58bead"
+          },
+          "target": {
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "dba5917b-3904-4ace-a10e-12910bce6a84"
+          }
+        },
+        {
+          "source": {
+            "block": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+            "port": "d071615f-8845-49ee-8142-c3211bdab00d"
+          },
+          "target": {
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "dadfac33-4280-4bcf-80e5-83a671f14a57"
+          },
+          "vertices": [
+            {
+              "x": 520,
+              "y": 312
             }
           ],
           "size": 16
         },
         {
           "source": {
-            "block": "dadfac33-4280-4bcf-80e5-83a671f14a57",
-            "port": "out"
+            "block": "507f3368-b17b-42f8-a6db-aee1ee250fd1",
+            "port": "d071615f-8845-49ee-8142-c3211bdab00d"
           },
           "target": {
-            "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
-            "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
-          },
-          "size": 16
-        },
-        {
-          "source": {
-            "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
-            "port": "output-Mayor"
-          },
-          "target": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "input-r"
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "72682d1d-d946-4bc1-910c-9d9b42e1205d"
           },
           "vertices": [
             {
-              "x": 696,
-              "y": 288
-            }
-          ]
-        },
-        {
-          "source": {
-            "block": "a9eb27a4-ab1d-4d24-bf6b-6bac11e23e6d",
-            "port": "e2762678-de79-45f9-8bb2-7242058bb44b"
-          },
-          "target": {
-            "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
-            "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
-          },
-          "vertices": [
-            {
-              "x": 176,
-              "y": 232
+              "x": 520,
+              "y": 344
             }
           ],
           "size": 16
         },
         {
           "source": {
-            "block": "72682d1d-d946-4bc1-910c-9d9b42e1205d",
-            "port": "out"
+            "block": "36d27a85-6764-4d96-9b99-61e0096efee5",
+            "port": "constant-out"
           },
           "target": {
-            "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
-            "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
-          },
-          "size": 16
+            "block": "e648880a-e55d-4cd9-8284-5e7109e5b8cf",
+            "port": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc"
+          }
         },
         {
           "source": {
-            "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
-            "port": "output-Mayor"
+            "block": "e648880a-e55d-4cd9-8284-5e7109e5b8cf",
+            "port": "92857b35-250e-46fb-8019-f7a220ce6091"
           },
           "target": {
-            "block": "c766d843-ebca-4010-b720-962ef099c08b",
-            "port": "input-s"
+            "block": "7dc01128-ef94-44a3-a755-2831f3202e1d",
+            "port": "3988034f-8468-442a-ae3e-4b97e4d270bc"
           },
           "vertices": [
             {
-              "x": 696,
-              "y": 400
+              "x": 544,
+              "y": 40
+            },
+            {
+              "x": 624,
+              "y": 168
             }
-          ]
+          ],
+          "size": 16
         }
       ]
     },
     "state": {
       "pan": {
-        "x": 72,
-        "y": 63.1666
+        "x": 73.9063,
+        "y": 104.7656
       },
-      "zoom": 0.9792
+      "zoom": 0.8477
     }
   },
   "dependencies": {
-    "fcb8adf01a58a54d8a21b3ff107b891448d652c2": {
+    "862d2a36c72ddee13ea44bf906fe1b60efa90941": {
       "package": {
-        "name": "Triggers NE555",
-        "version": "1.0",
-        "description": "Simular Triggers de 2/3 Vcc y  1/3 Vcc",
-        "author": "José Picó",
-        "image": ""
+        "name": "Bit 0",
+        "version": "1.0.0",
+        "description": "Assign 0 to the output wire",
+        "author": "Jesús Arroyo",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2247.303%22%20height=%2227.648%22%20viewBox=%220%200%2044.346456%2025.919999%22%3E%3Ctext%20style=%22line-height:125%25%22%20x=%22325.37%22%20y=%22315.373%22%20font-weight=%22400%22%20font-size=%2212.669%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20transform=%22translate(-307.01%20-298.51)%22%3E%3Ctspan%20x=%22325.37%22%20y=%22315.373%22%20style=%22-inkscape-font-specification:'Courier%2010%20Pitch'%22%20font-family=%22Courier%2010%20Pitch%22%3E0%3C/tspan%3E%3C/text%3E%3C/svg%3E"
       },
       "design": {
         "graph": {
           "blocks": [
             {
-              "id": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
-              "type": "basic.output",
-              "data": {
-                "name": "Trigger2",
-                "range": "[15:0]",
-                "size": 16
-              },
-              "position": {
-                "x": 872,
-                "y": 224
-              }
-            },
-            {
-              "id": "e2762678-de79-45f9-8bb2-7242058bb44b",
-              "type": "basic.output",
-              "data": {
-                "name": "Trigger1",
-                "range": "[15:0]",
-                "size": 16
-              },
-              "position": {
-                "x": 872,
-                "y": 344
-              }
-            },
-            {
-              "id": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
-              "type": "basic.constant",
-              "data": {
-                "name": "Trigger",
-                "value": "20000",
-                "local": false
-              },
-              "position": {
-                "x": 480,
-                "y": 64
-              }
-            },
-            {
-              "id": "451264f2-540c-4969-8734-20d58349dab2",
-              "type": "basic.info",
-              "data": {
-                "info": "\nComo salidas de 16 bits (2^16= 65536 [0..65535]) y como usaré\ncontadores de 16 bits para simular los condensadores que se añaden al NE555 \nno debo superar 32767 por que si no, el contador nunca podrá superar al segundo\ntrigger.",
-                "readonly": false
-              },
-              "position": {
-                "x": 272,
-                "y": -72
-              },
-              "size": {
-                "width": 704,
-                "height": 128
-              }
-            },
-            {
-              "id": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+              "id": "b959fb96-ac67-4aea-90b3-ed35a4c17bf5",
               "type": "basic.code",
               "data": {
-                "code": "\nlocalparam t1=Trigger,t2=Trigger*2; \n\nassign Trigger1=t1;\nassign Trigger2=t2;\n\n\n",
-                "params": [
-                  {
-                    "name": "Trigger"
-                  }
-                ],
+                "code": "// Bit 0\n\nassign v = 1'b0;",
+                "params": [],
                 "ports": {
                   "in": [],
                   "out": [
                     {
-                      "name": "Trigger2",
-                      "range": "[15:0]",
-                      "size": 16
+                      "name": "v"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 96,
+                "y": 96
+              }
+            },
+            {
+              "id": "19c8f68d-5022-487f-9ab0-f0a3cd58bead",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 608,
+                "y": 192
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "b959fb96-ac67-4aea-90b3-ed35a4c17bf5",
+                "port": "v"
+              },
+              "target": {
+                "block": "19c8f68d-5022-487f-9ab0-f0a3cd58bead",
+                "port": "in"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 0,
+            "y": 0
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "7c0ae704fe4f7176c6e19f8639bc59e42c836297": {
+      "package": {
+        "name": "Bomba_x1",
+        "version": "0.1",
+        "description": "Bombeo de bits. Una pulsación por segundo",
+        "author": "Juan Gonzalez (Obijuan)",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22113.28%22%20height=%2281.27%22%20viewBox=%220%200%20106.20044%2076.190928%22%3E%3Ctext%20y=%22443.842%22%20x=%22-155.758%22%20style=%22line-height:125%25%22%20font-weight=%22400%22%20font-size=%2240.397%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22red%22%20transform=%22translate(238.359%20-394.146)%22%3E%3Ctspan%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20y=%22443.842%22%20x=%22-155.758%22%20font-weight=%22700%22%20font-size=%2223.084%22%3E1%3C/tspan%3E%3C/text%3E%3Cpath%20d=%22M40.85%2073.768c-1.314-2.254-3.351-4.461-7.211-7.812-2.091-1.815-3.363-2.823-10.605-8.401-5.676-4.373-8.508-6.799-11.79-10.101-3.28-3.302-5.208-5.932-6.862-9.361-1.056-2.19-1.782-4.3-2.234-6.492-.573-2.785-.651-3.728-.648-7.829.004-5.381.182-6.276%201.954-9.866%201.317-2.666%202.317-4.07%204.4-6.179C9.877%205.68%2011.19%204.75%2014.03%203.35c3.155-1.556%205.437-1.964%2010.138-1.813%203.653.118%204.99.48%207.886%202.142%204.558%202.615%208.095%206.813%209.074%2010.77.16.647.325%201.177.367%201.177.042%200%20.411-.757.82-1.682%201.392-3.145%202.685-5.064%204.739-7.038C53.343.86%2063.258-.233%2071.275%204.234c3.274%201.824%205.938%204.48%208.002%207.978%201.625%202.753%202.456%206.41%202.598%2011.433.205%207.277-1.13%2012.32-4.683%2017.694-1.41%202.133-2.453%203.425-4.409%205.461-3.156%203.287-6.002%205.703-12.721%2010.798-4.24%203.215-6.753%205.282-10.39%208.55-2.915%202.618-7.431%207.176-7.866%207.938-.19.333-.362.605-.382.605-.02%200-.278-.415-.574-.923z%22%20fill=%22red%22%20stroke=%22#000%22%20stroke-width=%223%22/%3E%3Cpath%20d=%22M77.277%2053.462h25.759%22%20fill=%22none%22%20stroke=%22red%22%20stroke-width=%223%22/%3E%3Ctext%20y=%22463.171%22%20x=%22-164.04%22%20style=%22line-height:125%25%22%20font-weight=%22400%22%20font-size=%2227.48%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22red%22%20transform=%22translate(238.359%20-394.146)%22%3E%3Ctspan%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20y=%22463.171%22%20x=%22-164.04%22%20font-weight=%22700%22%20font-size=%2215.703%22%3ESeg%3C/tspan%3E%3C/text%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "8709aff2-3586-4a6f-b6c5-d8751d3bc45d",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- module bomba_x1(input wire clk, output wire clk_1hz)\n\n//-- Bombeo de bits a 1Hz (1 pulsacion por segundo)\n\n//-- Constante para dividir y obtener una frecuencia de 2Hz\nlocalparam M = 6000000;\n\n//-- Calcular el numero de bits para almacenar M\nlocalparam N = $clog2(M);\n\n//-- Registro del divisor\nreg [N-1:0] divcounter;\n\n//-- Contador modulo M. tras M pulsos de relog vuelve a 0\nalways @(posedge clk)\n  divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;\n\n//-- Obtener la señal de 2Hz. La señal no tiene ciclo del 50%\nwire clk_2hz;\nassign clk_2hz = divcounter[N-1]; \n\n//-- Usamos un biestable T para dividir entre 2 y obtener una señal\n//-- de 1Hz y ciclo del 50%\nreg T = 0;\nalways @(posedge clk_2hz)\n  T <= ~T;\n  \n//-- Señal de salida de 1Hz y ciclo del 50%\nassign clk_1hz = T;\n  \n//endmodule\n \n\n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "clk_1hz"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 192,
+                "y": 24
+              },
+              "size": {
+                "width": 592,
+                "height": 320
+              }
+            },
+            {
+              "id": "e19c6f2f-5747-4ed1-87c8-748575f0cc10",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": 0,
+                "y": 152
+              }
+            },
+            {
+              "id": "7e07d449-6475-4839-b43e-8aead8be2aac",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 856,
+                "y": 152
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "8709aff2-3586-4a6f-b6c5-d8751d3bc45d",
+                "port": "clk_1hz"
+              },
+              "target": {
+                "block": "7e07d449-6475-4839-b43e-8aead8be2aac",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "e19c6f2f-5747-4ed1-87c8-748575f0cc10",
+                "port": "out"
+              },
+              "target": {
+                "block": "8709aff2-3586-4a6f-b6c5-d8751d3bc45d",
+                "port": "clk"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 20,
+            "y": 0
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "68421b20df074eab6816990fc7c412f405dde9e1": {
+      "package": {
+        "name": "Contador-16bits-up-down-ini0",
+        "version": "0.1",
+        "description": "Contador ascendente/descendente de 2 bits",
+        "author": "Basado en Juan Gonzalez-Gomez (Obijuan)",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22138.94%22%20height=%2295.122%22%20viewBox=%220%200%20130.25659%2089.176724%22%3E%3Cdefs%3E%3Cmarker%20orient=%22auto%22%20id=%22a%22%20overflow=%22visible%22%3E%3Cpath%20d=%22M-2.308%200l3.46-2v4l-3.46-2z%22%20fill=%22#00f%22%20fill-rule=%22evenodd%22%20stroke=%22#00f%22%20stroke-width=%22.4pt%22/%3E%3C/marker%3E%3Cmarker%20orient=%22auto%22%20id=%22b%22%20overflow=%22visible%22%3E%3Cpath%20d=%22M2.308%200l-3.46%202v-4l3.46%202z%22%20fill=%22#00f%22%20fill-rule=%22evenodd%22%20stroke=%22#00f%22%20stroke-width=%22.4pt%22/%3E%3C/marker%3E%3C/defs%3E%3Cg%20transform=%22translate(-179.283%20-305.015)%22%3E%3Ctext%20style=%22line-height:125%25%22%20x=%22178.286%22%20y=%22320.211%22%20font-weight=%22400%22%20font-size=%2220%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%3E%3Ctspan%20x=%22178.286%22%20y=%22320.211%22%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20font-weight=%22700%22%3EContador%3C/tspan%3E%3C/text%3E%3Cpath%20d=%22M294.94%20377.347v-50.78%22%20fill=%22#00f%22%20stroke=%22#00f%22%20stroke-width=%226%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20marker-start=%22url(#a)%22%20marker-end=%22url(#b)%22/%3E%3Crect%20width=%2239.464%22%20height=%2263.929%22%20x=%22229.67%22%20y=%22329.214%22%20ry=%223.75%22%20fill=%22#666%22%20stroke=%22#000%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Ctext%20style=%22line-height:125%25%22%20x=%22247.059%22%20y=%22359.153%22%20transform=%22scale(.94516%201.05802)%22%20font-weight=%22400%22%20font-size=%2247.638%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22#fff%22%20stroke=%22#000%22%20stroke-width=%222%22%3E%3Ctspan%20x=%22247.059%22%20y=%22359.153%22%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20font-weight=%22700%22%3E0%3C/tspan%3E%3C/text%3E%3Cpath%20d=%22M231.168%20362.607h37.094%22%20fill=%22#fff%22%20stroke=%22#000%22%20stroke-width=%223%22%20stroke-linecap=%22square%22%20stroke-linejoin=%22round%22/%3E%3Crect%20width=%2239.464%22%20height=%2263.929%22%20x=%22185.027%22%20y=%22329.214%22%20ry=%223.75%22%20fill=%22#666%22%20stroke=%22#000%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Ctext%20style=%22line-height:125%25%22%20x=%22199.826%22%20y=%22359.153%22%20transform=%22scale(.94516%201.05802)%22%20font-weight=%22400%22%20font-size=%2247.638%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22#fff%22%20stroke=%22#000%22%20stroke-width=%222%22%3E%3Ctspan%20x=%22199.826%22%20y=%22359.153%22%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20font-weight=%22700%22%3E0%3C/tspan%3E%3C/text%3E%3Cpath%20d=%22M186.525%20362.607h37.094%22%20fill=%22#fff%22%20stroke=%22#000%22%20stroke-width=%223%22%20stroke-linecap=%22square%22%20stroke-linejoin=%22round%22/%3E%3C/g%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "21b5d14a-3d4d-45b5-b68e-62d72b01440f",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": 320,
+                "y": 144
+              }
+            },
+            {
+              "id": "d071615f-8845-49ee-8142-c3211bdab00d",
+              "type": "basic.output",
+              "data": {
+                "name": "q",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 864,
+                "y": 184
+              }
+            },
+            {
+              "id": "6236d616-9fd4-4be8-8407-15d06fc81e61",
+              "type": "basic.input",
+              "data": {
+                "name": "up",
+                "clock": false
+              },
+              "position": {
+                "x": 320,
+                "y": 224
+              }
+            },
+            {
+              "id": "63bc2d1a-c45d-483b-afd7-af4bdec12283",
+              "type": "basic.constant",
+              "data": {
+                "name": "Start",
+                "value": "",
+                "local": false
+              },
+              "position": {
+                "x": 584,
+                "y": 8
+              }
+            },
+            {
+              "id": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
+              "type": "basic.code",
+              "data": {
+                "code": "reg [15:0] q=start;\n\nalways @(posedge clk)\n    if (up)\n      q <= q + 1;\n    else\n      q <= q - 1;",
+                "params": [
+                  {
+                    "name": "start"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
                     },
                     {
-                      "name": "Trigger1",
+                      "name": "up"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "q",
                       "range": "[15:0]",
                       "size": 16
                     }
@@ -666,56 +625,509 @@
                 }
               },
               "position": {
-                "x": 312,
-                "y": 192
+                "x": 512,
+                "y": 136
               },
               "size": {
-                "width": 432,
-                "height": 240
+                "width": 240,
+                "height": 160
               }
             }
           ],
           "wires": [
             {
               "source": {
-                "block": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
-                "port": "constant-out"
+                "block": "21b5d14a-3d4d-45b5-b68e-62d72b01440f",
+                "port": "out"
               },
               "target": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger"
+                "block": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
+                "port": "clk"
               }
             },
             {
               "source": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger1"
+                "block": "6236d616-9fd4-4be8-8407-15d06fc81e61",
+                "port": "out"
               },
               "target": {
-                "block": "e2762678-de79-45f9-8bb2-7242058bb44b",
+                "block": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
+                "port": "up"
+              }
+            },
+            {
+              "source": {
+                "block": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
+                "port": "q"
+              },
+              "target": {
+                "block": "d071615f-8845-49ee-8142-c3211bdab00d",
                 "port": "in"
               },
               "size": 16
             },
             {
               "source": {
-                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
-                "port": "Trigger2"
+                "block": "63bc2d1a-c45d-483b-afd7-af4bdec12283",
+                "port": "constant-out"
               },
               "target": {
-                "block": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
-                "port": "in"
+                "block": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
+                "port": "start"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 51,
+            "y": 129.5
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "292d8f0fc505d3089319b79751f6b637bf628c8b": {
+      "package": {
+        "name": "NE555 v2",
+        "version": "1.0",
+        "description": "NE555 en versión digital",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "f278b99e-314b-4463-8589-554daa98d341",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": true
               },
+              "position": {
+                "x": -248,
+                "y": -104
+              }
+            },
+            {
+              "id": "3988034f-8468-442a-ae3e-4b97e4d270bc",
+              "type": "basic.input",
+              "data": {
+                "name": "Control",
+                "range": "[15:0]",
+                "clock": false,
+                "size": 16
+              },
+              "position": {
+                "x": -248,
+                "y": 72
+              }
+            },
+            {
+              "id": "dadfac33-4280-4bcf-80e5-83a671f14a57",
+              "type": "basic.input",
+              "data": {
+                "name": "THRES",
+                "range": "[15:0]",
+                "clock": false,
+                "size": 16
+              },
+              "position": {
+                "x": -248,
+                "y": 216
+              }
+            },
+            {
+              "id": "10955a62-4d6b-49bf-b16c-bcbd9a53d099",
+              "type": "basic.output",
+              "data": {
+                "name": "DISCH"
+              },
+              "position": {
+                "x": 992,
+                "y": 264
+              }
+            },
+            {
+              "id": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4",
+              "type": "basic.output",
+              "data": {
+                "name": "Out"
+              },
+              "position": {
+                "x": 992,
+                "y": 328
+              }
+            },
+            {
+              "id": "72682d1d-d946-4bc1-910c-9d9b42e1205d",
+              "type": "basic.input",
+              "data": {
+                "name": "TRIG",
+                "range": "[15:0]",
+                "clock": false,
+                "size": 16
+              },
+              "position": {
+                "x": -248,
+                "y": 448
+              }
+            },
+            {
+              "id": "dba5917b-3904-4ace-a10e-12910bce6a84",
+              "type": "basic.input",
+              "data": {
+                "name": "RESET",
+                "clock": false
+              },
+              "position": {
+                "x": -248,
+                "y": 520
+              }
+            },
+            {
+              "id": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
+              "type": "basic.constant",
+              "data": {
+                "name": "Trigger",
+                "value": "10",
+                "local": false
+              },
+              "position": {
+                "x": 24,
+                "y": -40
+              }
+            },
+            {
+              "id": "c766d843-ebca-4010-b720-962ef099c08b",
+              "type": "7d0f82789eaec41d0715012cadf06a18c97dc71f",
+              "position": {
+                "x": 784,
+                "y": 264
+              },
+              "size": {
+                "width": 96,
+                "height": 128
+              }
+            },
+            {
+              "id": "19e12d86-3baa-4c22-802e-9111c08a7582",
+              "type": "cccb5f2b7776604a6af0828da14ca16a3a723154",
+              "position": {
+                "x": 560,
+                "y": 432
+              },
+              "size": {
+                "width": 96,
+                "height": 64
+              }
+            },
+            {
+              "id": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
+              "type": "cccb5f2b7776604a6af0828da14ca16a3a723154",
+              "position": {
+                "x": 552,
+                "y": 232
+              },
+              "size": {
+                "width": 96,
+                "height": 64
+              }
+            },
+            {
+              "id": "a2c68a7b-7dc0-46d7-8f94-f14c59ea8c07",
+              "type": "basic.info",
+              "data": {
+                "info": "1/3 Vcc   Trigger\n",
+                "readonly": true
+              },
+              "position": {
+                "x": 256,
+                "y": 408
+              },
+              "size": {
+                "width": 176,
+                "height": 32
+              }
+            },
+            {
+              "id": "bbecaa09-8e05-47bc-8b83-a6e27d50c683",
+              "type": "basic.info",
+              "data": {
+                "info": "2/3 Vcc  (Trigger x2)+ Control\n",
+                "readonly": true
+              },
+              "position": {
+                "x": 248,
+                "y": 288
+              },
+              "size": {
+                "width": 304,
+                "height": 32
+              }
+            },
+            {
+              "id": "56a0e822-190f-4c9d-9259-35643e45aae4",
+              "type": "basic.info",
+              "data": {
+                "info": "En un Ne555 Analógico tenemos una \ntensión de alimentación Vcc y un divisor\nde tensión con el cual aplicamos una tensión\nde 1/3 Vcc en entrada + del comparador 1\ny 2/3 Vcc en la entrada - del comparador 2.\n\nAquí aplicamos el simil digital (divisor de V\ncon dos resistencias de igual valor )\nconfigurando mediante \"Trigger\" el valor\nde 1/3 Vcc y  \"Trigger x 2\" el valor de 2/3 Vcc.\n\n Ejemplo: Si \"Trigger\" = 10                => 1/3 Vcc\n             \"(Trigger x 2)+Control \" = 20 => 2/3 Vcc + VControl\n                      ",
+                "readonly": true
+              },
+              "position": {
+                "x": 736,
+                "y": -88
+              },
+              "size": {
+                "width": 624,
+                "height": 272
+              }
+            },
+            {
+              "id": "18da2321-1523-4e9a-8382-fd203b80aecf",
+              "type": "basic.info",
+              "data": {
+                "info": "1",
+                "readonly": true
+              },
+              "position": {
+                "x": 592,
+                "y": 392
+              },
+              "size": {
+                "width": 64,
+                "height": 32
+              }
+            },
+            {
+              "id": "b5813742-c0f4-4bcf-afe2-12931a028ab7",
+              "type": "basic.info",
+              "data": {
+                "info": "2",
+                "readonly": true
+              },
+              "position": {
+                "x": 584,
+                "y": 192
+              },
+              "size": {
+                "width": 64,
+                "height": 32
+              }
+            },
+            {
+              "id": "3d8c1342-1efb-445e-8e06-f131ec666486",
+              "type": "basic.info",
+              "data": {
+                "info": "\nMediante la señal de \"control\" se\npuede aumentar la tensión de umbral THRESHOLD.\n (Trigger x 2 + Control)",
+                "readonly": true
+              },
+              "position": {
+                "x": -408,
+                "y": -16
+              },
+              "size": {
+                "width": 448,
+                "height": 112
+              }
+            },
+            {
+              "id": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+              "type": "6179c27f46d2936acc9b11b7aa065a1450eb3917",
+              "position": {
+                "x": 24,
+                "y": 72
+              },
+              "size": {
+                "width": 96,
+                "height": 64
+              }
+            },
+            {
+              "id": "eed2bd15-0422-4846-89af-fdaf01bbc79c",
+              "type": "basic.info",
+              "data": {
+                "info": "DISCH: 0 Debe activar descarga del Cond Externo (Contador)\n       1 Debe activar Carga del Cond. Externo (Contador)\n       \n       El Equivalente del Condensador digital se puede\n       realizar con un contador Up-Down (Carga-Descarga)",
+                "readonly": false
+              },
+              "position": {
+                "x": 800,
+                "y": 424
+              },
+              "size": {
+                "width": 512,
+                "height": 128
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "dba5917b-3904-4ace-a10e-12910bce6a84",
+                "port": "out"
+              },
+              "target": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "input-rst"
+              }
+            },
+            {
+              "source": {
+                "block": "f278b99e-314b-4463-8589-554daa98d341",
+                "port": "out"
+              },
+              "target": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "input-clk"
+              },
+              "vertices": [
+                {
+                  "x": 720,
+                  "y": 32
+                }
+              ]
+            },
+            {
+              "source": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "215cac53-baac-4871-a582-15f5139e23b2"
+              },
+              "target": {
+                "block": "10955a62-4d6b-49bf-b16c-bcbd9a53d099",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "3a4e890e-c1b1-47b6-bd3b-b27e26605f35"
+              },
+              "target": {
+                "block": "ab3567b0-18a3-4d5b-8e67-38e6a445baa4",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "dadfac33-4280-4bcf-80e5-83a671f14a57",
+                "port": "out"
+              },
+              "target": {
+                "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
+                "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
+                "port": "output-Mayor"
+              },
+              "target": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "input-r"
+              },
+              "vertices": [
+                {
+                  "x": 696,
+                  "y": 288
+                }
+              ]
+            },
+            {
+              "source": {
+                "block": "72682d1d-d946-4bc1-910c-9d9b42e1205d",
+                "port": "out"
+              },
+              "target": {
+                "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
+                "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
+                "port": "output-Mayor"
+              },
+              "target": {
+                "block": "c766d843-ebca-4010-b720-962ef099c08b",
+                "port": "input-s"
+              },
+              "vertices": [
+                {
+                  "x": 696,
+                  "y": 400
+                }
+              ]
+            },
+            {
+              "source": {
+                "block": "3988034f-8468-442a-ae3e-4b97e4d270bc",
+                "port": "out"
+              },
+              "target": {
+                "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+                "port": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+                "port": "e2762678-de79-45f9-8bb2-7242058bb44b"
+              },
+              "target": {
+                "block": "19e12d86-3baa-4c22-802e-9111c08a7582",
+                "port": "f9076a11-3d75-4115-8809-571e2de26b9e"
+              },
+              "vertices": [
+                {
+                  "x": 200,
+                  "y": 312
+                }
+              ],
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "fff35b4f-5c08-48aa-b7ee-576a6326d3e7",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+                "port": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2"
+              }
+            },
+            {
+              "source": {
+                "block": "a7fca15c-f85f-4136-8c0a-2bfb47abb8bc",
+                "port": "d0b4b4e5-f4fc-472d-82b7-6e422228f077"
+              },
+              "target": {
+                "block": "c01f84de-c671-4ee0-9b6a-42a3ee9ef780",
+                "port": "cc6b28e0-6241-43f2-8ab2-985541e36239"
+              },
+              "vertices": [
+                {
+                  "x": 232,
+                  "y": 200
+                },
+                {
+                  "x": 232,
+                  "y": 232
+                }
+              ],
               "size": 16
             }
           ]
         },
         "state": {
           "pan": {
-            "x": 67,
-            "y": 165.5
+            "x": 340.4615,
+            "y": 168.7579
           },
-          "zoom": 1
+          "zoom": 0.7364
         }
       }
     },
@@ -1038,6 +1450,284 @@
           "pan": {
             "x": -14,
             "y": 26.5
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "6179c27f46d2936acc9b11b7aa065a1450eb3917": {
+      "package": {
+        "name": "Triggers NE555",
+        "version": "1.0",
+        "description": "Simular Triggers de 2/3 Vcc y  1/3 Vcc",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
+              "type": "basic.output",
+              "data": {
+                "name": "Trigger2",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 872,
+                "y": 224
+              }
+            },
+            {
+              "id": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc",
+              "type": "basic.input",
+              "data": {
+                "name": "Control",
+                "range": "[15:0]",
+                "clock": false,
+                "size": 16
+              },
+              "position": {
+                "x": 88,
+                "y": 280
+              }
+            },
+            {
+              "id": "e2762678-de79-45f9-8bb2-7242058bb44b",
+              "type": "basic.output",
+              "data": {
+                "name": "Trigger1",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 872,
+                "y": 344
+              }
+            },
+            {
+              "id": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
+              "type": "basic.constant",
+              "data": {
+                "name": "Trigger",
+                "value": "20000",
+                "local": false
+              },
+              "position": {
+                "x": 480,
+                "y": 64
+              }
+            },
+            {
+              "id": "451264f2-540c-4969-8734-20d58349dab2",
+              "type": "basic.info",
+              "data": {
+                "info": "\nComo salidas de 16 bits (2^16= 65536 [0..65535]) y como usaré\ncontadores de 16 bits para simular los condensadores que se añaden al NE555 \nno debo superar 32767 por que si no, el contador nunca podrá superar al segundo\ntrigger.\nAñado una tensión de control ( con signo ) con la cual podría variar\nla tensión umbral de THRESHOLD del Ne555",
+                "readonly": false
+              },
+              "position": {
+                "x": 240,
+                "y": -136
+              },
+              "size": {
+                "width": 656,
+                "height": 176
+              }
+            },
+            {
+              "id": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+              "type": "basic.code",
+              "data": {
+                "code": "\nwire signed[15:0] q=Control;\n\nlocalparam t1=Trigger,t2=Trigger*2; \n\n\nassign Trigger1=t1;\nassign Trigger2=t2+q;\n\n\n",
+                "params": [
+                  {
+                    "name": "Trigger"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "Control",
+                      "range": "[15:0]",
+                      "size": 16
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "Trigger2",
+                      "range": "[15:0]",
+                      "size": 16
+                    },
+                    {
+                      "name": "Trigger1",
+                      "range": "[15:0]",
+                      "size": 16
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 312,
+                "y": 192
+              },
+              "size": {
+                "width": 432,
+                "height": 240
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "c9c247de-d1ea-4c1c-b94b-f0df52fd16e2",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger"
+              }
+            },
+            {
+              "source": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger1"
+              },
+              "target": {
+                "block": "e2762678-de79-45f9-8bb2-7242058bb44b",
+                "port": "in"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Trigger2"
+              },
+              "target": {
+                "block": "d0b4b4e5-f4fc-472d-82b7-6e422228f077",
+                "port": "in"
+              },
+              "size": 16
+            },
+            {
+              "source": {
+                "block": "b9e018cc-94bb-43fe-bd95-47f3d7d72fdc",
+                "port": "out"
+              },
+              "target": {
+                "block": "e5d9e4c7-350c-429d-b9f5-350709f4dd83",
+                "port": "Control"
+              },
+              "size": 16
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 163,
+            "y": 197.5
+          },
+          "zoom": 1
+        }
+      }
+    },
+    "1fd50aa8caccd0ab3c116052dc37a926d5d29c78": {
+      "package": {
+        "name": "16 bits constant",
+        "version": "1.0",
+        "description": "16 bits constant",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+              "type": "basic.constant",
+              "data": {
+                "name": "numero",
+                "value": "",
+                "local": false
+              },
+              "position": {
+                "x": 448,
+                "y": 72
+              }
+            },
+            {
+              "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+              "type": "basic.code",
+              "data": {
+                "code": "\nassign num=n;",
+                "params": [
+                  {
+                    "name": "n"
+                  }
+                ],
+                "ports": {
+                  "in": [],
+                  "out": [
+                    {
+                      "name": "num",
+                      "range": "[15:0]",
+                      "size": 16
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 384,
+                "y": 184
+              },
+              "size": {
+                "width": 224,
+                "height": 80
+              }
+            },
+            {
+              "id": "92857b35-250e-46fb-8019-f7a220ce6091",
+              "type": "basic.output",
+              "data": {
+                "name": "Const",
+                "range": "[15:0]",
+                "size": 16
+              },
+              "position": {
+                "x": 768,
+                "y": 192
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+                "port": "n"
+              }
+            },
+            {
+              "source": {
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+                "port": "num"
+              },
+              "target": {
+                "block": "92857b35-250e-46fb-8019-f7a220ce6091",
+                "port": "in"
+              },
+              "size": 16
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": 67,
+            "y": 177.5
           },
           "zoom": 1
         }
