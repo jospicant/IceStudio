@@ -12,6 +12,25 @@
     "graph": {
       "blocks": [
         {
+          "id": "f5614157-0fa4-4a4d-94a4-e8a133aa4979",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D1",
+                "value": "99"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1080,
+            "y": 224
+          }
+        },
+        {
           "id": "71bd60d9-39c3-4f16-918a-37071a101530",
           "type": "b734f60cce5a9de8621cbbd63cf95b689e40512c",
           "position": {
@@ -61,25 +80,6 @@
           }
         },
         {
-          "id": "f5614157-0fa4-4a4d-94a4-e8a133aa4979",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D1",
-                "value": "99"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 1080,
-            "y": 224
-          }
-        },
-        {
           "id": "aa06d5f9-5e6c-47e6-802d-1becd4fc2416",
           "type": "fec7ff39e4c71bcdf0ca03690e64aab18405ad25",
           "position": {
@@ -95,15 +95,15 @@
           "id": "33e7e62f-a1c2-4a2f-af34-c345581f877e",
           "type": "basic.info",
           "data": {
-            "info": "\n¿Qué pasaría si sintetizo el bloque superior? ¿Me cortocicuitaría out y dañaría la FPGA y el D1?\nNo, el sintetizador parece que prevee y sintentiza añadiendo a la salida una OR produciendo a la \nsalida un 1 lógico.\nSin embargo Icestudio no permite poner dos salidas juntas. Pero como código verilog SI.\n"
+            "info": "\n¿Qué pasaría si sintetizo el bloque superior? ¿Me cortocicuitaría out y dañaría la FPGA y el D1?\nNo, el sintetizador parece que prevee y sintentiza añadiendo a la salida una OR produciendo a la \nsalida un 1 lógico.\nSinembargo Icestudio no permite poner dos salidas juntas. Pero como código verilog SI.\n"
           },
           "position": {
             "x": 320,
             "y": 352
           },
           "size": {
-            "width": 848,
-            "height": 112
+            "width": 864,
+            "height": 176
           }
         }
       ],
@@ -174,10 +174,10 @@
     },
     "state": {
       "pan": {
-        "x": 45.2857,
-        "y": -1.4194
+        "x": -261.8889,
+        "y": -11.6481
       },
-      "zoom": 0.8815
+      "zoom": 0.9676
     }
   },
   "dependencies": {

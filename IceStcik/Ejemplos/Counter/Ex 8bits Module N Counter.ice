@@ -8,7 +8,7 @@
     "image": ""
   },
   "design": {
-    "board": "icestick",
+    "board": "iCE40-HX8K",
     "graph": {
       "blocks": [
         {
@@ -19,8 +19,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "D5",
-                "value": "95"
+                "name": "LED7",
+                "value": "C3"
               }
             ],
             "virtual": false
@@ -28,6 +28,61 @@
           "position": {
             "x": 336,
             "y": 40
+          }
+        },
+        {
+          "id": "ad4c9abd-f2a5-409f-9fe7-40fe1ec62c19",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "range": "[7:0]",
+            "pins": [
+              {
+                "index": "7",
+                "name": "N16",
+                "value": "N16"
+              },
+              {
+                "index": "6",
+                "name": "LED6",
+                "value": "B3"
+              },
+              {
+                "index": "5",
+                "name": "LED5",
+                "value": "C4"
+              },
+              {
+                "index": "4",
+                "name": "LED4",
+                "value": "C5"
+              },
+              {
+                "index": "3",
+                "name": "LED3",
+                "value": "A1"
+              },
+              {
+                "index": "2",
+                "name": "LED2",
+                "value": "A2"
+              },
+              {
+                "index": "1",
+                "name": "LED1",
+                "value": "B4"
+              },
+              {
+                "index": "0",
+                "name": "LED0",
+                "value": "B5"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 832,
+            "y": 128
           }
         },
         {
@@ -41,61 +96,6 @@
           "position": {
             "x": 592,
             "y": 112
-          }
-        },
-        {
-          "id": "ad4c9abd-f2a5-409f-9fe7-40fe1ec62c19",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "range": "[7:0]",
-            "pins": [
-              {
-                "index": "7",
-                "name": "PMOD4",
-                "value": "81"
-              },
-              {
-                "index": "6",
-                "name": "PMOD3",
-                "value": "80"
-              },
-              {
-                "index": "5",
-                "name": "PMOD2",
-                "value": "79"
-              },
-              {
-                "index": "4",
-                "name": "PMOD1",
-                "value": "78"
-              },
-              {
-                "index": "3",
-                "name": "D4",
-                "value": "96"
-              },
-              {
-                "index": "2",
-                "name": "D3",
-                "value": "97"
-              },
-              {
-                "index": "1",
-                "name": "D2",
-                "value": "98"
-              },
-              {
-                "index": "0",
-                "name": "D1",
-                "value": "99"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 832,
-            "y": 128
           }
         },
         {
@@ -132,6 +132,22 @@
           "size": {
             "width": 96,
             "height": 64
+          }
+        },
+        {
+          "id": "cee0e963-fd43-484d-9da7-0bc4a448bb80",
+          "type": "basic.info",
+          "data": {
+            "info": "\nCuenta 0,1,2,3,4 y vuelve a 0,1,2,3,4",
+            "readonly": false
+          },
+          "position": {
+            "x": 512,
+            "y": -56
+          },
+          "size": {
+            "width": 432,
+            "height": 112
           }
         }
       ],
@@ -191,8 +207,8 @@
     },
     "state": {
       "pan": {
-        "x": 23,
-        "y": 61.5
+        "x": 163,
+        "y": 89.5
       },
       "zoom": 1
     }
