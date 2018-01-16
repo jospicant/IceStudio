@@ -27,7 +27,7 @@
           },
           "position": {
             "x": 1344,
-            "y": 328
+            "y": 320
           }
         },
         {
@@ -39,8 +39,8 @@
             "local": false
           },
           "position": {
-            "x": 608,
-            "y": 64
+            "x": 504,
+            "y": 72
           }
         },
         {
@@ -52,7 +52,7 @@
             "local": false
           },
           "position": {
-            "x": 792,
+            "x": 712,
             "y": 64
           }
         },
@@ -73,7 +73,7 @@
           "id": "d3626c2e-87f4-403a-b0cf-5ff05c00c5ba",
           "type": "basic.code",
           "data": {
-            "code": "\ninteger A=a,B=b;\nreg[1:-6] C;  //8 decimales 2.6\n              //2 enteros y 6 decimales\n              //formato punto fijo\n\nalways @(posedge clk)\nbegin\n  C<=A+B;\nend\n\nassign c=C;",
+            "code": "\ninteger A=a,B=b;\nreg[1:-6] C;  //8 números 2.6\n              //2 enteros y 6 decimales\n              //formato punto fijo\n\nalways @(posedge clk)\nbegin\n  C<=A+B;\nend\n\nassign c=C;",
             "params": [
               {
                 "name": "a"
@@ -98,12 +98,12 @@
             }
           },
           "position": {
-            "x": 560,
-            "y": 208
+            "x": 448,
+            "y": 184
           },
           "size": {
-            "width": 368,
-            "height": 240
+            "width": 416,
+            "height": 272
           }
         },
         {
@@ -111,7 +111,7 @@
           "type": "b5390ad427a44ba66c02aab0c3d494962b93a213",
           "position": {
             "x": 1160,
-            "y": 312
+            "y": 304
           },
           "size": {
             "width": 96,

@@ -1,9 +1,9 @@
 {
   "version": "1.1",
   "package": {
-    "name": "8 bits constant",
-    "version": "1.0",
-    "description": "Constante 8 bits",
+    "name": "A-B",
+    "version": "v1.0",
+    "description": "Suma,resta y negación",
     "author": "José Picó",
     "image": ""
   },
@@ -12,10 +12,10 @@
     "graph": {
       "blocks": [
         {
-          "id": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
+          "id": "e451b8c2-1d39-4727-879c-6a1f78a18fe8",
           "type": "basic.output",
           "data": {
-            "name": "Const",
+            "name": "Resta",
             "range": "[7:0]",
             "pins": [
               {
@@ -67,33 +67,65 @@
           }
         },
         {
-          "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+          "id": "d9f216d6-20a2-4b2c-afa2-1b696db90f3a",
           "type": "basic.constant",
           "data": {
-            "name": "numero",
+            "name": "A",
             "value": "",
             "local": false
           },
           "position": {
             "x": 448,
-            "y": 72
+            "y": 56
           }
         },
         {
-          "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+          "id": "b7b2afad-fba3-4df3-adc8-19bc35d7903d",
+          "type": "basic.constant",
+          "data": {
+            "name": "B",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 568,
+            "y": 56
+          }
+        },
+        {
+          "id": "7455b8fb-c5aa-4f1b-9529-648f617c748b",
+          "type": "basic.info",
+          "data": {
+            "info": "\n  Módulo para poder estudiar como realiza la resta.\n\n  Tratará los resultados negativos en Complemento\n  a 2 ( Ca2 ) ?",
+            "readonly": false
+          },
+          "position": {
+            "x": 352,
+            "y": -88
+          },
+          "size": {
+            "width": 448,
+            "height": 128
+          }
+        },
+        {
+          "id": "e1f36b29-1191-4b27-a529-7ffdee4bddf7",
           "type": "basic.code",
           "data": {
-            "code": "\nassign num=n;",
+            "code": "\nassign resta=A-B;\n\n",
             "params": [
               {
-                "name": "n"
+                "name": "A"
+              },
+              {
+                "name": "B"
               }
             ],
             "ports": {
               "in": [],
               "out": [
                 {
-                  "name": "num",
+                  "name": "resta",
                   "range": "[7:0]",
                   "size": 8
                 }
@@ -101,49 +133,43 @@
             }
           },
           "position": {
-            "x": 384,
-            "y": 184
+            "x": 432,
+            "y": 176
           },
           "size": {
-            "width": 224,
-            "height": 80
-          }
-        },
-        {
-          "id": "91b6911a-fe3b-4297-afcf-483eeddd8f66",
-          "type": "basic.info",
-          "data": {
-            "info": "\nBloque donde se asigna a la salida \"num\" de 8 bits el valor\nintroducido como constante en la casilla \"numero\".\nSi se introducen valores decimales se ttratará como un número \nentero ( hasta 32 bits ) y los números negativos los tratará en\nComplemento a 2.\nSi introducimos -8 lo tratará como el Ca2 de 8 = -8 que en binario\nes 11111000 ( para 8 bits en este caso ).\n",
-            "readonly": false
-          },
-          "position": {
-            "x": 304,
-            "y": -120
-          },
-          "size": {
-            "width": 592,
-            "height": 176
+            "width": 240,
+            "height": 96
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+            "block": "d9f216d6-20a2-4b2c-afa2-1b696db90f3a",
             "port": "constant-out"
           },
           "target": {
-            "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
-            "port": "n"
+            "block": "e1f36b29-1191-4b27-a529-7ffdee4bddf7",
+            "port": "A"
           }
         },
         {
           "source": {
-            "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
-            "port": "num"
+            "block": "b7b2afad-fba3-4df3-adc8-19bc35d7903d",
+            "port": "constant-out"
           },
           "target": {
-            "block": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
+            "block": "e1f36b29-1191-4b27-a529-7ffdee4bddf7",
+            "port": "B"
+          }
+        },
+        {
+          "source": {
+            "block": "e1f36b29-1191-4b27-a529-7ffdee4bddf7",
+            "port": "resta"
+          },
+          "target": {
+            "block": "e451b8c2-1d39-4727-879c-6a1f78a18fe8",
             "port": "in"
           },
           "size": 8
@@ -152,8 +178,8 @@
     },
     "state": {
       "pan": {
-        "x": 67,
-        "y": 177.5
+        "x": 68,
+        "y": 224.5
       },
       "zoom": 1
     }
