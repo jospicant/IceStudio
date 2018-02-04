@@ -12,10 +12,29 @@
     "graph": {
       "blocks": [
         {
+          "id": "5262a500-6685-4435-bce2-159b52ce01ab",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D5",
+                "value": "95"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 984,
+            "y": 208
+          }
+        },
+        {
           "id": "e5e028fb-df10-49a1-a2d5-43cb6491c753",
           "type": "basic.info",
           "data": {
-            "info": "\n// Verilog Example of Sequential Logic:\n   This circuit generate a:\n   \n       AND(a,b)-->Flip Flop D--> out f"
+            "info": "\n// Verilog Example of Sequential Logic:\n   This circuit will generate a:\n   \n       AND(a,b)-->Flip Flop D--> out f"
           },
           "position": {
             "x": 456,
@@ -82,25 +101,6 @@
           "size": {
             "width": 96,
             "height": 64
-          }
-        },
-        {
-          "id": "5262a500-6685-4435-bce2-159b52ce01ab",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D5",
-                "value": "95"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 984,
-            "y": 208
           }
         },
         {
@@ -205,10 +205,10 @@
     },
     "state": {
       "pan": {
-        "x": 43,
-        "y": 83
+        "x": 33.7612,
+        "y": 135.8881
       },
-      "zoom": 1
+      "zoom": 0.7799
     }
   },
   "dependencies": {
