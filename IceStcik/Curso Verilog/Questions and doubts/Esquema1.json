@@ -1,0 +1,183 @@
+{
+  "creator": "Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)",
+  "modules": {
+    "main_v553349": {
+      "attributes": {
+        "top": 1,
+        "src": "01_BlockingAndNonBlocking.v:52"
+      },
+      "ports": {
+        "F": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "H": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "K": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "$and$01_BlockingAndNonBlocking.v:66$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:66"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 7 ]
+          }
+        },
+        "$or$01_BlockingAndNonBlocking.v:67$3": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:67"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 4 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$procdff$6": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:64"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 5 ],
+            "D": [ 7 ],
+            "Q": [ 8 ]
+          }
+        },
+        "$procdff$7": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:64"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 5 ],
+            "D": [ 9 ],
+            "Q": [ 6 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\I[0:0]": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:64"
+          }
+        },
+        "$0\\K[0:0]": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:64"
+          }
+        },
+        "F": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:53"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:54"
+          }
+        },
+        "H": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:55"
+          }
+        },
+        "I": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:62"
+          }
+        },
+        "K": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:57"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "01_BlockingAndNonBlocking.v:56"
+          }
+        }
+      }
+    }
+  }
+}

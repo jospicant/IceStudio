@@ -1,0 +1,24 @@
+digraph "SB_CARRY" {
+label="SB_CARRY";
+rankdir="LR";
+remincross=true;
+n6 [ shape=octagon, label="CI", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="I1", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="I0", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="CO", color="black", fontcolor="black" ];
+c13 [ shape=record, label="{{<p10> A|<p11> B}|$4\n$logic_or|{<p12> Y}}" ];
+c14 [ shape=record, label="{{<p10> A|<p11> B}|$3\n$logic_and|{<p12> Y}}" ];
+c15 [ shape=record, label="{{<p10> A|<p11> B}|$2\n$logic_or|{<p12> Y}}" ];
+c16 [ shape=record, label="{{<p10> A|<p11> B}|$1\n$logic_and|{<p12> Y}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+c13:p12:e -> x0:w:w [color="black", label=""];
+c14:p12:e -> c13:p11:w [color="black", label=""];
+c15:p12:e -> c14:p10:w [color="black", label=""];
+c16:p12:e -> c13:p10:w [color="black", label=""];
+n6:e -> c14:p11:w [color="black", label=""];
+n7:e -> c15:p11:w [color="black", label=""];
+n7:e -> c16:p11:w [color="black", label=""];
+n8:e -> c15:p10:w [color="black", label=""];
+n8:e -> c16:p10:w [color="black", label=""];
+x0:e:e -> n9:w [color="black", label=""];
+}

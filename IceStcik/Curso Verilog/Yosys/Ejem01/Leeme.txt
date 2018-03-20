@@ -1,0 +1,44 @@
+
+Dado un fichero Icestudio:
+
+Ejem01.ice
+
+Realizo la exportación a Verilog obteniendo:
+
+Ejem01.v
+
+Ejecutando:
+
+yosys -p "show" Ejem01.v
+
+me crea un fichero:
+
+show.dot
+
+Instalando "Graphviz" (visor gráfico con el cual puedo dibujar
+el resultado del fichero *.dot )
+
+Ejecuto:
+
+dot -Tpng  show.dot  -o  Ejem01.png
+
+obteniendo el dibujo en un fichero *.png
+
+Si uso:
+
+yosys -p "write_json Ejem01.json" Ejem01.v
+
+me creará un fichero:
+
+Ejem01.json
+
+Instalando nodejs
+
+Instalando "netlistsvg" que contiene una librería de componentes
+svg más adecuados pordré ver mejor el esquema creado.
+
+Ejecutando:
+
+node .....\bin\netlistsvg Ejem01.json -o Ejem01.svg 
+
+obtendremos un fichero *.svg muy adecuado.

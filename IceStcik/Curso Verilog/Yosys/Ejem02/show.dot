@@ -1,0 +1,57 @@
+digraph "main_vd5ba31" {
+label="main_vd5ba31";
+rankdir="LR";
+remincross=true;
+n4 [ shape=diamond, label="d", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="out", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="c", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="b", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="a", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p9> A|<p10> B}|$2\n$or|{<p11> Y}}" ];
+c13 [ shape=record, label="{{<p9> A|<p10> B}|$1\n$and|{<p11> Y}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x1 [shape=box, style=rounded, label="BUF"];
+c12:p11:e -> x1:w:w [color="black", label=""];
+c13:p11:e -> x0:w:w [color="black", label=""];
+x0:e:e -> n4:w [color="black", label=""];
+n4:e -> c12:p9:w [color="black", label=""];
+x1:e:e -> n5:w [color="black", label=""];
+n6:e -> c12:p10:w [color="black", label=""];
+n7:e -> c13:p10:w [color="black", label=""];
+n8:e -> c13:p9:w [color="black", label=""];
+}
+digraph "main" {
+label="main";
+rankdir="LR";
+remincross=true;
+n2 [ shape=diamond, label="w3", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="w2", color="black", fontcolor="black" ];
+n4 [ shape=diamond, label="w1", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="w0", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="vinit", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="v150ebc", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="vd21372", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="v341d0c", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="v59b961", color="black", fontcolor="black" ];
+c15 [ shape=record, label="{{<p11> a|<p12> b|<p13> c}|vd5ba31\nmain_vd5ba31|{<p14> out}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x1 [shape=box, style=rounded, label="BUF"];
+x2 [shape=box, style=rounded, label="BUF"];
+x3 [shape=box, style=rounded, label="BUF"];
+v4 [ label="4'0000" ];
+x5 [shape=box, style=rounded, label="BUF"];
+n10:e -> x0:w:w [color="black", label=""];
+c15:p14:e -> n2:w [color="black", label=""];
+n2:e -> x3:w:w [color="black", label=""];
+x2:e:e -> n3:w [color="black", label=""];
+n3:e -> c15:p13:w [color="black", label=""];
+x1:e:e -> n4:w [color="black", label=""];
+n4:e -> c15:p12:w [color="black", label=""];
+x0:e:e -> n5:w [color="black", label=""];
+n5:e -> c15:p11:w [color="black", label=""];
+x5:e:e -> n6:w [color="black", style="setlinewidth(3)", label=""];
+x3:e:e -> n7:w [color="black", label=""];
+n8:e -> x2:w:w [color="black", label=""];
+n9:e -> x1:w:w [color="black", label=""];
+v4:e -> x5:w:w [color="black", style="setlinewidth(3)", label=""];
+}

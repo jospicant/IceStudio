@@ -1,0 +1,184 @@
+{
+  "creator": "Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)",
+  "modules": {
+    "SB_CARRY": {
+      "attributes": {
+        "src": "modulo.v:2"
+      },
+      "ports": {
+        "CO": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "I0": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "I1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "CI": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$logic_or$modulo.v:8$4": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "modulo.v:8"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 2 ],
+            "B": [ 6 ],
+            "A": [ 7 ]
+          }
+        },
+        "$logic_and$modulo.v:8$3": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "modulo.v:8"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 6 ],
+            "B": [ 5 ],
+            "A": [ 8 ]
+          }
+        },
+        "$logic_or$modulo.v:8$2": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "modulo.v:8"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 8 ],
+            "B": [ 4 ],
+            "A": [ 3 ]
+          }
+        },
+        "$logic_and$modulo.v:8$1": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "modulo.v:8"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 7 ],
+            "B": [ 4 ],
+            "A": [ 3 ]
+          }
+        }
+      },
+      "netnames": {
+        "$logic_or$modulo.v:8$4_Y": {
+          "hide_name": 1,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "modulo.v:8"
+          }
+        },
+        "$logic_and$modulo.v:8$3_Y": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "modulo.v:8"
+          }
+        },
+        "$logic_or$modulo.v:8$2_Y": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "modulo.v:8"
+          }
+        },
+        "$logic_and$modulo.v:8$1_Y": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "modulo.v:8"
+          }
+        },
+        "CI": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "modulo.v:6"
+          }
+        },
+        "I1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "modulo.v:5"
+          }
+        },
+        "I0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "modulo.v:4"
+          }
+        },
+        "CO": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "modulo.v:3"
+          }
+        }
+      }
+    }
+  }
+}
