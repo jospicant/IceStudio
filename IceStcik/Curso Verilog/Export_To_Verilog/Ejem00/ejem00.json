@@ -1,0 +1,231 @@
+{
+  "creator": "Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)",
+  "modules": {
+    "main": {
+      "attributes": {
+        "top": 1,
+        "src": "Ejem00.v:6"
+      },
+      "ports": {
+        "v6b373b": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "vdc365b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "v1e8eaf": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "v02b1d1": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "vinit": {
+          "direction": "output",
+          "bits": [ "0", "0", "0", "0", "0" ]
+        }
+      },
+      "cells": {
+        "vd5ba31": {
+          "hide_name": 0,
+          "type": "main_vd5ba31",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem00.v:21"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "input",
+            "out": "output"
+          },
+          "connections": {
+            "a": [ 2 ],
+            "b": [ 3 ],
+            "c": [ 4 ],
+            "out": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "v02b1d1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "Ejem00.v:10"
+          }
+        },
+        "v1e8eaf": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem00.v:9"
+          }
+        },
+        "v6b373b": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem00.v:7"
+          }
+        },
+        "vdc365b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem00.v:8"
+          }
+        },
+        "vinit": {
+          "hide_name": 0,
+          "bits": [ "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "Ejem00.v:11"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem00.v:13"
+          }
+        },
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem00.v:14"
+          }
+        },
+        "w2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem00.v:15"
+          }
+        },
+        "w3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "Ejem00.v:16"
+          }
+        }
+      }
+    },
+    "main_vd5ba31": {
+      "attributes": {
+        "src": "Ejem00.v:30"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "c": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "out": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$and$Ejem00.v:40$1": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "Ejem00.v:40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$or$Ejem00.v:41$2": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "Ejem00.v:41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 4 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem00.v:31"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem00.v:32"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem00.v:33"
+          }
+        },
+        "d": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "Ejem00.v:38"
+          }
+        },
+        "out": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "Ejem00.v:34"
+          }
+        }
+      }
+    }
+  }
+}
