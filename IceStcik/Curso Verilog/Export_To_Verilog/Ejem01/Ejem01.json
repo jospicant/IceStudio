@@ -1,0 +1,610 @@
+{
+  "creator": "Yosys 0.7 (git sha1 61f6811, i686-w64-mingw32.static-gcc 4.9.3 -Os)",
+  "modules": {
+    "v7f3e9f_vd54ca1": {
+      "attributes": {
+        "src": "Ejem01.v:122"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+        "$not$Ejem01.v:131$3": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "A_WIDTH": 1,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "Ejem01.v:131"
+          },
+          "port_directions": {
+            "Y": "output",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 3 ],
+            "A": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "$not$Ejem01.v:131$3_Y": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:131"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:124"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:123"
+          }
+        }
+      }
+    },
+    "v7f3e9f": {
+      "attributes": {
+        "src": "Ejem01.v:108"
+      },
+      "ports": {
+        "v0e28cb": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "vcbab45": {
+          "direction": "output",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+        "vd54ca1": {
+          "hide_name": 0,
+          "type": "v7f3e9f_vd54ca1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:116"
+          },
+          "port_directions": {
+            "c": "output",
+            "a": "input"
+          },
+          "connections": {
+            "c": [ 3 ],
+            "a": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:113"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:112"
+          }
+        },
+        "vcbab45": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:110"
+          }
+        },
+        "v0e28cb": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:109"
+          }
+        }
+      }
+    },
+    "v3f1160_vf4938a": {
+      "attributes": {
+        "src": "Ejem01.v:91"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "$or$Ejem01.v:102$2": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "Ejem01.v:102"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 4 ],
+            "B": [ 3 ],
+            "A": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "$or$Ejem01.v:102$2_Y": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:102"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:94"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:93"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:92"
+          }
+        }
+      }
+    },
+    "v3f1160": {
+      "attributes": {
+        "src": "Ejem01.v:73"
+      },
+      "ports": {
+        "v0e28cb": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "v3ca442": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "vcbab45": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "vf4938a": {
+          "hide_name": 0,
+          "type": "v3f1160_vf4938a",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:84"
+          },
+          "port_directions": {
+            "c": "output",
+            "b": "input",
+            "a": "input"
+          },
+          "connections": {
+            "c": [ 4 ],
+            "b": [ 3 ],
+            "a": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "w2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:80"
+          }
+        },
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:79"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:78"
+          }
+        },
+        "vcbab45": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:76"
+          }
+        },
+        "v3ca442": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:75"
+          }
+        },
+        "v0e28cb": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:74"
+          }
+        }
+      }
+    },
+    "vb8ea79_vf4938a": {
+      "attributes": {
+        "src": "Ejem01.v:58"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "$and$Ejem01.v:68$1": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "Y_WIDTH": 1,
+            "B_WIDTH": 1,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "A_SIGNED": 0
+          },
+          "attributes": {
+            "src": "Ejem01.v:68"
+          },
+          "port_directions": {
+            "Y": "output",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "Y": [ 4 ],
+            "B": [ 3 ],
+            "A": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "$and$Ejem01.v:68$1_Y": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:68"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:61"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:60"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:59"
+          }
+        }
+      }
+    },
+    "vb8ea79": {
+      "attributes": {
+        "src": "Ejem01.v:40"
+      },
+      "ports": {
+        "v0e28cb": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "v3ca442": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "vcbab45": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "vf4938a": {
+          "hide_name": 0,
+          "type": "vb8ea79_vf4938a",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:51"
+          },
+          "port_directions": {
+            "c": "output",
+            "b": "input",
+            "a": "input"
+          },
+          "connections": {
+            "c": [ 4 ],
+            "b": [ 3 ],
+            "a": [ 2 ]
+          }
+        }
+      },
+      "netnames": {
+        "w2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:47"
+          }
+        },
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:46"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:45"
+          }
+        },
+        "vcbab45": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:43"
+          }
+        },
+        "v3ca442": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:42"
+          }
+        },
+        "v0e28cb": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:41"
+          }
+        }
+      }
+    },
+    "main": {
+      "attributes": {
+        "src": "Ejem01.v:6"
+      },
+      "ports": {
+        "v476ca1": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "vc114a5": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "va18244": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "v019e5a": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "vinit": {
+          "direction": "output",
+          "bits": [ "0", "0", "0", "0" ]
+        }
+      },
+      "cells": {
+        "v0341db": {
+          "hide_name": 0,
+          "type": "v7f3e9f",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:33"
+          },
+          "port_directions": {
+            "v0e28cb": "input",
+            "vcbab45": "output"
+          },
+          "connections": {
+            "v0e28cb": [ 4 ],
+            "vcbab45": [ 6 ]
+          }
+        },
+        "vf19fb7": {
+          "hide_name": 0,
+          "type": "v3f1160",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:28"
+          },
+          "port_directions": {
+            "vcbab45": "output",
+            "v3ca442": "input",
+            "v0e28cb": "input"
+          },
+          "connections": {
+            "vcbab45": [ 5 ],
+            "v3ca442": [ 6 ],
+            "v0e28cb": [ 7 ]
+          }
+        },
+        "v6a98ff": {
+          "hide_name": 0,
+          "type": "vb8ea79",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "Ejem01.v:23"
+          },
+          "port_directions": {
+            "v3ca442": "input",
+            "v0e28cb": "input",
+            "vcbab45": "output"
+          },
+          "connections": {
+            "v3ca442": [ 3 ],
+            "v0e28cb": [ 2 ],
+            "vcbab45": [ 7 ]
+          }
+        }
+      },
+      "netnames": {
+        "w5": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "Ejem01.v:18"
+          }
+        },
+        "w4": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:17"
+          }
+        },
+        "w3": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:16"
+          }
+        },
+        "w2": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:15"
+          }
+        },
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "Ejem01.v:14"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "Ejem01.v:13"
+          }
+        },
+        "vinit": {
+          "hide_name": 0,
+          "bits": [ "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "Ejem01.v:11"
+          }
+        },
+        "v019e5a": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "Ejem01.v:10"
+          }
+        },
+        "va18244": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "Ejem01.v:9"
+          }
+        },
+        "vc114a5": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "Ejem01.v:8"
+          }
+        },
+        "v476ca1": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "Ejem01.v:7"
+          }
+        }
+      }
+    }
+  }
+}
