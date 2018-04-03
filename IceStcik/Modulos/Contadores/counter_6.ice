@@ -1,9 +1,9 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 5 bits",
+    "name": "Count_6bits",
     "version": "1.0",
-    "description": "0,1,2,3...n (16 bits)",
+    "description": "0,1,2,3...n ",
     "author": "José Picó",
     "image": ""
   },
@@ -32,12 +32,17 @@
           }
         },
         {
-          "id": "aafccbfd-e816-4545-b74b-6381310a0240",
+          "id": "2a338da3-d1b0-45ef-bdc4-ff64bd3f4374",
           "type": "basic.output",
           "data": {
             "name": "out",
-            "range": "[4:0]",
+            "range": "[5:0]",
             "pins": [
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
               {
                 "index": "4",
                 "name": "",
@@ -75,7 +80,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 5 bits counter\n\nreg [4:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
+            "code": "// 6 bits counter\n\nreg [5:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
             "params": [],
             "ports": {
               "in": [
@@ -86,8 +91,8 @@
               "out": [
                 {
                   "name": "d",
-                  "range": "[4:0]",
-                  "size": 5
+                  "range": "[5:0]",
+                  "size": 6
                 }
               ]
             }
@@ -119,10 +124,10 @@
             "port": "d"
           },
           "target": {
-            "block": "aafccbfd-e816-4545-b74b-6381310a0240",
+            "block": "2a338da3-d1b0-45ef-bdc4-ff64bd3f4374",
             "port": "in"
           },
-          "size": 5
+          "size": 6
         }
       ]
     },

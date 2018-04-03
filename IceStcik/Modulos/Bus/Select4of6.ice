@@ -1,9 +1,9 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 5 bits",
+    "name": "4 LSB de 6",
     "version": "1.0",
-    "description": "0,1,2,3...n (16 bits)",
+    "description": "Selecciona los 4 bits menos significativos de un total de 6",
     "author": "José Picó",
     "image": ""
   },
@@ -12,32 +12,17 @@
     "graph": {
       "blocks": [
         {
-          "id": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
+          "id": "38263657-07c3-4651-8bf1-574b22e2d00f",
           "type": "basic.input",
           "data": {
-            "name": "clk",
+            "name": "in",
+            "range": "[5:0]",
             "pins": [
               {
-                "index": "0",
+                "index": "5",
                 "name": "",
                 "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": 128,
-            "y": 176
-          }
-        },
-        {
-          "id": "aafccbfd-e816-4545-b74b-6381310a0240",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "range": "[4:0]",
-            "pins": [
+              },
               {
                 "index": "4",
                 "name": "",
@@ -64,72 +49,111 @@
                 "value": "0"
               }
             ],
-            "virtual": true
+            "virtual": true,
+            "clock": false
           },
           "position": {
-            "x": 712,
-            "y": 176
+            "x": 360,
+            "y": 304
           }
         },
         {
-          "id": "17174045-a45c-4f73-8dd4-50651082b454",
+          "id": "51c1044e-4560-4320-bbe6-c5e6f77bbcf1",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "range": "[3:0]",
+            "pins": [
+              {
+                "index": "3",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": "0"
+              },
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true
+          },
+          "position": {
+            "x": 888,
+            "y": 304
+          }
+        },
+        {
+          "id": "e32de015-3ee4-421c-9218-78bc71063d2a",
           "type": "basic.code",
           "data": {
-            "code": "// 5 bits counter\n\nreg [4:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
+            "code": "\nassign out[3:0]=in[3:0];",
             "params": [],
             "ports": {
               "in": [
                 {
-                  "name": "clk"
+                  "name": "in",
+                  "range": "[5:0]",
+                  "size": 6
                 }
               ],
               "out": [
                 {
-                  "name": "d",
-                  "range": "[4:0]",
-                  "size": 5
+                  "name": "out",
+                  "range": "[3:0]",
+                  "size": 4
                 }
               ]
             }
           },
           "position": {
-            "x": 320,
-            "y": 136
+            "x": 512,
+            "y": 296
           },
           "size": {
-            "width": 320,
-            "height": 144
+            "width": 288,
+            "height": 80
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
+            "block": "38263657-07c3-4651-8bf1-574b22e2d00f",
             "port": "out"
           },
           "target": {
-            "block": "17174045-a45c-4f73-8dd4-50651082b454",
-            "port": "clk"
-          }
+            "block": "e32de015-3ee4-421c-9218-78bc71063d2a",
+            "port": "in"
+          },
+          "size": 6
         },
         {
           "source": {
-            "block": "17174045-a45c-4f73-8dd4-50651082b454",
-            "port": "d"
+            "block": "e32de015-3ee4-421c-9218-78bc71063d2a",
+            "port": "out"
           },
           "target": {
-            "block": "aafccbfd-e816-4545-b74b-6381310a0240",
+            "block": "51c1044e-4560-4320-bbe6-c5e6f77bbcf1",
             "port": "in"
           },
-          "size": 5
+          "size": 4
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -10,
-        "y": 74.5
+        "x": -214,
+        "y": -53.5
       },
       "zoom": 1
     }

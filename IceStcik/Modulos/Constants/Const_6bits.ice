@@ -1,9 +1,9 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 5 bits",
+    "name": "5 bits Constant",
     "version": "1.0",
-    "description": "0,1,2,3...n (16 bits)",
+    "description": "Constante 4 bits",
     "author": "José Picó",
     "image": ""
   },
@@ -12,32 +12,17 @@
     "graph": {
       "blocks": [
         {
-          "id": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
-          "type": "basic.input",
-          "data": {
-            "name": "clk",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": "0"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": 128,
-            "y": 176
-          }
-        },
-        {
-          "id": "aafccbfd-e816-4545-b74b-6381310a0240",
+          "id": "14be8a74-94ce-4a11-9a0f-395a05d494ef",
           "type": "basic.output",
           "data": {
-            "name": "out",
-            "range": "[4:0]",
+            "name": "Const",
+            "range": "[5:0]",
             "pins": [
+              {
+                "index": "5",
+                "name": "",
+                "value": "0"
+              },
               {
                 "index": "4",
                 "name": "",
@@ -67,69 +52,82 @@
             "virtual": true
           },
           "position": {
-            "x": 712,
-            "y": 176
+            "x": 768,
+            "y": 192
           }
         },
         {
-          "id": "17174045-a45c-4f73-8dd4-50651082b454",
+          "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+          "type": "basic.constant",
+          "data": {
+            "name": "numero",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 448,
+            "y": 72
+          }
+        },
+        {
+          "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
           "type": "basic.code",
           "data": {
-            "code": "// 5 bits counter\n\nreg [4:0] d = 0;\n\nalways @(posedge clk)\n  d <= d + 1;\n  \n",
-            "params": [],
+            "code": "\nassign num=n;",
+            "params": [
+              {
+                "name": "n"
+              }
+            ],
             "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                }
-              ],
+              "in": [],
               "out": [
                 {
-                  "name": "d",
-                  "range": "[4:0]",
-                  "size": 5
+                  "name": "num",
+                  "range": "[5:0]",
+                  "size": 6
                 }
               ]
             }
           },
           "position": {
-            "x": 320,
-            "y": 136
+            "x": 384,
+            "y": 184
           },
           "size": {
-            "width": 320,
-            "height": 144
+            "width": 224,
+            "height": 80
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "e9690e45-84c1-4ae2-901b-adaae5aee1bc",
-            "port": "out"
+            "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+            "port": "constant-out"
           },
           "target": {
-            "block": "17174045-a45c-4f73-8dd4-50651082b454",
-            "port": "clk"
+            "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+            "port": "n"
           }
         },
         {
           "source": {
-            "block": "17174045-a45c-4f73-8dd4-50651082b454",
-            "port": "d"
+            "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+            "port": "num"
           },
           "target": {
-            "block": "aafccbfd-e816-4545-b74b-6381310a0240",
+            "block": "14be8a74-94ce-4a11-9a0f-395a05d494ef",
             "port": "in"
           },
-          "size": 5
+          "size": 6
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -10,
-        "y": 74.5
+        "x": -166,
+        "y": 114.5
       },
       "zoom": 1
     }
