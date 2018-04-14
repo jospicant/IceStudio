@@ -1,0 +1,35 @@
+Section Type   Array Num   Name                     Real Name          Base     Number     Increment
+// ------------------------------------------------------------------------------------------
+      Port          1      d[2:0]                        d                  2          3            -1
+End
+Section Member   Rename                   Array-Notation          Array Number     Index
+// -------------------------------------------------------------------------------------
+        Port      d_2_                        d[2]                       1            0            
+        Port      d_1_                        d[1]                       1            1            
+        Port      d_0_                        d[0]                       1            2            
+End
+Section Cross Reference File
+Design 'Contador3bits' created Mon Apr 09 16:14:16 2018
+   Type              New Name                               Original Name
+// ----------------------------------------------------------------------
+   Inst                dDFF_0_                                   dDFF[0]
+   Inst                dDFF_1_                                   dDFF[1]
+   Inst                dDFF_2_                                   dDFF[2]
+   Inst                   d_0_                                      d[0]
+   Inst                   d_1_                                      d[1]
+   Inst                   d_2_                                      d[2]
+   Inst                 d_i_0_                                    d_i[0]
+   Net                d_i_0__n                                    d_i[0]
+   Net                d_c_0__n                                    d_c[0]
+   Net                  d_0__n                                      d[0]
+   Net                d_c_1__n                                    d_c[1]
+   Net                  d_1__n                                      d[1]
+   Net                d_c_2__n                                    d_c[2]
+End
+Section Type      Name
+// ----------------------------------------------------------------------
+        Input     clk
+        Output     d_2_
+        Output     d_1_
+        Output     d_0_
+End

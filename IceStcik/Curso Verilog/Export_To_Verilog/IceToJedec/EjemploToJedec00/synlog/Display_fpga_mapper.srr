@@ -1,0 +1,29 @@
+Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N: MF248 |Running in 64-bit mode.
+@N:"c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":14:1:14:6|Found counter in view:work.Display(verilog) inst cuenta[3:0]
+@N: MO106 :"c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":20:5:20:8|Found ROM, 'display_2[6:0]', 16 words by 7 bits 
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFF             11 uses
+IBUF            1 use
+OBUF            7 uses
+AND2            41 uses
+INV             28 uses
+OR2             1 use
+XOR2            4 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 38MB peak: 103MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Apr 10 00:59:23 2018
+
+###########################################################]

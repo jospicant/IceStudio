@@ -1,0 +1,8 @@
+clk  i
+display[6]  o
+display[5]  o
+display[4]  o
+display[3]  o
+display[2]  o
+display[1]  o
+display[0]  o

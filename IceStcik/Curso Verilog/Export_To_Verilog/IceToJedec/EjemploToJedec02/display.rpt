@@ -1,0 +1,208 @@
+
+
+                                                                      Page 1
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+
+
+--------------------------------------------------------------------------------
+
+Module                   : 'display'
+
+--------------------------------------------------------------------------------
+
+Input files:
+
+    ABEL PLA file        : display.tt3
+    Device library       : P22V10G.dev
+
+Output files:
+
+    Report file          : display.rpt
+    Programmer load file : display.jed
+
+--------------------------------------------------------------------------------
+
+
+                                                                      Page 2
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+P22V10G Programmed Logic:
+--------------------------------------------------------------------------------
+
+
+
+cuenta_0_.D   = (  !cuenta_0_.Q ); " ISTYPE 'BUFFER'
+cuenta_0_.C   = (  clk );
+
+cuenta_1_.D   = (  !cuenta_0_.Q & cuenta_1_.Q 
+                 #   cuenta_0_.Q & !cuenta_1_.Q ); " ISTYPE 'BUFFER'
+cuenta_1_.C   = (  clk );
+
+cuenta_2_.D   = (  !cuenta_0_.Q & cuenta_2_.Q 
+                 #   !cuenta_1_.Q & cuenta_2_.Q 
+                 #   cuenta_0_.Q & cuenta_1_.Q & !cuenta_2_.Q );
+               " ISTYPE 'BUFFER'
+cuenta_2_.C   = (  clk );
+
+display_0_.D   = (  !cuenta_0_.Q & cuenta_2_.Q 
+                  #   !cuenta_1_.Q & cuenta_2_.Q 
+                  #   cuenta_1_.Q & !cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_0_.C   = (  clk );
+
+display_1_.D   = (  !cuenta_0_.Q & !cuenta_1_.Q 
+                  #   !cuenta_0_.Q & cuenta_2_.Q 
+                  #   !cuenta_1_.Q & cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_1_.C   = (  clk );
+
+display_2_.D   = (  !cuenta_0_.Q & cuenta_1_.Q 
+                  #   !cuenta_0_.Q & !cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_2_.C   = (  clk );
+
+display_3_.D   = (  !cuenta_0_.Q & cuenta_1_.Q 
+                  #   cuenta_0_.Q & !cuenta_1_.Q & cuenta_2_.Q 
+                  #   !cuenta_0_.Q & !cuenta_2_.Q 
+                  #   cuenta_1_.Q & !cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_3_.C   = (  clk );
+
+display_4_.D   = (  cuenta_0_.Q 
+                  #   !cuenta_1_.Q 
+                  #   cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_4_.C   = (  clk );
+
+display_5_.D   = (  cuenta_0_.Q & cuenta_1_.Q 
+                  #   !cuenta_0_.Q & !cuenta_1_.Q 
+                  #   !cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_5_.C   = (  clk );
+
+display_6_.D   = (  cuenta_1_.Q 
+                  #   cuenta_0_.Q & cuenta_2_.Q 
+                  #   !cuenta_0_.Q & !cuenta_2_.Q ); " ISTYPE 'BUFFER'
+display_6_.C   = (  clk );
+
+
+
+                                                                      Page 3
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+P22V10G Chip Diagram:
+--------------------------------------------------------------------------------
+
+
+
+
+                                   P22V10G
+
+                         +---------\       /---------+
+                         |          \     /          |
+                         |           -----           |
+                     clk |  1                    24  | Vcc                     
+                         |                           |
+                         |  2                    23  | cuenta_2_               
+                         |                           |
+                         |  3                    22  | cuenta_1_               
+                         |                           |
+                         |  4                    21  | cuenta_0_               
+                         |                           |
+                         |  5                    20  | display_6_              
+                         |                           |
+                         |  6                    19  | display_5_              
+                         |                           |
+                         |  7                    18  | display_4_              
+                         |                           |
+                         |  8                    17  | display_3_              
+                         |                           |
+                         |  9                    16  | display_2_              
+                         |                           |
+                         | 10                    15  | display_1_              
+                         |                           |
+                         | 11                    14  | display_0_              
+                         |                           |
+                     GND | 12                    13  |                         
+                         |                           |
+                         |                           |
+                         `---------------------------'
+
+                        SIGNATURE: N/A
+
+
+                                                                      Page 4
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+P22V10G Resource Allocations:
+--------------------------------------------------------------------------------
+
+
+
+        Device        | Resource  |   Design    |
+       Resources      | Available | Requirement | Unused
+======================|===========|=============|==============
+                      |           |             |
+Input Pins:           |           |             |
+                      |           |             |
+          Input:      |     12    |      1      |   11 ( 91 %)
+                      |           |             |
+Output Pins:          |           |             |
+                      |           |             |
+          In/Out:     |     10    |     10      |    0 (  0 %)
+          Output:     |      -    |      -      |    -
+                      |           |             |
+Buried Nodes:         |           |             |
+                      |           |             |
+          Input Reg:  |      -    |      -      |    -
+          Pin Reg:    |     10    |     10      |    0 (  0 %)
+          Buried Reg: |      -    |      -      |    -
+
+
+                                                                      Page 5
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+P22V10G Product Terms Distribution:
+--------------------------------------------------------------------------------
+
+
+
+            Signal                       |    Pin   | Terms | Terms | Terms
+             Name                        | Assigned | Used  |  Max  | Unused
+=========================================|==========|=======|=======|=======
+cuenta_0_.D                              |   21     |   1   |  12   |  11
+cuenta_1_.D                              |   22     |   2   |  10   |   8
+cuenta_2_.D                              |   23     |   3   |   8   |   5
+display_0_.D                             |   14     |   3   |   8   |   5
+display_1_.D                             |   15     |   3   |  10   |   7
+display_2_.D                             |   16     |   2   |  12   |  10
+display_3_.D                             |   17     |   4   |  14   |  10
+display_4_.D                             |   18     |   3   |  16   |  13
+display_5_.D                             |   19     |   3   |  16   |  13
+display_6_.D                             |   20     |   3   |  14   |  11
+
+
+     ==== List of Inputs/Feedbacks ====
+
+Signal Name                              | Pin      | Pin Type
+=========================================|==========|=========
+clk                                      |    1     | CLK/IN
+
+
+                                                                      Page 6
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Tue Apr 10 01:33:18 2018
+
+P22V10G Unused Resources:
+--------------------------------------------------------------------------------
+
+
+
+ Pin   |  Pin   |   Product   | Flip-flop
+Number |  Type  |   Terms     |   Type
+=======|========|=============|==========
+    2  |  INPUT |      -      |    -   
+    3  |  INPUT |      -      |    -   
+    4  |  INPUT |      -      |    -   
+    5  |  INPUT |      -      |    -   
+    6  |  INPUT |      -      |    -   
+    7  |  INPUT |      -      |    -   
+    8  |  INPUT |      -      |    -   
+    9  |  INPUT |      -      |    -   
+   10  |  INPUT |      -      |    -   
+   11  |  INPUT |      -      |    -   
+   13  |  INPUT |      -      |    -   

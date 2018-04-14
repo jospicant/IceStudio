@@ -1,0 +1,39 @@
+#-- Lattice Semiconductor Corporation Ltd.
+#-- Synplify OEM project file c:/users/picoj/desktop/github/icestudio/icestcik/curso verilog/export_to_verilog/icetojedec/ejemplotojedec00\Display.prj
+#-- Written on Tue Apr 10 00:59:13 2018
+
+
+#device options
+set_option -technology ispGAL
+
+#compilation/mapping options
+
+#use verilog 2001 standard option
+set_option -vlog_std v2001
+
+#map options
+
+#simulation options
+set_option -write_verilog false
+set_option -write_vhdl false
+
+#timing analysis options
+set_option -synthesis_onoff_pragma false
+
+#-- add_file options
+add_file -verilog "C:/ispLEVER_Classic2_0/synpbase/lib/cpld/lattice.v"
+add_file -verilog "C:/ispLEVER_Classic2_0/ispcpld/generic/verilog/synplify/generic.v"
+add_file -verilog -lib work "display.h"
+add_file -verilog -lib work "../ejemplotojedec02/display7.v"
+
+#-- top module name
+set_option -top_module Display
+
+#-- set result format/file last
+project -result_file "Display.edi"
+
+#-- error message log file
+project -log_file display.srf
+
+#-- run Synplify with 'arrange VHDL file'
+project -run

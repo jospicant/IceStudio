@@ -1,0 +1,34 @@
+#$ DATE Mon Apr 09 16:14:16 2018
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE contador3bits
+#$ PINS 4 d_2_ clk d_1_ d_0_
+#$ NODES 5 d_c1 clk_c dDFF_0_reg dDFF_1_reg dDFF_2_reg 
+.model contador3bits
+.inputs clk.BLIF d_c1.BLIF clk_c.BLIF dDFF_0_reg.BLIF dDFF_1_reg.BLIF dDFF_2_reg.BLIF  
+.outputs d_2_ d_1_ d_0_ dDFF_0_reg.D dDFF_0_reg.C dDFF_1_reg.D dDFF_1_reg.C dDFF_2_reg.D dDFF_2_reg.C d_c1 clk_c \
+ 
+.names  clk.BLIF clk_c
+1 1
+.names  dDFF_0_reg.BLIF d_0_
+1 1
+.names  dDFF_1_reg.BLIF d_1_
+1 1
+.names  dDFF_2_reg.BLIF d_2_
+1 1
+.names  dDFF_0_reg.BLIF dDFF_0_reg.D
+0 1
+.names  d_c1.BLIF dDFF_2_reg.BLIF dDFF_2_reg.D
+01 1
+10 1
+.names  dDFF_0_reg.BLIF dDFF_1_reg.BLIF dDFF_1_reg.D
+01 1
+10 1
+.names  dDFF_0_reg.BLIF dDFF_1_reg.BLIF d_c1
+11 1
+.names  clk_c.BLIF dDFF_0_reg.C
+1 1
+.names  clk_c.BLIF dDFF_1_reg.C
+1 1
+.names  clk_c.BLIF dDFF_2_reg.C
+1 1
+.end

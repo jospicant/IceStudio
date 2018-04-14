@@ -1,0 +1,2 @@
+@E: CG906 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":91:10:91:20|Reference to unknown variable clk.
+

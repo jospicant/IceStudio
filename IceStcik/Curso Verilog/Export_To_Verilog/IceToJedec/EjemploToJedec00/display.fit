@@ -1,0 +1,16 @@
+Note 4042: Unable to assign display_1_, need more pins 
+like pin 23.
+Note 4042: Unable to assign display_1_, need more pins 
+like pin 22.
+Note 4042: Unable to assign display_1_, need more pins 
+like pin 21.
+Note 4042: Unable to assign display_1_, need more pins 
+like pin 20.
+Note 4042: Unable to assign display_1_, need more pins 
+like pin 19.
+$DEVICE         p22v10g  nofit 
+$PINS   11  display_0_:23   cuenta_3_:14   cuenta_2_:22   cuenta_1_:15   cuenta_0_:21   display_6_:16   display_5_:20   
+display_4_:17   display_3_:19   display_2_:18   clk:1   
+$UNASSIGNED    1  display_1_   
+--------------------------------------------------------------
+

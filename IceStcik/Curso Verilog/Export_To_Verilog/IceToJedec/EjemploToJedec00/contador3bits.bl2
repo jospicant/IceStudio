@@ -1,0 +1,44 @@
+#$ TOOL ispLEVER Classic 2.0.00.17.20.15
+#$ DATE Mon Apr 09 16:14:16 2018
+#$ MODULE Contador3bits
+#$ PINS 4 d_2_ clk d_1_ d_0_
+#$ NODES 3 dDFF_0_reg dDFF_1_reg dDFF_2_reg
+
+.model contador3bits
+.inputs clk.BLIF dDFF_0_reg.BLIF dDFF_1_reg.BLIF dDFF_2_reg.BLIF
+.outputs d_2_ d_1_ d_0_ dDFF_0_reg.D dDFF_0_reg.C dDFF_1_reg.D dDFF_1_reg.C \
+dDFF_2_reg.D dDFF_2_reg.C
+.names dDFF_0_reg.BLIF dDFF_0_reg.D
+0 1
+1 0
+.names dDFF_0_reg.BLIF dDFF_1_reg.BLIF dDFF_1_reg.D
+10 1
+01 1
+00 0
+11 0
+.names dDFF_0_reg.BLIF dDFF_1_reg.BLIF dDFF_2_reg.BLIF dDFF_2_reg.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names dDFF_2_reg.BLIF d_2_
+1 1
+0 0
+.names dDFF_1_reg.BLIF d_1_
+1 1
+0 0
+.names dDFF_0_reg.BLIF d_0_
+1 1
+0 0
+.names clk.BLIF dDFF_0_reg.C
+1 1
+0 0
+.names clk.BLIF dDFF_1_reg.C
+1 1
+0 0
+.names clk.BLIF dDFF_2_reg.C
+1 1
+0 0
+.end

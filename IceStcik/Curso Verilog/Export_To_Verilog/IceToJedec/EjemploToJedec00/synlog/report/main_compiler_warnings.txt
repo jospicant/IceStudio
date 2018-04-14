@@ -1,0 +1,2 @@
+@W: CG921 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":71:11:71:11|d is already declared in this scope.
+

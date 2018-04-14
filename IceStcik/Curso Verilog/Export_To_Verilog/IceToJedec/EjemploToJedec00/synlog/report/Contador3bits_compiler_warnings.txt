@@ -1,0 +1,2 @@
+@W: CG921 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec01\contador3bits.v":8:11:8:11|d is already declared in this scope.
+

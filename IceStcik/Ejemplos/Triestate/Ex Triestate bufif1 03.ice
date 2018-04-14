@@ -8,7 +8,7 @@
     "image": ""
   },
   "design": {
-    "board": "iCE40-HX8K",
+    "board": "icestick",
     "graph": {
       "blocks": [
         {
@@ -19,8 +19,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "LED0",
-                "value": "B5"
+                "name": "D1",
+                "value": "99"
               }
             ],
             "virtual": false
@@ -38,8 +38,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "LED1",
-                "value": "B4"
+                "name": "D2",
+                "value": "98"
               }
             ],
             "virtual": false
@@ -58,7 +58,7 @@
               {
                 "index": "0",
                 "name": "CLK",
-                "value": "J3"
+                "value": "21"
               }
             ],
             "virtual": false,
@@ -77,8 +77,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "LED4",
-                "value": "C5"
+                "name": "D3",
+                "value": "97"
               }
             ],
             "virtual": false
@@ -311,10 +311,10 @@
     },
     "state": {
       "pan": {
-        "x": 287,
-        "y": 85.5
+        "x": 95.7333,
+        "y": 97.8833
       },
-      "zoom": 1
+      "zoom": 0.8708
     }
   },
   "dependencies": {

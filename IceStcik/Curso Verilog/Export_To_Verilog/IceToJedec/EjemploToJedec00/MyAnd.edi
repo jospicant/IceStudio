@@ -1,0 +1,86 @@
+(edif MyAnd
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2018 4 9 15 25 29)
+      (author "Synopsys, Inc.")
+      (program "Synplify Pro" (version "I-2014.03LC , mapper maplat, Build 923R"))
+     )
+   )
+  (external mach
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell AND2 (cellType GENERIC)
+       (view prim (viewType NETLIST)
+         (interface
+           (port O (direction OUTPUT))
+           (port I0 (direction INPUT))
+           (port I1 (direction INPUT))
+         )
+       )
+    )
+    (cell IBUF (cellType GENERIC)
+       (view prim (viewType NETLIST)
+         (interface
+           (port O (direction OUTPUT))
+           (port I0 (direction INPUT))
+         )
+       )
+    )
+    (cell OBUF (cellType GENERIC)
+       (view prim (viewType NETLIST)
+         (interface
+           (port O (direction OUTPUT))
+           (port I0 (direction INPUT))
+         )
+       )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell MyAnd (cellType GENERIC)
+       (view verilog (viewType NETLIST)
+         (interface
+           (port a (direction INPUT))
+           (port b (direction INPUT))
+           (port c (direction OUTPUT))
+         )
+         (contents
+          (instance a (viewRef prim (cellRef IBUF (libraryRef mach)))          )
+          (instance b (viewRef prim (cellRef IBUF (libraryRef mach)))          )
+          (instance c (viewRef prim (cellRef OBUF (libraryRef mach)))          )
+          (instance cand (viewRef prim (cellRef AND2 (libraryRef mach)))          )
+          (net a_c (joined
+           (portRef O (instanceRef a))
+           (portRef I0 (instanceRef cand))
+          ))
+          (net a (joined
+           (portRef a)
+           (portRef I0 (instanceRef a))
+          ))
+          (net b_c (joined
+           (portRef O (instanceRef b))
+           (portRef I1 (instanceRef cand))
+          ))
+          (net b (joined
+           (portRef b)
+           (portRef I0 (instanceRef b))
+          ))
+          (net c_c (joined
+           (portRef O (instanceRef cand))
+           (portRef I0 (instanceRef c))
+          ))
+          (net c (joined
+           (portRef O (instanceRef c))
+           (portRef c)
+          ))
+         )
+        (property orig_inst_of (string "MyAnd"))
+       )
+    )
+  )
+  (design MyAnd (cellRef MyAnd (libraryRef work)))
+)

@@ -1,0 +1,53 @@
+Running in Lattice mode
+
+
+Starting:    C:\ispLEVER_Classic2_0\synpbase\win64\mbin\synbatch.exe
+Install:     C:\ispLEVER_Classic2_0\synpbase
+Date:        Tue Apr 10 01:33:10 2018
+Version:     I-2014.03LC 
+
+Arguments:   -product synplify_pro  -batch c:/users/picoj/desktop/github/icestudio/icestcik/curso verilog/export_to_verilog/icetojedec/ejemplotojedec02\Display.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\Display.srr"
+
+Running Display|ejemplotojedec02
+
+Running: Compile on Display|ejemplotojedec02
+
+Running: Compile Process on Display|ejemplotojedec02
+
+Running: Compile Input on Display|ejemplotojedec02
+Copied C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_comp.srs to C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\Display.srs
+compiler Completed with warnings
+Return Code: 1
+Run Time:0h:00m:02s
+
+Running: Multi-srs Generator on Display|ejemplotojedec02
+Copied C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_comp.srs to C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_s.srs
+multi_srs_gen Completed
+Return Code: 0
+Run Time:0h:00m:01s
+Copied C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_mult.srs to C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\Display.srs
+Copied C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\Display.srr to C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display.srf
+Complete: Compile Process on Display|ejemplotojedec02
+Complete: Compile on Display|ejemplotojedec02
+
+Running: Map on Display|ejemplotojedec02
+
+Running: Map & Optimize on Display|ejemplotojedec02
+fpga_mapper Completed
+Return Code: 0
+Run Time:0h:00m:00s
+Complete: Map on Display|ejemplotojedec02
+Copied C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\Display.srr to C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display.srf
+Complete: Logic Synthesis on Display|ejemplotojedec02
+
+exit status=0
+
+exit status=0
+

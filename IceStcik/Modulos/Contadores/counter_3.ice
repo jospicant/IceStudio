@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Counter 3 bits",
+    "name": "Counter_3_bits",
     "version": "1.0",
     "description": "0,1,2,3...n (3 bits)",
     "author": "José Picó",

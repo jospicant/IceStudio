@@ -1,0 +1,172 @@
+#$ TOOL ispLEVER Classic 2.0.00.17.20.15
+#$ DATE Tue Apr 10 00:59:27 2018
+#$ MODULE Display
+#$ PINS 8 display_6_ clk display_5_ display_4_ display_3_ display_2_ display_1_ display_0_
+#$ NODES 11 cuenta_0_ cuenta_1_ cuenta_2_ cuenta_3_ displayDFF_0_reg displayDFF_1_reg displayDFF_2_reg displayDFF_3_reg displayDFF_4_reg \
+#  displayDFF_5_reg displayDFF_6_reg
+
+.model display
+.inputs clk.BLIF cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_0_reg.BLIF displayDFF_1_reg.BLIF displayDFF_2_reg.BLIF \
+displayDFF_3_reg.BLIF displayDFF_4_reg.BLIF displayDFF_5_reg.BLIF \
+displayDFF_6_reg.BLIF
+.outputs display_6_ display_5_ display_4_ display_3_ display_2_ display_1_ \
+display_0_ displayDFF_1_reg.D displayDFF_1_reg.C displayDFF_2_reg.D \
+displayDFF_2_reg.C displayDFF_3_reg.D displayDFF_3_reg.C displayDFF_4_reg.D \
+displayDFF_4_reg.C displayDFF_5_reg.D displayDFF_5_reg.C displayDFF_6_reg.D \
+displayDFF_6_reg.C cuenta_0_.D cuenta_0_.C cuenta_1_.D cuenta_1_.C cuenta_2_.D \
+cuenta_2_.C cuenta_3_.D cuenta_3_.C displayDFF_0_reg.D displayDFF_0_reg.C
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_1_reg.D
+-010 1
+0-1- 1
+00-- 1
+--01 1
+-1-1 1
+1011 0
+-100 0
+1-00 0
+11-0 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_2_reg.D
+0-0- 1
+01-- 1
+--11 1
+-1-1 1
+100- 0
+-010 0
+1--0 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_3_reg.D
+01-0 1
+1-01 1
+-100 1
+0-11 1
+000- 1
+101- 1
+0101 0
+1000 0
+0010 0
+111- 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_4_reg.D
+-00- 1
+1-0- 1
+10-- 1
+--10 1
+--01 1
+0100 0
+-111 0
+0-11 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_5_reg.D
+--00 1
+11-0 1
+00-0 1
+0-0- 1
+10-1 1
+1010 0
+011- 0
+11-1 0
+0-11 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_6_reg.D
+1-10 1
+-001 1
+0-0- 1
+-11- 1
+-1-0 1
+0--1 1
+0010 0
+1101 0
+1000 0
+1011 0
+.names cuenta_0_.BLIF cuenta_0_.D
+0 1
+1 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_1_.D
+10 1
+01 1
+00 0
+11 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF cuenta_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF \
+displayDFF_0_reg.D
+-010 1
+1--1 1
+01-- 1
+-10- 1
+--01 1
+1110 0
+0011 0
+-000 0
+.names displayDFF_6_reg.BLIF display_6_
+1 1
+0 0
+.names displayDFF_5_reg.BLIF display_5_
+1 1
+0 0
+.names displayDFF_4_reg.BLIF display_4_
+1 1
+0 0
+.names displayDFF_3_reg.BLIF display_3_
+1 1
+0 0
+.names displayDFF_2_reg.BLIF display_2_
+1 1
+0 0
+.names displayDFF_1_reg.BLIF display_1_
+1 1
+0 0
+.names displayDFF_0_reg.BLIF display_0_
+1 1
+0 0
+.names clk.BLIF displayDFF_1_reg.C
+1 1
+0 0
+.names clk.BLIF displayDFF_2_reg.C
+1 1
+0 0
+.names clk.BLIF displayDFF_3_reg.C
+1 1
+0 0
+.names clk.BLIF displayDFF_4_reg.C
+1 1
+0 0
+.names clk.BLIF displayDFF_5_reg.C
+1 1
+0 0
+.names clk.BLIF displayDFF_6_reg.C
+1 1
+0 0
+.names clk.BLIF cuenta_0_.C
+1 1
+0 0
+.names clk.BLIF cuenta_1_.C
+1 1
+0 0
+.names clk.BLIF cuenta_2_.C
+1 1
+0 0
+.names clk.BLIF cuenta_3_.C
+1 1
+0 0
+.names clk.BLIF displayDFF_0_reg.C
+1 1
+0 0
+.end

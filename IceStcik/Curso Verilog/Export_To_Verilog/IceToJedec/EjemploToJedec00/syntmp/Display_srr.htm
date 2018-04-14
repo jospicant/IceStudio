@@ -1,0 +1,81 @@
+<html><body><samp><pre>
+<!@TC:1523314761>
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: C:\ispLEVER_Classic2_0\synpbase
+#OS: Windows 7 6.1
+#Hostname: RTCMW0616M
+
+#Implementation: ejemplotojedec00
+
+<a name=compilerReport1>$ Start of Compile</a>
+#Tue Apr 10 00:59:21 2018
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N: : <!@TM:1523314761> | Running in 64-bit mode 
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\umr_capim.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_objects.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\hypermods.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\cpld\lattice.v"
+@I::"C:\ispLEVER_Classic2_0\ispcpld\generic\verilog\synplify\generic.v"
+@I::"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec00\display.h"
+@I::"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v"
+<font color=#A52A2A>@W:<a href="@W:CG921:@XP_HELP">CG921</a> : <a href="C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v:12:10:12:17:@W:CG921:@XP_MSG">display7.v(12)</a><!@TM:1523314761> | display is already declared in this scope.</font>
+Verilog syntax check successful!
+File C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v changed - recompiling
+Selecting top level module Display
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v:6:7:6:14:@N:CG364:@XP_MSG">display7.v(6)</a><!@TM:1523314761> | Synthesizing module Display
+
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 78MB peak: 79MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Apr 10 00:59:21 2018
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
+@N: : <!@TM:1523314763> | Running in 64-bit mode 
+File C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec00\synwork\Display_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Apr 10 00:59:23 2018
+
+###########################################################]
+Map & Optimize Report
+
+<a name=mapperReport2>Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014</a>
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1523314763> | Running in 64-bit mode. 
+@N: : <a href="c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v:14:1:14:7:@N::@XP_MSG">display7.v(14)</a><!@TM:1523314763> | Found counter in view:work.Display(verilog) inst cuenta[3:0]
+@N:<a href="@N:MO106:@XP_HELP">MO106</a> : <a href="c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v:20:5:20:9:@N:MO106:@XP_MSG">display7.v(20)</a><!@TM:1523314763> | Found ROM, 'display_2[6:0]', 16 words by 7 bits 
+---------------------------------------
+<a name=resourceUsage3>Resource Usage Report</a>
+
+Simple gate primitives:
+DFF             11 uses
+IBUF            1 use
+OBUF            7 uses
+AND2            41 uses
+INV             28 uses
+OR2             1 use
+XOR2            4 uses
+
+
+@N:<a href="@N:FC100:@XP_HELP">FC100</a> : <!@TM:1523314763> | Timing Report not generated for this device, please use place and route tools for timing analysis. 
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 38MB peak: 103MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Apr 10 00:59:23 2018
+
+###########################################################]
+
+</pre></samp></body></html>

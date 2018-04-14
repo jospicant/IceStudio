@@ -1,0 +1,13 @@
+Starting EDIF2BLIF....
+readEDIF ended normally.
+
+Inspect circuit Contador3bits
+    Number of input ports   : 1
+    Number of output ports  : 1
+    Number of bidir ports   : 0
+    Number of instances     : 12
+    Number of nets          : 13
+
+No design errors found in circuit Contador3bits
+
+WriteBLIF ended normally.

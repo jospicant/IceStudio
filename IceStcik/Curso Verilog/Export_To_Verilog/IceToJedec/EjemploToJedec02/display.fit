@@ -1,0 +1,5 @@
+$DEVICE         p22v10g    fit     display.tt3
+$PINS   11  display_6_:20   display_5_:19   display_4_:18   display_3_:17   display_2_:16   display_1_:15   display_0_:14   
+cuenta_2_:23   cuenta_1_:22   cuenta_0_:21   clk:1   
+--------------------------------------------------------------
+

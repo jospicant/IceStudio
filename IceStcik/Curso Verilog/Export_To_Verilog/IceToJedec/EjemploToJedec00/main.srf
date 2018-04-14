@@ -1,0 +1,33 @@
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: C:\ispLEVER_Classic2_0\synpbase
+#OS: Windows 7 6.1
+#Hostname: RTCMW0616M
+
+#Implementation: ejemplotojedec00
+
+$ Start of Compile
+#Tue Apr 10 00:26:29 2018
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\umr_capim.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_objects.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\hypermods.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\cpld\lattice.v"
+@I::"C:\ispLEVER_Classic2_0\ispcpld\generic\verilog\synplify\generic.v"
+@I::"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec00\display.h"
+@I::"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v"
+@W: CG921 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":71:11:71:11|d is already declared in this scope.
+Verilog syntax check successful!
+Selecting top level module main
+@N: CG364 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":79:7:79:18|Synthesizing module main_v3b18b7
+
+@E: CG906 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":91:10:91:20|Reference to unknown variable clk.
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Apr 10 00:26:29 2018
+
+###########################################################]

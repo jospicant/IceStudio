@@ -1,0 +1,5 @@
+Selecting top level module main
+@N: CG364 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":79:7:79:18|Synthesizing module main_v3b18b7
+
+@E: CG906 :"C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\display7.v":91:10:91:20|Reference to unknown variable clk.
+@END

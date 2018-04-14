@@ -1,0 +1,6 @@
+ispLEVER Auto-Make Log File
+---------------------------
+
+Starting: 'C:\ispLEVER_Classic2_0\ispcpld\bin\checkini.exe -err=automake.err "C:\ispLEVER_Classic2_0\ispcpld\config\gen_GAL.ini"'
+
+Done: completed successfully.

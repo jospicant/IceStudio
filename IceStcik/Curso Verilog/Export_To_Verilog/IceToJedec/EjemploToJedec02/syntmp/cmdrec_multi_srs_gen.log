@@ -1,0 +1,7 @@
+C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe  -link  -top  Display  -multisrs  "C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_comp.srs"  -osyn  "C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_mult.srs"  -log  "C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synlog\Display_multi_srs_gen.srr" 
+rc:0 success:1
+C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_comp.srs|i|1523316791|2028
+C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synwork\Display_mult.srs|o|1523316792|2381
+C:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec02\synlog\Display_multi_srs_gen.srr|o|1523316792|538
+C:\ispLEVER_Classic2_0\synpbase\bin\syn_nfilter.exe|i|1401227536|2741760
+C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe|i|1401227732|6337536

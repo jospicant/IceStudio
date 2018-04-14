@@ -1,0 +1,162 @@
+
+
+                                                                      Page 1
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+
+
+--------------------------------------------------------------------------------
+
+Module                   : 'myand'
+
+--------------------------------------------------------------------------------
+
+Input files:
+
+    ABEL PLA file        : myand.tt3
+    Device library       : P22V10G.dev
+
+Output files:
+
+    Report file          : myand.rpt
+    Programmer load file : myand.jed
+
+--------------------------------------------------------------------------------
+
+
+                                                                      Page 2
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+P22V10G Programmed Logic:
+--------------------------------------------------------------------------------
+
+
+
+c     = (  a & b );
+
+
+
+                                                                      Page 3
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+P22V10G Chip Diagram:
+--------------------------------------------------------------------------------
+
+
+
+
+                                   P22V10G
+
+                         +---------\       /---------+
+                         |          \     /          |
+                         |           -----           |
+                       a |  1                    24  | Vcc                     
+                         |                           |
+                       b |  2                    23  | c                       
+                         |                           |
+                         |  3                    22  |                         
+                         |                           |
+                         |  4                    21  |                         
+                         |                           |
+                         |  5                    20  |                         
+                         |                           |
+                         |  6                    19  |                         
+                         |                           |
+                         |  7                    18  |                         
+                         |                           |
+                         |  8                    17  |                         
+                         |                           |
+                         |  9                    16  |                         
+                         |                           |
+                         | 10                    15  |                         
+                         |                           |
+                         | 11                    14  |                         
+                         |                           |
+                     GND | 12                    13  |                         
+                         |                           |
+                         |                           |
+                         `---------------------------'
+
+                        SIGNATURE: N/A
+
+
+                                                                      Page 4
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+P22V10G Resource Allocations:
+--------------------------------------------------------------------------------
+
+
+
+        Device        | Resource  |   Design    |
+       Resources      | Available | Requirement | Unused
+======================|===========|=============|==============
+                      |           |             |
+Input Pins:           |           |             |
+                      |           |             |
+          Input:      |     12    |      2      |   10 ( 83 %)
+                      |           |             |
+Output Pins:          |           |             |
+                      |           |             |
+          In/Out:     |     10    |      1      |    9 ( 90 %)
+          Output:     |      -    |      -      |    -
+                      |           |             |
+Buried Nodes:         |           |             |
+                      |           |             |
+          Input Reg:  |      -    |      -      |    -
+          Pin Reg:    |     10    |      0      |   10 (100 %)
+          Buried Reg: |      -    |      -      |    -
+
+
+                                                                      Page 5
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+P22V10G Product Terms Distribution:
+--------------------------------------------------------------------------------
+
+
+
+            Signal                       |    Pin   | Terms | Terms | Terms
+             Name                        | Assigned | Used  |  Max  | Unused
+=========================================|==========|=======|=======|=======
+c                                        |   23     |   1   |   8   |   7
+
+
+     ==== List of Inputs/Feedbacks ====
+
+Signal Name                              | Pin      | Pin Type
+=========================================|==========|=========
+a                                        |    1     | CLK/IN
+b                                        |    2     | INPUT
+
+
+                                                                      Page 6
+ispLEVER Classic 2.0.00.17.20.15  -  Device Utilization Chart         Mon Apr 09 15:25:34 2018
+
+P22V10G Unused Resources:
+--------------------------------------------------------------------------------
+
+
+
+ Pin   |  Pin   |   Product   | Flip-flop
+Number |  Type  |   Terms     |   Type
+=======|========|=============|==========
+    3  |  INPUT |      -      |    -   
+    4  |  INPUT |      -      |    -   
+    5  |  INPUT |      -      |    -   
+    6  |  INPUT |      -      |    -   
+    7  |  INPUT |      -      |    -   
+    8  |  INPUT |      -      |    -   
+    9  |  INPUT |      -      |    -   
+   10  |  INPUT |      -      |    -   
+   11  |  INPUT |      -      |    -   
+   13  |  INPUT |      -      |    -   
+   14  |  BIDIR | NORMAL  8   |    D
+   15  |  BIDIR | NORMAL 10   |    D
+   16  |  BIDIR | NORMAL 12   |    D
+   17  |  BIDIR | NORMAL 14   |    D
+   18  |  BIDIR | NORMAL 16   |    D
+   19  |  BIDIR | NORMAL 16   |    D
+   20  |  BIDIR | NORMAL 14   |    D
+   21  |  BIDIR | NORMAL 12   |    D
+   22  |  BIDIR | NORMAL 10   |    D

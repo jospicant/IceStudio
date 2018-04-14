@@ -1,0 +1,5 @@
+InFile:myand.psl
+DBaseFile: C:\ispLEVER_Classic2_0\ispcpld\lib5\devices\Lattice.tim
+Outfile: -o myand.tim
+Partname:$PARTNAME LAT GAL22V10D-15LP GAL P22V10
+Size:39

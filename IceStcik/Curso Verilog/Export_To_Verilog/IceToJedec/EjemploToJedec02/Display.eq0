@@ -1,0 +1,227 @@
+EDIF2BLIF version IspLever 1.0  Linked Equations File
+Copyright(C), 1992-2015, Lattice Semiconductor Corp.
+All Rights Reserved.
+
+Design display created Tue Apr 10 01:06:05 2018
+
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   1/1        1        1    Pin   display_6_ 
+   1/1        1        1    Pin   display_5_ 
+   1/1        1        1    Pin   display_4_ 
+   1/1        1        1    Pin   display_3_ 
+   1/1        1        1    Pin   display_2_ 
+   1/1        1        1    Pin   display_1_ 
+   1/1        1        1    Pin   display_0_ 
+   1/1        1        1    Node  cuenta_0_.D 
+   1/1        1        1    Node  cuenta_0_.C 
+   1/1        1        1    Node  cuenta_1_.D 
+   1/1        1        1    Node  cuenta_1_.C 
+   1          1        1    Node  cuenta_2_.D 
+   1/1        1        1    Node  cuenta_2_.C 
+   1          2        1    Node  display20 
+   1          1        1    Node  N_24 
+   1          2        1    Node  N_35 
+   1          2        1    Node  N_36 
+   1          2        1    Node  N_38 
+   1          2        1    Node  N_40 
+   1          2        1    Node  N_41 
+   1          2        1    Node  N_42 
+   1          2        1    Node  N_44 
+   2          2        1    Node  N_29_i 
+   2          2        1    Node  N_30_i 
+   1          1        1    Node  cuenta_i_1__n 
+   1          1        1    Node  cuenta_i_0__n 
+   1          1        1    Node  cuenta_i_2__n 
+   1          1        1    Node  N_40_i_0 
+   1/1        1        1    Node  clk_c 
+   1          1        1    Node  displayDFF_0_reg.D 
+   1/1        1        1    Node  displayDFF_0_reg.C 
+   1          1        1    Node  displayDFF_1_reg.D 
+   1/1        1        1    Node  displayDFF_1_reg.C 
+   1          2        1    Node  displayDFF_2_reg.D 
+   1/1        1        1    Node  displayDFF_2_reg.C 
+   1          2        1    Node  displayDFF_3_reg.D 
+   1/1        1        1    Node  displayDFF_3_reg.C 
+   1          1        1    Node  displayDFF_4_reg.D 
+   1/1        1        1    Node  displayDFF_4_reg.C 
+   1          1        1    Node  displayDFF_5_reg.D 
+   1/1        1        1    Node  displayDFF_5_reg.C 
+   1/1        1        1    Node  displayDFF_6_reg.D 
+   1/1        1        1    Node  displayDFF_6_reg.C 
+   1          2        1    Node  N_24_0 
+   1          2        1    Node  display_2_0_5__n 
+   1          1        1    Node  N_35_i 
+   1          1        1    Node  N_44_i 
+   1          2        1    Node  N_17_0 
+   1          1        1    Node  N_42_i 
+   1          1        1    Node  N_41_i 
+   1          1        1    Node  N_38_i 
+   1          2        1    Node  N_12_0 
+   1          1        1    Node  N_36_i 
+   1          2        1    Node  cuenta_n2_0 
+=========
+  56/21         Best P-Term Total: 56
+                       Total Pins: 8
+                      Total Nodes: 37
+            Average P-Term/Output: 1
+
+
+Equations:
+
+display_6_ = (displayDFF_6_reg);
+
+display_5_ = (displayDFF_5_reg);
+
+display_4_ = (displayDFF_4_reg);
+
+display_3_ = (displayDFF_3_reg);
+
+display_2_ = (displayDFF_2_reg);
+
+display_1_ = (displayDFF_1_reg);
+
+display_0_ = (displayDFF_0_reg);
+
+cuenta_0_.D = (cuenta_i_0__n);
+
+cuenta_0_.C = (clk_c);
+
+cuenta_1_.D = (N_30_i);
+
+cuenta_1_.C = (clk_c);
+
+cuenta_2_.D = (!cuenta_n2_0);
+
+cuenta_2_.C = (clk_c);
+
+display20 = (N_44 & cuenta_i_0__n);
+
+N_24 = (!N_24_0);
+
+N_35 = (N_24 & cuenta_2_);
+
+N_36 = (N_24_0 & cuenta_i_2__n);
+
+N_38 = (cuenta_i_0__n & cuenta_i_1__n);
+
+N_40 = (N_29_i & cuenta_i_1__n);
+
+N_41 = (N_24_0 & cuenta_2_);
+
+N_42 = (cuenta_2_ & cuenta_i_1__n);
+
+N_44 = (cuenta_1_ & cuenta_i_2__n);
+
+N_29_i = (!cuenta_0_ & cuenta_2_
+     # cuenta_0_ & !cuenta_2_);
+
+N_30_i = (!cuenta_0_ & cuenta_1_
+     # cuenta_0_ & !cuenta_1_);
+
+cuenta_i_1__n = (!cuenta_1_);
+
+cuenta_i_0__n = (!cuenta_0_);
+
+cuenta_i_2__n = (!cuenta_2_);
+
+N_40_i_0 = (!N_40);
+
+clk_c = (clk);
+
+displayDFF_0_reg.D = (!N_17_0);
+
+displayDFF_0_reg.C = (clk_c);
+
+displayDFF_1_reg.D = (!N_12_0);
+
+displayDFF_1_reg.C = (clk_c);
+
+displayDFF_2_reg.D = (N_42_i & cuenta_i_0__n);
+
+displayDFF_2_reg.C = (clk_c);
+
+displayDFF_3_reg.D = (N_40_i_0 & N_41_i);
+
+displayDFF_3_reg.C = (clk_c);
+
+displayDFF_4_reg.D = (!display20);
+
+displayDFF_4_reg.C = (clk_c);
+
+displayDFF_5_reg.D = (!display_2_0_5__n);
+
+displayDFF_5_reg.C = (clk_c);
+
+displayDFF_6_reg.D = (N_40_i_0);
+
+displayDFF_6_reg.C = (clk_c);
+
+N_24_0 = (cuenta_0_ & cuenta_1_);
+
+display_2_0_5__n = (N_30_i & cuenta_2_);
+
+N_35_i = (!N_35);
+
+N_44_i = (!N_44);
+
+N_17_0 = (N_35_i & N_44_i);
+
+N_42_i = (!N_42);
+
+N_41_i = (!N_41);
+
+N_38_i = (!N_38);
+
+N_12_0 = (N_35_i & N_38_i);
+
+N_36_i = (!N_36);
+
+cuenta_n2_0 = (N_35_i & N_36_i);
+
+
+Reverse-Polarity Equations:
+
+!display_6_ = (!displayDFF_6_reg);
+
+!display_5_ = (!displayDFF_5_reg);
+
+!display_4_ = (!displayDFF_4_reg);
+
+!display_3_ = (!displayDFF_3_reg);
+
+!display_2_ = (!displayDFF_2_reg);
+
+!display_1_ = (!displayDFF_1_reg);
+
+!display_0_ = (!displayDFF_0_reg);
+
+!cuenta_0_.D = (!cuenta_i_0__n);
+
+!cuenta_0_.C = (!clk_c);
+
+!cuenta_1_.D = (!N_30_i);
+
+!cuenta_1_.C = (!clk_c);
+
+!cuenta_2_.C = (!clk_c);
+
+!clk_c = (!clk);
+
+!displayDFF_0_reg.C = (!clk_c);
+
+!displayDFF_1_reg.C = (!clk_c);
+
+!displayDFF_2_reg.C = (!clk_c);
+
+!displayDFF_3_reg.C = (!clk_c);
+
+!displayDFF_4_reg.C = (!clk_c);
+
+!displayDFF_5_reg.C = (!clk_c);
+
+!displayDFF_6_reg.D = (!N_40_i_0);
+
+!displayDFF_6_reg.C = (!clk_c);
+

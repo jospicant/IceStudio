@@ -1,0 +1,11 @@
+Section Cross Reference File
+Design 'MyAnd' created Mon Apr 09 15:25:33 2018
+   Type              New Name                               Original Name
+// ----------------------------------------------------------------------
+End
+Section Type      Name
+// ----------------------------------------------------------------------
+        Input     a
+        Input     b
+        Output     c
+End

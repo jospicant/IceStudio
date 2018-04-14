@@ -1,0 +1,225 @@
+#$ DATE Tue Apr 10 00:59:27 2018
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE display
+#$ PINS 8 display_6_ clk display_5_ display_4_ display_3_ display_2_ display_1_ display_0_
+#$ NODES 76 cuenta_0_ cuenta_1_ cuenta_2_ cuenta_3_ N_24 N_26 N_25 cuenta_c1 N_23_i N_33 \
+#  N_43 N_49 N_42 N_48 N_38 N_37 N_39 N_50 N_34 N_31 \
+#  N_32 N_27 N_46 N_47 N_40 N_41 N_35 N_36 cuenta_i_2__n cuenta_i_3__n \
+#  cuenta_i_0__n cuenta_i_1__n N_26_i clk_c displayDFF_0_reg displayDFF_1_reg displayDFF_2_reg displayDFF_3_reg displayDFF_4_reg displayDFF_5_reg \
+#  displayDFF_6_reg N_35_i N_36_i N_40_i N_41_i N_24_i N_25_i N_46_i N_47_i N_27_0 \
+#  N_49_i N_31_i N_32_i N_33_i N_34_i display_2_0_1__n N_37_i N_38_i N_50_i N_39_i \
+#  display_2_0_4__n N_42_i N_43_i N_22_i_1 display_2_0_1_4__n N_17_i_1 display_2_0_1_1__n display_2_0_2_1__n N_12_i_1 N_33_1 \
+#  N_43_1 N_42_1 N_38_1 display_2_0_m2_4__un3_n display_2_0_m2_4__un1_n display_2_0_m2_4__un0_n 
+.model display
+.inputs clk.BLIF cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF cuenta_3_.BLIF N_24.BLIF N_26.BLIF N_25.BLIF cuenta_c1.BLIF \
+  N_23_i.BLIF N_33.BLIF N_43.BLIF N_49.BLIF N_42.BLIF N_48.BLIF N_38.BLIF N_37.BLIF N_39.BLIF \
+  N_50.BLIF N_34.BLIF N_31.BLIF N_32.BLIF N_27.BLIF N_46.BLIF N_47.BLIF N_40.BLIF N_41.BLIF \
+  N_35.BLIF N_36.BLIF cuenta_i_2__n.BLIF cuenta_i_3__n.BLIF cuenta_i_0__n.BLIF cuenta_i_1__n.BLIF N_26_i.BLIF clk_c.BLIF displayDFF_0_reg.BLIF \
+  displayDFF_1_reg.BLIF displayDFF_2_reg.BLIF displayDFF_3_reg.BLIF displayDFF_4_reg.BLIF displayDFF_5_reg.BLIF displayDFF_6_reg.BLIF N_35_i.BLIF N_36_i.BLIF N_40_i.BLIF \
+  N_41_i.BLIF N_24_i.BLIF N_25_i.BLIF N_46_i.BLIF N_47_i.BLIF N_27_0.BLIF N_49_i.BLIF N_31_i.BLIF N_32_i.BLIF \
+  N_33_i.BLIF N_34_i.BLIF display_2_0_1__n.BLIF N_37_i.BLIF N_38_i.BLIF N_50_i.BLIF N_39_i.BLIF display_2_0_4__n.BLIF N_42_i.BLIF \
+  N_43_i.BLIF N_22_i_1.BLIF display_2_0_1_4__n.BLIF N_17_i_1.BLIF display_2_0_1_1__n.BLIF display_2_0_2_1__n.BLIF N_12_i_1.BLIF N_33_1.BLIF N_43_1.BLIF \
+  N_42_1.BLIF N_38_1.BLIF display_2_0_m2_4__un3_n.BLIF display_2_0_m2_4__un1_n.BLIF display_2_0_m2_4__un0_n.BLIF  
+.outputs display_6_ display_5_ display_4_ display_3_ display_2_ display_1_ display_0_ displayDFF_1_reg.D displayDFF_1_reg.C displayDFF_2_reg.D displayDFF_2_reg.C \
+  displayDFF_3_reg.D displayDFF_3_reg.C displayDFF_4_reg.D displayDFF_4_reg.C displayDFF_5_reg.D displayDFF_5_reg.C displayDFF_6_reg.D displayDFF_6_reg.C cuenta_0_.D cuenta_0_.C cuenta_1_.D \
+  cuenta_1_.C cuenta_2_.D cuenta_2_.C cuenta_3_.D cuenta_3_.C displayDFF_0_reg.D displayDFF_0_reg.C N_24 N_26 N_25 cuenta_c1 \
+  N_23_i N_33 N_43 N_49 N_42 N_48 N_38 N_37 N_39 N_50 N_34 \
+  N_31 N_32 N_27 N_46 N_47 N_40 N_41 N_35 N_36 cuenta_i_2__n cuenta_i_3__n \
+  cuenta_i_0__n cuenta_i_1__n N_26_i clk_c N_35_i N_36_i N_40_i N_41_i N_24_i N_25_i N_46_i \
+  N_47_i N_27_0 N_49_i N_31_i N_32_i N_33_i N_34_i display_2_0_1__n N_37_i N_38_i N_50_i \
+  N_39_i display_2_0_4__n N_42_i N_43_i N_22_i_1 display_2_0_1_4__n N_17_i_1 display_2_0_1_1__n display_2_0_2_1__n N_12_i_1 N_33_1 \
+  N_43_1 N_42_1 N_38_1 display_2_0_m2_4__un3_n display_2_0_m2_4__un1_n display_2_0_m2_4__un0_n
+.names  clk.BLIF clk_c
+1 1
+.names  displayDFF_0_reg.BLIF display_0_
+1 1
+.names  displayDFF_1_reg.BLIF display_1_
+1 1
+.names  displayDFF_2_reg.BLIF display_2_
+1 1
+.names  displayDFF_3_reg.BLIF display_3_
+1 1
+.names  displayDFF_4_reg.BLIF display_4_
+1 1
+.names  displayDFF_5_reg.BLIF display_5_
+1 1
+.names  displayDFF_6_reg.BLIF display_6_
+1 1
+.names  N_37_i.BLIF N_38_i.BLIF N_17_i_1
+11 1
+.names  N_17_i_1.BLIF N_50_i.BLIF displayDFF_3_reg.D
+11 1
+.names  N_34_i.BLIF N_25.BLIF display_2_0_1_1__n
+11 1
+.names  N_27_0.BLIF N_49_i.BLIF display_2_0_2_1__n
+11 1
+.names  display_2_0_1_1__n.BLIF display_2_0_2_1__n.BLIF display_2_0_1__n
+11 1
+.names  N_31_i.BLIF N_32_i.BLIF N_12_i_1
+11 1
+.names  N_12_i_1.BLIF N_33_i.BLIF displayDFF_0_reg.D
+11 1
+.names  N_25_i.BLIF cuenta_3_.BLIF N_33_1
+11 1
+.names  N_33_1.BLIF cuenta_i_1__n.BLIF N_33
+11 1
+.names  N_49.BLIF cuenta_0_.BLIF N_43_1
+11 1
+.names  N_43_1.BLIF cuenta_1_.BLIF N_43
+11 1
+.names  N_48.BLIF cuenta_3_.BLIF N_42_1
+11 1
+.names  N_42_1.BLIF cuenta_i_1__n.BLIF N_42
+11 1
+.names  N_49.BLIF cuenta_1_.BLIF N_38_1
+11 1
+.names  N_38_1.BLIF cuenta_i_0__n.BLIF N_38
+11 1
+.names  N_32.BLIF N_32_i
+0 1
+.names  N_33.BLIF N_33_i
+0 1
+.names  N_34.BLIF N_34_i
+0 1
+.names  display_2_0_1__n.BLIF displayDFF_1_reg.D
+0 1
+.names  N_37.BLIF N_37_i
+0 1
+.names  N_38.BLIF N_38_i
+0 1
+.names  N_50.BLIF N_50_i
+0 1
+.names  N_39.BLIF N_39_i
+0 1
+.names  display_2_0_4__n.BLIF displayDFF_4_reg.D
+0 1
+.names  N_42.BLIF N_42_i
+0 1
+.names  N_43.BLIF N_43_i
+0 1
+.names  N_37_i.BLIF N_42_i.BLIF N_22_i_1
+11 1
+.names  N_22_i_1.BLIF N_43_i.BLIF displayDFF_6_reg.D
+11 1
+.names  N_49_i.BLIF N_26.BLIF display_2_0_1_4__n
+11 1
+.names  display_2_0_1_4__n.BLIF N_39_i.BLIF display_2_0_4__n
+11 1
+.names  N_35.BLIF N_35_i
+0 1
+.names  N_36.BLIF N_36_i
+0 1
+.names  N_40.BLIF N_40_i
+0 1
+.names  N_41.BLIF N_41_i
+0 1
+.names  N_24_i.BLIF N_24
+0 1
+.names  N_25_i.BLIF N_25
+0 1
+.names  N_46.BLIF N_46_i
+0 1
+.names  N_47.BLIF N_47_i
+0 1
+.names  N_27_0.BLIF N_27
+0 1
+.names  N_49.BLIF N_49_i
+0 1
+.names  N_31.BLIF N_31_i
+0 1
+.names  cuenta_0_.BLIF cuenta_i_3__n.BLIF N_36
+11 1
+.names  N_26.BLIF N_26_i
+0 1
+.names  N_26_i.BLIF cuenta_i_1__n.BLIF N_35
+11 1
+.names  cuenta_0_.BLIF cuenta_i_0__n
+0 1
+.names  cuenta_1_.BLIF cuenta_i_1__n
+0 1
+.names  cuenta_i_0__n.BLIF cuenta_i_1__n.BLIF N_34
+11 1
+.names  cuenta_3_.BLIF cuenta_i_3__n
+0 1
+.names  N_50.BLIF cuenta_i_3__n.BLIF N_32
+11 1
+.names  cuenta_2_.BLIF cuenta_i_2__n
+0 1
+.names  N_24_i.BLIF cuenta_i_2__n.BLIF N_31
+11 1
+.names  cuenta_0_.BLIF cuenta_1_.BLIF cuenta_c1
+11 1
+.names  N_46_i.BLIF N_47_i.BLIF N_27_0
+11 1
+.names  cuenta_2_.BLIF display_2_0_m2_4__un3_n
+0 1
+.names  cuenta_3_.BLIF cuenta_2_.BLIF display_2_0_m2_4__un1_n
+11 1
+.names  cuenta_i_0__n.BLIF display_2_0_m2_4__un3_n.BLIF display_2_0_m2_4__un0_n
+11 1
+.names  display_2_0_m2_4__un1_n.BLIF display_2_0_m2_4__un0_n.BLIF N_26
+1- 1
+-1 1
+.names  cuenta_2_.BLIF cuenta_i_0__n.BLIF N_25_i
+11 1
+.names  cuenta_i_1__n.BLIF cuenta_i_3__n.BLIF N_24_i
+11 1
+.names  N_40_i.BLIF N_41_i.BLIF displayDFF_5_reg.D
+11 1
+.names  N_35_i.BLIF N_36_i.BLIF displayDFF_2_reg.D
+11 1
+.names  N_48.BLIF cuenta_1_.BLIF N_50
+11 1
+.names  cuenta_3_.BLIF cuenta_i_2__n.BLIF N_49
+11 1
+.names  cuenta_0_.BLIF cuenta_2_.BLIF N_48
+11 1
+.names  cuenta_1_.BLIF cuenta_3_.BLIF N_47
+11 1
+.names  N_24_i.BLIF cuenta_2_.BLIF N_46
+11 1
+.names  N_24.BLIF N_25_i.BLIF N_41
+11 1
+.names  N_27.BLIF cuenta_0_.BLIF N_40
+11 1
+.names  N_25.BLIF cuenta_i_1__n.BLIF N_39
+11 1
+.names  N_23_i.BLIF N_24_i.BLIF N_37
+11 1
+.names  N_50.BLIF cuenta_3_.BLIF cuenta_3_.D
+01 1
+10 1
+.names  cuenta_0_.BLIF cuenta_1_.BLIF cuenta_1_.D
+01 1
+10 1
+.names  cuenta_2_.BLIF cuenta_c1.BLIF cuenta_2_.D
+01 1
+10 1
+.names  cuenta_0_.BLIF cuenta_2_.BLIF N_23_i
+01 1
+10 1
+.names  clk_c.BLIF displayDFF_1_reg.C
+1 1
+.names  clk_c.BLIF displayDFF_2_reg.C
+1 1
+.names  clk_c.BLIF displayDFF_3_reg.C
+1 1
+.names  clk_c.BLIF displayDFF_4_reg.C
+1 1
+.names  clk_c.BLIF displayDFF_5_reg.C
+1 1
+.names  clk_c.BLIF displayDFF_6_reg.C
+1 1
+.names  cuenta_i_0__n.BLIF cuenta_0_.D
+1 1
+.names  clk_c.BLIF cuenta_0_.C
+1 1
+.names  clk_c.BLIF cuenta_1_.C
+1 1
+.names  clk_c.BLIF cuenta_2_.C
+1 1
+.names  clk_c.BLIF cuenta_3_.C
+1 1
+.names  clk_c.BLIF displayDFF_0_reg.C
+1 1
+.end

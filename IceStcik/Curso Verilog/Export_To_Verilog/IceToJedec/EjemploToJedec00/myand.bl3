@@ -1,0 +1,13 @@
+#$ TOOL ispLEVER Classic 2.0.00.17.20.15
+#$ DATE Mon Apr 09 15:25:33 2018
+#$ MODULE myand
+#$ PINS 3 a b c
+
+.model myand
+.inputs a.BLIF b.BLIF
+.outputs c
+.names a.BLIF b.BLIF c
+11 1
+0- 0
+-0 0
+.end

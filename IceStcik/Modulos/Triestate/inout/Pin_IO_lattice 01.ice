@@ -26,7 +26,7 @@
             "virtual": true
           },
           "position": {
-            "x": 760,
+            "x": 712,
             "y": 80
           }
         },
@@ -54,7 +54,7 @@
           "id": "128cd3b2-36de-4f77-b68b-4d5c193467bf",
           "type": "basic.output",
           "data": {
-            "name": "dout",
+            "name": "Entrada",
             "pins": [
               {
                 "index": "0",
@@ -65,7 +65,7 @@
             "virtual": true
           },
           "position": {
-            "x": 752,
+            "x": 712,
             "y": 192
           }
         },
@@ -73,7 +73,7 @@
           "id": "23b877e3-5ee7-46cf-9554-234accf8714c",
           "type": "basic.input",
           "data": {
-            "name": "din",
+            "name": "salida",
             "pins": [
               {
                 "index": "0",
@@ -85,42 +85,8 @@
             "clock": false
           },
           "position": {
-            "x": 32,
+            "x": 24,
             "y": 192
-          }
-        },
-        {
-          "id": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
-          "type": "basic.code",
-          "data": {
-            "code": "\nSB_IO #(\n      .PIN_TYPE(6'b1010_01),\n      .PULLUP(1'b0)\n  ) triState (\n      .PACKAGE_PIN(pin),\n      .OUTPUT_ENABLE(oe),\n      .D_OUT_0(din),\n      .D_IN_0(dout)\n  );",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "oe"
-                },
-                {
-                  "name": "din"
-                }
-              ],
-              "out": [
-                {
-                  "name": "pin"
-                },
-                {
-                  "name": "dout"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 216,
-            "y": 56
-          },
-          "size": {
-            "width": 416,
-            "height": 224
           }
         },
         {
@@ -131,8 +97,8 @@
             "readonly": true
           },
           "position": {
-            "x": 864,
-            "y": 32
+            "x": 816,
+            "y": 64
           },
           "size": {
             "width": 320,
@@ -154,27 +120,51 @@
             "width": 1184,
             "height": 240
           }
+        },
+        {
+          "id": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
+          "type": "basic.code",
+          "data": {
+            "code": "\nSB_IO #(\n      .PIN_TYPE(6'b1010_01),\n      .PULLUP(1'b0)\n  ) triState (\n      .PACKAGE_PIN(Pin),\n      .OUTPUT_ENABLE(oe),\n      .D_OUT_0(ToPin),\n      .D_IN_0(FromPin)\n  );",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "oe"
+                },
+                {
+                  "name": "ToPin"
+                }
+              ],
+              "out": [
+                {
+                  "name": "Pin"
+                },
+                {
+                  "name": "FromPin"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 200,
+            "y": 56
+          },
+          "size": {
+            "width": 416,
+            "height": 224
+          }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
-            "port": "pin"
+            "block": "ab314537-cbba-4eab-8fd7-af4f3311b8c0",
+            "port": "out"
           },
           "target": {
-            "block": "b317e0b6-8ed9-493e-9403-dfb06fa08ad0",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
             "block": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
-            "port": "dout"
-          },
-          "target": {
-            "block": "128cd3b2-36de-4f77-b68b-4d5c193467bf",
-            "port": "in"
+            "port": "oe"
           }
         },
         {
@@ -184,17 +174,27 @@
           },
           "target": {
             "block": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
-            "port": "din"
+            "port": "ToPin"
           }
         },
         {
           "source": {
-            "block": "ab314537-cbba-4eab-8fd7-af4f3311b8c0",
-            "port": "out"
+            "block": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
+            "port": "FromPin"
           },
           "target": {
+            "block": "128cd3b2-36de-4f77-b68b-4d5c193467bf",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
             "block": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
-            "port": "oe"
+            "port": "Pin"
+          },
+          "target": {
+            "block": "b317e0b6-8ed9-493e-9403-dfb06fa08ad0",
+            "port": "in"
           }
         }
       ]

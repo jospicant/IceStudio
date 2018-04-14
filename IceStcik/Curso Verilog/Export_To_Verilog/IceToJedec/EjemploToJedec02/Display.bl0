@@ -1,0 +1,130 @@
+#$ DATE Tue Apr 10 01:33:17 2018
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE display
+#$ PINS 8 display_6_:20'ke'  clk display_5_:19'ke'  display_4_:18'ke'  display_3_:17'ke'  display_2_:16'ke'  display_1_:15'ke'  display_0_:14'ke' 
+#$ NODES 37 cuenta_0_ cuenta_1_ cuenta_2_ display20 N_24 N_35 N_36 N_38 N_40 N_41 \
+#  N_42 N_44 N_29_i N_30_i cuenta_i_1__n cuenta_i_0__n cuenta_i_2__n N_40_i_0 clk_c displayDFF_0reg \
+#  displayDFF_1reg displayDFF_2reg displayDFF_3reg displayDFF_4reg displayDFF_5reg displayDFF_6reg N_24_0 display_2_0_5__n N_35_i N_44_i \
+#  N_17_0 N_42_i N_41_i N_38_i N_12_0 N_36_i cuenta_n2_0 
+.model display
+.inputs clk.BLIF cuenta_0_.BLIF cuenta_1_.BLIF cuenta_2_.BLIF display20.BLIF N_24.BLIF N_35.BLIF N_36.BLIF N_38.BLIF \
+  N_40.BLIF N_41.BLIF N_42.BLIF N_44.BLIF N_29_i.BLIF N_30_i.BLIF cuenta_i_1__n.BLIF cuenta_i_0__n.BLIF cuenta_i_2__n.BLIF \
+  N_40_i_0.BLIF clk_c.BLIF displayDFF_0reg.BLIF displayDFF_1reg.BLIF displayDFF_2reg.BLIF displayDFF_3reg.BLIF displayDFF_4reg.BLIF displayDFF_5reg.BLIF displayDFF_6reg.BLIF \
+  N_24_0.BLIF display_2_0_5__n.BLIF N_35_i.BLIF N_44_i.BLIF N_17_0.BLIF N_42_i.BLIF N_41_i.BLIF N_38_i.BLIF N_12_0.BLIF \
+  N_36_i.BLIF cuenta_n2_0.BLIF  
+.outputs display_6_ display_5_ display_4_ display_3_ display_2_ display_1_ display_0_ cuenta_0_.D cuenta_0_.C cuenta_1_.D cuenta_1_.C \
+  cuenta_2_.D cuenta_2_.C displayDFF_0reg.D displayDFF_0reg.C displayDFF_1reg.D displayDFF_1reg.C displayDFF_2reg.D displayDFF_2reg.C displayDFF_3reg.D displayDFF_3reg.C displayDFF_4reg.D \
+  displayDFF_4reg.C displayDFF_5reg.D displayDFF_5reg.C displayDFF_6reg.D displayDFF_6reg.C display20 N_24 N_35 N_36 N_38 N_40 \
+  N_41 N_42 N_44 N_29_i N_30_i cuenta_i_1__n cuenta_i_0__n cuenta_i_2__n N_40_i_0 clk_c N_24_0 \
+  display_2_0_5__n N_35_i N_44_i N_17_0 N_42_i N_41_i N_38_i N_12_0 N_36_i cuenta_n2_0
+.names  clk.BLIF clk_c
+1 1
+.names  displayDFF_0reg.BLIF display_0_
+1 1
+.names  displayDFF_1reg.BLIF display_1_
+1 1
+.names  displayDFF_2reg.BLIF display_2_
+1 1
+.names  displayDFF_3reg.BLIF display_3_
+1 1
+.names  displayDFF_4reg.BLIF display_4_
+1 1
+.names  displayDFF_5reg.BLIF display_5_
+1 1
+.names  displayDFF_6reg.BLIF display_6_
+1 1
+.names  N_42.BLIF N_42_i
+0 1
+.names  N_41.BLIF N_41_i
+0 1
+.names  N_38.BLIF N_38_i
+0 1
+.names  N_12_0.BLIF displayDFF_1reg.D
+0 1
+.names  N_36.BLIF N_36_i
+0 1
+.names  cuenta_n2_0.BLIF cuenta_2_.D
+0 1
+.names  cuenta_0_.BLIF cuenta_2_.BLIF N_29_i
+01 1
+10 1
+.names  cuenta_0_.BLIF cuenta_1_.BLIF N_30_i
+01 1
+10 1
+.names  N_24_0.BLIF N_24
+0 1
+.names  display_2_0_5__n.BLIF displayDFF_5reg.D
+0 1
+.names  N_35.BLIF N_35_i
+0 1
+.names  N_44.BLIF N_44_i
+0 1
+.names  N_17_0.BLIF displayDFF_0reg.D
+0 1
+.names  cuenta_i_0__n.BLIF cuenta_i_1__n.BLIF N_38
+11 1
+.names  N_29_i.BLIF cuenta_i_1__n.BLIF N_40
+11 1
+.names  N_24_0.BLIF cuenta_2_.BLIF N_41
+11 1
+.names  cuenta_2_.BLIF cuenta_i_1__n.BLIF N_42
+11 1
+.names  cuenta_1_.BLIF cuenta_i_2__n.BLIF N_44
+11 1
+.names  N_35_i.BLIF N_36_i.BLIF cuenta_n2_0
+11 1
+.names  N_35_i.BLIF N_38_i.BLIF N_12_0
+11 1
+.names  N_40_i_0.BLIF N_41_i.BLIF displayDFF_3reg.D
+11 1
+.names  N_42_i.BLIF cuenta_i_0__n.BLIF displayDFF_2reg.D
+11 1
+.names  N_35_i.BLIF N_44_i.BLIF N_17_0
+11 1
+.names  cuenta_2_.BLIF cuenta_i_2__n
+0 1
+.names  N_30_i.BLIF cuenta_2_.BLIF display_2_0_5__n
+11 1
+.names  cuenta_1_.BLIF cuenta_i_1__n
+0 1
+.names  cuenta_0_.BLIF cuenta_i_0__n
+0 1
+.names  cuenta_0_.BLIF cuenta_1_.BLIF N_24_0
+11 1
+.names  display20.BLIF displayDFF_4reg.D
+0 1
+.names  N_40.BLIF N_40_i_0
+0 1
+.names  N_24.BLIF cuenta_2_.BLIF N_35
+11 1
+.names  N_24_0.BLIF cuenta_i_2__n.BLIF N_36
+11 1
+.names  N_44.BLIF cuenta_i_0__n.BLIF display20
+11 1
+.names  cuenta_i_0__n.BLIF cuenta_0_.D
+1 1
+.names  clk_c.BLIF cuenta_0_.C
+1 1
+.names  N_30_i.BLIF cuenta_1_.D
+1 1
+.names  clk_c.BLIF cuenta_1_.C
+1 1
+.names  clk_c.BLIF cuenta_2_.C
+1 1
+.names  clk_c.BLIF displayDFF_0reg.C
+1 1
+.names  clk_c.BLIF displayDFF_1reg.C
+1 1
+.names  clk_c.BLIF displayDFF_2reg.C
+1 1
+.names  clk_c.BLIF displayDFF_3reg.C
+1 1
+.names  clk_c.BLIF displayDFF_4reg.C
+1 1
+.names  clk_c.BLIF displayDFF_5reg.C
+1 1
+.names  N_40_i_0.BLIF displayDFF_6reg.D
+1 1
+.names  clk_c.BLIF displayDFF_6reg.C
+1 1
+.end

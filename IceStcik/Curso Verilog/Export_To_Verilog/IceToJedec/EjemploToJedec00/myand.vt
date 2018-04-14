@@ -1,0 +1,180 @@
+// Jed2vlog, ispLEVER version 2.00 
+// Header :
+//    File Name :
+//       myand 
+//    Circuit Name :
+//       MyAnd 
+//    Last Update :
+//       Tue Apr 10 19:23:00 2018
+//    Device Information :
+//       PLD Type P22V10G
+//    Delay Model Selected :TYP
+//    Jedec Information :
+//	ispLEVER Classic 2.0.00.17.20.15 Lattice Semiconductor Corp.
+//	JEDEC file for: P22V10G V9.0
+//	Created on: Mon Apr 09 15:25:34 2018
+//	
+//	
+// endHeader
+
+
+// Delay Assigments
+`timescale 1ns /100ps
+//----------------------------------------------------------------------//
+//                                                                      //
+//              MAIN PLD NETLIST MODULE                                 //
+//                                                                      //
+//----------------------------------------------------------------------//
+
+module MyAnd(a,b,PIN03,PIN04,PIN05,PIN06,PIN07,PIN08,PIN09,PIN10,PIN11,PIN12,
+             PIN13,PIN14,PIN15,PIN16,PIN17,PIN18,PIN19,PIN20,PIN21,PIN22,
+             c,PIN24);
+	inout PIN14,PIN15,PIN16,PIN17,PIN18,PIN19,PIN20,PIN21,PIN22
+             , c;
+	input a, b, PIN03, PIN04, PIN05, PIN06, PIN07, PIN08, PIN09, PIN10
+             , PIN11, PIN12, PIN13, PIN24;
+	supply0 GND;
+	supply1 PWR;
+
+//Pin Assignments:
+//        PIN01 = a;
+//        PIN02 = b;
+//        PIN23 = c;
+
+// Delay Parameters:
+//   TYP delay used
+parameter tpLH09 = 0:0:0;
+parameter tpHL09 = 0:0:0;
+parameter tpLH11 = 0:0:0;
+parameter tpHL11 = 0:0:0;
+parameter tpLH12 = 0:0:0;
+parameter tpHL12 = 0:0:0;
+parameter tpLH03 = 0:0:0;
+parameter tpHL03 = 0:0:0;
+parameter tpLH05 = 0:0:0;
+parameter tpHL05 = 0:0:0;
+parameter tpLH_inco_lump = 3:9:15;
+parameter tpHL_inco_lump = 3:9:15;
+parameter tpLH_oe = 0:0:0;
+parameter tpHL_oe = 0:0:0;
+parameter tpLH_oe_pterm = 3:9:15;
+parameter tpHL_oe_pterm = 3:9:15;
+parameter tpLH_preset_lump = 0:0:0;
+parameter tpHL_preset_lump = 0:0:0;
+parameter tpLH_reset_lump = 3:12:20;
+parameter tpHL_reset_lump = 3:12:20;
+parameter tpLH_fo_lump = 0:2:5;
+parameter tpHL_fo_lump = 0:2:5;
+
+//   Input Buffer:
+	andinv_MyAnd  CLKIN1( CLKIN1_o, CLKIN1_ob, a);
+	andinv_MyAnd  INBUF02( INBUF02_o, INBUF02_ob, b);
+	andinv_MyAnd  INBUF03( INBUF03_o, INBUF03_ob, PIN03);
+	andinv_MyAnd  INBUF04( INBUF04_o, INBUF04_ob, PIN04);
+	andinv_MyAnd  INBUF05( INBUF05_o, INBUF05_ob, PIN05);
+	andinv_MyAnd  INBUF06( INBUF06_o, INBUF06_ob, PIN06);
+	andinv_MyAnd  INBUF07( INBUF07_o, INBUF07_ob, PIN07);
+	andinv_MyAnd  INBUF08( INBUF08_o, INBUF08_ob, PIN08);
+	andinv_MyAnd  INBUF09( INBUF09_o, INBUF09_ob, PIN09);
+	andinv_MyAnd  INBUF10( INBUF10_o, INBUF10_ob, PIN10);
+	andinv_MyAnd  INBUF11( INBUF11_o, INBUF11_ob, PIN11);
+	andinv_MyAnd  INBUF13( INBUF13_o, INBUF13_ob, PIN13);
+	andinv_MyAnd  INBUF23( INBUF23_o, INBUF23_ob, c);
+
+//   Product Terms (AND array):
+	and  #(tpLH03,tpHL03) PT002_88( PT002_88_o, CLKIN1_o, INBUF02_o);
+
+//   Sum Terms (OR arrray):
+	or  #(tpLH_inco_lump,tpHL_inco_lump) ST023( ST023_o, PT002_88_o);
+
+//   Macro Cells:
+	dff_spar_MyAnd  OUTREG14( OUTREG14_o, OUTREG14_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG15( OUTREG15_o, OUTREG15_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG16( OUTREG16_o, OUTREG16_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG17( OUTREG17_o, OUTREG17_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG18( OUTREG18_o, OUTREG18_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG19( OUTREG19_o, OUTREG19_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG20( OUTREG20_o, OUTREG20_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG21( OUTREG21_o, OUTREG21_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+	dff_spar_MyAnd  OUTREG22( OUTREG22_o, OUTREG22_ob, GND, CLKIN1_o, NODE26_o, NODE25_o);
+
+//   Feedback Node:
+	andinv_MyAnd  NODE27( NODE27_o, NODE27_ob, OUTREG14_ob);
+	andinv_MyAnd  NODE28( NODE28_o, NODE28_ob, OUTREG15_ob);
+	andinv_MyAnd  NODE29( NODE29_o, NODE29_ob, OUTREG16_ob);
+	andinv_MyAnd  NODE30( NODE30_o, NODE30_ob, OUTREG17_ob);
+	andinv_MyAnd  NODE31( NODE31_o, NODE31_ob, OUTREG18_ob);
+	andinv_MyAnd  NODE32( NODE32_o, NODE32_ob, OUTREG19_ob);
+	andinv_MyAnd  NODE33( NODE33_o, NODE33_ob, OUTREG20_ob);
+	andinv_MyAnd  NODE34( NODE34_o, NODE34_ob, OUTREG21_ob);
+	andinv_MyAnd  NODE35( NODE35_o, NODE35_ob, OUTREG22_ob);
+
+//   Output Buffer:
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF14( PIN14, OUTREG14_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF15( PIN15, OUTREG15_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF16( PIN16, OUTREG16_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF17( PIN17, OUTREG17_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF18( PIN18, OUTREG18_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF19( PIN19, OUTREG19_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF20( PIN20, OUTREG20_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF21( PIN21, OUTREG21_o, GND);
+	notif1  #(tpLH_fo_lump,tpHL_fo_lump) OUTBUF22( PIN22, OUTREG22_o, GND);
+	bufif1  #(tpLH11,tpHL11) OUTBUF23( c, ST023_o, PWR);
+	andinv_MyAnd  NODE25( NODE25_o, NODE25_ob, GND);
+	andinv_MyAnd  NODE26( NODE26_o, NODE26_ob, GND);
+endmodule
+/************************************************************************
+*                                                                       *
+*   MODULE: ANDINV                                                      *
+*     Input Buffer with dual outputs.                                   *
+*                                                                       *
+*************************************************************************/
+module andinv_MyAnd(out,outb,in);
+output out,outb;
+input  in;
+parameter tpLH_iob = 0:0:0; 
+parameter tpHL_iob = 0:0:0; 
+        
+   and #(tpLH_iob,tpHL_iob) n1(out,in);
+   not #(tpLH_iob,tpHL_iob) n2(outb,in);
+endmodule
+/************************************************************************
+*                                                                       *
+*   MODULE: DFF_SPAR :                                                     *
+*      Leading edge triggered DFF.                                      *
+*                                                                       *
+*************************************************************************/
+module dff_spar_MyAnd(q,qb,d,clk,pst_h,rst_h);
+   output q,qb;
+   input  d,clk,pst_h,rst_h;
+   wire   rst_pst;
+   reg    pst;
+initial
+   pst = 1'b0; 
+ 
+parameter pwrUpState = 0;
+parameter pwrUpDelay = 50;
+   dff_primitive_p0 DFF(q,data,clk,rst_h,pst);
+
+//  Leading edge triggered DFF 
+   or (data,d,pst_h);/* async preset gated with clock */
+ 
+   nand (qb,q);
+  
+   assign rst_pst = ~rst_h && ~pst_h;
+// Timing check
+specify
+specparam tpLH_co_lump = 2:5:8;
+specparam tpHL_co_lump = 2:5:8;
+specparam tpLH_ff_lump = 2:3:3;
+specparam tpHL_ff_lump = 2:3:3;
+specparam setup_ff_lump = 10:10:10;
+specparam hold_ff_lump = 0:0:0;
+specparam preset_ff_lump = 0:0:0;
+specparam reset_ff_lump = 3:12:20;
+   $setuphold(posedge clk &&& rst_pst, data &&& rst_pst, setup_ff_lump, hold_ff_lump);
+   (clk *> q) = (tpLH_ff_lump,tpHL_ff_lump);
+   (clk *> qb) = (tpLH_ff_lump,tpHL_ff_lump);
+endspecify
+endmodule
+//

@@ -1,0 +1,109 @@
+%%% protect protected_file
+f "c:\isplever_classic2_0\synpbase\lib\vlog\umr_capim.v"; #file 0
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\isplever_classic2_0\synpbase\lib\vlog\scemi_objects.v"; #file 1
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\isplever_classic2_0\synpbase\lib\vlog\scemi_pipes.svh"; #file 2
+af  .standard "sv";
+af  .is_verilog 1;
+f "c:\isplever_classic2_0\synpbase\lib\vlog\hypermods.v"; #file 3
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\isplever_classic2_0\synpbase\lib\cpld\lattice.v"; #file 4
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\isplever_classic2_0\ispcpld\generic\verilog\synplify\generic.v"; #file 5
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec00\myand.h"; #file 6
+af  .standard "01";
+af  .is_verilog 1;
+f "c:\users\picoj\desktop\github\icestudio\icestcik\curso verilog\export_to_verilog\icetojedec\ejemplotojedec00\and00.v"; #file 7
+af  .standard "01";
+af  .is_verilog 1;
+VNAME 'mach.IBUF.prim'; # view id 0
+VNAME 'mach.OBUF.prim'; # view id 1
+VNAME 'mach.AND2.prim'; # view id 2
+@ERMRlENORzQAwsRbH
+l;N3PRHs#bH4lR;P
+NR$3#MH_DMs	CH"8RlENO3zQAws3bH;l"
+mFR;R
+HQ
+j;N3HRHN#b8;R4
+fbRjR:jLRkVmRRmQ
+j;bjRf:0jRsRkC0CskRBeB;R
+bfjj:RDVN#VCRNCD#R7th;R
+MROlNEARmzbwRs;Hl
+RNP3bH#sRHl4N;
+P#R3$DM_HCM	sRH8"OlNEA3mzbw3s"Hl;R
+FmN;
+HHR3#8bNR
+4;HjRQ;R
+bfjj:RVLkRmmRR;Qj
+fbRjR:j0CskRk0sCBReBb;
+R:fjjNRVDR#CV#NDChRt7M;
+RNRlOqERhR7.blsH;P
+NR#3HblsHR
+4;N3PR#_$MD	HMC8sHRN"lOqE3h37.blsH"F;
+R
+m;HjRQ;R
+HQ
+4;bjRf:0jRsRkC0CskRBeB;R
+bfjj:RDVN#VCRNCD#R7th;R
+bfjj:R8NMPRRmmjRQR;Q4
+
+@ 
+ftell;
+@E@MR@.(::.(::R44RsIF	$RvqRM8PHCsD;Fo
+RNP3MDHCRMFd
+U;N3PRHC#PsFHDo;R4
+RNP3_H#PHCsDRFo4N;
+PFR3shHoNRlC"qv$M;8"
+RNPFosH_#HM0V_FR$"vq"M8;P
+NRD3OCkNMb0_#C_b.0CHlRjj3jjjjjN;
+POR3DMCNk#b_04Cb_l0HC3Rjjjjjj
+j;N3PR#00lD0H#0CHlRjj3jjjjjN;
+P#R3$lM_#_s##HC08;Rj
+RNP3FVDI0_#NR0C{P
+NRD3VFbI_s#Fb_bNbD8HCR
+4;N3PRVIDF_HkMJVkHHRC84N;
+PVR3D_FIbCNsMH0_bN#_#o#HMRC84N;
+PVR3D_FIDbFF#s_LFM	CR
+j;}N;
+P$R#M#_HlCHG8MDNo;R4
+RNP3M#$_#lV_FoskHb_8;Rj
+RNP3M#$_lMkOsEN#6R..N;
+P#R3$DM_HCM	sRH8"U{ Ugjc6B(-(-4wcqBw-gABBA-4BUdj7cc.n"q};P
+NR83OLN_#P{CR
+RNP#_$MsCCVsOCMCD_OFRO	{P
+NR#1$0RCl{P
+NR$3#MC_sVFODO0	_$RbCg};
+;;
+}
+
+};N3PRFFL#bF08M4CR;R
+H@:@(d::(d::(N;RN
+RNH3Ds0_HFsolMNCNR""H;
+R(@@:(c::(c::LLR;H
+NR03sDs_FHNoMl"CRL
+";F@R@(::6U::6UR:OON;
+HsR30FD_sMHoNRlC";O"
+fsRjR:jlENORzQAwsRbHNlR
+=SmN
+_OS=QjNs;
+R:fjjNRlOQERARzwblsHRSL
+m_=LOQ
+Sj;=L
+fsRjR:jlENORzmAwsRbHOlR
+=SmOQ
+Sj_=OOs;
+R:fjjNRlOqERhR7.blsHRMON8m
+S=OO_
+jSQ=ON_
+4SQ=OL_;R
+bfjj:RDVN#tCRht7Rh
+7;bjRf:0jRsRkCeRBBe;BB
+
+@ 

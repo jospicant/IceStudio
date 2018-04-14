@@ -90,7 +90,7 @@
           "type": "basic.constant",
           "data": {
             "name": "Programa",
-            "value": "\"Prog03.list\"",
+            "value": "\"Prog01.list\"",
             "local": false
           },
           "position": {
@@ -99,8 +99,8 @@
           }
         },
         {
-          "id": "4fcb5f19-8095-41f4-bbae-1c057049da7e",
-          "type": "e74742f09c778d57409a247f1dd15f17be7acb72",
+          "id": "4a60d030-ed27-49ad-b724-59e424d4f8c2",
+          "type": "377515a1feeac4624cd184b4a46a4521b290408a",
           "position": {
             "x": 640,
             "y": 264
@@ -118,7 +118,7 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "4fcb5f19-8095-41f4-bbae-1c057049da7e",
+            "block": "4a60d030-ed27-49ad-b724-59e424d4f8c2",
             "port": "3d8e5a67-d17f-4014-b069-016ea09e5978"
           }
         },
@@ -128,13 +128,13 @@
             "port": "out"
           },
           "target": {
-            "block": "4fcb5f19-8095-41f4-bbae-1c057049da7e",
+            "block": "4a60d030-ed27-49ad-b724-59e424d4f8c2",
             "port": "e680c029-2290-4de7-8783-7de2e7998701"
           }
         },
         {
           "source": {
-            "block": "4fcb5f19-8095-41f4-bbae-1c057049da7e",
+            "block": "4a60d030-ed27-49ad-b724-59e424d4f8c2",
             "port": "d8436649-85a9-4fa4-a527-f93617f6d235"
           },
           "target": {
@@ -144,7 +144,7 @@
         },
         {
           "source": {
-            "block": "4fcb5f19-8095-41f4-bbae-1c057049da7e",
+            "block": "4a60d030-ed27-49ad-b724-59e424d4f8c2",
             "port": "8f03ff1c-a84c-4c15-ac75-b91d85d23e42"
           },
           "target": {
@@ -157,14 +157,14 @@
     },
     "state": {
       "pan": {
-        "x": 11,
-        "y": 45.5
+        "x": -222,
+        "y": -17.5
       },
       "zoom": 1
     }
   },
   "dependencies": {
-    "e74742f09c778d57409a247f1dd15f17be7acb72": {
+    "377515a1feeac4624cd184b4a46a4521b290408a": {
       "package": {
         "name": "Microbio",
         "version": "1.0",
@@ -249,18 +249,6 @@
               }
             },
             {
-              "id": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
-              "type": "e3b5d734b2993c3770bb2cc745db7feb434b76b7",
-              "position": {
-                "x": 104,
-                "y": 208
-              },
-              "size": {
-                "width": 96,
-                "height": 160
-              }
-            },
-            {
               "id": "6aae76f6-ac05-4df4-a6ea-1fae2995d1e4",
               "type": "2bca346914e1bd8d2341fd88d67a082c9f48dca8",
               "position": {
@@ -321,18 +309,6 @@
               }
             },
             {
-              "id": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
-              "type": "85ae3e45561fa6041e14ab9e7ddbade88b7a8816",
-              "position": {
-                "x": -176,
-                "y": 432
-              },
-              "size": {
-                "width": 96,
-                "height": 160
-              }
-            },
-            {
               "id": "0817428e-0e51-4216-b108-3ac481134230",
               "type": "62333f4609e86fcbb661330f34f9f48861f442a0",
               "position": {
@@ -342,6 +318,30 @@
               "size": {
                 "width": 96,
                 "height": 64
+              }
+            },
+            {
+              "id": "55408186-3f6c-4fb6-98f0-343fab98b81c",
+              "type": "eb385f4cceeb5fc9db58c7fc2bf0cd060e577900",
+              "position": {
+                "x": 104,
+                "y": 208
+              },
+              "size": {
+                "width": 96,
+                "height": 160
+              }
+            },
+            {
+              "id": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
+              "type": "aaf4ffbb5aa440e801aab0871aadfd52a07f0b8b",
+              "position": {
+                "x": -176,
+                "y": 432
+              },
+              "size": {
+                "width": 96,
+                "height": 160
               }
             }
           ],
@@ -358,7 +358,7 @@
             },
             {
               "source": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "4396c162-f4b4-42b8-ba7b-93a1579e36a8"
               },
               "target": {
@@ -373,7 +373,7 @@
                 "port": "e6582dfa-72f1-4192-a986-ff44e6274b68"
               },
               "target": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "bd737aa1-a526-417e-b0fd-336d4288df96"
               }
             },
@@ -383,7 +383,7 @@
                 "port": "e6cd8e28-1b35-47fc-a9e9-fae71aaa9c6f"
               },
               "target": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "4a2a1e6f-4d28-40e7-a816-868cb7b339fa"
               },
               "size": 2
@@ -401,11 +401,11 @@
             },
             {
               "source": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "22786594-7a7c-4079-9bcf-ca4291dead2d"
               },
               "target": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "4ef43e17-3107-4e12-ab3d-989e06b624df"
               },
               "vertices": [
@@ -417,11 +417,11 @@
             },
             {
               "source": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "59e08ba7-60c5-4cec-9a58-de25b231c5dd"
               },
               "target": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "675fe777-e68b-4c17-986a-47c84b478e54"
               },
               "vertices": [
@@ -433,7 +433,7 @@
             },
             {
               "source": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "5d2364ba-663b-413c-8075-7e8ccf819c4d"
               },
               "target": {
@@ -457,7 +457,7 @@
             },
             {
               "source": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "2bc8c573-0a6d-4681-a1f4-909d70334d71"
               },
               "target": {
@@ -477,7 +477,7 @@
             },
             {
               "source": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "3a285de8-7fac-43b8-ab86-446855ea3696"
               },
               "target": {
@@ -497,7 +497,7 @@
                 "port": "576c916a-3252-4e8f-b29b-d46d1bb035fc"
               },
               "target": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "b62e3eba-af7a-4043-ba4e-ae15c1392d26"
               },
               "vertices": [
@@ -541,7 +541,7 @@
                 "port": "615b4574-647d-4582-9cd9-0eedebddde00"
               },
               "target": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "5f366ad6-5d1b-4b21-ab49-7e585fde53e9"
               },
               "vertices": [
@@ -561,7 +561,7 @@
                 "port": "615b4574-647d-4582-9cd9-0eedebddde00"
               },
               "target": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "466fc130-fd46-4e06-83e3-8d0ba88324d1"
               },
               "vertices": [
@@ -667,7 +667,7 @@
                 "port": "out"
               },
               "target": {
-                "block": "02276fee-7920-40fd-9d8f-556fafc3f1c0",
+                "block": "55408186-3f6c-4fb6-98f0-343fab98b81c",
                 "port": "2c8e0863-8398-4b64-a425-865df1538199"
               },
               "vertices": [
@@ -735,7 +735,7 @@
                 "port": "out"
               },
               "target": {
-                "block": "9a3b3863-dae0-4b08-b09a-fde0cada5096",
+                "block": "3a0d5f9a-1769-43c9-8005-daeb2bc89977",
                 "port": "bc19ea18-8348-4797-acfe-47f0ddfb83c0"
               }
             },
@@ -753,10 +753,10 @@
         },
         "state": {
           "pan": {
-            "x": 707.2171,
-            "y": 76.2193
+            "x": 468.4128,
+            "y": 109.5978
           },
-          "zoom": 0.5792
+          "zoom": 0.3719
         }
       }
     },
@@ -914,227 +914,6 @@
             "y": 29.6976
           },
           "zoom": 0.6257
-        }
-      }
-    },
-    "e3b5d734b2993c3770bb2cc745db7feb434b76b7": {
-      "package": {
-        "name": "CP",
-        "version": "1.0",
-        "description": "Contador de Programa MicroBio",
-        "author": "Inspirado en Microbio del Curso de verilog de Obijuan ",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "2c8e0863-8398-4b64-a425-865df1538199",
-              "type": "basic.input",
-              "data": {
-                "name": "clk",
-                "clock": false
-              },
-              "position": {
-                "x": 296,
-                "y": 160
-              }
-            },
-            {
-              "id": "466fc130-fd46-4e06-83e3-8d0ba88324d1",
-              "type": "basic.input",
-              "data": {
-                "name": "rstn",
-                "clock": false
-              },
-              "position": {
-                "x": 296,
-                "y": 248
-              }
-            },
-            {
-              "id": "4396c162-f4b4-42b8-ba7b-93a1579e36a8",
-              "type": "basic.output",
-              "data": {
-                "name": "addr",
-                "range": "[5:0]",
-                "size": 6
-              },
-              "position": {
-                "x": 992,
-                "y": 328
-              }
-            },
-            {
-              "id": "b62e3eba-af7a-4043-ba4e-ae15c1392d26",
-              "type": "basic.input",
-              "data": {
-                "name": "DAT",
-                "range": "[5:0]",
-                "clock": false,
-                "size": 6
-              },
-              "position": {
-                "x": 296,
-                "y": 328
-              }
-            },
-            {
-              "id": "4ef43e17-3107-4e12-ab3d-989e06b624df",
-              "type": "basic.input",
-              "data": {
-                "name": "cp_inc",
-                "clock": false
-              },
-              "position": {
-                "x": 296,
-                "y": 408
-              }
-            },
-            {
-              "id": "675fe777-e68b-4c17-986a-47c84b478e54",
-              "type": "basic.input",
-              "data": {
-                "name": "cp_load",
-                "clock": false
-              },
-              "position": {
-                "x": 296,
-                "y": 496
-              }
-            },
-            {
-              "id": "5d213071-c4e4-4745-82b1-99502127c211",
-              "type": "basic.info",
-              "data": {
-                "info": "\n<b> CONTADOR DE PROGRAMA: </b>  \nSi \"rstn\" = 0 se pone a 0 el valor del contador del programa.  \nSi cp_inc = 1 el contador de programa se irá incrementando de 1 en 1.   \nsi cp_load = 1 el contador de programa se cargará con el valor que haya en DAT.  \n\naddr --> mostrará el valor del contador del programa, que atacará al bus de direcciones de la memoria  \n         de programa.",
-                "readonly": true
-              },
-              "position": {
-                "x": 288,
-                "y": -56
-              },
-              "size": {
-                "width": 912,
-                "height": 176
-              }
-            },
-            {
-              "id": "90585276-b36f-4b42-9077-3dc02807a54a",
-              "type": "basic.code",
-              "data": {
-                "code": "\n//-- Contador de programa \n// con 6 bits de direccionamiento\n\nreg [5:0] cp;\n\nalways @(posedge clk)\n  if (!rstn)          \n    cp <= 0;          \n  else if (cp_load)   \n    cp <= DAT;\n  else if (cp_inc)\n    cp <= cp + 1;\n\nassign addr = cp;",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    },
-                    {
-                      "name": "rstn"
-                    },
-                    {
-                      "name": "DAT",
-                      "range": "[5:0]",
-                      "size": 6
-                    },
-                    {
-                      "name": "cp_inc"
-                    },
-                    {
-                      "name": "cp_load"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "addr",
-                      "range": "[5:0]",
-                      "size": 6
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 456,
-                "y": 152
-              },
-              "size": {
-                "width": 448,
-                "height": 416
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "466fc130-fd46-4e06-83e3-8d0ba88324d1",
-                "port": "out"
-              },
-              "target": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "rstn"
-              }
-            },
-            {
-              "source": {
-                "block": "4ef43e17-3107-4e12-ab3d-989e06b624df",
-                "port": "out"
-              },
-              "target": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "cp_inc"
-              }
-            },
-            {
-              "source": {
-                "block": "675fe777-e68b-4c17-986a-47c84b478e54",
-                "port": "out"
-              },
-              "target": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "cp_load"
-              }
-            },
-            {
-              "source": {
-                "block": "2c8e0863-8398-4b64-a425-865df1538199",
-                "port": "out"
-              },
-              "target": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "clk"
-              }
-            },
-            {
-              "source": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "addr"
-              },
-              "target": {
-                "block": "4396c162-f4b4-42b8-ba7b-93a1579e36a8",
-                "port": "in"
-              },
-              "size": 6
-            },
-            {
-              "source": {
-                "block": "b62e3eba-af7a-4043-ba4e-ae15c1392d26",
-                "port": "out"
-              },
-              "target": {
-                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
-                "port": "DAT"
-              },
-              "size": 6
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": 44.3353,
-            "y": 119.2311
-          },
-          "zoom": 0.6292
         }
       }
     },
@@ -1897,7 +1676,323 @@
         }
       }
     },
-    "85ae3e45561fa6041e14ab9e7ddbade88b7a8816": {
+    "62333f4609e86fcbb661330f34f9f48861f442a0": {
+      "package": {
+        "name": "Div 200ms",
+        "version": "1.0",
+        "description": "200ms",
+        "author": "",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "a729501c-14be-4119-af61-cffc175fda18",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": false
+              },
+              "position": {
+                "x": 120,
+                "y": 256
+              }
+            },
+            {
+              "id": "e6582dfa-72f1-4192-a986-ff44e6274b68",
+              "type": "basic.output",
+              "data": {
+                "name": "clk_out"
+              },
+              "position": {
+                "x": 1328,
+                "y": 256
+              }
+            },
+            {
+              "id": "f01d3a01-e646-462e-a4b4-071ef1c94605",
+              "type": "basic.code",
+              "data": {
+                "code": "// Adaptación a IceStudio ( Ejemplo tomado de Obijuan)\n\n//-- Señal de periodo igual al indicado\n//-- El ancho del pulso positivo es de 1 ciclo de reloj\n//--\n//-- (c) BQ. September 2015. written by Juan Gonzalez (obijuan)\n//-----------------------------------------------------------------------------\n//-- GPL license\n//-----------------------------------------------------------------------------\n\n//-- ENTRADAS:\n//--     -clk: Senal de reloj del sistema (12 MHZ en la iceStick)\n//\n//-- SALIDAS:\n//--     - clk_out. Señal de salida para lograr la velocidad en baudios indicada\n//--                Anchura de 1 periodo de clk. SALIDA NO REGISTRADA\n\n`define T_200ms  2400000\n\n//-- Valor por defecto de la velocidad en baudios\nparameter M = `T_200ms;  // 2.400.000\n\n//-- Numero de bits para almacenar el divisor de baudios\nlocalparam N = $clog2(M);\n\n//-- Registro para implementar el contador modulo M\nreg [N-1:0] divcounter = 0;\n\n//-- Contador módulo M\nalways @(posedge clk)\n    divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;\n\n//-- Sacar un pulso de anchura 1 ciclo de reloj si el generador\nassign clk_out = (divcounter == 0) ? 1 : 0;\n\n\n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "clk_out"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 328,
+                "y": 24
+              },
+              "size": {
+                "width": 912,
+                "height": 528
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "a729501c-14be-4119-af61-cffc175fda18",
+                "port": "out"
+              },
+              "target": {
+                "block": "f01d3a01-e646-462e-a4b4-071ef1c94605",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "f01d3a01-e646-462e-a4b4-071ef1c94605",
+                "port": "clk_out"
+              },
+              "target": {
+                "block": "e6582dfa-72f1-4192-a986-ff44e6274b68",
+                "port": "in"
+              }
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": -36.9325,
+            "y": 97.862
+          },
+          "zoom": 0.6411
+        }
+      }
+    },
+    "eb385f4cceeb5fc9db58c7fc2bf0cd060e577900": {
+      "package": {
+        "name": "CP",
+        "version": "1.0",
+        "description": "Contador de Programa MicroBio",
+        "author": "Inspirado en Microbio del Curso de verilog de Obijuan ",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "2c8e0863-8398-4b64-a425-865df1538199",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": false
+              },
+              "position": {
+                "x": 288,
+                "y": 184
+              }
+            },
+            {
+              "id": "466fc130-fd46-4e06-83e3-8d0ba88324d1",
+              "type": "basic.input",
+              "data": {
+                "name": "rstn",
+                "clock": false
+              },
+              "position": {
+                "x": 288,
+                "y": 272
+              }
+            },
+            {
+              "id": "4396c162-f4b4-42b8-ba7b-93a1579e36a8",
+              "type": "basic.output",
+              "data": {
+                "name": "addr",
+                "range": "[5:0]",
+                "size": 6
+              },
+              "position": {
+                "x": 1168,
+                "y": 360
+              }
+            },
+            {
+              "id": "b62e3eba-af7a-4043-ba4e-ae15c1392d26",
+              "type": "basic.input",
+              "data": {
+                "name": "DAT",
+                "range": "[5:0]",
+                "clock": false,
+                "size": 6
+              },
+              "position": {
+                "x": 288,
+                "y": 360
+              }
+            },
+            {
+              "id": "4ef43e17-3107-4e12-ab3d-989e06b624df",
+              "type": "basic.input",
+              "data": {
+                "name": "cp_inc",
+                "clock": false
+              },
+              "position": {
+                "x": 288,
+                "y": 448
+              }
+            },
+            {
+              "id": "675fe777-e68b-4c17-986a-47c84b478e54",
+              "type": "basic.input",
+              "data": {
+                "name": "cp_load",
+                "clock": false
+              },
+              "position": {
+                "x": 288,
+                "y": 536
+              }
+            },
+            {
+              "id": "5d213071-c4e4-4745-82b1-99502127c211",
+              "type": "basic.info",
+              "data": {
+                "info": "\n<b> CONTADOR DE PROGRAMA: </b>  \nSi \"rstn\" = 0 se pone a 0 el valor del contador del programa.  \nSi cp_inc = 1 el contador de programa se irá incrementando de 1 en 1.   \nsi cp_load = 1 el contador de programa se cargará con el valor que haya en DAT.  \n\naddr --> mostrará el valor del contador del programa, que atacará al bus de direcciones de la memoria  \n         de programa.",
+                "readonly": true
+              },
+              "position": {
+                "x": 384,
+                "y": -72
+              },
+              "size": {
+                "width": 912,
+                "height": 176
+              }
+            },
+            {
+              "id": "90585276-b36f-4b42-9077-3dc02807a54a",
+              "type": "basic.code",
+              "data": {
+                "code": "\n//-- Contador de programa \n// con 6 bits de direccionamiento\n\nreg [5:0] cp=0; \n\nalways @(posedge clk)\n  if (!rstn)          \n    cp <= 0;          \n  else if (cp_load)   \n    cp <= DAT;\n  else if (cp_inc)\n    cp <= cp + 1;\n\nassign addr = cp;",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "rstn"
+                    },
+                    {
+                      "name": "DAT",
+                      "range": "[5:0]",
+                      "size": 6
+                    },
+                    {
+                      "name": "cp_inc"
+                    },
+                    {
+                      "name": "cp_load"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "addr",
+                      "range": "[5:0]",
+                      "size": 6
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 456,
+                "y": 168
+              },
+              "size": {
+                "width": 624,
+                "height": 448
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "466fc130-fd46-4e06-83e3-8d0ba88324d1",
+                "port": "out"
+              },
+              "target": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "rstn"
+              }
+            },
+            {
+              "source": {
+                "block": "4ef43e17-3107-4e12-ab3d-989e06b624df",
+                "port": "out"
+              },
+              "target": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "cp_inc"
+              }
+            },
+            {
+              "source": {
+                "block": "675fe777-e68b-4c17-986a-47c84b478e54",
+                "port": "out"
+              },
+              "target": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "cp_load"
+              }
+            },
+            {
+              "source": {
+                "block": "2c8e0863-8398-4b64-a425-865df1538199",
+                "port": "out"
+              },
+              "target": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "addr"
+              },
+              "target": {
+                "block": "4396c162-f4b4-42b8-ba7b-93a1579e36a8",
+                "port": "in"
+              },
+              "size": 6
+            },
+            {
+              "source": {
+                "block": "b62e3eba-af7a-4043-ba4e-ae15c1392d26",
+                "port": "out"
+              },
+              "target": {
+                "block": "90585276-b36f-4b42-9077-3dc02807a54a",
+                "port": "DAT"
+              },
+              "size": 6
+            }
+          ]
+        },
+        "state": {
+          "pan": {
+            "x": -12.3605,
+            "y": 103.9419
+          },
+          "zoom": 0.8881
+        }
+      }
+    },
+    "aaf4ffbb5aa440e801aab0871aadfd52a07f0b8b": {
       "package": {
         "name": "Unidad de Control",
         "version": "1.0",
@@ -2017,7 +2112,7 @@
               "id": "53bfe1ad-4a27-4699-998c-0e77e485468c",
               "type": "basic.code",
               "data": {
-                "code": "\n//-- Declaracion de las microordenes\nreg cp_inc = 0;  //-- Incrementar contador de programa\nreg cp_load = 0; //-- Cargar el contador de programa\nreg ri_load = 0; //-- Cargar una instruccion en el registro de instruccion\nreg halt = 0;    //-- Instruccion halt ejecutada\nreg leds_load = 0;  //-- Mostrar un valor por los leds\n\n//-- Codigo de operacion de las instrucciones\nlocalparam RETARDO = 2'b00;\nlocalparam HALT = 2'b01;\nlocalparam LEDS = 2'b10;\nlocalparam JP = 2'b11;\n\n//----------- UNIDAD DE CONTROL\nlocalparam INIT = 0;\nlocalparam FETCH = 1;\nlocalparam EXEC = 2;\n\n//-- Estado del automata\nreg [1:0] state;\nreg [1:0] next_state;\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n  if (!rstn)\n    state <= INIT;\n  else\n    state <= next_state;\n\n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto\n  next_state = state;      //-- Por defecto permanecer en el mismo estado\n  cp_inc = 0;\n  cp_load = 0;\n  ri_load = 0;\n  halt = 0;\n  leds_load = 0;\n\n\n  case (state)\n    //-- Estado inicial y de reposo\n    INIT:\n      next_state = FETCH;\n\n    //-- Ciclo de captura: obtener la siguiente instruccion\n    //-- de la memoria\n    FETCH: begin\n      cp_inc = 1;  //-- Incrementar CP (en el siguiente estado)\n      ri_load = 1; //-- Cargar la instruccion (en el siguiente estado)\n      next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n       next_state = FETCH;          \n\n      //-- Ejecutar la instruccion\n      case (CO)\n\n        //-- Instruccion HALT\n        HALT: begin\n          halt = 1;           //-- Activar microorden de halt\n          next_state = EXEC;  //-- Permanecer en este estado indefinidamente\n        end\n\n        //-- Instruccion WAIT\n        RETARDO: begin\n          //-- Mientras no se active clk_tic, se sigue en el mismo\n          //-- estado de ejecucion\n          if (clk_tic) next_state = FETCH;\n          else next_state = EXEC;\n        end\n\n        //-- Instruccion LEDs\n        LEDS:\n          leds_load = 1;  //-- Microorden de carga en el registro de leds\n\t\t\n        //-- Instruccion de Salto\n        JP: begin\n          cp_load = 1;    //-- Microorden de carga del CP\n          next_state = INIT;  //-- Realizar un ciclo de reposo para\n                              //-- que se cargue CP antes del estado FETCH\n        end\n\n      endcase\n\n    end\n  endcase\n\nend",
+                "code": "\n//-- Declaracion de las microordenes\nreg cp_inc = 0;  //-- Incrementar contador de programa\nreg cp_load = 0; //-- Cargar el contador de programa\nreg ri_load = 0; //-- Cargar una instruccion en el registro de instruccion\nreg halt = 0;    //-- Instruccion halt ejecutada\nreg leds_load = 0;  //-- Mostrar un valor por los leds\n\n//-- Codigo de operacion de las instrucciones\nlocalparam RETARDO = 2'b00;\nlocalparam HALT = 2'b01;\nlocalparam LEDS = 2'b10;\nlocalparam JP = 2'b11;\n\n//----------- UNIDAD DE CONTROL\nlocalparam INIT = 0;\nlocalparam FETCH = 1;\nlocalparam EXEC = 2;\n\n//-- Estado del automata\nreg [1:0] state= INIT;\nreg [1:0] next_state= INIT;\n\n//-- Transiciones de estados\n\nalways @(posedge clk)\n  if (!rstn)\n    state <= INIT;\n  else\n    state <= next_state;\n\n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n case (state)\n    //-- Estado inicial y de reposo\n    INIT:begin\n      next_state <= FETCH;\n      cp_inc <= 0;\n      cp_load <= 0;\n      ri_load <= 0;\n      halt <= 0;\n      leds_load <= 0;\n    end\n\n    //-- Ciclo de captura: obtener la siguiente instruccion\n    //-- de la memoria\n    FETCH: begin\n      cp_inc <= 1;  //-- Incrementar CP (en el siguiente estado)\n      ri_load <= 1; //-- Cargar la instruccion (en el siguiente estado)\n      next_state <= EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n       \n      //-- Ejecutar la instruccion\n      case (CO)\n\n        //-- Instruccion HALT\n        HALT: begin\n          halt <= 1;           //-- Activar microorden de halt\n          next_state <= EXEC;  //-- Permanecer en este estado indefinidamente\n        end\n\n        //-- Instruccion WAIT\n        RETARDO: begin\n          //-- Mientras no se active clk_tic, se sigue en el mismo\n          //-- estado de ejecucion\n          if (clk_tic) next_state <= FETCH;\n          else next_state <= EXEC;\n        end\n\n        //-- Instruccion LEDs\n        LEDS:begin\n          leds_load <= 1;  //-- Microorden de carga en el registro de leds\n          next_state <= FETCH;\n\t\tend\n        //-- Instruccion de Salto\n        JP: begin\n          cp_load <= 1;    //-- Microorden de carga del CP\n          next_state <= INIT;  //-- Realizar un ciclo de reposo para\n                              //-- que se cargue CP antes del estado FETCH\n        end\n\n      endcase\n\n    end\n  endcase\n\nend",
                 "params": [],
                 "ports": {
                   "in": [
@@ -2165,101 +2260,6 @@
             "y": 25.5
           },
           "zoom": 1
-        }
-      }
-    },
-    "62333f4609e86fcbb661330f34f9f48861f442a0": {
-      "package": {
-        "name": "Div 200ms",
-        "version": "1.0",
-        "description": "200ms",
-        "author": "",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "a729501c-14be-4119-af61-cffc175fda18",
-              "type": "basic.input",
-              "data": {
-                "name": "clk",
-                "clock": false
-              },
-              "position": {
-                "x": 120,
-                "y": 256
-              }
-            },
-            {
-              "id": "e6582dfa-72f1-4192-a986-ff44e6274b68",
-              "type": "basic.output",
-              "data": {
-                "name": "clk_out"
-              },
-              "position": {
-                "x": 1328,
-                "y": 256
-              }
-            },
-            {
-              "id": "f01d3a01-e646-462e-a4b4-071ef1c94605",
-              "type": "basic.code",
-              "data": {
-                "code": "// Adaptación a IceStudio ( Ejemplo tomado de Obijuan)\n\n//-- Señal de periodo igual al indicado\n//-- El ancho del pulso positivo es de 1 ciclo de reloj\n//--\n//-- (c) BQ. September 2015. written by Juan Gonzalez (obijuan)\n//-----------------------------------------------------------------------------\n//-- GPL license\n//-----------------------------------------------------------------------------\n\n//-- ENTRADAS:\n//--     -clk: Senal de reloj del sistema (12 MHZ en la iceStick)\n//\n//-- SALIDAS:\n//--     - clk_out. Señal de salida para lograr la velocidad en baudios indicada\n//--                Anchura de 1 periodo de clk. SALIDA NO REGISTRADA\n\n`define T_200ms  2400000\n\n//-- Valor por defecto de la velocidad en baudios\nparameter M = `T_200ms;  // 2.400.000\n\n//-- Numero de bits para almacenar el divisor de baudios\nlocalparam N = $clog2(M);\n\n//-- Registro para implementar el contador modulo M\nreg [N-1:0] divcounter = 0;\n\n//-- Contador módulo M\nalways @(posedge clk)\n    divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;\n\n//-- Sacar un pulso de anchura 1 ciclo de reloj si el generador\nassign clk_out = (divcounter == 0) ? 1 : 0;\n\n\n",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "clk_out"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 328,
-                "y": 24
-              },
-              "size": {
-                "width": 912,
-                "height": 528
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "a729501c-14be-4119-af61-cffc175fda18",
-                "port": "out"
-              },
-              "target": {
-                "block": "f01d3a01-e646-462e-a4b4-071ef1c94605",
-                "port": "clk"
-              }
-            },
-            {
-              "source": {
-                "block": "f01d3a01-e646-462e-a4b4-071ef1c94605",
-                "port": "clk_out"
-              },
-              "target": {
-                "block": "e6582dfa-72f1-4192-a986-ff44e6274b68",
-                "port": "in"
-              }
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": -36.9325,
-            "y": 97.862
-          },
-          "zoom": 0.6411
         }
       }
     }

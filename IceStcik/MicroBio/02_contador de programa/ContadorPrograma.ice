@@ -27,8 +27,8 @@
             "clock": false
           },
           "position": {
-            "x": 296,
-            "y": 160
+            "x": 288,
+            "y": 184
           }
         },
         {
@@ -47,8 +47,8 @@
             "clock": false
           },
           "position": {
-            "x": 296,
-            "y": 248
+            "x": 288,
+            "y": 272
           }
         },
         {
@@ -92,8 +92,8 @@
             "virtual": true
           },
           "position": {
-            "x": 992,
-            "y": 328
+            "x": 1168,
+            "y": 360
           }
         },
         {
@@ -138,8 +138,8 @@
             "clock": false
           },
           "position": {
-            "x": 296,
-            "y": 328
+            "x": 288,
+            "y": 360
           }
         },
         {
@@ -158,8 +158,8 @@
             "clock": false
           },
           "position": {
-            "x": 296,
-            "y": 408
+            "x": 288,
+            "y": 448
           }
         },
         {
@@ -178,8 +178,8 @@
             "clock": false
           },
           "position": {
-            "x": 296,
-            "y": 496
+            "x": 288,
+            "y": 536
           }
         },
         {
@@ -190,8 +190,8 @@
             "readonly": true
           },
           "position": {
-            "x": 288,
-            "y": -56
+            "x": 384,
+            "y": -72
           },
           "size": {
             "width": 912,
@@ -202,7 +202,7 @@
           "id": "90585276-b36f-4b42-9077-3dc02807a54a",
           "type": "basic.code",
           "data": {
-            "code": "\n//-- Contador de programa \n// con 6 bits de direccionamiento\n\nreg [5:0] cp;\n\nalways @(posedge clk)\n  if (!rstn)          \n    cp <= 0;          \n  else if (cp_load)   \n    cp <= DAT;\n  else if (cp_inc)\n    cp <= cp + 1;\n\nassign addr = cp;",
+            "code": "\n//-- Contador de programa \n// con 6 bits de direccionamiento\n\nreg [5:0] cp=0; \n\nalways @(posedge clk)\n  if (!rstn)          \n    cp <= 0;          \n  else if (cp_load)   \n    cp <= DAT;\n  else if (cp_inc)\n    cp <= cp + 1;\n\nassign addr = cp;",
             "params": [],
             "ports": {
               "in": [
@@ -235,11 +235,11 @@
           },
           "position": {
             "x": 456,
-            "y": 152
+            "y": 168
           },
           "size": {
-            "width": 448,
-            "height": 416
+            "width": 624,
+            "height": 448
           }
         }
       ],
@@ -310,10 +310,10 @@
     },
     "state": {
       "pan": {
-        "x": 44.3353,
-        "y": 119.2311
+        "x": -12.3605,
+        "y": 103.9419
       },
-      "zoom": 0.6292
+      "zoom": 0.8881
     }
   },
   "dependencies": {}
