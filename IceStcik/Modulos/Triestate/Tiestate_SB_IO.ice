@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "package": {
-    "name": "Triestate SB_IO",
+    "name": "Triestate SB_IO v3",
     "version": "0.1",
     "description": "SB_IO de Lattice definido como salida Triestado",
     "author": "José Picó",
@@ -27,8 +27,8 @@
             "clock": false
           },
           "position": {
-            "x": 32,
-            "y": 80
+            "x": 40,
+            "y": 128
           }
         },
         {
@@ -46,8 +46,8 @@
             "virtual": true
           },
           "position": {
-            "x": 736,
-            "y": 136
+            "x": 1024,
+            "y": 232
           }
         },
         {
@@ -66,20 +66,20 @@
             "clock": false
           },
           "position": {
-            "x": 32,
-            "y": 192
+            "x": 40,
+            "y": 336
           }
         },
         {
           "id": "cfa0a64a-c2fb-444f-8db9-5c54843a86d5",
           "type": "basic.info",
           "data": {
-            "info": "PAD del integrado.\nBloque SB_IO del integrado lattice\ndefinido como salida Triestado.\n ",
+            "info": "PAD.\nSB_IO Triestado\n\n ",
             "readonly": true
           },
           "position": {
-            "x": 864,
-            "y": 136
+            "x": 992,
+            "y": 184
           },
           "size": {
             "width": 336,
@@ -87,26 +87,10 @@
           }
         },
         {
-          "id": "5577a295-809b-4977-aa87-7cfc12144e00",
-          "type": "basic.info",
-          "data": {
-            "info": "Se instancia un bloque I/O del integrado Lattice ( tipo SB_IO ) pasando como parámetros la configuración\nque tiene el circuito de IN y de OUT definido por el parámetro PIN_TYPE.\n\nPIN_TYPE es un parámetro de configuración del módulo de entrada donde:\n  PIN_TYPE[5:2] configuran la estructura que tendrá el camino de salida hacia el PAD del integrado y\n  PIN_TYPE[1:0] configuran la estructura que tendrá el camino de entrada desde el PAD del integrado hacia el interior de la FPGA.\n  \nCon el parámetro PULLUP 1 o 0 se define si el PAD del integrado tiene o no añadida una resistencia de pull up.\n\nEn este caso PIN_TYPE[5:2] = 1010 ; --> configura una salida triestrado\n             PIN_TYPE[1:0] = 01 ;   --> configura una entrada directa a través de un buffer  ( Aquí no se ha usado para definir una\n                                                                                               salida triestado únicamente )\n             \n             PULLUP = 0 ;           --> configura el pad de salida sin resistencia de pull up.\n  \n  En=1  salida activa\n  En=0  salida en alta impedancia Hi-z",
-            "readonly": false
-          },
-          "position": {
-            "x": 24,
-            "y": -304
-          },
-          "size": {
-            "width": 1184,
-            "height": 336
-          }
-        },
-        {
           "id": "ea87e095-81c2-4e6b-983c-5df0db2f3081",
           "type": "basic.code",
           "data": {
-            "code": "\nSB_IO #(\n      .PIN_TYPE(6'b1010_01),\n      .PULLUP(1'b0)\n  ) triState (\n      .PACKAGE_PIN(pin),\n      .OUTPUT_ENABLE(En),\n      .D_OUT_0(in)\n  );",
+            "code": "\nSB_IO #(\n      .PIN_TYPE(6'b1010_01),\n      .PULLUP(1'b0)\n      //.NEG_TRIGGER(1'b0),\n      //.IO_STANDARD(SB_LVCMOS)\n  ) triState (\n      .PACKAGE_PIN(pin),\n      //.LATCH_INPUT_VALUE(1'b1),\n      //.CLOCK_ENABLE(1'b0),\n      //.INPUT_CLK(RelojParaFFin),\n      //.OUTPUT_CLK(RelojParaFFOut),\n      //\n      .OUTPUT_ENABLE(En),\n      .D_OUT_0(in)",
             "params": [],
             "ports": {
               "in": [
@@ -129,8 +113,8 @@
             "y": 56
           },
           "size": {
-            "width": 416,
-            "height": 224
+            "width": 736,
+            "height": 416
           }
         }
       ],
@@ -169,8 +153,8 @@
     },
     "state": {
       "pan": {
-        "x": 75,
-        "y": 357.5
+        "x": 71,
+        "y": 105.5
       },
       "zoom": 1
     }

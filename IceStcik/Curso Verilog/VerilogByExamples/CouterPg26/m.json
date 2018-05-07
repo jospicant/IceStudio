@@ -1,0 +1,234 @@
+{
+  "creator": "Yosys 0.8-dev (Apio build) (git sha1 bc63d80, i686-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "counterM14": {
+      "attributes": {
+        "src": "CounterMod14.v:6"
+      },
+      "ports": {
+        "en": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "count": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      },
+      "cells": {
+        "$add$CounterMod14.v:20$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 4
+          },
+          "attributes": {
+            "src": "CounterMod14.v:20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7, 8 ],
+            "B": [ "1" ],
+            "Y": [ 9, 10, 11, 12 ]
+          }
+        },
+        "$eq$CounterMod14.v:19$2": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "CounterMod14.v:19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7, 8 ],
+            "B": [ "1", "0", "1", "1" ],
+            "Y": [ 13 ]
+          }
+        },
+        "$logic_and$CounterMod14.v:19$3": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "CounterMod14.v:19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 13 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$procdff$11": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 0,
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "CounterMod14.v:15"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 4 ],
+            "D": [ 15, 16, 17, 18 ],
+            "Q": [ 5, 6, 7, 8 ]
+          }
+        },
+        "$procmux$6": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "CounterMod14.v:20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7, 8 ],
+            "B": [ 9, 10, 11, 12 ],
+            "S": [ 2 ],
+            "Y": [ 19, 20, 21, 22 ]
+          }
+        },
+        "$procmux$9": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "CounterMod14.v:19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 19, 20, 21, 22 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 14 ],
+            "Y": [ 15, 16, 17, 18 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\count[3:0]": {
+          "hide_name": 1,
+          "bits": [ 15, 16, 17, 18 ],
+          "attributes": {
+            "src": "CounterMod14.v:15"
+          }
+        },
+        "$add$CounterMod14.v:20$4_Y": {
+          "hide_name": 1,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+          }
+        },
+        "$eq$CounterMod14.v:19$2_Y": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "CounterMod14.v:19"
+          }
+        },
+        "$logic_and$CounterMod14.v:19$3_Y": {
+          "hide_name": 1,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "CounterMod14.v:19"
+          }
+        },
+        "$procmux$6_Y": {
+          "hide_name": 1,
+          "bits": [ 19, 20, 21, 22 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "CounterMod14.v:9"
+          }
+        },
+        "count": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src": "CounterMod14.v:10"
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "CounterMod14.v:7"
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "CounterMod14.v:8"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+digraph "main" {
+label="main";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="v52917d", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="w0", color="black", fontcolor="black" ];
+n4 [ shape=diamond, label="w1", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="w2", color="black", fontcolor="black" ];
+n6 [ shape=diamond, label="w3", color="black", fontcolor="black" ];
+c9 [ shape=record, label="{{<p7> vfe1eb9}|v2e2e35\nv806539|{<p8> v1bf25e}}" ];
+c10 [ shape=record, label="{{<p7> vfe1eb9}|v543dc1\nv806539|{<p8> v1bf25e}}" ];
+c12 [ shape=record, label="{{}|v85bb26\nvb734f6|{<p11> v9fb85f}}" ];
+c13 [ shape=record, label="{{<p7> vfe1eb9}|vf30ac7\nv806539|{<p8> v1bf25e}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x0:e:e -> n2:w [color="black", label=""];
+c9:p8:e -> n3:w [color="black", label=""];
+n3:e -> c13:p7:w [color="black", label=""];
+c13:p8:e -> n4:w [color="black", label=""];
+n4:e -> c10:p7:w [color="black", label=""];
+c10:p8:e -> n5:w [color="black", label=""];
+n5:e -> x0:w:w [color="black", label=""];
+c12:p11:e -> n6:w [color="black", label=""];
+n6:e -> c9:p7:w [color="black", label=""];
+}
+digraph "v806539" {
+label="v806539";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="v1bf25e", color="black", fontcolor="black" ];
+n3 [ shape=octagon, label="vfe1eb9", color="black", fontcolor="black" ];
+n4 [ shape=diamond, label="w0", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="w1", color="black", fontcolor="black" ];
+c8 [ shape=record, label="{{<p6> in}|v8a0042\nv806539_v8a0042|{<p7> out}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x1 [shape=box, style=rounded, label="BUF"];
+x1:e:e -> n2:w [color="black", label=""];
+n3:e -> c8:p6:w [color="black", label=""];
+n3:e -> x0:w:w [color="black", label=""];
+c8:p7:e -> n4:w [color="black", label=""];
+n4:e -> x1:w:w [color="black", label=""];
+x0:e:e -> n5:w [color="black", label=""];
+}
+digraph "v806539_v8a0042" {
+label="v806539_v8a0042";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="in", color="black", fontcolor="black" ];
+n3 [ shape=octagon, label="out", color="black", fontcolor="black" ];
+x0 [shape=box, style=rounded, label="BUF"];
+n2:e -> x0:w:w [color="black", label=""];
+x0:e:e -> n3:w [color="black", label=""];
+}
+digraph "vb734f6" {
+label="vb734f6";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="v9fb85f", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="w0", color="black", fontcolor="black" ];
+c5 [ shape=record, label="{{}|vb2eccd\nvb734f6_vb2eccd|{<p4> q}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x0:e:e -> n2:w [color="black", label=""];
+c5:p4:e -> n3:w [color="black", label=""];
+n3:e -> x0:w:w [color="black", label=""];
+}
+digraph "vb734f6_vb2eccd" {
+label="vb734f6_vb2eccd";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="q", color="black", fontcolor="black" ];
+v0 [ label="1'1" ];
+x1 [shape=box, style=rounded, label="BUF"];
+x1:e:e -> n2:w [color="black", label=""];
+v0:e -> x1:w:w [color="black", label=""];
+}

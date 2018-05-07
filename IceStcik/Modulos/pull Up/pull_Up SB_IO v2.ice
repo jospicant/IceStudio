@@ -15,7 +15,7 @@
           "id": "05a64a53-8281-4de2-a681-30852d3eb462",
           "type": "basic.input",
           "data": {
-            "name": "pin",
+            "name": "FromPin",
             "pins": [
               {
                 "index": "0",
@@ -35,7 +35,7 @@
           "id": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
           "type": "basic.output",
           "data": {
-            "name": "din",
+            "name": "Pin",
             "pins": [
               {
                 "index": "0",
@@ -70,17 +70,17 @@
           "id": "a5067b96-5043-4e38-9940-adb54545c2ad",
           "type": "basic.code",
           "data": {
-            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 1010_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(pin), //defino PAD\n    .D_IN_0(din),      //entrada hacia FPGA\n    \n    .OUTPUT_ENABLE(1'b0),//Buffer Triestado\n    .D_OUT_0(1'b1)       //en HiZ (anulado)\n \n);",
+            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 1010_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(Pin), //defino PAD\n    .D_IN_0(FromPin),      //entrada hacia FPGA\n    \n    .OUTPUT_ENABLE(1'b0),//Buffer Triestado\n    .D_OUT_0(1'b1)       //en HiZ (anulado)\n \n);",
             "params": [],
             "ports": {
               "in": [
                 {
-                  "name": "pin"
+                  "name": "FromPin"
                 }
               ],
               "out": [
                 {
-                  "name": "din"
+                  "name": "Pin"
                 }
               ]
             }
@@ -98,22 +98,22 @@
       "wires": [
         {
           "source": {
+            "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
+            "port": "Pin"
+          },
+          "target": {
+            "block": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
             "block": "05a64a53-8281-4de2-a681-30852d3eb462",
             "port": "out"
           },
           "target": {
             "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "pin"
-          }
-        },
-        {
-          "source": {
-            "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "din"
-          },
-          "target": {
-            "block": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
-            "port": "in"
+            "port": "FromPin"
           }
         }
       ]

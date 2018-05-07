@@ -1,0 +1,164 @@
+{
+  "creator": "Yosys 0.8-dev (Apio build) (git sha1 bc63d80, i686-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "DFlopENCL": {
+      "attributes": {
+        "src": "DFlopENCL.v:7"
+      },
+      "ports": {
+        "D": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "EN": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "clear_n": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "Q": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$procdff$9": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 0,
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "DFlopENCL.v:18"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 5 ],
+            "CLK": [ 6 ],
+            "D": [ 8 ],
+            "Q": [ 7 ]
+          }
+        },
+        "$procmux$4": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "DFlopENCL.v:22"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 2 ],
+            "S": [ 3 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$procmux$7": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "DFlopENCL.v:21"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 9 ],
+            "S": [ 4 ],
+            "Y": [ 8 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\Q[0:0]": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "DFlopENCL.v:18"
+          }
+        },
+        "$procmux$4_Y": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "DFlopENCL.v:8"
+          }
+        },
+        "EN": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "DFlopENCL.v:9"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "DFlopENCL.v:13"
+          }
+        },
+        "clear_n": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "DFlopENCL.v:10"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "DFlopENCL.v:12"
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "DFlopENCL.v:11"
+          }
+        }
+      }
+    }
+  }
+}

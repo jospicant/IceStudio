@@ -28,7 +28,7 @@
           },
           "position": {
             "x": 280,
-            "y": 144
+            "y": 168
           }
         },
         {
@@ -47,7 +47,7 @@
           },
           "position": {
             "x": 944,
-            "y": 192
+            "y": 208
           }
         },
         {
@@ -74,7 +74,7 @@
           "id": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
           "type": "basic.code",
           "data": {
-            "code": "\nbufif0 buffer1(Out,In,En0);",
+            "code": "\n\nbufif0 buffer1(Out,In,En0);",
             "params": [],
             "ports": {
               "in": [
@@ -98,7 +98,7 @@
           },
           "size": {
             "width": 368,
-            "height": 80
+            "height": 112
           }
         }
       ],
@@ -138,7 +138,7 @@
     "state": {
       "pan": {
         "x": -202,
-        "y": 58.5
+        "y": 46.5
       },
       "zoom": 1
     }

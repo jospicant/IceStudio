@@ -1,0 +1,83 @@
+{
+  "creator": "Yosys 0.7 (Apio build) (git sha1 8c071a2, x86_64-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "main_v5bdb2b": {
+      "attributes": {
+        "top": 1,
+        "src": "always01.v:30"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "sel": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$procmux$4": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always01.v:42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "S": [ 4 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "always01.v:31"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "always01.v:32"
+          }
+        },
+        "sel": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "always01.v:33"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "always01.v:34"
+          }
+        }
+      }
+    }
+  }
+}

@@ -12,30 +12,10 @@
     "graph": {
       "blocks": [
         {
-          "id": "05a64a53-8281-4de2-a681-30852d3eb462",
-          "type": "basic.input",
-          "data": {
-            "name": "pin",
-            "pins": [
-              {
-                "index": "0",
-                "name": "PMOD3",
-                "value": "80"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": -24,
-            "y": 344
-          }
-        },
-        {
           "id": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
           "type": "basic.output",
           "data": {
-            "name": "din",
+            "name": "FromPin",
             "pins": [
               {
                 "index": "0",
@@ -46,41 +26,45 @@
             "virtual": true
           },
           "position": {
-            "x": 760,
-            "y": 344
+            "x": 824,
+            "y": 352
           }
         },
         {
-          "id": "67858780-6ba0-4f02-bce4-195a015b2867",
-          "type": "basic.info",
+          "id": "c4cdcdcb-5804-4eae-958c-9ad0dd630291",
+          "type": "basic.input",
           "data": {
-            "info": "\nUsando parámetro PIN_TYPE y PULLUP configuramos un PAD (conectado a \"pin\") del integrado como entrada y con una\nresistencia de pull up en su entrada.\npara ello instanciamos un SB_IO con los parámetros adecuados y configuración adecuada.\nCon PINTYPE[5:2] = 1010 se está configurando el PAD como salida a través de un buffer triestado puesto en HiZ (camino anulado)\n    PIN_TYPE[1:0] =01   se configura la parte del PAD como entrada directa a través de un buffer y \n    con una resistencia de pull up a su entrada.\n",
-            "readonly": false
+            "name": "Pin",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true,
+            "clock": false
           },
           "position": {
-            "x": -120,
-            "y": 24
-          },
-          "size": {
-            "width": 1088,
-            "height": 176
+            "x": 0,
+            "y": 352
           }
         },
         {
           "id": "a5067b96-5043-4e38-9940-adb54545c2ad",
           "type": "basic.code",
           "data": {
-            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 1010_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(pin), //defino PAD\n    .D_IN_0(din),      //entrada hacia FPGA\n    \n    .OUTPUT_ENABLE(1'b0),//Buffer Triestado\n    .D_OUT_0(1'b1)       //en HiZ (anulado)\n \n);",
+            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 0000_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(Pin), //defino PAD\n    .D_IN_0(FromPin)     //entrada hacia FPGA\n    \n);",
             "params": [],
             "ports": {
               "in": [
                 {
-                  "name": "pin"
+                  "name": "Pin"
                 }
               ],
               "out": [
                 {
-                  "name": "din"
+                  "name": "FromPin"
                 }
               ]
             }
@@ -90,26 +74,26 @@
             "y": 240
           },
           "size": {
-            "width": 464,
-            "height": 272
+            "width": 544,
+            "height": 288
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "05a64a53-8281-4de2-a681-30852d3eb462",
+            "block": "c4cdcdcb-5804-4eae-958c-9ad0dd630291",
             "port": "out"
           },
           "target": {
             "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "pin"
+            "port": "Pin"
           }
         },
         {
           "source": {
             "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "din"
+            "port": "FromPin"
           },
           "target": {
             "block": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
@@ -120,10 +104,10 @@
     },
     "state": {
       "pan": {
-        "x": 132.2059,
-        "y": 76.5735
+        "x": 40,
+        "y": -75.7857
       },
-      "zoom": 0.7684
+      "zoom": 0.933
     }
   },
   "dependencies": {}

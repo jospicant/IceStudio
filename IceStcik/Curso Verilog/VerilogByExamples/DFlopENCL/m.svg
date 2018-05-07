@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:s="https://github.com/nturley/netlistsvg" width="399" height="286">
+  <style>svg {
+    stroke:#000;
+    fill:none;
+  }
+  text {
+    fill:#000;
+    stroke:none;
+    font-size:10px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+  }
+  .nodelabel {
+    text-anchor: middle;
+  }
+  .inputPortLabel {
+    text-anchor: end;
+  }
+  .splitjoinBody {
+    fill:#000;
+  }</style>
+  <g s:type="inputExt" transform="translate(12,171)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">D</text>
+    <s:alias val="$_inputExt_"/>
+    <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z"/>
+    <g s:x="28" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="inputExt" transform="translate(12,230)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">EN</text>
+    <s:alias val="$_inputExt_"/>
+    <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z"/>
+    <g s:x="28" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="inputExt" transform="translate(83,254)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">clear_n</text>
+    <s:alias val="$_inputExt_"/>
+    <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z"/>
+    <g s:x="28" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="inputExt" transform="translate(169,27)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">reset</text>
+    <s:alias val="$_inputExt_"/>
+    <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z"/>
+    <g s:x="28" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="inputExt" transform="translate(169,86)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">clk</text>
+    <s:alias val="$_inputExt_"/>
+    <path d="M0,0 L0,20 L15,20 L30,10 L15,0 Z"/>
+    <g s:x="28" s:y="10" s:pid="Y"/>
+  </g>
+  <g s:type="outputExt" transform="translate(354,66)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">Q</text>
+    <s:alias val="$_outputExt_"/>
+    <path d="M30,0 L30,20 L15,20 L0,10 L15,0 Z"/>
+    <g s:x="0" s:y="10" s:pid="A"/>
+  </g>
+  <g s:type="generic" transform="translate(274,65.5)" s:width="30" s:height="40">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">$adff</text>
+    <rect width="30" height="60" s:generic="body"/>
+    <g transform="translate(0,10)" s:x="0" s:y="10" s:pid="in0">
+      <text x="-3" y="-4" class="inputPortLabel">ARST</text>
+    </g>
+    <g transform="translate(0,30)" s:x="0" s:y="10" s:pid="in0">
+      <text x="-3" y="-4" class="inputPortLabel">CLK</text>
+    </g>
+    <g transform="translate(0,50)" s:x="0" s:y="10" s:pid="in0">
+      <text x="-3" y="-4" class="inputPortLabel">D</text>
+    </g>
+    <g transform="translate(30,10)" s:x="30" s:y="10" s:pid="out0">
+      <text x="5" y="-4" style="fill:#000; stroke:none">Q</text>
+    </g>
+  </g>
+  <g s:type="mux" transform="translate(96.66666666666667,151)" s:width="20" s:height="40">
+    <s:alias val="$pmux"/>
+    <s:alias val="$mux"/>
+    <s:alias val="$_MUX_"/>
+    <path d="M0,0 L20,10 L20,30 L0,40 Z"/>
+    <g s:x="0" s:y="10" s:pid="A"/>
+    <g s:x="0" s:y="30" s:pid="B"/>
+    <g s:x="10" s:y="35" s:pid="S"/>
+    <g s:x="20" s:y="20" s:pid="Y"/>
+  </g>
+  <g s:type="mux" transform="translate(177.33333333333334,141)" s:width="20" s:height="40">
+    <s:alias val="$pmux"/>
+    <s:alias val="$mux"/>
+    <s:alias val="$_MUX_"/>
+    <path d="M0,0 L20,10 L20,30 L0,40 Z"/>
+    <g s:x="0" s:y="10" s:pid="A"/>
+    <g s:x="0" s:y="30" s:pid="B"/>
+    <g s:x="10" s:y="35" s:pid="S"/>
+    <g s:x="20" s:y="20" s:pid="Y"/>
+  </g>
+  <g s:type="constant" transform="translate(83,96)" s:width="30" s:height="20">
+    <text x="15" y="-4" class="nodelabel" s:attribute="ref">0</text>
+    <s:alias val="$_constant_"/>
+    <rect width="30" height="20"/>
+    <g s:x="30" s:y="10" s:pid="Y"/>
+  </g>
+  <line x1="305" y1="76" x2="354" y2="76"/>
+  <line x1="305" y1="76" x2="329" y2="76"/>
+  <line x1="329" y1="76" x2="329" y2="12"/>
+  <line x1="329" y1="12" x2="58" y2="12"/>
+  <line x1="58" y1="12" x2="58" y2="161"/>
+  <circle cx="329" cy="76" r="2" style="fill:#000"/>
+  <line x1="58" y1="161" x2="96.66666666666667" y2="161"/>
+  <line x1="197" y1="37" x2="224" y2="37"/>
+  <line x1="224" y1="37" x2="224" y2="76"/>
+  <line x1="224" y1="76" x2="274" y2="76"/>
+  <line x1="197" y1="96" x2="274" y2="96"/>
+  <line x1="197.33333333333334" y1="161" x2="224" y2="161"/>
+  <line x1="224" y1="161" x2="224" y2="116"/>
+  <line x1="224" y1="116" x2="274" y2="116"/>
+  <line x1="40" y1="181" x2="96.66666666666667" y2="181"/>
+  <line x1="40" y1="240" x2="106.66666666666667" y2="240"/>
+  <line x1="106.66666666666667" y1="240" x2="106.66666666666667" y2="186"/>
+  <line x1="113" y1="106" x2="144" y2="106"/>
+  <line x1="144" y1="106" x2="144" y2="151"/>
+  <line x1="144" y1="151" x2="177.33333333333334" y2="151"/>
+  <line x1="116.66666666666667" y1="171" x2="177.33333333333334" y2="171"/>
+  <line x1="111" y1="264" x2="187.33333333333334" y2="264"/>
+  <line x1="187.33333333333334" y1="264" x2="187.33333333333334" y2="176"/>
+</svg>

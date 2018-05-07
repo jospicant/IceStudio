@@ -1,0 +1,161 @@
+{
+  "creator": "Yosys 0.7 (Apio build) (git sha1 8c071a2, x86_64-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "main_v5bdb2b": {
+      "attributes": {
+        "top": 1,
+        "src": "always03.v:38"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "sel": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "reset": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$procdff$10": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always03.v:49"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 6 ],
+            "D": [ 8 ],
+            "Q": [ 7 ]
+          }
+        },
+        "$procmux$5": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always03.v:53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "S": [ 4 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$procmux$8": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always03.v:51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 9 ],
+            "S": [ 5 ],
+            "Y": [ 8 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\y[0:0]": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "always03.v:49"
+          }
+        },
+        "$procmux$5_Y": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "always03.v:39"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "always03.v:40"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "always03.v:43"
+          }
+        },
+        "reset": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "always03.v:42"
+          }
+        },
+        "sel": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "always03.v:41"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "always03.v:44"
+          }
+        }
+      }
+    }
+  }
+}

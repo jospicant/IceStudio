@@ -27,8 +27,8 @@
             "clock": true
           },
           "position": {
-            "x": 152,
-            "y": 280
+            "x": 144,
+            "y": 336
           }
         },
         {
@@ -46,8 +46,8 @@
             "virtual": true
           },
           "position": {
-            "x": 1056,
-            "y": 280
+            "x": 1048,
+            "y": 336
           }
         },
         {
@@ -67,7 +67,7 @@
           "id": "f54545c4-308e-4787-8383-c79146f70ab8",
           "type": "basic.code",
           "data": {
-            "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+            "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  //para que el dutty de la señal sea de 50%, una vez calculado\n  //la cantidad de numeros que tienes que contar como el corte no\n  // queda justo en el centro lo dividimos por 2 y así \n  // calculamos un número donde queda en el centro (50%) y\n  // cambiaremos la salida en cada cambio.\n  \n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
             "params": [
               {
                 "name": "Hz"
@@ -92,7 +92,7 @@
           },
           "size": {
             "width": 656,
-            "height": 528
+            "height": 640
           }
         }
       ],
@@ -131,10 +131,10 @@
     },
     "state": {
       "pan": {
-        "x": -29.9938,
-        "y": 93.8889
+        "x": 133.1246,
+        "y": 70.2181
       },
-      "zoom": 0.7485
+      "zoom": 0.7505
     }
   },
   "dependencies": {}

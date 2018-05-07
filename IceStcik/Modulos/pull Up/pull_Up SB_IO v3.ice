@@ -12,30 +12,10 @@
     "graph": {
       "blocks": [
         {
-          "id": "05a64a53-8281-4de2-a681-30852d3eb462",
-          "type": "basic.input",
-          "data": {
-            "name": "pin",
-            "pins": [
-              {
-                "index": "0",
-                "name": "PMOD3",
-                "value": "80"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": -24,
-            "y": 344
-          }
-        },
-        {
           "id": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
           "type": "basic.output",
           "data": {
-            "name": "din",
+            "name": "Pin",
             "pins": [
               {
                 "index": "0",
@@ -46,8 +26,27 @@
             "virtual": true
           },
           "position": {
-            "x": 760,
-            "y": 344
+            "x": 768,
+            "y": 280
+          }
+        },
+        {
+          "id": "08f6dabb-24d6-4270-87ff-9d33d808947a",
+          "type": "basic.output",
+          "data": {
+            "name": "FromPin",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": "0"
+              }
+            ],
+            "virtual": true
+          },
+          "position": {
+            "x": 768,
+            "y": 416
           }
         },
         {
@@ -70,17 +69,16 @@
           "id": "a5067b96-5043-4e38-9940-adb54545c2ad",
           "type": "basic.code",
           "data": {
-            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 1010_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(pin), //defino PAD\n    .D_IN_0(din),      //entrada hacia FPGA\n    \n    .OUTPUT_ENABLE(1'b0),//Buffer Triestado\n    .D_OUT_0(1'b1)       //en HiZ (anulado)\n \n);",
+            "code": "\n// Pull up\n\nSB_IO #(\n    .PIN_TYPE(6'b 1010_01),\n    .PULLUP(1'b 1)\n) out_PullUp (\n    .PACKAGE_PIN(Pin), //defino PAD\n    .D_IN_0(FromPin),      //entrada hacia FPGA\n    \n    .OUTPUT_ENABLE(1'b0),//Buffer Triestado\n    .D_OUT_0(1'b1)       //en HiZ (anulado)\n \n);",
             "params": [],
             "ports": {
-              "in": [
-                {
-                  "name": "pin"
-                }
-              ],
+              "in": [],
               "out": [
                 {
-                  "name": "din"
+                  "name": "Pin"
+                },
+                {
+                  "name": "FromPin"
                 }
               ]
             }
@@ -98,21 +96,21 @@
       "wires": [
         {
           "source": {
-            "block": "05a64a53-8281-4de2-a681-30852d3eb462",
-            "port": "out"
+            "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
+            "port": "Pin"
           },
           "target": {
-            "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "pin"
+            "block": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
+            "port": "in"
           }
         },
         {
           "source": {
             "block": "a5067b96-5043-4e38-9940-adb54545c2ad",
-            "port": "din"
+            "port": "FromPin"
           },
           "target": {
-            "block": "7d8509c5-da3c-4fa8-805a-a02effda1bcd",
+            "block": "08f6dabb-24d6-4270-87ff-9d33d808947a",
             "port": "in"
           }
         }
@@ -120,10 +118,10 @@
     },
     "state": {
       "pan": {
-        "x": 132.2059,
-        "y": 76.5735
+        "x": 267,
+        "y": 77.5
       },
-      "zoom": 0.7684
+      "zoom": 1
     }
   },
   "dependencies": {}

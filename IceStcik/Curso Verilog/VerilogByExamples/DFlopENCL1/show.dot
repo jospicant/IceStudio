@@ -1,0 +1,25 @@
+digraph "DFlopENCL" {
+label="DFlopENCL";
+rankdir="LR";
+remincross=true;
+n4 [ shape=octagon, label="D", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="EN", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="Q", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="clear_n", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p10> ARST|<p11> CLK|<p4> D}|$9\n$adff|{<p6> Q}}" ];
+c17 [ shape=record, label="{{<p13> A|<p14> B|<p15> S}|$4\n$mux|{<p16> Y}}" ];
+v0 [ label="1'0" ];
+c18 [ shape=record, label="{{<p13> A|<p14> B|<p15> S}|$7\n$mux|{<p16> Y}}" ];
+c18:p16:e -> c12:p4:w [color="black", label=""];
+c17:p16:e -> c18:p14:w [color="black", label=""];
+n4:e -> c17:p14:w [color="black", label=""];
+n5:e -> c17:p15:w [color="black", label=""];
+c12:p6:e -> n6:w [color="black", label=""];
+n6:e -> c17:p13:w [color="black", label=""];
+n7:e -> c18:p15:w [color="black", label=""];
+n8:e -> c12:p11:w [color="black", label=""];
+n9:e -> c12:p10:w [color="black", label=""];
+v0:e -> c18:p13:w [color="black", label=""];
+}

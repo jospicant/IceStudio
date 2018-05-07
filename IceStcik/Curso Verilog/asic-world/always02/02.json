@@ -1,0 +1,122 @@
+{
+  "creator": "Yosys 0.7 (Apio build) (git sha1 8c071a2, x86_64-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "main_v5bdb2b": {
+      "attributes": {
+        "top": 1,
+        "src": "always02.v:34"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "sel": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "$procdff$6": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always02.v:44"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 5 ],
+            "D": [ 7 ],
+            "Q": [ 6 ]
+          }
+        },
+        "$procmux$4": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "always02.v:47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "S": [ 4 ],
+            "Y": [ 7 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\y[0:0]": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "always02.v:44"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "always02.v:35"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "always02.v:36"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "always02.v:38"
+          }
+        },
+        "sel": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "always02.v:37"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "always02.v:39"
+          }
+        }
+      }
+    }
+  }
+}

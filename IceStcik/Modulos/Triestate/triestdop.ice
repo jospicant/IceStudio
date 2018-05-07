@@ -15,7 +15,7 @@
           "id": "ea5b8ff1-80a8-47d3-9fb3-0fa7308887c3",
           "type": "basic.input",
           "data": {
-            "name": "In",
+            "name": "in",
             "pins": [
               {
                 "index": "0",
@@ -28,14 +28,14 @@
           },
           "position": {
             "x": 280,
-            "y": 144
+            "y": 168
           }
         },
         {
           "id": "019473e4-7e83-4203-ae69-b77e8a4aab5e",
           "type": "basic.output",
           "data": {
-            "name": "Out",
+            "name": "pin",
             "pins": [
               {
                 "index": "0",
@@ -46,7 +46,7 @@
             "virtual": true
           },
           "position": {
-            "x": 944,
+            "x": 1104,
             "y": 192
           }
         },
@@ -54,7 +54,7 @@
           "id": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
           "type": "basic.input",
           "data": {
-            "name": "En1",
+            "name": "eo",
             "pins": [
               {
                 "index": "0",
@@ -74,49 +74,49 @@
           "id": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
           "type": "basic.code",
           "data": {
-            "code": "localparam EXPLICIT_TBUF=0;\n\nbufif1 buffer1(Out,In,En1);",
+            "code": "\n//@include triestadop.v\n\ntriestadop mybuffif1(.pin(pin),.in(in),.eo(eo));",
             "params": [],
             "ports": {
               "in": [
                 {
-                  "name": "In"
+                  "name": "in"
                 },
                 {
-                  "name": "En1"
+                  "name": "eo"
                 }
               ],
               "out": [
                 {
-                  "name": "Out"
+                  "name": "pin"
                 }
               ]
             }
           },
           "position": {
-            "x": 480,
-            "y": 184
+            "x": 464,
+            "y": 168
           },
           "size": {
-            "width": 368,
-            "height": 80
+            "width": 528,
+            "height": 112
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "ea5b8ff1-80a8-47d3-9fb3-0fa7308887c3",
+            "block": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
             "port": "out"
           },
           "target": {
             "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
-            "port": "In"
+            "port": "eo"
           }
         },
         {
           "source": {
             "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
-            "port": "Out"
+            "port": "pin"
           },
           "target": {
             "block": "019473e4-7e83-4203-ae69-b77e8a4aab5e",
@@ -125,22 +125,22 @@
         },
         {
           "source": {
-            "block": "ff4b7f76-30ef-4301-8119-79028b2a8d72",
+            "block": "ea5b8ff1-80a8-47d3-9fb3-0fa7308887c3",
             "port": "out"
           },
           "target": {
             "block": "90e70c0b-9f56-4789-bc36-9aa8122ce52c",
-            "port": "En1"
+            "port": "in"
           }
         }
       ]
     },
     "state": {
       "pan": {
-        "x": -202,
-        "y": 58.5
+        "x": -214.4348,
+        "y": 68.0478
       },
-      "zoom": 1
+      "zoom": 0.9087
     }
   },
   "dependencies": {}
