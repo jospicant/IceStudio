@@ -1,0 +1,80 @@
+{
+  "creator": "Yosys 0.8-dev (Apio build) (git sha1 bc63d80, i686-w64-mingw32-gcc 5.3.0 -fpermissive -Os)",
+  "modules": {
+    "Or3": {
+      "attributes": {
+        "src": "OR3.v:7"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "c": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "d": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$reduce_or$OR3.v:15$1": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "OR3.v:15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 3, 2 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "OR3.v:8"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "OR3.v:9"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "OR3.v:10"
+          }
+        },
+        "d": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "OR3.v:11"
+          }
+        }
+      }
+    }
+  }
+}

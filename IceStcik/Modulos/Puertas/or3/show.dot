@@ -1,0 +1,16 @@
+digraph "Or3" {
+label="Or3";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="a", color="black", fontcolor="black" ];
+n3 [ shape=octagon, label="b", color="black", fontcolor="black" ];
+n4 [ shape=octagon, label="c", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="d", color="black", fontcolor="black" ];
+c8 [ shape=record, label="{{<p6> A}|$1\n$reduce_or|{<p7> Y}}" ];
+x0 [ shape=record, style=rounded, label="<s2> 0:0 - 2:2 |<s1> 0:0 - 1:1 |<s0> 0:0 - 0:0 " ];
+x0:e -> c8:p6:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", style="setlinewidth(3)", label=""];
+n2:e -> x0:s2:w [color="black", label=""];
+n3:e -> x0:s1:w [color="black", label=""];
+n4:e -> x0:s0:w [color="black", label=""];
+c8:p7:e -> n5:w [color="black", label=""];
+}
