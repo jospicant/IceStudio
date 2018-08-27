@@ -12,44 +12,6 @@
     "graph": {
       "blocks": [
         {
-          "id": "cfa47801-2fa9-4961-9944-0054ebec6297",
-          "type": "basic.output",
-          "data": {
-            "name": "Diode",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D5",
-                "value": "95"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 624,
-            "y": -72
-          }
-        },
-        {
-          "id": "e9404dad-3381-4b43-b0c4-9d76b9416427",
-          "type": "basic.output",
-          "data": {
-            "name": "EN",
-            "pins": [
-              {
-                "index": "0",
-                "name": "TR9",
-                "value": "118"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 624,
-            "y": 8
-          }
-        },
-        {
           "id": "840b47e6-2edd-42a7-9cf3-c98cda7f7bcb",
           "type": "basic.output",
           "data": {
@@ -66,26 +28,6 @@
           "position": {
             "x": 624,
             "y": 96
-          }
-        },
-        {
-          "id": "a2502ddf-db66-4fc1-9491-06a02e97659f",
-          "type": "basic.input",
-          "data": {
-            "name": "en0  ",
-            "pins": [
-              {
-                "index": "0",
-                "name": "TR10",
-                "value": "119"
-              }
-            ],
-            "virtual": false,
-            "clock": false
-          },
-          "position": {
-            "x": 48,
-            "y": 144
           }
         },
         {
@@ -108,42 +50,63 @@
           }
         },
         {
-          "id": "500ad2f3-d5f0-46ef-a9ad-7fc51461de43",
+          "id": "ee3e3369-5a5c-49c0-ad6f-cac90d318f5e",
           "type": "basic.input",
           "data": {
-            "name": "",
+            "name": "datos",
             "pins": [
               {
                 "index": "0",
-                "name": "TR3",
-                "value": "112"
+                "name": "PMOD2",
+                "value": "79"
               }
             ],
             "virtual": false,
             "clock": false
           },
           "position": {
-            "x": 48,
-            "y": 216
+            "x": 88,
+            "y": 232
           }
         },
         {
-          "id": "c01799df-1104-4306-b15d-f476d932708e",
+          "id": "7f487a36-8953-4e9e-84ad-a3d2a995321e",
           "type": "basic.output",
           "data": {
-            "name": "Ready",
+            "name": "D",
+            "range": "[4:0]",
             "pins": [
               {
+                "index": "4",
+                "name": "D5",
+                "value": "95"
+              },
+              {
+                "index": "3",
+                "name": "D4",
+                "value": "96"
+              },
+              {
+                "index": "2",
+                "name": "D3",
+                "value": "97"
+              },
+              {
+                "index": "1",
+                "name": "D2",
+                "value": "98"
+              },
+              {
                 "index": "0",
-                "name": "BR10",
-                "value": "44"
+                "name": "D1",
+                "value": "99"
               }
             ],
             "virtual": false
           },
           "position": {
-            "x": 624,
-            "y": 240
+            "x": 1112,
+            "y": 288
           }
         },
         {
@@ -159,11 +122,43 @@
           }
         },
         {
-          "id": "b64aec9a-8d70-412b-8b39-42dd10a2d645",
-          "type": "c83dcd1d9ab420d911df81b3dfae04681559c623",
+          "id": "4f6effd3-65f3-4dd2-b97d-77d3d72403b0",
+          "type": "basic.info",
+          "data": {
+            "info": "PMOD3",
+            "readonly": true
+          },
           "position": {
-            "x": 464,
-            "y": -72
+            "x": 736,
+            "y": 112
+          },
+          "size": {
+            "width": 72,
+            "height": 40
+          }
+        },
+        {
+          "id": "e34aaf13-9614-48b6-a5c9-dd6253f59891",
+          "type": "basic.info",
+          "data": {
+            "info": "PMOD1\n",
+            "readonly": true
+          },
+          "position": {
+            "x": 736,
+            "y": 176
+          },
+          "size": {
+            "width": 80,
+            "height": 56
+          }
+        },
+        {
+          "id": "ef753dbc-15a8-44d2-b562-3f9f54b04c42",
+          "type": "d07567dc2eacea5c4c564c0dd74bff8595ea07de",
+          "position": {
+            "x": 88,
+            "y": 144
           },
           "size": {
             "width": 96,
@@ -171,19 +166,69 @@
           }
         },
         {
-          "id": "8ff7b1e5-349e-45a3-8857-2f9bfb528517",
+          "id": "ede622a5-54f0-438f-bcd8-cd4ae294bba9",
+          "type": "fec7ff39e4c71bcdf0ca03690e64aab18405ad25",
+          "position": {
+            "x": -80,
+            "y": 128
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "3f2f3c8f-cbda-4f41-b5a9-c7f0cbfcb17d",
           "type": "basic.info",
           "data": {
-            "info": "\nTesting control's signal  adc_clk, adc_cs, ready   \nWhen \"en0\" fall ( 1->0 ) Start the measure ( while \"en0=0\" the system will do continuos adc's sample )  \nadc_CS will be On only 1 cycle of clock starting the measure, when the measure is Ready signal \"Ready\" will be On   \n1 cycle of clock.  \n<a href=\"https://github.com/jospicant/IceStudio/tree/master/Ice40/ADC\"> Github jospicant </a> \n",
+            "info": "PMOD2",
             "readonly": true
           },
           "position": {
-            "x": 8,
-            "y": -216
+            "x": 16,
+            "y": 248
           },
           "size": {
-            "width": 912,
-            "height": 144
+            "width": 72,
+            "height": 48
+          }
+        },
+        {
+          "id": "45912a98-adfb-4763-9775-1b8fd0e603b1",
+          "type": "basic.code",
+          "data": {
+            "code": "\nreg[11:0] Q=0;\n\nalways @(posedge clk)\n if(ready==1'b1)\n    Q<=datos;\n   \n    \nassign Leds=Q[11:7];",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "datos",
+                  "range": "[11:0]",
+                  "size": 12
+                },
+                {
+                  "name": "ready"
+                },
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "Leds",
+                  "range": "[4:0]",
+                  "size": 5
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 640,
+            "y": 256
+          },
+          "size": {
+            "width": 392,
+            "height": 248
           }
         }
       ],
@@ -216,8 +261,8 @@
         },
         {
           "source": {
-            "block": "a2502ddf-db66-4fc1-9491-06a02e97659f",
-            "port": "out"
+            "block": "ef753dbc-15a8-44d2-b562-3f9f54b04c42",
+            "port": "670814e5-996c-4437-9dc9-a9c22a91f1a8"
           },
           "target": {
             "block": "207f9fc4-ba97-4a1c-b5fd-14d7bc5dcbb1",
@@ -226,7 +271,17 @@
         },
         {
           "source": {
-            "block": "500ad2f3-d5f0-46ef-a9ad-7fc51461de43",
+            "block": "ede622a5-54f0-438f-bcd8-cd4ae294bba9",
+            "port": "3d584b0a-29eb-47af-8c43-c0822282ef05"
+          },
+          "target": {
+            "block": "ef753dbc-15a8-44d2-b562-3f9f54b04c42",
+            "port": "f5b0fa41-3141-4216-a31a-770bc5866f59"
+          }
+        },
+        {
+          "source": {
+            "block": "ee3e3369-5a5c-49c0-ad6f-cac90d318f5e",
             "port": "out"
           },
           "target": {
@@ -235,10 +290,21 @@
           },
           "vertices": [
             {
-              "x": 176,
-              "y": 224
+              "x": 224,
+              "y": 240
             }
           ]
+        },
+        {
+          "source": {
+            "block": "207f9fc4-ba97-4a1c-b5fd-14d7bc5dcbb1",
+            "port": "8a88651c-5455-4dd0-a603-77fc9c42ff99"
+          },
+          "target": {
+            "block": "45912a98-adfb-4763-9775-1b8fd0e603b1",
+            "port": "datos"
+          },
+          "size": 12
         },
         {
           "source": {
@@ -246,35 +312,26 @@
             "port": "169d1982-adc4-4d75-9516-ed6210ecda43"
           },
           "target": {
-            "block": "c01799df-1104-4306-b15d-f476d932708e",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "b64aec9a-8d70-412b-8b39-42dd10a2d645",
-            "port": "19c8f68d-5022-487f-9ab0-f0a3cd58bead"
-          },
-          "target": {
-            "block": "cfa47801-2fa9-4961-9944-0054ebec6297",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "a2502ddf-db66-4fc1-9491-06a02e97659f",
-            "port": "out"
-          },
-          "target": {
-            "block": "e9404dad-3381-4b43-b0c4-9d76b9416427",
-            "port": "in"
+            "block": "45912a98-adfb-4763-9775-1b8fd0e603b1",
+            "port": "ready"
           },
           "vertices": [
             {
-              "x": 216,
-              "y": 112
+              "x": 512,
+              "y": 320
             }
           ]
+        },
+        {
+          "source": {
+            "block": "45912a98-adfb-4763-9775-1b8fd0e603b1",
+            "port": "Leds"
+          },
+          "target": {
+            "block": "7f487a36-8953-4e9e-84ad-a3d2a995321e",
+            "port": "in"
+          },
+          "size": 5
         }
       ]
     }
@@ -495,61 +552,174 @@
         }
       }
     },
-    "c83dcd1d9ab420d911df81b3dfae04681559c623": {
+    "d07567dc2eacea5c4c564c0dd74bff8595ea07de": {
       "package": {
-        "name": "Bit 1",
-        "version": "1.0.0",
-        "description": "Assign 1 to the output wire",
-        "author": "Jesús Arroyo",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2247.303%22%20height=%2227.648%22%20viewBox=%220%200%2044.346456%2025.919999%22%3E%3Ctext%20style=%22line-height:125%25%22%20x=%22325.218%22%20y=%22315.455%22%20font-weight=%22400%22%20font-size=%2212.669%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20transform=%22translate(-307.01%20-298.51)%22%3E%3Ctspan%20x=%22325.218%22%20y=%22315.455%22%20style=%22-inkscape-font-specification:'Courier%2010%20Pitch'%22%20font-family=%22Courier%2010%20Pitch%22%3E1%3C/tspan%3E%3C/text%3E%3C/svg%3E"
+        "name": "DFF1",
+        "version": "v1.0",
+        "description": "Biestable D",
+        "author": "José Picó",
+        "image": ""
       },
       "design": {
         "graph": {
           "blocks": [
             {
-              "id": "19c8f68d-5022-487f-9ab0-f0a3cd58bead",
-              "type": "basic.output",
+              "id": "f5b0fa41-3141-4216-a31a-770bc5866f59",
+              "type": "basic.input",
               "data": {
-                "name": ""
+                "name": "D",
+                "clock": false
               },
               "position": {
-                "x": 608,
-                "y": 192
+                "x": 368,
+                "y": 224
               }
             },
             {
-              "id": "b959fb96-ac67-4aea-90b3-ed35a4c17bf5",
+              "id": "670814e5-996c-4437-9dc9-a9c22a91f1a8",
+              "type": "basic.output",
+              "data": {
+                "name": "q"
+              },
+              "position": {
+                "x": 960,
+                "y": 264
+              }
+            },
+            {
+              "id": "b6e945d8-e761-4a4e-a078-580f2614f39e",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": true
+              },
+              "position": {
+                "x": 368,
+                "y": 312
+              }
+            },
+            {
+              "id": "099db605-2cf8-4928-9e98-0ebe4460dd20",
               "type": "basic.code",
               "data": {
-                "code": "// Bit 1\n\nassign v = 1'b1;",
+                "code": "\nreg q=1'b1;\n\nalways @(posedge clk)\nq<=d;\n  \n\n\n\n",
                 "params": [],
                 "ports": {
-                  "in": [],
+                  "in": [
+                    {
+                      "name": "d"
+                    },
+                    {
+                      "name": "clk"
+                    }
+                  ],
                   "out": [
                     {
-                      "name": "v"
+                      "name": "q"
                     }
                   ]
                 }
               },
               "position": {
-                "x": 96,
-                "y": 96
+                "x": 568,
+                "y": 208
               },
               "size": {
-                "width": 384,
-                "height": 256
+                "width": 304,
+                "height": 176
               }
             }
           ],
           "wires": [
             {
               "source": {
-                "block": "b959fb96-ac67-4aea-90b3-ed35a4c17bf5",
-                "port": "v"
+                "block": "b6e945d8-e761-4a4e-a078-580f2614f39e",
+                "port": "out"
               },
               "target": {
-                "block": "19c8f68d-5022-487f-9ab0-f0a3cd58bead",
+                "block": "099db605-2cf8-4928-9e98-0ebe4460dd20",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "099db605-2cf8-4928-9e98-0ebe4460dd20",
+                "port": "q"
+              },
+              "target": {
+                "block": "670814e5-996c-4437-9dc9-a9c22a91f1a8",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "f5b0fa41-3141-4216-a31a-770bc5866f59",
+                "port": "out"
+              },
+              "target": {
+                "block": "099db605-2cf8-4928-9e98-0ebe4460dd20",
+                "port": "d"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "fec7ff39e4c71bcdf0ca03690e64aab18405ad25": {
+      "package": {
+        "name": "0",
+        "version": "0.1",
+        "description": "Un bit constante a 0",
+        "author": "Jesus Arroyo",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2233.641%22%20height=%2258.608%22%20viewBox=%220%200%2031.538733%2054.944538%22%3E%3Cg%20stroke=%22#00f%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M21.822%2033.91l4.092%208.992-3.772%209.727%204.181%201.311M13.356%2034.68s-1.091%208.252-2.585%208.918C9.278%2044.265%201%2050.456%201%2050.456l2.647%203.256%22%20fill=%22none%22%20stroke-width=%222%22/%3E%3Cpath%20d=%22M19.787%202.504a11.65%2017.168%2028.167%200%200-14.101%2010.6%2011.65%2017.168%2028.167%200%200%202.166%2020.634%2011.65%2017.168%2028.167%200%200%2018.373-9.636%2011.65%2017.168%2028.167%200%200-2.166-20.633%2011.65%2017.168%2028.167%200%200-4.272-.965zm-1.31%205.123a8.864%2012.535%2028.167%200%201%203.232.766%208.864%2012.535%2028.167%200%201%201.898%2015.234%208.864%2012.535%2028.167%200%201-13.732%206.867A8.864%2012.535%2028.167%200%201%207.979%2015.26a8.864%2012.535%2028.167%200%201%2010.498-7.633z%22%20fill=%22#00f%22%20stroke-width=%225%22/%3E%3C/g%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Bit constante a 0\nassign q = 1'b0;\n\n",
+                "params": [],
+                "ports": {
+                  "in": [],
+                  "out": [
+                    {
+                      "name": "q"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 168,
+                "y": 112
+              },
+              "size": {
+                "width": 256,
+                "height": 160
+              }
+            },
+            {
+              "id": "3d584b0a-29eb-47af-8c43-c0822282ef05",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 512,
+                "y": 160
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
+                "port": "q"
+              },
+              "target": {
+                "block": "3d584b0a-29eb-47af-8c43-c0822282ef05",
                 "port": "in"
               }
             }

@@ -1,10 +1,10 @@
 {
   "version": "1.1",
   "package": {
-    "name": "",
-    "version": "",
-    "description": "",
-    "author": "",
+    "name": "Count_7seg",
+    "version": "1.0",
+    "description": "Contador 0 a 7 sobre display 7 segmentos",
+    "author": "José Picó",
     "image": ""
   },
   "design": {
@@ -85,7 +85,7 @@
           "id": "39b90323-9fb6-4f00-b2b1-8f5981c346d2",
           "type": "basic.code",
           "data": {
-            "code": "\nreg[2:0] cuenta=4'b000;\nreg[6:0] display=7'b 1111110;\n\nalways @(posedge clk)\nbegin\n\ncuenta<=cuenta+1;\n\n    // Case statement implements a logig truth table\n    case(cuenta)\n        3'b000:display <=7'b 1111110;  //a,b,c,d,e,f,g\n        3'b001:display <=7'b 0110000;\n        3'b010:display <=7'b 1101101;\n        3'b011:display <=7'b 1111001;\n        3'b100:display <=7'b 0110011;\n        3'b101:display <=7'b 1011011;\n        3'b110:display <=7'b 1011111;\n        3'b111:display <=7'b 1110000;\n        \n        default:display <=7'b 1111110;\n    endcase\nend\n\n",
+            "code": "\nreg[2:0] cuenta=4'b000;\nreg[6:0] display=7'b 1111110;\n\nalways @(posedge clk)\nbegin\n\ncuenta<=cuenta+1;\n\n    // Case statement implements a logic truth table\n    case(cuenta)\n        3'b000:display <=7'b 1111110;  //segments a,b,c,d,e,f,g\n        3'b001:display <=7'b 0110000;\n        3'b010:display <=7'b 1101101;\n        3'b011:display <=7'b 1111001;\n        3'b100:display <=7'b 0110011;\n        3'b101:display <=7'b 1011011;\n        3'b110:display <=7'b 1011111;\n        3'b111:display <=7'b 1110000;\n        \n        default:display <=7'b 1111110;\n    endcase\nend\n\n",
             "params": [],
             "ports": {
               "in": [
@@ -135,13 +135,6 @@
           "size": 7
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 410.5741,
-        "y": 198.599
-      },
-      "zoom": 0.5325
     }
   },
   "dependencies": {}

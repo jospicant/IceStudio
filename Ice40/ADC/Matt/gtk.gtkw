@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Mon Jul 30 10:19:11 2018
+[*]
+[dumpfile] "/home/matt/work/kicad/ADS7883-pmod/icestick/test.vcd"
+[dumpfile_mtime] "Mon Jul 30 10:18:10 2018"
+[dumpfile_size] 846
+[savefile] "/home/matt/work/kicad/ADS7883-pmod/icestick/gtk.gtkw"
+[timestart] 23
+[size] 1681 811
+[pos] -1 -1
+*-3.942273 31 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test.
+[sst_width] 253
+[signals_width] 406
+[sst_expanded] 1
+[sst_vpaned_height] 231
+@28
+test.clk
+test.adc_clk
+test.adc_cs
+test.adc_ready
+test.adc_sd
+@22
+test.adc_1.cnt[3:0]
+@29
+test.adc_1.serial_data[11:0]
+@22
+test.adc_data[11:0]
+[pattern_trace] 1
+[pattern_trace] 0

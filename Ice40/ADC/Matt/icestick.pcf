@@ -1,0 +1,17 @@
+set_io --warn-no-port leds[4] 95
+set_io --warn-no-port leds[3] 96
+set_io --warn-no-port leds[2] 97
+set_io --warn-no-port leds[1] 98
+set_io --warn-no-port leds[0] 99
+
+set_io --warn-no-port clk 21
+
+# adc 1
+set_io --warn-no-port adc_1_cs 87
+set_io --warn-no-port adc_1_do 88
+set_io --warn-no-port adc_1_ck 90
+
+# adc 2
+set_io --warn-no-port adc_2_cs 78
+set_io --warn-no-port adc_2_do 79
+set_io --warn-no-port adc_2_ck 80
