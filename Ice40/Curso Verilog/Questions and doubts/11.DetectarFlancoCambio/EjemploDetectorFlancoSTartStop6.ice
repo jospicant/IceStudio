@@ -67,15 +67,111 @@
             "clock": false
           },
           "position": {
-            "x": -120,
-            "y": 216
+            "x": -384,
+            "y": 200
+          }
+        },
+        {
+          "id": "af64a53f-8cf4-469a-8cf4-a00b0f9bd252",
+          "type": "basic.output",
+          "data": {
+            "name": "T",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD2",
+                "value": "79"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 456,
+            "y": 328
+          }
+        },
+        {
+          "id": "fd9be4c5-5e55-46e7-b89f-ef3fe02ba053",
+          "type": "basic.output",
+          "data": {
+            "name": "F",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD7",
+                "value": "87"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": -264,
+            "y": 400
+          }
+        },
+        {
+          "id": "7fc2ceb0-8e1e-4f75-805d-7c5d1ac5b84f",
+          "type": "basic.input",
+          "data": {
+            "name": "clk",
+            "pins": [
+              {
+                "index": "0",
+                "name": "CLK",
+                "value": "21"
+              }
+            ],
+            "virtual": false,
+            "clock": false
+          },
+          "position": {
+            "x": -424,
+            "y": 400
+          }
+        },
+        {
+          "id": "d15029ac-fa6c-4da9-9a0a-6b8ac613afff",
+          "type": "basic.output",
+          "data": {
+            "name": "F",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD3",
+                "value": "80"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 456,
+            "y": 408
+          }
+        },
+        {
+          "id": "232db94d-128d-4a4f-bc02-639dee388342",
+          "type": "basic.output",
+          "data": {
+            "name": "R",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD4",
+                "value": "81"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 456,
+            "y": 488
           }
         },
         {
           "id": "e619a96b-81a6-4946-9dd6-9449d9e8f645",
           "type": "3e6c249e205080168c1bf4ee8dbc33b50653d5f4",
           "position": {
-            "x": -120,
+            "x": -88,
             "y": 288
           },
           "size": {
@@ -120,11 +216,11 @@
           }
         },
         {
-          "id": "d119ef8a-ef7e-40fb-bd7c-9e826db34e90",
-          "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
+          "id": "475f35c7-5eff-4617-ac0c-5314d104e00e",
+          "type": "fec7ff39e4c71bcdf0ca03690e64aab18405ad25",
           "position": {
-            "x": -120,
-            "y": 392
+            "x": 616,
+            "y": 176
           },
           "size": {
             "width": 96,
@@ -132,11 +228,39 @@
           }
         },
         {
-          "id": "475f35c7-5eff-4617-ac0c-5314d104e00e",
-          "type": "fec7ff39e4c71bcdf0ca03690e64aab18405ad25",
+          "id": "71d2407e-0e99-406b-a01a-6f728fadf27d",
+          "type": "basic.info",
+          "data": {
+            "info": "Status: Tested OK \nComo estamos introduciendo una señal asíncrona, esta debe primero sincronizarse con el reloj del sistema y además eliminar posible antirebote.  \nAmbos casos, los realizamos añadiendo el bloque \"Debouncer\" delante de la señal asíncrona.(Sincronismo+Debouncer).  \nHay que considerar que la señal de reloj debe ser mucho más rápida que la señal de entrada. En este ejemplo como nosostros queremos visualizalo de forma    \nlenta la pulsación del pulsador la haremos bastante larga ya que el reloj del contador es de 1sg.\nCon el reloj configurado a 1 sg podemos visualizar bien la cuenta del contador mientras está el pulsador apretado  ( nivel 1 ).  \n",
+            "readonly": false
+          },
           "position": {
-            "x": 624,
-            "y": 152
+            "x": -280,
+            "y": -64
+          },
+          "size": {
+            "width": 1376,
+            "height": 136
+          }
+        },
+        {
+          "id": "9df378cf-d4ac-4ebd-93cc-8a4cf79897a5",
+          "type": "7c0ae704fe4f7176c6e19f8639bc59e42c836297",
+          "position": {
+            "x": 488,
+            "y": 104
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "1379f2ac-a0c3-4d32-a3dc-fd52ad84b10a",
+          "type": "cfd9babc26edba88e2152493023c4bef7c47f247",
+          "position": {
+            "x": -160,
+            "y": 184
           },
           "size": {
             "width": 96,
@@ -145,16 +269,6 @@
         }
       ],
       "wires": [
-        {
-          "source": {
-            "block": "cfc52301-73b0-435e-b24b-449b6c1ff4eb",
-            "port": "out"
-          },
-          "target": {
-            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
-            "port": "42f7958a-d7b3-4938-86f5-f4f33f740ead"
-          }
-        },
         {
           "source": {
             "block": "c5120156-4ce5-4455-89cc-ca8a9ee43abd",
@@ -204,17 +318,17 @@
         },
         {
           "source": {
-            "block": "d119ef8a-ef7e-40fb-bd7c-9e826db34e90",
-            "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
+            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
+            "port": "8588c7da-1bf0-4aa8-a39f-ad13743de3db"
           },
           "target": {
-            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
-            "port": "1049a2b8-b711-449b-a505-c1b5650ea1e7"
+            "block": "af64a53f-8cf4-469a-8cf4-a00b0f9bd252",
+            "port": "in"
           },
           "vertices": [
             {
-              "x": 128,
-              "y": 392
+              "x": 424,
+              "y": 304
             }
           ]
         },
@@ -226,17 +340,53 @@
           "target": {
             "block": "c5120156-4ce5-4455-89cc-ca8a9ee43abd",
             "port": "26ea8344-b7c2-4be3-bc89-3430d92fd415"
+          }
+        },
+        {
+          "source": {
+            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
+            "port": "5643f65d-51de-4076-acd8-b877f982d3ee"
+          },
+          "target": {
+            "block": "d15029ac-fa6c-4da9-9a0a-6b8ac613afff",
+            "port": "in"
           },
           "vertices": [
             {
-              "x": 768,
-              "y": 184
+              "x": 416,
+              "y": 384
             }
           ]
         },
         {
           "source": {
-            "block": "d119ef8a-ef7e-40fb-bd7c-9e826db34e90",
+            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
+            "port": "c20e5ec9-1c08-4161-a946-b4733a7bc8fa"
+          },
+          "target": {
+            "block": "232db94d-128d-4a4f-bc02-639dee388342",
+            "port": "in"
+          },
+          "vertices": [
+            {
+              "x": 408,
+              "y": 416
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "7fc2ceb0-8e1e-4f75-805d-7c5d1ac5b84f",
+            "port": "out"
+          },
+          "target": {
+            "block": "fd9be4c5-5e55-46e7-b89f-ef3fe02ba053",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "9df378cf-d4ac-4ebd-93cc-8a4cf79897a5",
             "port": "7e07d449-6475-4839-b43e-8aead8be2aac"
           },
           "target": {
@@ -245,10 +395,30 @@
           },
           "vertices": [
             {
-              "x": 128,
-              "y": 112
+              "x": 832,
+              "y": 144
             }
           ]
+        },
+        {
+          "source": {
+            "block": "1379f2ac-a0c3-4d32-a3dc-fd52ad84b10a",
+            "port": "22ff3fa1-943b-4d1a-bd89-36e1c054d077"
+          },
+          "target": {
+            "block": "11aadaf9-5ca1-4902-82d3-114738e28ba5",
+            "port": "42f7958a-d7b3-4938-86f5-f4f33f740ead"
+          }
+        },
+        {
+          "source": {
+            "block": "cfc52301-73b0-435e-b24b-449b6c1ff4eb",
+            "port": "out"
+          },
+          "target": {
+            "block": "1379f2ac-a0c3-4d32-a3dc-fd52ad84b10a",
+            "port": "c9e1af2a-6f09-4cf6-a5b3-fdf7ec2c6530"
+          }
         }
       ]
     }
@@ -947,6 +1117,68 @@
         }
       }
     },
+    "fec7ff39e4c71bcdf0ca03690e64aab18405ad25": {
+      "package": {
+        "name": "0",
+        "version": "0.1",
+        "description": "Un bit constante a 0",
+        "author": "Jesus Arroyo",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2233.641%22%20height=%2258.608%22%20viewBox=%220%200%2031.538733%2054.944538%22%3E%3Cg%20stroke=%22#00f%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M21.822%2033.91l4.092%208.992-3.772%209.727%204.181%201.311M13.356%2034.68s-1.091%208.252-2.585%208.918C9.278%2044.265%201%2050.456%201%2050.456l2.647%203.256%22%20fill=%22none%22%20stroke-width=%222%22/%3E%3Cpath%20d=%22M19.787%202.504a11.65%2017.168%2028.167%200%200-14.101%2010.6%2011.65%2017.168%2028.167%200%200%202.166%2020.634%2011.65%2017.168%2028.167%200%200%2018.373-9.636%2011.65%2017.168%2028.167%200%200-2.166-20.633%2011.65%2017.168%2028.167%200%200-4.272-.965zm-1.31%205.123a8.864%2012.535%2028.167%200%201%203.232.766%208.864%2012.535%2028.167%200%201%201.898%2015.234%208.864%2012.535%2028.167%200%201-13.732%206.867A8.864%2012.535%2028.167%200%201%207.979%2015.26a8.864%2012.535%2028.167%200%201%2010.498-7.633z%22%20fill=%22#00f%22%20stroke-width=%225%22/%3E%3C/g%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Bit constante a 0\nassign q = 1'b0;\n\n",
+                "params": [],
+                "ports": {
+                  "in": [],
+                  "out": [
+                    {
+                      "name": "q"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 168,
+                "y": 112
+              },
+              "size": {
+                "width": 256,
+                "height": 160
+              }
+            },
+            {
+              "id": "3d584b0a-29eb-47af-8c43-c0822282ef05",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 512,
+                "y": 160
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
+                "port": "q"
+              },
+              "target": {
+                "block": "3d584b0a-29eb-47af-8c43-c0822282ef05",
+                "port": "in"
+              }
+            }
+          ]
+        }
+      }
+    },
     "7c0ae704fe4f7176c6e19f8639bc59e42c836297": {
       "package": {
         "name": "Bomba_x1",
@@ -1035,61 +1267,112 @@
         }
       }
     },
-    "fec7ff39e4c71bcdf0ca03690e64aab18405ad25": {
+    "cfd9babc26edba88e2152493023c4bef7c47f247": {
       "package": {
-        "name": "0",
-        "version": "0.1",
-        "description": "Un bit constante a 0",
-        "author": "Jesus Arroyo",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2233.641%22%20height=%2258.608%22%20viewBox=%220%200%2031.538733%2054.944538%22%3E%3Cg%20stroke=%22#00f%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M21.822%2033.91l4.092%208.992-3.772%209.727%204.181%201.311M13.356%2034.68s-1.091%208.252-2.585%208.918C9.278%2044.265%201%2050.456%201%2050.456l2.647%203.256%22%20fill=%22none%22%20stroke-width=%222%22/%3E%3Cpath%20d=%22M19.787%202.504a11.65%2017.168%2028.167%200%200-14.101%2010.6%2011.65%2017.168%2028.167%200%200%202.166%2020.634%2011.65%2017.168%2028.167%200%200%2018.373-9.636%2011.65%2017.168%2028.167%200%200-2.166-20.633%2011.65%2017.168%2028.167%200%200-4.272-.965zm-1.31%205.123a8.864%2012.535%2028.167%200%201%203.232.766%208.864%2012.535%2028.167%200%201%201.898%2015.234%208.864%2012.535%2028.167%200%201-13.732%206.867A8.864%2012.535%2028.167%200%201%207.979%2015.26a8.864%2012.535%2028.167%200%201%2010.498-7.633z%22%20fill=%22#00f%22%20stroke-width=%225%22/%3E%3C/g%3E%3C/svg%3E"
+        "name": "Debouncer",
+        "version": "1.0.0",
+        "description": "Remove the rebound on a mechanical switch",
+        "author": "Juan González",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%22-252%20400.9%2090%2040%22%3E%3Cpath%20d=%22M-251.547%20436.672h22.802v-30.353h5.862v30.353h5.259v-30.353h3.447v30.353h2.984v-30.353h3.506v30.523h6.406V405.77h38.868%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%221.4%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-232.57%20403.877l26.946%2032.391M-205.624%20403.877l-26.946%2032.391%22%20fill=%22none%22%20stroke=%22red%22%20stroke-width=%223%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E"
       },
       "design": {
         "graph": {
           "blocks": [
             {
-              "id": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
-              "type": "basic.code",
+              "id": "4bf41c17-a2da-4140-95f7-2a80d51b1e1a",
+              "type": "basic.input",
               "data": {
-                "code": "//-- Bit constante a 0\nassign q = 1'b0;\n\n",
-                "params": [],
-                "ports": {
-                  "in": [],
-                  "out": [
-                    {
-                      "name": "q"
-                    }
-                  ]
-                }
+                "name": "",
+                "clock": true
               },
               "position": {
-                "x": 168,
-                "y": 112
-              },
-              "size": {
-                "width": 256,
-                "height": 160
+                "x": 48,
+                "y": 144
               }
             },
             {
-              "id": "3d584b0a-29eb-47af-8c43-c0822282ef05",
+              "id": "22ff3fa1-943b-4d1a-bd89-36e1c054d077",
               "type": "basic.output",
               "data": {
                 "name": ""
               },
               "position": {
-                "x": 512,
-                "y": 160
+                "x": 768,
+                "y": 208
+              }
+            },
+            {
+              "id": "c9e1af2a-6f09-4cf6-a5b3-fdf7ec2c6530",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": false
+              },
+              "position": {
+                "x": 48,
+                "y": 272
+              }
+            },
+            {
+              "id": "92490e7e-c3ba-4e9c-a917-2a771d99f1ef",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Debouncer Circuit\n//-- It produces a stable output when the\n//-- input signal is bouncing\n\nreg btn_prev = 0;\nreg btn_out_r = 0;\n\nreg [16:0] counter = 0;\n\n\nalways @(posedge clk) begin\n\n  //-- If btn_prev and btn_in are differents\n  if (btn_prev ^ in == 1'b1) begin\n    \n      //-- Reset the counter\n      counter <= 0;\n      \n      //-- Capture the button status\n      btn_prev <= in;\n  end\n    \n  //-- If no timeout, increase the counter\n  else if (counter[16] == 1'b0)\n      counter <= counter + 1;\n      \n  else\n    //-- Set the output to the stable value\n    btn_out_r <= btn_prev;\n\nend\n\nassign out = btn_out_r;\n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "in"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "out"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 264,
+                "y": 112
+              },
+              "size": {
+                "width": 384,
+                "height": 256
               }
             }
           ],
           "wires": [
             {
               "source": {
-                "block": "61331ec5-2c56-4cdd-b607-e63b1502fa65",
-                "port": "q"
+                "block": "92490e7e-c3ba-4e9c-a917-2a771d99f1ef",
+                "port": "out"
               },
               "target": {
-                "block": "3d584b0a-29eb-47af-8c43-c0822282ef05",
+                "block": "22ff3fa1-943b-4d1a-bd89-36e1c054d077",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "4bf41c17-a2da-4140-95f7-2a80d51b1e1a",
+                "port": "out"
+              },
+              "target": {
+                "block": "92490e7e-c3ba-4e9c-a917-2a771d99f1ef",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "c9e1af2a-6f09-4cf6-a5b3-fdf7ec2c6530",
+                "port": "out"
+              },
+              "target": {
+                "block": "92490e7e-c3ba-4e9c-a917-2a771d99f1ef",
                 "port": "in"
               }
             }

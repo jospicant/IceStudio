@@ -147,6 +147,22 @@
             "width": 96,
             "height": 96
           }
+        },
+        {
+          "id": "f0872b45-ba8b-4c83-a78c-5b354f5c76e0",
+          "type": "basic.info",
+          "data": {
+            "info": "\nStatus: Test OK\nCon pulsador de BQ funciona muy bien (Elimina Rebotes bastante bien)\nLo correcto sería sincronizar la entrada con el reloj y poner Debouncer.",
+            "readonly": false
+          },
+          "position": {
+            "x": 160,
+            "y": -32
+          },
+          "size": {
+            "width": 608,
+            "height": 88
+          }
         }
       ],
       "wires": [

@@ -160,7 +160,7 @@
           "id": "d6e65598-d432-48bf-8eb7-9e8154bf1921",
           "type": "basic.info",
           "data": {
-            "info": "\nCuando \"in\" pasa de 0 a 1  se produce un pulso de \"Rising\" generando un Set que habilita el contador para que empieze a contar\nCuando \"in\" pasa de 1 a 0 se produce un pulso de \"Falling\" generando un Reset que inhabilita el contador y para su cuenta",
+            "info": "Status: Tested OK sobre leds del Dispositivo.\nLo correcto sería poner sincronización para la señal de entrada + Debouncer.\nEn este caso como estamos con reloj de 1 sg la sicronización  y Debouncer pasan un poco desapercibido pero están ahí.\n\nCuando \"in\" pasa de 0 a 1  se produce un pulso de \"Rising\" generando un Set que habilita el contador para que empieze a contar\nCuando \"in\" pasa de 1 a 0 se produce un pulso de \"Falling\" generando un Reset que inhabilita el contador y para su cuenta\n",
             "readonly": false
           },
           "position": {
