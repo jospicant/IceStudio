@@ -1,0 +1,28 @@
+
+Se realiza exportación:
+
+  verilog
+  testbench
+  gtkwave 
+  pcf ( no necesaria)
+
+
+  Se abre el testbench.v generado y se modifica DURATION ( los nanosegundos que 
+  quieres que dure el test)
+
+  Se añaden líneas con los datos que quieres entrar al sistema:
+
+  in=0;         // señal in a 0
+  #10  in=1;    //a los 10 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 1
+  #10  in=0;    // a los 10 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 0
+  #3   in=1;    // a los 3 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 1
+  .....
+
+  salvo
+
+  y desde donde tengo todos los ficheros ejecuto 
+
+  apio sim   
+ 
+  se me habría el gtkwave con los resultados de la simulación que podré ir chequeando con el 
+  zoom.

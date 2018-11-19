@@ -1,0 +1,54 @@
+$date
+	Thu Nov 15 16:51:31 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module main_tb $end
+$var wire 1 ! out $end
+$var reg 1 " in $end
+$scope module MAIN $end
+$var wire 1 " v873d49 $end
+$var wire 1 ! v89c3d3 $end
+$var wire 8 # vinit [0:7] $end
+$var wire 1 $ w0 $end
+$var wire 1 % w1 $end
+$scope module ve759f9 $end
+$var wire 1 $ in $end
+$var wire 1 % out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1%
+0$
+b0 #
+0"
+1!
+$end
+#100
+0!
+0%
+1$
+1"
+#200
+1!
+1%
+0$
+0"
+#230
+0!
+0%
+1$
+1"
+#250
+1!
+1%
+0$
+0"
+#3750

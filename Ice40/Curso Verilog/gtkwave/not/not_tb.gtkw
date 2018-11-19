@@ -1,0 +1,21 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Thu Nov 15 15:51:51 2018
+[*]
+[dumpfile] "C:\Users\picoj\Desktop\GitHub\IceStudio\Ice40\Curso Verilog\gtkwave\not\not_tb.vcd"
+[dumpfile_mtime] "Thu Nov 15 15:51:31 2018"
+[dumpfile_size] 610
+[savefile] "C:\Users\picoj\Desktop\GitHub\IceStudio\Ice40\Curso Verilog\gtkwave\not\not_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 64 -65
+*-7.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+main_tb.in
+main_tb.out
+[pattern_trace] 1
+[pattern_trace] 0

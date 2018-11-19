@@ -1,0 +1,372 @@
+
+// Code your design here
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    09:34:31 03/09/2015 
+// Design Name: 
+// Module Name:    i2c 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module i2c(clk, reset, din, dout, wren, rden, addr, sclk, sdout, sdin, dir); 
+input clk, reset, wren, rden;
+input [7:0] din;
+output [7:0] dout;
+input [1:0] addr;
+output sclk;        //serial clock out
+output sdout;       //serial data out
+input sdin;         //serial data int
+output dir; 
+
+//control register
+`define START_CONTROL_BIT	 0
+`define STOP_CONTROL_BIT	 1
+`define WRITE_EN_CONTROL_BIT 2
+`define WRITE_ACK_STATUS_BIT 3
+`define READ_EN_CONTROL_BIT  4
+`define READ_ACK_BIT 		 5
+`define RESET_CONTROL_BIT    6
+
+`define PERIOD_REG		3'b000
+`define TX_REG 			3'b001
+`define RX_REG 			3'b010
+`define STATUS_REG 		3'b011
+`define I2CADDR_REG 	3'b100
+
+// This is the ns hold time period values for 400KHz Clock speed
+`define HOLD_300   14
+`define HOLD_600   25
+`define HOLD_1250  62
+ 
+wire sclr_en, check_equal;
+
+reg [7:0] Tx_Reg, Rx_Reg, Stat_Reg, I2Addr, Period;
+reg sclk, sclk_sclr, sclk_sset, sclktmr_sclr, sclktmr_en;
+reg [7:0] Out_SReg;
+reg sdout, OSR_ld, OSR_en, out_ld, out_sclr, out_sset;
+reg [7:0] counter, timer_period;
+reg timer_en, timer_exp, timer_clr;
+
+assign sclr_en = (sclktmr_sclr || check_equal);
+assign check_equal = (Period == I2Addr);
+
+//SCLK GENERATION PART 1
+always @(posedge clk or posedge reset) begin
+	if (reset) begin
+	   counter <= 0;
+	   timer_exp <= 0;
+	end else begin
+	if (timer_clr) begin
+	   counter <= 0;
+	   timer_exp <= 0;
+	end else begin
+	if (timer_en) begin
+	   counter <= counter + 1;
+	end
+			
+	if (counter == timer_period) begin
+	   timer_exp <= 1;
+	   counter <= 0;
+   end
+  end
+ end
+end
+
+
+wire [7:0] din, dout;
+wire [1:0] addr;
+
+reg [4:0] nstate, pstate, bit_count;
+reg dir, sdinq, sdinq2, in_ld;
+
+assign dout = (rden && (addr == 0)) ? Period : (rden && (addr == 1)) ? Tx_Reg : (rden && (addr == 2)) ? Rx_Reg : Stat_Reg;
+
+//FSM Difining the States
+`define STATE_START_WAIT    5'b00000  
+`define STATE_HOLD_START    5'b00001  
+`define STATE_HOLD_WAIT	    5'b00010  
+`define STATE_RWS_WAIT      5'b00011  
+`define STATE_WRITE_HOLD    5'b00100  
+`define STATE_ACK_READ      5'b00101  
+`define STATE_ACK_READ_2    5'b00110  
+`define STATE_ACK_READ_3    5'b00111  
+`define STATE_ACK_READ_4    5'b01000      
+`define STATE_WRITE_BIT     5'b01001      
+`define STATE_WRITE_BIT_2   5'b01010      
+
+`define s10_rd_hold           5'b01001          
+`define s12_st_sclk_low       5'b01010
+`define s13_st_hold           5'b01011
+`define s14_st_bus_idle       5'b01100
+          
+//RESETING THE FSM VALUEES
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+	   I2Addr = 8'h00;
+	   sclk = 1;
+	   sdout = 1;
+	   Period = 0;
+	   Tx_Reg = 0;
+	   Rx_Reg = 0;
+	   Stat_Reg = 0;
+	   dir = 1;
+	   bit_count = 0;
+	   sclktmr_sclr = 0;
+	   sclktmr_en = 0;
+	   OSR_ld = 0;
+	   OSR_en = 0;
+	   out_ld = 0;
+	   in_ld = 0;
+	   timer_en = 0;
+	   timer_clr = 0;
+	   nstate = `STATE_START_WAIT;
+	   pstate = `STATE_START_WAIT;
+    end else begin
+	if (Stat_Reg[6]) begin
+	   I2Addr = 8'h00;
+	   sclk = 1;
+	   dir = 1;
+	   bit_count = 0;
+	   sclktmr_sclr = 0;
+	   sclktmr_en = 0;
+	   sclk_sset = 1;
+	   sdout = 1;
+	   OSR_ld = 0;
+	   OSR_en = 0;
+	   out_ld = 0;
+	   in_ld = 0;
+	   timer_en = 0;
+	   timer_clr = 0;
+	   Stat_Reg[6] = 0;
+	   nstate = `STATE_START_WAIT;
+	   pstate = `STATE_START_WAIT;
+	end else begin
+	///SDIN SAMPLING
+	   sclk_sset = 0;
+	   out_sset = 0;
+	   sdinq = sdin;
+	   sdinq2 = sdinq;
+	if (in_ld) Rx_Reg = {Rx_Reg[6:0],sdinq2}; //left shift referenced from the pdf of i2c instructions 
+			
+	if (wren) begin
+	   case (addr)
+	   `PERIOD_REG :  Period = din; 
+	   `TX_REG :  Tx_Reg = din;
+	   `STATUS_REG :  Stat_Reg = din;
+endcase	
+end	
+			
+//FSM Begins:
+//ASM PART 1
+case (nstate)
+`STATE_START_WAIT: begin //Wait for the start
+    timer_clr = 0;
+    if (Stat_Reg[0]) begin
+       dir = 0;
+	   out_sclr = 1;
+	   timer_period = `HOLD_600;
+	   nstate = `STATE_HOLD_START;
+	end
+end 
+				
+`STATE_HOLD_START: begin // Hold time Starts
+    out_sclr = 0;
+	timer_en = 1;
+	pstate = nstate;
+	nstate  = `STATE_HOLD_WAIT;
+end
+				
+`STATE_HOLD_WAIT: begin // wait for hond done
+    out_sclr = 0;
+    if (timer_exp) begin
+	   timer_en = 0;
+	   timer_clr = 1;
+	   sclk_sclr = 1;
+	   Stat_Reg[0] = 1'b0;
+	   pstate = nstate;
+	   nstate = `STATE_RWS_WAIT;
+	end
+end
+				
+`STATE_RWS_WAIT: begin //Wait for write, read, or stop
+    sclk_sclr = 0;
+	out_sclr = 1;
+	out_sset = 0;
+	timer_clr = 0;
+	timer_period = `HOLD_300;
+	if (Stat_Reg[2]) begin 
+	   out_sclr = 0;
+	   OSR_ld = 1;
+	   bit_count = 0;
+	   dir = 0;
+       sclktmr_en = 1;
+	   timer_en = 1;
+	   pstate = nstate;
+       nstate = `STATE_WRITE_HOLD;
+	end else if (Stat_Reg[4]) begin 
+	   out_sclr = 0;
+	   bit_count = 0;
+	   dir = 1;
+	   sclktmr_en = 1;
+	   timer_en = 1;
+	   pstate = nstate;
+	   nstate = `s10_rd_hold;
+    end else if (Stat_Reg[1]) begin 
+	   pstate = nstate;
+	   nstate = `s12_st_sclk_low ;
+	end
+end
+							
+//compare the bits and and when the bits are done then it reads and go to acknowledge bit				
+`STATE_WRITE_HOLD: begin
+    OSR_en = 0;
+	OSR_ld = 0;
+    if (timer_exp) begin
+	   timer_en = 0;
+	   timer_clr = 1;
+	if (bit_count == 8) begin
+	   dir = 1;
+	   pstate = nstate;
+	   nstate = `STATE_ACK_READ;
+	   end else begin
+	   out_ld = 1;
+	   pstate = nstate;
+	   nstate = `STATE_WRITE_BIT;
+	end
+	end				
+end			
+`STATE_WRITE_BIT: begin
+    timer_clr = 0;
+	if (sclk) nstate = `STATE_WRITE_BIT_2;
+end
+				
+`STATE_WRITE_BIT_2: begin
+    if (~sclk) begin
+	   OSR_en = 1;
+	if (bit_count < 8) bit_count = bit_count + 1;
+	   timer_en = 1;
+	   pstate = nstate;
+	   nstate = `STATE_WRITE_HOLD;
+	end
+end
+				
+`STATE_ACK_READ: begin
+    timer_clr = 0;
+	if (sclk) nstate = `STATE_ACK_READ_2;				
+	end
+				
+`STATE_ACK_READ_2: begin
+	if (~sclk) begin
+	   in_ld = 1;
+	   timer_en = 1;
+	   sclktmr_en = 0;
+	   pstate = nstate;
+	   nstate = `STATE_ACK_READ_3;
+	end			
+end
+				
+`STATE_ACK_READ_3: begin
+    Stat_Reg[3] = Rx_Reg[0];
+					
+	if (timer_exp) begin
+	   timer_en = 0;
+	   timer_clr = 1;
+	   dir = 0;
+	   in_ld = 0;				
+	   Stat_Reg[2] = 0;
+	   sclktmr_sclr = 1;
+	   pstate = nstate;
+	   nstate = `STATE_ACK_READ_4;					
+	end
+end
+				
+`STATE_ACK_READ_4: begin
+    timer_clr = 0;
+	sclktmr_sclr = 0;
+    pstate = nstate;
+	nstate = `STATE_RWS_WAIT;
+end
+
+`s12_st_sclk_low: begin
+    	   out_sclr = 0;
+bit_count = 0;
+out_ld = 0;
+ timer_period = `HOLD_1250;
+timer_en = 1;
+    pstate = nstate;
+	nstate = `s13_st_hold;
+end 
+
+`s13_st_hold: begin
+           dir = 0;
+out_sclr = 1;
+	timer_period = `HOLD_600;
+    pstate = nstate;
+	nstate = `s14_st_bus_idle;
+end  
+
+`s14_st_bus_idle: begin
+    	   out_sclr = 0;
+bit_count = 0;
+
+timer_period = `HOLD_1250;
+timer_en = 1;
+dir=1;
+out_ld= 1;
+sclk=1;
+Stat_Reg[1]=0;
+Stat_Reg[0]=1;
+    pstate = nstate;
+	nstate = `STATE_RWS_WAIT;
+end
+				
+endcase
+			
+//SDOUT Generation. Reference from the i2c pdf of instructions 
+if (OSR_ld) Out_SReg = Tx_Reg;
+if (OSR_en) Out_SReg = {Out_SReg[6:0],1'b0}; /// Kinda took from  the pdf but different variables are used.
+			
+if (out_sclr) begin 
+    sdout = 0;
+end else if (out_sset) begin
+	sdout = 1;
+end else begin
+if (out_ld) sdout = Out_SReg[7];
+end
+
+//SCLK GENERATION PART 2
+if (sclr_en) begin
+    I2Addr = 8'h00;
+end else 
+if (sclktmr_en) begin
+    I2Addr = I2Addr + 1;
+end
+			
+if (sclk_sclr) begin 
+    sclk = 0;
+end else 
+if (sclk_sset) begin
+    sclk = 1;
+end
+//s clock timer 
+if (sclktmr_en && check_equal) begin
+    sclk = ~sclk;
+    if (nstate == 0) 
+        sdout = sdin;
+    end
+   end
+ end
+end
+endmodule

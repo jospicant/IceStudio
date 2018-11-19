@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -98,7 +98,7 @@
           "id": "f1fac888-6ddb-41f5-9a3d-07f792ea88e9",
           "type": "basic.info",
           "data": {
-            "info": "\nprobado pero no funcioma pq no\nestá creando un circuito secuencial\ncrea uno combinacional",
+            "info": "\nNo tested",
             "readonly": false
           },
           "position": {
@@ -114,7 +114,7 @@
           "id": "38ff78bc-9cce-4b64-b941-c21e38dc6ecf",
           "type": "basic.code",
           "data": {
-            "code": "\nreg out=1'b0;\n\nalways @(*)\nbegin\n _out<=!_out;\nend\n\nassign out=_out;",
+            "code": "\nreg _out=1'b0;\n\nalways @(*)\nbegin\n _out<=!_out;\nend\n\nassign out=_out;",
             "params": [],
             "ports": {
               "in": [
@@ -233,13 +233,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 335.8563,
-        "y": 437.15
-      },
-      "zoom": 0.9547
     }
   },
   "dependencies": {
@@ -505,13 +498,6 @@
               ]
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 623,
-            "y": 377.5
-          },
-          "zoom": 1
         }
       }
     },
@@ -681,13 +667,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 129.2742,
-            "y": 145.1183
-          },
-          "zoom": 0.8212
         }
       }
     },
@@ -992,13 +971,6 @@
               ]
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 197.5072,
-            "y": 188.6014
-          },
-          "zoom": 0.7572
         }
       }
     },
@@ -1142,13 +1114,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 31,
-            "y": 129.5
-          },
-          "zoom": 1
         }
       }
     },
@@ -1262,13 +1227,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": -146,
-            "y": -0.5
-          },
-          "zoom": 1
         }
       }
     },
@@ -1407,13 +1365,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 99,
-            "y": 37.5
-          },
-          "zoom": 1
         }
       }
     },
@@ -1476,13 +1427,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 0,
-            "y": 0
-          },
-          "zoom": 1
         }
       }
     },
@@ -1578,13 +1522,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": -198,
-            "y": 22.5
-          },
-          "zoom": 1
         }
       }
     },
@@ -1700,13 +1637,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 217.4768,
-            "y": 203.1959
-          },
-          "zoom": 0.7408
         }
       }
     }

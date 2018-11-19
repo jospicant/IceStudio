@@ -226,7 +226,7 @@
           "id": "bde84cfc-56e2-4c53-b5cb-2b2412dc338f",
           "type": "basic.code",
           "data": {
-            "code": "\n\nassign Mayor=A>B;\n",
+            "code": "\n\nassign Out=A>B;\n",
             "params": [],
             "ports": {
               "in": [
@@ -292,13 +292,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 219,
-        "y": 89.5
-      },
-      "zoom": 1
     }
   },
   "dependencies": {}
