@@ -1,7 +1,7 @@
 {
   "version": "1.2",
   "package": {
-    "name": "Counter 9bits",
+    "name": "Counter 10bits",
     "version": "1.0",
     "description": "0,1,2,3...n ",
     "author": "José Picó",
@@ -120,7 +120,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 10 bits counter for PWM\n\nreg [9:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n d <= d + 1;\n \n if (d<To)\n  pwm <= 1'b1;\n  else\n   pwm <=1'b0;\nend\n  \n",
+            "code": "// 10 bits counter for PWM\n\nreg [9:0] d =0;\nreg pwm=0;\n\nalways @(posedge clk)\nbegin\n d <= d + 1;\n \n if (d<To)\n  pwm <= 1'b1;\n  else\n   pwm <=1'b0;\nend\n  \n",
             "params": [],
             "ports": {
               "in": [

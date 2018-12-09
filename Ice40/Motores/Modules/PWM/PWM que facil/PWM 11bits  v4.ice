@@ -1,7 +1,7 @@
 {
   "version": "1.2",
   "package": {
-    "name": "PWM 10bits",
+    "name": "PWM 11bits",
     "version": "4.0",
     "description": "PWM 11 bits",
     "author": "José Picó",

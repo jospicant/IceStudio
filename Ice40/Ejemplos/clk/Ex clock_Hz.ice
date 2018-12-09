@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -12,128 +12,76 @@
     "graph": {
       "blocks": [
         {
-          "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
-          "type": "basic.constant",
-          "data": {
-            "name": "T_Hz",
-            "value": "1",
-            "local": false
-          },
-          "position": {
-            "x": 368,
-            "y": 72
-          }
-        },
-        {
-          "id": "6a9606ff-7390-4254-9e94-d33071df353d",
-          "type": "basic.input",
-          "data": {
-            "name": "in",
-            "pins": [
-              {
-                "index": "0",
-                "name": "CLK",
-                "value": "21"
-              }
-            ],
-            "virtual": false,
-            "clock": false
-          },
-          "position": {
-            "x": 184,
-            "y": 192
-          }
-        },
-        {
-          "id": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
-          "type": "d624f12138d30e557267db6c35a445f9147a5c1a",
-          "position": {
-            "x": 368,
-            "y": 192
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
+          "id": "26dd5893-ffab-4b30-b507-f2468d09a5be",
           "type": "basic.output",
           "data": {
-            "name": "out",
+            "name": "Hz",
             "pins": [
               {
                 "index": "0",
-                "name": "D5",
-                "value": "95"
+                "name": "PMOD1",
+                "value": "78"
               }
             ],
             "virtual": false
           },
           "position": {
-            "x": 560,
-            "y": 192
+            "x": 448,
+            "y": 144
           }
         },
         {
-          "id": "1a3b7d39-ee00-40f5-b6b5-e85d89968935",
-          "type": "basic.info",
+          "id": "317fcbde-6d5d-4ff0-ac07-d03ef932bb43",
+          "type": "basic.constant",
           "data": {
-            "info": "\nf_input = 12 MHz internal frequecy of FPGA\n\nf_output = It is configurable, T period = 1 Hz"
+            "name": "Hz",
+            "value": "10",
+            "local": false
           },
           "position": {
-            "x": 200,
-            "y": 312
+            "x": 224,
+            "y": 40
+          }
+        },
+        {
+          "id": "8003cbba-a8e8-47fe-83fd-e9cd6c2a3f9c",
+          "type": "e3f2800393ad99841a6fc7575171e16916ad11c8",
+          "position": {
+            "x": 224,
+            "y": 144
           },
           "size": {
-            "width": 544,
-            "height": 144
+            "width": 96,
+            "height": 64
           }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
-            "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
-          },
-          "target": {
-            "block": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
+            "block": "317fcbde-6d5d-4ff0-ac07-d03ef932bb43",
             "port": "constant-out"
           },
           "target": {
-            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
+            "block": "8003cbba-a8e8-47fe-83fd-e9cd6c2a3f9c",
             "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
           }
         },
         {
           "source": {
-            "block": "6a9606ff-7390-4254-9e94-d33071df353d",
-            "port": "out"
+            "block": "8003cbba-a8e8-47fe-83fd-e9cd6c2a3f9c",
+            "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
           },
           "target": {
-            "block": "fc00d243-d10c-44fe-8d6c-5bbf1fbd04e8",
-            "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
+            "block": "26dd5893-ffab-4b30-b507-f2468d09a5be",
+            "port": "in"
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 0,
-        "y": 0
-      },
-      "zoom": 1
     }
   },
   "dependencies": {
-    "d624f12138d30e557267db6c35a445f9147a5c1a": {
+    "e3f2800393ad99841a6fc7575171e16916ad11c8": {
       "package": {
         "name": "clock",
         "version": "1.0",
@@ -144,6 +92,29 @@
       "design": {
         "graph": {
           "blocks": [
+            {
+              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+              "type": "basic.input",
+              "data": {
+                "name": "clk",
+                "clock": true
+              },
+              "position": {
+                "x": 144,
+                "y": 336
+              }
+            },
+            {
+              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+              "type": "basic.output",
+              "data": {
+                "name": "f_output"
+              },
+              "position": {
+                "x": 1048,
+                "y": 336
+              }
+            },
             {
               "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
               "type": "basic.constant",
@@ -161,7 +132,7 @@
               "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  //para que el dutty de la señal sea de 50%, una vez calculado\n  //la cantidad de numeros que tienes que contar como el corte no\n  // queda justo en el centro lo dividimos por 2 y así \n  // calculamos un número donde queda en el centro (50%) y\n  // cambiaremos la salida en cada cambio.\n  \n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
                     "name": "Hz"
@@ -186,30 +157,7 @@
               },
               "size": {
                 "width": 656,
-                "height": 528
-              }
-            },
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "f_input",
-                "clock": false
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
+                "height": 640
               }
             }
           ],
@@ -245,13 +193,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 217.4768,
-            "y": 203.1959
-          },
-          "zoom": 0.7408
         }
       }
     }

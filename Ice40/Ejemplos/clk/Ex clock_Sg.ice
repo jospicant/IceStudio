@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -11,19 +11,6 @@
     "board": "icestick",
     "graph": {
       "blocks": [
-        {
-          "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
-          "type": "basic.constant",
-          "data": {
-            "name": "T_sg",
-            "value": "4",
-            "local": false
-          },
-          "position": {
-            "x": 368,
-            "y": 72
-          }
-        },
         {
           "id": "6a9606ff-7390-4254-9e94-d33071df353d",
           "type": "basic.input",
@@ -45,18 +32,6 @@
           }
         },
         {
-          "id": "8dd10f3e-c606-4844-85f8-a2442f98192d",
-          "type": "3128151b411ed203c57ec6862c5e65e5809bd11f",
-          "position": {
-            "x": 368,
-            "y": 192
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
           "id": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
           "type": "basic.output",
           "data": {
@@ -64,8 +39,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "D5",
-                "value": "95"
+                "name": "PMOD1",
+                "value": "78"
               }
             ],
             "virtual": false
@@ -73,6 +48,19 @@
           "position": {
             "x": 616,
             "y": 192
+          }
+        },
+        {
+          "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
+          "type": "basic.constant",
+          "data": {
+            "name": "T_sg",
+            "value": "4",
+            "local": false
+          },
+          "position": {
+            "x": 368,
+            "y": 72
           }
         },
         {
@@ -89,6 +77,18 @@
             "width": 544,
             "height": 144
           }
+        },
+        {
+          "id": "4a5906a2-b023-4b0b-8101-5fd20cc22c0a",
+          "type": "f88e6c6c6cbdb03eac8e696c52561c644dbc3822",
+          "position": {
+            "x": 368,
+            "y": 192
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
         }
       ],
       "wires": [
@@ -98,7 +98,7 @@
             "port": "out"
           },
           "target": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
+            "block": "4a5906a2-b023-4b0b-8101-5fd20cc22c0a",
             "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
           }
         },
@@ -108,13 +108,13 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
+            "block": "4a5906a2-b023-4b0b-8101-5fd20cc22c0a",
             "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
           }
         },
         {
           "source": {
-            "block": "8dd10f3e-c606-4844-85f8-a2442f98192d",
+            "block": "4a5906a2-b023-4b0b-8101-5fd20cc22c0a",
             "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
           },
           "target": {
@@ -123,19 +123,12 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 0,
-        "y": 0
-      },
-      "zoom": 1
     }
   },
   "dependencies": {
-    "3128151b411ed203c57ec6862c5e65e5809bd11f": {
+    "f88e6c6c6cbdb03eac8e696c52561c644dbc3822": {
       "package": {
-        "name": "clock",
+        "name": "clock ",
         "version": "1.0",
         "description": "Configurable signal clock",
         "author": "",
@@ -144,6 +137,29 @@
       "design": {
         "graph": {
           "blocks": [
+            {
+              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+              "type": "basic.input",
+              "data": {
+                "name": "f_input",
+                "clock": false
+              },
+              "position": {
+                "x": 152,
+                "y": 280
+              }
+            },
+            {
+              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+              "type": "basic.output",
+              "data": {
+                "name": "f_output"
+              },
+              "position": {
+                "x": 1056,
+                "y": 280
+              }
+            },
             {
               "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
               "type": "basic.constant",
@@ -161,7 +177,7 @@
               "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_sg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_sg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
                     "name": "T_sg"
@@ -187,29 +203,6 @@
               "size": {
                 "width": 656,
                 "height": 528
-              }
-            },
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "f_input",
-                "clock": false
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
               }
             }
           ],
@@ -245,13 +238,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 217.4768,
-            "y": 203.1959
-          },
-          "zoom": 0.7408
         }
       }
     }

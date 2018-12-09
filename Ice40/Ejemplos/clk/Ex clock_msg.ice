@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -11,34 +11,6 @@
     "board": "icestick",
     "graph": {
       "blocks": [
-        {
-          "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
-          "type": "basic.constant",
-          "data": {
-            "name": "T_ms",
-            "value": "1000",
-            "local": false
-          },
-          "position": {
-            "x": 440,
-            "y": 48
-          }
-        },
-        {
-          "id": "1a3b7d39-ee00-40f5-b6b5-e85d89968935",
-          "type": "basic.info",
-          "data": {
-            "info": "\n\nf_input = 12 MHz internal frequecy of FPGA\n\n Upper: ( miliseconds)\n \nf_output = It is configurable, here T_msg=1000\n           output is 1 second ON and 1second OFF.\n           \n           \n           \n           \n           \n           \n           \n        \nLower: ( Seconds )\n\nf_output = It is configurable, here T_msg=1000\n           output is 1 second ON and 1second OFF.\n           "
-          },
-          "position": {
-            "x": 728,
-            "y": 136
-          },
-          "size": {
-            "width": 560,
-            "height": 416
-          }
-        },
         {
           "id": "6a9606ff-7390-4254-9e94-d33071df353d",
           "type": "basic.input",
@@ -60,18 +32,6 @@
           }
         },
         {
-          "id": "475a44ab-f200-4bf9-b563-f59d26cbe783",
-          "type": "d1516ec7c09c7d4b838508bea1ff8aa17259d7c1",
-          "position": {
-            "x": 440,
-            "y": 192
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
           "id": "8c2c8a15-84a8-4009-9d01-0b1d58ee1232",
           "type": "basic.output",
           "data": {
@@ -79,8 +39,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "D3",
-                "value": "97"
+                "name": "PMOD1",
+                "value": "78"
               }
             ],
             "virtual": false
@@ -88,6 +48,38 @@
           "position": {
             "x": 608,
             "y": 192
+          }
+        },
+        {
+          "id": "aa9630df-66dc-4fe2-b7ab-ee0b4a4813c7",
+          "type": "basic.output",
+          "data": {
+            "name": "out",
+            "pins": [
+              {
+                "index": "0",
+                "name": "PMOD2",
+                "value": "79"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 608,
+            "y": 448
+          }
+        },
+        {
+          "id": "ac1fc639-b21f-478b-80f6-ace97e3343d5",
+          "type": "basic.constant",
+          "data": {
+            "name": "T_ms",
+            "value": "1000",
+            "local": false
+          },
+          "position": {
+            "x": 440,
+            "y": 48
           }
         },
         {
@@ -104,27 +96,36 @@
           }
         },
         {
-          "id": "aa9630df-66dc-4fe2-b7ab-ee0b4a4813c7",
-          "type": "basic.output",
+          "id": "1a3b7d39-ee00-40f5-b6b5-e85d89968935",
+          "type": "basic.info",
           "data": {
-            "name": "out",
-            "pins": [
-              {
-                "index": "0",
-                "name": "D1",
-                "value": "99"
-              }
-            ],
-            "virtual": false
+            "info": "\n\nf_input = 12 MHz internal frequecy of FPGA\n\n Upper: ( miliseconds)\n \nf_output = It is configurable, here T_msg=1000\n           output is 1 second ON and 1second OFF.\n           \n           \n           \n           \n           \n           \nLower: ( Seconds )\n\nf_output = It is configurable, here T_msg=1000\n           output is 1 second ON and 1second OFF.\n           ",
+            "readonly": false
           },
           "position": {
-            "x": 608,
-            "y": 440
+            "x": 728,
+            "y": 136
+          },
+          "size": {
+            "width": 560,
+            "height": 416
           }
         },
         {
-          "id": "f25d1a6e-3b98-4e3e-8f06-012048f41f80",
-          "type": "3128151b411ed203c57ec6862c5e65e5809bd11f",
+          "id": "a3350934-98b6-47c1-a496-df2d25fa9799",
+          "type": "1cb997f972b8f529539ec941cd76b38cc86a0d33",
+          "position": {
+            "x": 440,
+            "y": 192
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "4c4f6029-a238-4c7a-9983-e3920ca1bb8c",
+          "type": "f88e6c6c6cbdb03eac8e696c52561c644dbc3822",
           "position": {
             "x": 440,
             "y": 448
@@ -138,7 +139,7 @@
       "wires": [
         {
           "source": {
-            "block": "f25d1a6e-3b98-4e3e-8f06-012048f41f80",
+            "block": "4c4f6029-a238-4c7a-9983-e3920ca1bb8c",
             "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
           },
           "target": {
@@ -152,13 +153,13 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "f25d1a6e-3b98-4e3e-8f06-012048f41f80",
+            "block": "4c4f6029-a238-4c7a-9983-e3920ca1bb8c",
             "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
           }
         },
         {
           "source": {
-            "block": "475a44ab-f200-4bf9-b563-f59d26cbe783",
+            "block": "a3350934-98b6-47c1-a496-df2d25fa9799",
             "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
           },
           "target": {
@@ -172,7 +173,7 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "475a44ab-f200-4bf9-b563-f59d26cbe783",
+            "block": "a3350934-98b6-47c1-a496-df2d25fa9799",
             "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
           }
         },
@@ -182,7 +183,7 @@
             "port": "out"
           },
           "target": {
-            "block": "475a44ab-f200-4bf9-b563-f59d26cbe783",
+            "block": "a3350934-98b6-47c1-a496-df2d25fa9799",
             "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
           }
         },
@@ -192,7 +193,7 @@
             "port": "out"
           },
           "target": {
-            "block": "f25d1a6e-3b98-4e3e-8f06-012048f41f80",
+            "block": "4c4f6029-a238-4c7a-9983-e3920ca1bb8c",
             "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
           },
           "vertices": [
@@ -203,17 +204,10 @@
           ]
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": -9,
-        "y": 17
-      },
-      "zoom": 1
     }
   },
   "dependencies": {
-    "d1516ec7c09c7d4b838508bea1ff8aa17259d7c1": {
+    "1cb997f972b8f529539ec941cd76b38cc86a0d33": {
       "package": {
         "name": "clock",
         "version": "1.0",
@@ -224,6 +218,29 @@
       "design": {
         "graph": {
           "blocks": [
+            {
+              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+              "type": "basic.input",
+              "data": {
+                "name": "f_input",
+                "clock": false
+              },
+              "position": {
+                "x": 152,
+                "y": 280
+              }
+            },
+            {
+              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+              "type": "basic.output",
+              "data": {
+                "name": "f_output"
+              },
+              "position": {
+                "x": 1056,
+                "y": 280
+              }
+            },
             {
               "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
               "type": "basic.constant",
@@ -241,7 +258,7 @@
               "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_msg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_msg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
                     "name": "T_msg"
@@ -267,29 +284,6 @@
               "size": {
                 "width": 656,
                 "height": 528
-              }
-            },
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "f_input",
-                "clock": false
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
               }
             }
           ],
@@ -325,19 +319,12 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": -60.5232,
-            "y": 79.1959
-          },
-          "zoom": 0.7408
         }
       }
     },
-    "3128151b411ed203c57ec6862c5e65e5809bd11f": {
+    "f88e6c6c6cbdb03eac8e696c52561c644dbc3822": {
       "package": {
-        "name": "clock",
+        "name": "clock ",
         "version": "1.0",
         "description": "Configurable signal clock",
         "author": "",
@@ -346,6 +333,29 @@
       "design": {
         "graph": {
           "blocks": [
+            {
+              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+              "type": "basic.input",
+              "data": {
+                "name": "f_input",
+                "clock": false
+              },
+              "position": {
+                "x": 152,
+                "y": 280
+              }
+            },
+            {
+              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+              "type": "basic.output",
+              "data": {
+                "name": "f_output"
+              },
+              "position": {
+                "x": 1056,
+                "y": 280
+              }
+            },
             {
               "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
               "type": "basic.constant",
@@ -363,7 +373,7 @@
               "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_sg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000; //internal frequency FPGA IceStick\n  localparam cuenta_Hasta = i_freq*T_sg/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
                     "name": "T_sg"
@@ -389,29 +399,6 @@
               "size": {
                 "width": 656,
                 "height": 528
-              }
-            },
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "f_input",
-                "clock": false
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
               }
             }
           ],
@@ -447,13 +434,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 217.4768,
-            "y": 203.1959
-          },
-          "zoom": 0.7408
         }
       }
     }

@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "u(t)",
     "version": "1.0",
@@ -11,51 +11,6 @@
     "board": "icestick",
     "graph": {
       "blocks": [
-        {
-          "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
-          "type": "basic.constant",
-          "data": {
-            "name": "t",
-            "value": "",
-            "local": false
-          },
-          "position": {
-            "x": 624,
-            "y": 64
-          }
-        },
-        {
-          "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
-          "type": "basic.code",
-          "data": {
-            "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_periods=t;\n\nreg[7:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(contador >= num_periods-1)\n begin\n u <=1'b0;\n contador <= contador;\n end\nelse\n begin\n  u<=1'b1;\n  contador=contador+1;\n end\n \n \n \n ",
-            "params": [
-              {
-                "name": "t"
-              }
-            ],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                }
-              ],
-              "out": [
-                {
-                  "name": "u"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 424,
-            "y": 184
-          },
-          "size": {
-            "width": 496,
-            "height": 432
-          }
-        },
         {
           "id": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6",
           "type": "basic.input",
@@ -94,6 +49,51 @@
             "x": 976,
             "y": 368
           }
+        },
+        {
+          "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
+          "type": "basic.constant",
+          "data": {
+            "name": "t",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 624,
+            "y": 64
+          }
+        },
+        {
+          "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
+          "type": "basic.code",
+          "data": {
+            "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_periods=t;\n\nreg[7:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(contador >= num_periods-1)\n begin\n u <=1'b0;\n contador <= contador;\n end\nelse\n begin\n  u<=1'b1;\n  contador<=contador+1;\n end\n \n \n \n ",
+            "params": [
+              {
+                "name": "t"
+              }
+            ],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "u"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 424,
+            "y": 184
+          },
+          "size": {
+            "width": 496,
+            "height": 432
+          }
         }
       ],
       "wires": [
@@ -128,13 +128,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 35,
-        "y": 5.5
-      },
-      "zoom": 1
     }
   },
   "dependencies": {}

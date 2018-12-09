@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
-    "name": "DDRFF",
+    "name": "DDR_FF",
     "version": "v2.1",
     "description": "Double Data Rate Flip Flop",
     "author": "José Picó",
@@ -11,43 +11,6 @@
     "board": "icezum",
     "graph": {
       "blocks": [
-        {
-          "id": "ed4c607b-e5b6-42b8-97b7-41aa54db60ad",
-          "type": "basic.code",
-          "data": {
-            "code": "//Double Data Rate Flip Flop\nreg q1,q2;\n\nalways @(posedge clk)\nq1 <= d1;\n\nalways @(negedge clk)\nq2 <= d2;\n\nassign q= (clk) ? q1:q2;\nassign qn=~q;\n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "d1"
-                },
-                {
-                  "name": "d2"
-                }
-              ],
-              "out": [
-                {
-                  "name": "q"
-                },
-                {
-                  "name": "qn"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 392,
-            "y": 80
-          },
-          "size": {
-            "width": 496,
-            "height": 288
-          }
-        },
         {
           "id": "2c19ed23-3870-4989-8a3f-a01376eef723",
           "type": "basic.input",
@@ -145,6 +108,43 @@
             "x": 144,
             "y": 288
           }
+        },
+        {
+          "id": "ed4c607b-e5b6-42b8-97b7-41aa54db60ad",
+          "type": "basic.code",
+          "data": {
+            "code": "//Double Data Rate Flip Flop\nreg q1=0,q2=0;\n\nalways @(posedge clk)\nq1 <= d1;\n\nalways @(negedge clk)\nq2 <= d2;\n\nassign q= (clk) ? q1:q2;\nassign qn=~q;\n",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "d1"
+                },
+                {
+                  "name": "d2"
+                }
+              ],
+              "out": [
+                {
+                  "name": "q"
+                },
+                {
+                  "name": "qn"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 392,
+            "y": 80
+          },
+          "size": {
+            "width": 496,
+            "height": 288
+          }
         }
       ],
       "wires": [
@@ -199,13 +199,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 75,
-        "y": 121.5
-      },
-      "zoom": 1
     }
   },
   "dependencies": {}

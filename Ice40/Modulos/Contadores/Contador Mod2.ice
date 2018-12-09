@@ -60,7 +60,7 @@
           "id": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
           "type": "basic.code",
           "data": {
-            "code": "reg [1:0] q;\n\nalways @(posedge clk)\n    if (q==2)\n      q <=0;\n    else\n      q <= q + 1;",
+            "code": "reg [1:0] q=0;\n\nalways @(posedge clk)\n    if (q==2)\n      q <=0;\n    else\n      q <= q + 1;",
             "params": [],
             "ports": {
               "in": [

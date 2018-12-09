@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "clock",
     "version": "1.0",
@@ -11,51 +11,6 @@
     "board": "icestick",
     "graph": {
       "blocks": [
-        {
-          "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-          "type": "basic.constant",
-          "data": {
-            "name": "Hz",
-            "value": "",
-            "local": false
-          },
-          "position": {
-            "x": 616,
-            "y": -72
-          }
-        },
-        {
-          "id": "f54545c4-308e-4787-8383-c79146f70ab8",
-          "type": "basic.code",
-          "data": {
-            "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
-            "params": [
-              {
-                "name": "Hz"
-              }
-            ],
-            "ports": {
-              "in": [
-                {
-                  "name": "i_clock"
-                }
-              ],
-              "out": [
-                {
-                  "name": "clk"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 336,
-            "y": 48
-          },
-          "size": {
-            "width": 656,
-            "height": 528
-          }
-        },
         {
           "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
           "type": "basic.input",
@@ -94,6 +49,51 @@
             "x": 1056,
             "y": 280
           }
+        },
+        {
+          "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
+          "type": "basic.constant",
+          "data": {
+            "name": "Hz",
+            "value": "",
+            "local": false
+          },
+          "position": {
+            "x": 616,
+            "y": -72
+          }
+        },
+        {
+          "id": "f54545c4-308e-4787-8383-c79146f70ab8",
+          "type": "basic.code",
+          "data": {
+            "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
+            "params": [
+              {
+                "name": "Hz"
+              }
+            ],
+            "ports": {
+              "in": [
+                {
+                  "name": "i_clock"
+                }
+              ],
+              "out": [
+                {
+                  "name": "clk"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 336,
+            "y": 48
+          },
+          "size": {
+            "width": 656,
+            "height": 528
+          }
         }
       ],
       "wires": [
@@ -128,13 +128,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 217.4768,
-        "y": 203.1959
-      },
-      "zoom": 0.7408
     }
   },
   "dependencies": {}

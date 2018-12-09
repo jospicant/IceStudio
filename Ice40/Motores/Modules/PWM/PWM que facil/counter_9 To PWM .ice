@@ -115,7 +115,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 9 bits counter for PWM\n\nreg [8:0] d =0;\nreg pwm;\n\nalways @(posedge clk)\nbegin\n d <= d + 1;\n \n if (d<To)\n  pwm <= 1'b1;\n  else\n   pwm <=1'b0;\nend\n  \n",
+            "code": "// 9 bits counter for PWM\n\nreg [8:0] d =0;\nreg pwm=0;\n\nalways @(posedge clk)\nbegin\n d <= d + 1;\n \n if (d<To)\n  pwm <= 1'b1;\n  else\n   pwm <=1'b0;\nend\n  \n",
             "params": [],
             "ports": {
               "in": [

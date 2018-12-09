@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "u(t)",
     "version": "1.0",
@@ -87,7 +87,7 @@
           "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
           "type": "basic.code",
           "data": {
-            "code": "// Escalón u(t)\n// t ciclos de reloj a 0 y\n// cambia a 1.\n\nlocalparam num_periods=t;\n\nreg[7:0] contador=0;\nreg u=1'b0;\n\n\nalways @(posedge clk)\nif(contador >= num_periods-1)\n begin\n u <=1'b1;\n contador <= contador;\n end\nelse\n begin\n  u<=1'b0;\n  contador=contador+1;\n end\n \n \n \n ",
+            "code": "// Escalón u(t)\n// t ciclos de reloj a 0 y\n// cambia a 1.\n\nlocalparam num_periods=t;\n\nreg[7:0] contador=0;\nreg u=1'b0;\n\n\nalways @(posedge clk)\nif(contador >= num_periods-1)\n begin\n u <=1'b1;\n contador <= contador;\n end\nelse\n begin\n  u<=1'b0;\n  contador<=contador+1;\n end\n \n \n \n ",
             "params": [
               {
                 "name": "t"
@@ -180,13 +180,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 143.581,
-        "y": 74.6646
-      },
-      "zoom": 0.5042
     }
   },
   "dependencies": {
@@ -298,13 +291,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 0,
-            "y": 0
-          },
-          "zoom": 1
         }
       }
     }

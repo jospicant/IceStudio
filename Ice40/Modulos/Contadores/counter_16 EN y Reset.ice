@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
-    "name": "Counter 16 CLK,EN,RESET",
+    "name": "Counter 16 EN,RESET",
     "version": "1.0",
     "description": "0,1,2,3...n (16 bits)",
     "author": "José Picó",
@@ -170,7 +170,7 @@
           "id": "17174045-a45c-4f73-8dd4-50651082b454",
           "type": "basic.code",
           "data": {
-            "code": "// 4 bits counter, Enable and Reset\n\nreg [15:0] d = 0;\n\nalways @(posedge clk,posedge Reset)\nbegin\n    if(Reset)\n      d<=0;\n    else\n    begin\n     if(Enable)\n      d<=d+1;\n     else\n      d<=d;\n    end\n    \n      \nend\n  \n",
+            "code": "// 16 bits counter, Enable and Reset\n\nreg [15:0] d = 0;\n\nalways @(posedge clk,posedge Reset)\nbegin\n    if(Reset)\n      d<=0;\n    else\n    begin\n     if(Enable)\n      d<=d+1;\n     else\n      d<=d;\n    end\n    \n      \nend\n  \n",
             "params": [],
             "ports": {
               "in": [
@@ -246,13 +246,6 @@
           "size": 16
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 110.1985,
-        "y": 148.4847
-      },
-      "zoom": 0.7977
     }
   },
   "dependencies": {}

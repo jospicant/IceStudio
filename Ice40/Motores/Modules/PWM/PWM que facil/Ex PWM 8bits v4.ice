@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -8,7 +8,7 @@
     "image": ""
   },
   "design": {
-    "board": "iCE40-HX8K",
+    "board": "icestick",
     "graph": {
       "blocks": [
         {
@@ -19,8 +19,8 @@
             "pins": [
               {
                 "index": "0",
-                "name": "B16",
-                "value": "B16"
+                "name": "PMOD1",
+                "value": "78"
               }
             ],
             "virtual": false
@@ -35,7 +35,7 @@
           "type": "basic.constant",
           "data": {
             "name": "dutty",
-            "value": "32",
+            "value": "1",
             "local": false
           },
           "position": {
@@ -57,18 +57,6 @@
           }
         },
         {
-          "id": "563fcaf2-f6d1-4006-af7c-e0cb5656e603",
-          "type": "07da00733de108e21c6e2a03b862e2ef6772d74b",
-          "position": {
-            "x": 584,
-            "y": 312
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
           "id": "152d019b-ff57-4b46-804c-eebf499fcc8c",
           "type": "45aff3cfbc3e100974c409406d5ff6b0ec0ee288",
           "position": {
@@ -79,12 +67,40 @@
             "width": 96,
             "height": 64
           }
+        },
+        {
+          "id": "35748e9a-f764-4b34-8f6f-1b454e8fd629",
+          "type": "basic.info",
+          "data": {
+            "info": "\n### Status: Checked Ok  \n T=20 ms        20ms/255 = 78,4 us por valor del dutty\n 32 = 2.5ms on;      5 = 396 us on;  \n 15 = 1.18 ms on;    1 = 79 us on;    Tiempo on = Valor de dutty * 78.4 us \n\n\n\n",
+            "readonly": true
+          },
+          "position": {
+            "x": 312,
+            "y": 48
+          },
+          "size": {
+            "width": 688,
+            "height": 112
+          }
+        },
+        {
+          "id": "643afb81-148c-477d-aae0-466faa3ace7a",
+          "type": "27cdbce60502726946336133ce9cd5e8235108e1",
+          "position": {
+            "x": 584,
+            "y": 312
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
         }
       ],
       "wires": [
         {
           "source": {
-            "block": "563fcaf2-f6d1-4006-af7c-e0cb5656e603",
+            "block": "643afb81-148c-477d-aae0-466faa3ace7a",
             "port": "1debc284-eb22-42ca-8b59-fa719091237d"
           },
           "target": {
@@ -98,7 +114,7 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "563fcaf2-f6d1-4006-af7c-e0cb5656e603",
+            "block": "643afb81-148c-477d-aae0-466faa3ace7a",
             "port": "8cea50d6-d3aa-499f-acd7-aaed57a675ff"
           }
         },
@@ -108,7 +124,7 @@
             "port": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5"
           },
           "target": {
-            "block": "563fcaf2-f6d1-4006-af7c-e0cb5656e603",
+            "block": "643afb81-148c-477d-aae0-466faa3ace7a",
             "port": "53be6576-9003-435a-be7b-a3923c7f2192"
           },
           "size": 8
@@ -124,17 +140,104 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": -261.488,
-        "y": -118.1449
-      },
-      "zoom": 1.5259
     }
   },
   "dependencies": {
-    "07da00733de108e21c6e2a03b862e2ef6772d74b": {
+    "45aff3cfbc3e100974c409406d5ff6b0ec0ee288": {
+      "package": {
+        "name": "8 bits constant",
+        "version": "1.0",
+        "description": "Constante 8 bits",
+        "author": "José Picó",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+              "type": "basic.constant",
+              "data": {
+                "name": "numero",
+                "value": "",
+                "local": false
+              },
+              "position": {
+                "x": 448,
+                "y": 72
+              }
+            },
+            {
+              "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+              "type": "basic.code",
+              "data": {
+                "code": "\nassign num=n;",
+                "params": [
+                  {
+                    "name": "n"
+                  }
+                ],
+                "ports": {
+                  "in": [],
+                  "out": [
+                    {
+                      "name": "num",
+                      "range": "[7:0]",
+                      "size": 8
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 384,
+                "y": 184
+              },
+              "size": {
+                "width": 224,
+                "height": 80
+              }
+            },
+            {
+              "id": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
+              "type": "basic.output",
+              "data": {
+                "name": "Const",
+                "range": "[7:0]",
+                "size": 8
+              },
+              "position": {
+                "x": 768,
+                "y": 192
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+                "port": "n"
+              }
+            },
+            {
+              "source": {
+                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+                "port": "num"
+              },
+              "target": {
+                "block": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
+                "port": "in"
+              },
+              "size": 8
+            }
+          ]
+        }
+      }
+    },
+    "27cdbce60502726946336133ce9cd5e8235108e1": {
       "package": {
         "name": "PWM 8bits",
         "version": "4.0",
@@ -225,11 +328,11 @@
               }
             },
             {
-              "id": "4f509ce2-0e21-4cf8-9896-d3ee1e45dc6b",
-              "type": "55f9e937d2c86b27a5fabd5c766ffc85ee93c2ab",
+              "id": "7a0298ff-2205-4bb3-8220-9be2440333f0",
+              "type": "5487806d5f045318191c6d15e36065db7459bcdb",
               "position": {
-                "x": 112,
-                "y": 224
+                "x": 504,
+                "y": 208
               },
               "size": {
                 "width": 96,
@@ -237,11 +340,11 @@
               }
             },
             {
-              "id": "7a0298ff-2205-4bb3-8220-9be2440333f0",
-              "type": "5487806d5f045318191c6d15e36065db7459bcdb",
+              "id": "1907a779-f4ef-4b2f-a03a-121457c7fa8a",
+              "type": "f21969330faa16d45ed504370ff1de290269bc40",
               "position": {
-                "x": 504,
-                "y": 208
+                "x": 112,
+                "y": 224
               },
               "size": {
                 "width": 96,
@@ -256,7 +359,7 @@
                 "port": "out"
               },
               "target": {
-                "block": "4f509ce2-0e21-4cf8-9896-d3ee1e45dc6b",
+                "block": "1907a779-f4ef-4b2f-a03a-121457c7fa8a",
                 "port": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf"
               }
             },
@@ -266,7 +369,7 @@
                 "port": "constant-out"
               },
               "target": {
-                "block": "4f509ce2-0e21-4cf8-9896-d3ee1e45dc6b",
+                "block": "1907a779-f4ef-4b2f-a03a-121457c7fa8a",
                 "port": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087"
               }
             },
@@ -276,7 +379,7 @@
                 "port": "constant-out"
               },
               "target": {
-                "block": "4f509ce2-0e21-4cf8-9896-d3ee1e45dc6b",
+                "block": "1907a779-f4ef-4b2f-a03a-121457c7fa8a",
                 "port": "9c26f62e-a8b9-4e3c-88ec-99f3622e7572"
               }
             },
@@ -292,7 +395,7 @@
             },
             {
               "source": {
-                "block": "4f509ce2-0e21-4cf8-9896-d3ee1e45dc6b",
+                "block": "1907a779-f4ef-4b2f-a03a-121457c7fa8a",
                 "port": "3fca0749-ce9d-42c5-98cb-aa24163d4324"
               },
               "target": {
@@ -318,177 +421,6 @@
               "size": 8
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 379,
-            "y": 297.5
-          },
-          "zoom": 1
-        }
-      }
-    },
-    "55f9e937d2c86b27a5fabd5c766ffc85ee93c2ab": {
-      "package": {
-        "name": "clock PWM",
-        "version": "1.0",
-        "description": "Configurable signal clock for generate a PWM",
-        "author": "José Picó",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-              "type": "basic.input",
-              "data": {
-                "name": "clk",
-                "clock": true
-              },
-              "position": {
-                "x": 152,
-                "y": 280
-              }
-            },
-            {
-              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-              "type": "basic.output",
-              "data": {
-                "name": "f_output"
-              },
-              "position": {
-                "x": 1056,
-                "y": 280
-              }
-            },
-            {
-              "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-              "type": "basic.constant",
-              "data": {
-                "name": "ms",
-                "value": "20",
-                "local": false
-              },
-              "position": {
-                "x": 456,
-                "y": -72
-              }
-            },
-            {
-              "id": "9c26f62e-a8b9-4e3c-88ec-99f3622e7572",
-              "type": "basic.constant",
-              "data": {
-                "name": "N_bits",
-                "value": "8",
-                "local": false
-              },
-              "position": {
-                "x": 784,
-                "y": -80
-              }
-            },
-            {
-              "id": "f54545c4-308e-4787-8383-c79146f70ab8",
-              "type": "basic.code",
-              "data": {
-                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  \n  localparam Hz=2**N_bits*1000/ms; // ** = funcion potencia\n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
-                "params": [
-                  {
-                    "name": "ms"
-                  },
-                  {
-                    "name": "N_bits"
-                  }
-                ],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "i_clock"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "clk"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 336,
-                "y": 48
-              },
-              "size": {
-                "width": 656,
-                "height": 528
-              }
-            },
-            {
-              "id": "f9e175a6-9c77-443b-8633-a62bb58442dd",
-              "type": "basic.info",
-              "data": {
-                "info": "\nMódulo usado para generar periodo adecuado\nde una señal PWM.\nDado los milisegundos que se quieren obtener para\nel periodo de la señal PWM y el número de bits\ncon los cuales va a trabajar el PWM se \nhacen los cálculos necesarios para obtener la\nfrecuencia del reloj en Hercios que debe tener\nel reloj del módulo PWM.\n\n8bits = 2^8 (256)\nSi quiero Periodo de la señal PWM de 20ms con 8 bits\n(256)\nnecesitaré una frecuencia de reloj de 256*1000/20 =\n12800 Hercios.",
-                "readonly": false
-              },
-              "position": {
-                "x": -200,
-                "y": -104
-              },
-              "size": {
-                "width": 448,
-                "height": 304
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "clk"
-              },
-              "target": {
-                "block": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
-                "port": "out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "i_clock"
-              }
-            },
-            {
-              "source": {
-                "block": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "ms"
-              }
-            },
-            {
-              "source": {
-                "block": "9c26f62e-a8b9-4e3c-88ec-99f3622e7572",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
-                "port": "N_bits"
-              }
-            }
-          ]
-        },
-        "state": {
-          "pan": {
-            "x": 263.3,
-            "y": 133.4471
-          },
-          "zoom": 0.8985
         }
       }
     },
@@ -607,21 +539,14 @@
               "size": 8
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": -22,
-            "y": 58.5
-          },
-          "zoom": 1
         }
       }
     },
-    "45aff3cfbc3e100974c409406d5ff6b0ec0ee288": {
+    "f21969330faa16d45ed504370ff1de290269bc40": {
       "package": {
-        "name": "8 bits constant",
+        "name": "clock PWM",
         "version": "1.0",
-        "description": "Constante 8 bits",
+        "description": "Configurable signal clock for generate a PWM",
         "author": "José Picó",
         "image": ""
       },
@@ -629,92 +554,148 @@
         "graph": {
           "blocks": [
             {
-              "id": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
-              "type": "basic.constant",
+              "id": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+              "type": "basic.input",
               "data": {
-                "name": "numero",
-                "value": "",
-                "local": false
+                "name": "clk",
+                "clock": true
               },
               "position": {
-                "x": 448,
-                "y": 72
+                "x": 152,
+                "y": 280
               }
             },
             {
-              "id": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
+              "id": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+              "type": "basic.output",
+              "data": {
+                "name": "f_output"
+              },
+              "position": {
+                "x": 1056,
+                "y": 280
+              }
+            },
+            {
+              "id": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
+              "type": "basic.constant",
+              "data": {
+                "name": "ms",
+                "value": "20",
+                "local": false
+              },
+              "position": {
+                "x": 456,
+                "y": -72
+              }
+            },
+            {
+              "id": "9c26f62e-a8b9-4e3c-88ec-99f3622e7572",
+              "type": "basic.constant",
+              "data": {
+                "name": "N_bits",
+                "value": "8",
+                "local": false
+              },
+              "position": {
+                "x": 784,
+                "y": -80
+              }
+            },
+            {
+              "id": "f54545c4-308e-4787-8383-c79146f70ab8",
               "type": "basic.code",
               "data": {
-                "code": "\nassign num=n;",
+                "code": "\n  // Constants (parameters) to create the frequencies needed:\n  // Input clock is 12MHz, chosen arbitrarily.\n  // Formula is: (12MHz / f_target * 50% duty cycle)\n  // So for 100 Hz: 12000000 / 100 * 0.5 = 60000\n  \n  \n  localparam Hz=2**N_bits*1000/ms; // ** = funcion potencia\n  localparam i_freq=12000000;\n  localparam cuenta_Hasta = i_freq/Hz/2;\n  localparam N=$clog2(cuenta_Hasta);\n  \n  // These signals will be the counters:\n  reg [N-1:0] contador=0;\n  \n  // These signals will toggle at the frequencies needed:\n  reg T = 0;\n \n  always @ (posedge i_clock)\n   contador <= (contador == cuenta_Hasta-1) ? 0 : contador + 1;\n\n  always @(posedge i_clock)\n  begin\n   if (contador==0)\n     T<=!T;\n   else\n     T<=T;\n  end\n  \n  assign clk=T;\n  \n  \n  \n    ",
                 "params": [
                   {
-                    "name": "n"
+                    "name": "ms"
+                  },
+                  {
+                    "name": "N_bits"
                   }
                 ],
                 "ports": {
-                  "in": [],
+                  "in": [
+                    {
+                      "name": "i_clock"
+                    }
+                  ],
                   "out": [
                     {
-                      "name": "num",
-                      "range": "[7:0]",
-                      "size": 8
+                      "name": "clk"
                     }
                   ]
                 }
               },
               "position": {
-                "x": 384,
-                "y": 184
+                "x": 336,
+                "y": 48
               },
               "size": {
-                "width": 224,
-                "height": 80
+                "width": 656,
+                "height": 528
               }
             },
             {
-              "id": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
-              "type": "basic.output",
+              "id": "f9e175a6-9c77-443b-8633-a62bb58442dd",
+              "type": "basic.info",
               "data": {
-                "name": "Const",
-                "range": "[7:0]",
-                "size": 8
+                "info": "\nMódulo usado para generar periodo adecuado\nde una señal PWM.\nDado los milisegundos que se quieren obtener para\nel periodo de la señal PWM y el número de bits\ncon los cuales va a trabajar el PWM se \nhacen los cálculos necesarios para obtener la\nfrecuencia del reloj en Hercios que debe tener\nel reloj del módulo PWM.\n\n8bits = 2^8 (256)\nSi quiero Periodo de la señal PWM de 20ms con 8 bits\n(256)\nnecesitaré una frecuencia de reloj de 256*1000/20 =\n12800 Hercios.",
+                "readonly": false
               },
               "position": {
-                "x": 768,
-                "y": 192
+                "x": -200,
+                "y": -104
+              },
+              "size": {
+                "width": 448,
+                "height": 304
               }
             }
           ],
           "wires": [
             {
               "source": {
-                "block": "8b66dfbb-562b-4c0b-9c30-538a06a1d2dc",
-                "port": "constant-out"
+                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
+                "port": "clk"
               },
               "target": {
-                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
-                "port": "n"
+                "block": "3fca0749-ce9d-42c5-98cb-aa24163d4324",
+                "port": "in"
               }
             },
             {
               "source": {
-                "block": "ffc8b4ec-23a4-4437-b7e7-73772f140c08",
-                "port": "num"
+                "block": "fabd9c4f-a3bf-43e1-86c1-be5bf602e9bf",
+                "port": "out"
               },
               "target": {
-                "block": "1bd6eda7-e02f-4b2d-9d8c-e3c1c40111b5",
-                "port": "in"
+                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
+                "port": "i_clock"
+              }
+            },
+            {
+              "source": {
+                "block": "63eb4dd8-1e63-4a4f-8ec8-f5d8f49c1087",
+                "port": "constant-out"
               },
-              "size": 8
+              "target": {
+                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
+                "port": "ms"
+              }
+            },
+            {
+              "source": {
+                "block": "9c26f62e-a8b9-4e3c-88ec-99f3622e7572",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "f54545c4-308e-4787-8383-c79146f70ab8",
+                "port": "N_bits"
+              }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": -166,
-            "y": 114.5
-          },
-          "zoom": 1
         }
       }
     }
