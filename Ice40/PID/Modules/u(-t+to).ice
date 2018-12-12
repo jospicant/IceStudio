@@ -35,7 +35,7 @@
           "id": "3a4aa0eb-7d20-4fd4-8336-a0297d3a43a6",
           "type": "basic.output",
           "data": {
-            "name": "u_t",
+            "name": "u(-t+to)",
             "pins": [
               {
                 "index": "0",
@@ -71,15 +71,28 @@
           }
         },
         {
-          "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
+          "id": "a8a3037a-ffab-4dda-be42-36bd9b066266",
           "type": "basic.constant",
           "data": {
-            "name": "t",
-            "value": "",
+            "name": "Nbits",
+            "value": "8",
             "local": false
           },
           "position": {
-            "x": 624,
+            "x": 504,
+            "y": 64
+          }
+        },
+        {
+          "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
+          "type": "basic.constant",
+          "data": {
+            "name": "to",
+            "value": "10",
+            "local": false
+          },
+          "position": {
+            "x": 752,
             "y": 64
           }
         },
@@ -87,10 +100,13 @@
           "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
           "type": "basic.code",
           "data": {
-            "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_periods=t;\n\nreg[23:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(reset) contador<=0;\nelse if(contador >= num_periods-1)\n begin\n u <=1'b0;\n contador <= contador;\n end\nelse\n begin\n  u<=1'b1;\n  contador<=contador+1;\n end\n \n \n \n ",
+            "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_bits=n-1;\nlocalparam num_periods=to;\n\nreg[num_bits:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(reset)begin contador<=0; u<=1'b1; end\nelse \nbegin\n    if(contador >= num_periods-1)\n     begin\n         u <=1'b0;\n         contador <= contador;\n     end\n    else\n     begin\n          u<=1'b1;\n          contador<=contador+1;\n     end\nend\n \n \n \n ",
             "params": [
               {
-                "name": "t"
+                "name": "n"
+              },
+              {
+                "name": "to"
               }
             ],
             "ports": {
@@ -132,16 +148,6 @@
         },
         {
           "source": {
-            "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
-            "port": "t"
-          }
-        },
-        {
-          "source": {
             "block": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6",
             "port": "out"
           },
@@ -158,6 +164,26 @@
           "target": {
             "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
             "port": "reset"
+          }
+        },
+        {
+          "source": {
+            "block": "a8a3037a-ffab-4dda-be42-36bd9b066266",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
+            "port": "n"
+          }
+        },
+        {
+          "source": {
+            "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
+            "port": "to"
           }
         }
       ]

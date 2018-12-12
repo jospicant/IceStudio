@@ -66,55 +66,55 @@
             "virtual": true
           },
           "position": {
-            "x": 816,
-            "y": 232
+            "x": 840,
+            "y": 264
           }
         },
         {
           "id": "0eaeb75a-1224-46fc-8ea0-11ddf99e153b",
           "type": "basic.constant",
           "data": {
-            "name": "Numbits",
-            "value": "",
+            "name": "Nbits",
+            "value": "8",
             "local": false
           },
           "position": {
             "x": 192,
-            "y": -8
+            "y": -16
           }
         },
         {
           "id": "89d579b6-35b0-4dff-ac7a-1e1d4e2c93cb",
           "type": "basic.constant",
           "data": {
-            "name": "t_up",
-            "value": "",
+            "name": "t1",
+            "value": "5",
             "local": false
           },
           "position": {
-            "x": 488,
-            "y": -8
+            "x": 520,
+            "y": -16
           }
         },
         {
           "id": "24fac480-4d51-4dd5-a299-ea62e354ede0",
           "type": "basic.constant",
           "data": {
-            "name": "t_down",
-            "value": "",
+            "name": "t2",
+            "value": "20",
             "local": false
           },
           "position": {
             "x": 520,
-            "y": 272
+            "y": 264
           }
         },
         {
           "id": "57dffa80-51a4-4efe-83cc-c9b8ceb90041",
           "type": "16124060c91b761a61a0c26ac97d5e7e919df783",
           "position": {
-            "x": 648,
-            "y": 232
+            "x": 680,
+            "y": 264
           },
           "size": {
             "width": 96,
@@ -122,8 +122,8 @@
           }
         },
         {
-          "id": "065193e8-18c7-488d-bd1b-ecab92525d5a",
-          "type": "46029eaf1e5d8ae0ee7931315f6a1c48c627c447",
+          "id": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
+          "type": "5b07d148dcf673e56f136ec7bdbdb38d79960d2c",
           "position": {
             "x": 496,
             "y": 152
@@ -134,8 +134,8 @@
           }
         },
         {
-          "id": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
-          "type": "b9eb86d10f974ebef768678f842f6432c0799906",
+          "id": "bd18cfa8-c52b-443c-8678-97646ba786a4",
+          "type": "5b3026ab565df60507bf165175d54ed67a9fe0fe",
           "position": {
             "x": 496,
             "y": 408
@@ -159,17 +159,7 @@
         },
         {
           "source": {
-            "block": "89d579b6-35b0-4dff-ac7a-1e1d4e2c93cb",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "065193e8-18c7-488d-bd1b-ecab92525d5a",
-            "port": "73257335-f2cf-4e46-85b6-3c24880469ae"
-          }
-        },
-        {
-          "source": {
-            "block": "065193e8-18c7-488d-bd1b-ecab92525d5a",
+            "block": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
             "port": "3a4aa0eb-7d20-4fd4-8336-a0297d3a43a6"
           },
           "target": {
@@ -183,7 +173,7 @@
             "port": "out"
           },
           "target": {
-            "block": "065193e8-18c7-488d-bd1b-ecab92525d5a",
+            "block": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
             "port": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6"
           },
           "vertices": [
@@ -195,21 +185,11 @@
         },
         {
           "source": {
-            "block": "24fac480-4d51-4dd5-a299-ea62e354ede0",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
-            "port": "73257335-f2cf-4e46-85b6-3c24880469ae"
-          }
-        },
-        {
-          "source": {
             "block": "56c9d0f9-1ef6-4b3c-ac6e-6e13c754e4d3",
             "port": "out"
           },
           "target": {
-            "block": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
+            "block": "bd18cfa8-c52b-443c-8678-97646ba786a4",
             "port": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6"
           },
           "vertices": [
@@ -221,7 +201,7 @@
         },
         {
           "source": {
-            "block": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
+            "block": "bd18cfa8-c52b-443c-8678-97646ba786a4",
             "port": "3a4aa0eb-7d20-4fd4-8336-a0297d3a43a6"
           },
           "target": {
@@ -235,7 +215,7 @@
             "port": "out"
           },
           "target": {
-            "block": "065193e8-18c7-488d-bd1b-ecab92525d5a",
+            "block": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
             "port": "e43b18c5-9152-4dbb-a47e-0bba2b7443c2"
           }
         },
@@ -245,7 +225,7 @@
             "port": "out"
           },
           "target": {
-            "block": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
+            "block": "bd18cfa8-c52b-443c-8678-97646ba786a4",
             "port": "e39c5a53-bef0-4134-bf02-cdc1a9dc42cd"
           }
         },
@@ -255,8 +235,8 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "065193e8-18c7-488d-bd1b-ecab92525d5a",
-            "port": "91daa06e-69a7-4945-ad28-2415b3336267"
+            "block": "bd18cfa8-c52b-443c-8678-97646ba786a4",
+            "port": "a8a3037a-ffab-4dda-be42-36bd9b066266"
           }
         },
         {
@@ -265,8 +245,34 @@
             "port": "constant-out"
           },
           "target": {
-            "block": "4fcdd15f-f3df-463e-930d-5329c97fa4f5",
-            "port": "a8a3037a-ffab-4dda-be42-36bd9b066266"
+            "block": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
+            "port": "91daa06e-69a7-4945-ad28-2415b3336267"
+          },
+          "vertices": [
+            {
+              "x": 376,
+              "y": 96
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "24fac480-4d51-4dd5-a299-ea62e354ede0",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "bd18cfa8-c52b-443c-8678-97646ba786a4",
+            "port": "73257335-f2cf-4e46-85b6-3c24880469ae"
+          }
+        },
+        {
+          "source": {
+            "block": "89d579b6-35b0-4dff-ac7a-1e1d4e2c93cb",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "af2ffcac-ac27-4df0-8132-e55bcd81252d",
+            "port": "73257335-f2cf-4e46-85b6-3c24880469ae"
           }
         }
       ]
@@ -380,7 +386,7 @@
         }
       }
     },
-    "46029eaf1e5d8ae0ee7931315f6a1c48c627c447": {
+    "5b07d148dcf673e56f136ec7bdbdb38d79960d2c": {
       "package": {
         "name": "u(t)",
         "version": "1.0",
@@ -407,7 +413,7 @@
               "id": "3a4aa0eb-7d20-4fd4-8336-a0297d3a43a6",
               "type": "basic.output",
               "data": {
-                "name": "u_t"
+                "name": "u(t-to)"
               },
               "position": {
                 "x": 976,
@@ -430,7 +436,7 @@
               "id": "91daa06e-69a7-4945-ad28-2415b3336267",
               "type": "basic.constant",
               "data": {
-                "name": "Numbits",
+                "name": "Nbits",
                 "value": "8",
                 "local": false
               },
@@ -443,7 +449,7 @@
               "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
               "type": "basic.constant",
               "data": {
-                "name": "t",
+                "name": "to",
                 "value": "1",
                 "local": false
               },
@@ -456,13 +462,13 @@
               "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
               "type": "basic.code",
               "data": {
-                "code": "// Escalón u(t)\n// t ciclos de reloj a 0 y\n// cambia a 1.\n\nlocalparam num_bits=n-1;\nlocalparam num_periods=t;\n\nreg[num_bits:0] contador=0;\nreg u=1'b0;\n\n\nalways @(posedge clk)\nif(reset) begin contador<=0; u<=1'b0; end\nelse \n    begin\n        if(contador >= num_periods-1)\n         begin\n             u <=1'b1;\n             contador <= contador;\n         end\n        else\n         begin\n              u<=1'b0;\n              contador<=contador+1;\n         end\n    end\n \n \n \n ",
+                "code": "// Escalón u(t)\n// t ciclos de reloj a 0 y\n// cambia a 1.\n\nlocalparam num_bits=n-1;\nlocalparam num_periods=to;\n\nreg[num_bits:0] contador=0;\nreg u=1'b0;\n\n\nalways @(posedge clk)\nif(reset) begin contador<=0; u<=1'b0; end\nelse \n    begin\n        if(contador >= num_periods-1)\n         begin\n             u <=1'b1;\n             contador <= contador;\n         end\n        else\n         begin\n              u<=1'b0;\n              contador<=contador+1;\n         end\n    end\n \n \n \n ",
                 "params": [
                   {
                     "name": "n"
                   },
                   {
-                    "name": "t"
+                    "name": "to"
                   }
                 ],
                 "ports": {
@@ -504,16 +510,6 @@
             },
             {
               "source": {
-                "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
-                "port": "t"
-              }
-            },
-            {
-              "source": {
                 "block": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6",
                 "port": "out"
               },
@@ -541,12 +537,22 @@
                 "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
                 "port": "n"
               }
+            },
+            {
+              "source": {
+                "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
+                "port": "to"
+              }
             }
           ]
         }
       }
     },
-    "b9eb86d10f974ebef768678f842f6432c0799906": {
+    "5b3026ab565df60507bf165175d54ed67a9fe0fe": {
       "package": {
         "name": "u(t)",
         "version": "1.0",
@@ -573,7 +579,7 @@
               "id": "3a4aa0eb-7d20-4fd4-8336-a0297d3a43a6",
               "type": "basic.output",
               "data": {
-                "name": "u_t"
+                "name": "u(-t+to)"
               },
               "position": {
                 "x": 976,
@@ -609,8 +615,8 @@
               "id": "73257335-f2cf-4e46-85b6-3c24880469ae",
               "type": "basic.constant",
               "data": {
-                "name": "t",
-                "value": "",
+                "name": "to",
+                "value": "10",
                 "local": false
               },
               "position": {
@@ -622,13 +628,13 @@
               "id": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
               "type": "basic.code",
               "data": {
-                "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_bits=n-1;\nlocalparam num_periods=t;\n\nreg[num_bits:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(reset)begin contador<=0; u<=1'b1; end\nelse \nbegin\n    if(contador >= num_periods-1)\n     begin\n         u <=1'b0;\n         contador <= contador;\n     end\n    else\n     begin\n          u<=1'b1;\n          contador<=contador+1;\n     end\nend\n \n \n \n ",
+                "code": "// falling pulse in t\n// t ciclos de reloj a 1 y\n// cambia a 0.\n\nlocalparam num_bits=n-1;\nlocalparam num_periods=to;\n\nreg[num_bits:0] contador=0;\nreg u=1'b1;\n\n\nalways @(posedge clk)\nif(reset)begin contador<=0; u<=1'b1; end\nelse \nbegin\n    if(contador >= num_periods-1)\n     begin\n         u <=1'b0;\n         contador <= contador;\n     end\n    else\n     begin\n          u<=1'b1;\n          contador<=contador+1;\n     end\nend\n \n \n \n ",
                 "params": [
                   {
                     "name": "n"
                   },
                   {
-                    "name": "t"
+                    "name": "to"
                   }
                 ],
                 "ports": {
@@ -670,16 +676,6 @@
             },
             {
               "source": {
-                "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
-                "port": "t"
-              }
-            },
-            {
-              "source": {
                 "block": "1a3ed286-eeb0-42be-9d75-3c77ff33d5f6",
                 "port": "out"
               },
@@ -706,6 +702,16 @@
               "target": {
                 "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
                 "port": "n"
+              }
+            },
+            {
+              "source": {
+                "block": "73257335-f2cf-4e46-85b6-3c24880469ae",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "9cdb70a7-a928-49d7-a05d-c00d425bbe64",
+                "port": "to"
               }
             }
           ]
