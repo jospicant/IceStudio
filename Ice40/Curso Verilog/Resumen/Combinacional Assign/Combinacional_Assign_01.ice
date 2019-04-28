@@ -27,8 +27,8 @@
             "clock": false
           },
           "position": {
-            "x": -872,
-            "y": 184
+            "x": -456,
+            "y": 56
           }
         },
         {
@@ -47,8 +47,8 @@
             "clock": false
           },
           "position": {
-            "x": -872,
-            "y": 240
+            "x": -456,
+            "y": 112
           }
         },
         {
@@ -66,8 +66,8 @@
             "virtual": true
           },
           "position": {
-            "x": -120,
-            "y": 240
+            "x": 296,
+            "y": 112
           }
         },
         {
@@ -86,20 +86,20 @@
             "clock": false
           },
           "position": {
-            "x": -872,
-            "y": 288
+            "x": -456,
+            "y": 160
           }
         },
         {
           "id": "1ca0ba94-5133-47db-be01-659f22d15eb7",
           "type": "basic.info",
           "data": {
-            "info": "\n# Circuito COMBINACIONAL ( Multiplexor )   \n\nEn la programación convencional es típico el uso de expresiones condicionales, en Verilog también se emplean,  \npero, ¿Qué se sintetiza?\n\ncreado el módulo verilog:\n```\nmodule Multiplexor(a,b,c,o);\n\n  input a,b,c;\n  output o;\n  \n  assign o =  a ? b : c;\n  \nendmodule`\n```\nLa asignación usando el condicional  ?  nos crea un multiplexor.\n\n",
+            "info": "\n# Circuito COMBINACIONAL (  Assign & condicional ? = Multiplexor )   \n\nEn la programación convencional es típico el uso de expresiones condicionales, en Verilog también se emplean,  \npero, ¿Qué se sintetiza?\n\ncreado el módulo verilog:\n```\nmodule Multiplexor(a,b,c,o);\n\n  input a,b,c;\n  output o;\n  \n  assign o =  a ? b : c;\n  \nendmodule\n\n```\nLa asignación usando el condicional  ?  nos crea un multiplexor.\n\n",
             "readonly": true
           },
           "position": {
-            "x": -856,
-            "y": -256
+            "x": -520,
+            "y": -360
           },
           "size": {
             "width": 896,
@@ -110,7 +110,7 @@
           "id": "dbe11de2-c9cb-4027-91a7-f9cd98707041",
           "type": "basic.code",
           "data": {
-            "code": "//Multiplexor. mediante la señal \"a\" se elige que señal\n// de entrada se extrae por la salida \"o\"\n\n// Si  a = 1  o = a\n// Si  a = 0  o = b\n\nassign o = a ? b : 1'bz;\n\n",
+            "code": "//Multiplexor. mediante la señal \"a\" se elige que señal\n// de entrada se extrae por la salida \"o\"\n\n// Si  a = 1  o = a\n// Si  a = 0  o = b\n\nassign o = a ? b : c ;\n\n",
             "params": [],
             "ports": {
               "in": [
@@ -132,11 +132,11 @@
             }
           },
           "position": {
-            "x": -736,
-            "y": 192
+            "x": -320,
+            "y": 64
           },
           "size": {
-            "width": 544,
+            "width": 536,
             "height": 152
           }
         },
@@ -144,16 +144,48 @@
           "id": "cb8f96f8-9fe2-412a-9d62-7459aa9b495f",
           "type": "basic.info",
           "data": {
-            "info": "\n## Circuito combinacional \n\nCopia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar  \n\n[digitaljs]( href=http://digitaljs.tilk.eu/)\n\nobtedrás el siguiente circuito:  \n\n\n",
+            "info": "\n## Circuito combinacional \n\nCopia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar  \n\n[http://digitaljs.tilk.eu/](http://digitaljs.tilk.eu/)\n\nobtedrás el siguiente circuito multiplexor:\n\n![](https://raw.githubusercontent.com/jospicant/IceStudio/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/mux01.png)\n\n\n",
             "readonly": true
           },
           "position": {
-            "x": 160,
-            "y": -216
+            "x": 448,
+            "y": -240
           },
           "size": {
-            "width": 1032,
-            "height": 320
+            "width": 696,
+            "height": 288
+          }
+        },
+        {
+          "id": "8442f472-b37a-4283-a417-6e49a9dfb0af",
+          "type": "basic.info",
+          "data": {
+            "info": "\n![](https://raw.githubusercontent.com/jospicant/IceStudio/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/FPGAWARS.png)",
+            "readonly": true
+          },
+          "position": {
+            "x": 408,
+            "y": -384
+          },
+          "size": {
+            "width": 120,
+            "height": 96
+          }
+        },
+        {
+          "id": "14e97c0d-91a5-48cd-b1bd-977dd20ecb70",
+          "type": "basic.info",
+          "data": {
+            "info": "\n[Github jospicant](https://github.com/jospicant/IceStudio/tree/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign)",
+            "readonly": true
+          },
+          "position": {
+            "x": 560,
+            "y": -320
+          },
+          "size": {
+            "width": 352,
+            "height": 88
           }
         }
       ],
