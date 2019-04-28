@@ -28,7 +28,7 @@
           },
           "position": {
             "x": -352,
-            "y": 208
+            "y": 328
           }
         },
         {
@@ -48,7 +48,7 @@
           },
           "position": {
             "x": -352,
-            "y": 248
+            "y": 368
           }
         },
         {
@@ -67,7 +67,7 @@
           },
           "position": {
             "x": 136,
-            "y": 248
+            "y": 368
           }
         },
         {
@@ -87,7 +87,7 @@
           },
           "position": {
             "x": -352,
-            "y": 288
+            "y": 408
           }
         },
         {
@@ -117,7 +117,7 @@
           },
           "position": {
             "x": -184,
-            "y": 216
+            "y": 336
           },
           "size": {
             "width": 272,
@@ -132,28 +132,44 @@
             "readonly": false
           },
           "position": {
-            "x": -272,
-            "y": -88
+            "x": -352,
+            "y": 16
           },
           "size": {
             "width": 416,
-            "height": 272
+            "height": 256
           }
         },
         {
           "id": "7428c99a-b790-4f06-9d81-85d811d70ddb",
           "type": "basic.info",
           "data": {
-            "info": "\n<H2>Circuito combinacional </H2>\n\n<p>Copia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar </p>\n<a href=\"http://digitaljs.tilk.eu/\">http://digitaljs.tilk.eu/ </a>  \n<p> obtendrás el siguiente circuito </p>\n<img src=\"c1.svg\">\n",
+            "info": "\n<H2>Circuito combinacional </H2>\n\n<p>Copia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar </p>\n\n<a href=\"http://digitaljs.tilk.eu/\">http://digitaljs.tilk.eu/\" </a>  \n\nobtedrás el siguiente circuito:  \n\n![](https://github.com/jospicant/IceStudio/blob/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/c1.png)  \n\n<img src=\"https://github.com/jospicant/IceStudio/blob/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/c1.png\" />\n",
             "readonly": false
           },
           "position": {
-            "x": 248,
-            "y": -88
+            "x": 152,
+            "y": 40
           },
           "size": {
-            "width": 728,
-            "height": 216
+            "width": 1008,
+            "height": 272
+          }
+        },
+        {
+          "id": "3c02c41c-d643-4a44-af8d-f1303af26b14",
+          "type": "basic.info",
+          "data": {
+            "info": "# Circuito COMBINACIONAL. (Parte 1. Uso de \"assign\" )\n\nPara crear un circuito combinacional en Verilog  se emplea  la asignación  blocking  con \"assign \"",
+            "readonly": true
+          },
+          "position": {
+            "x": -344,
+            "y": -104
+          },
+          "size": {
+            "width": 792,
+            "height": 80
           }
         }
       ],
