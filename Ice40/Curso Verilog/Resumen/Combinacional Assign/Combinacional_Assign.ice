@@ -27,7 +27,7 @@
             "clock": false
           },
           "position": {
-            "x": -352,
+            "x": -280,
             "y": 328
           }
         },
@@ -47,7 +47,7 @@
             "clock": false
           },
           "position": {
-            "x": -352,
+            "x": -280,
             "y": 368
           }
         },
@@ -66,7 +66,7 @@
             "virtual": true
           },
           "position": {
-            "x": 136,
+            "x": 208,
             "y": 368
           }
         },
@@ -86,7 +86,7 @@
             "clock": false
           },
           "position": {
-            "x": -352,
+            "x": -280,
             "y": 408
           }
         },
@@ -116,7 +116,7 @@
             }
           },
           "position": {
-            "x": -184,
+            "x": -112,
             "y": 336
           },
           "size": {
@@ -132,7 +132,7 @@
             "readonly": false
           },
           "position": {
-            "x": -352,
+            "x": -32,
             "y": 16
           },
           "size": {
@@ -144,16 +144,16 @@
           "id": "7428c99a-b790-4f06-9d81-85d811d70ddb",
           "type": "basic.info",
           "data": {
-            "info": "\n<H2>Circuito combinacional </H2>\n\n<p>Copia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar </p>\n\n<a href=\"http://digitaljs.tilk.eu/\">http://digitaljs.tilk.eu/\" </a>  \n\nobtedrás el siguiente circuito:  \n\n![](https://github.com/jospicant/IceStudio/blob/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/c1.png)  \n\n<img src=\"https://github.com/jospicant/IceStudio/blob/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/c1.png\" />\n",
-            "readonly": false
+            "info": "\n## Circuito combinacional\n\nCopia y pega el modulo combinacional en este enlace y dale Simular-Sintetizar  \n\n[http://digitaljs.tilk.eu/](http://digitaljs.tilk.eu/)\n\nobtedrás el siguiente circuito:  \n\n![](https://raw.githubusercontent.com/jospicant/IceStudio/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/c1.png)  \n\n",
+            "readonly": true
           },
           "position": {
-            "x": 152,
-            "y": 40
+            "x": 504,
+            "y": -8
           },
           "size": {
-            "width": 1008,
-            "height": 272
+            "width": 704,
+            "height": 224
           }
         },
         {
@@ -164,12 +164,28 @@
             "readonly": true
           },
           "position": {
-            "x": -344,
-            "y": -104
+            "x": -360,
+            "y": -120
           },
           "size": {
             "width": 792,
             "height": 80
+          }
+        },
+        {
+          "id": "c35e3920-849b-462c-85be-cf3c9f4fbc82",
+          "type": "basic.info",
+          "data": {
+            "info": "\n![]()",
+            "readonly": false
+          },
+          "position": {
+            "x": -336,
+            "y": 72
+          },
+          "size": {
+            "width": 192,
+            "height": 128
           }
         }
       ],
