@@ -148,8 +148,8 @@
             "readonly": true
           },
           "position": {
-            "x": 504,
-            "y": -8
+            "x": 464,
+            "y": 16
           },
           "size": {
             "width": 704,
@@ -176,8 +176,8 @@
           "id": "c35e3920-849b-462c-85be-cf3c9f4fbc82",
           "type": "basic.info",
           "data": {
-            "info": "\n![]()",
-            "readonly": false
+            "info": "\n![](https://raw.githubusercontent.com/jospicant/IceStudio/master/Ice40/Curso%20Verilog/Resumen/Combinacional%20Assign/FPGAWARS.png)",
+            "readonly": true
           },
           "position": {
             "x": -336,
