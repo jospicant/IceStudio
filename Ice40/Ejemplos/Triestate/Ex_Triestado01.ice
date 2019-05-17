@@ -12,6 +12,25 @@
     "graph": {
       "blocks": [
         {
+          "id": "d5f62739-9ac6-4bcf-a788-bdb2ef876fa0",
+          "type": "basic.output",
+          "data": {
+            "name": "reloj",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D1",
+                "value": "99"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 816,
+            "y": 112
+          }
+        },
+        {
           "id": "3836f3c8-36e1-43c3-981f-a7fbab0e9e27",
           "type": "basic.output",
           "data": {
@@ -106,8 +125,8 @@
             "readonly": false
           },
           "position": {
-            "x": 352,
-            "y": -8
+            "x": 280,
+            "y": -112
           },
           "size": {
             "width": 456,
@@ -160,6 +179,16 @@
           "target": {
             "block": "ffe12e98-4780-4026-ad58-7a9313442038",
             "port": "319cdca8-e777-4c8b-88ca-f885ba96ad06"
+          }
+        },
+        {
+          "source": {
+            "block": "ffe12e98-4780-4026-ad58-7a9313442038",
+            "port": "70887b0b-826c-4150-a873-605b77da8272"
+          },
+          "target": {
+            "block": "d5f62739-9ac6-4bcf-a788-bdb2ef876fa0",
+            "port": "in"
           }
         }
       ]
