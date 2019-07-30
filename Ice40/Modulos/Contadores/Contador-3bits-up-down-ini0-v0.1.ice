@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "Contador-2bits-up-down-ini0",
     "version": "0.1",
@@ -85,7 +85,7 @@
           "id": "b5ac0df0-dfb8-4bfd-8ae7-f6d61ecc0209",
           "type": "basic.code",
           "data": {
-            "code": "reg [2:0] q;\n\nalways @(posedge clk)\n    if (up)\n      q <= q + 1;\n    else\n      q <= q - 1;",
+            "code": "reg [2:0] q=0;\n\nalways @(posedge clk)\n    if (up)\n      q <= q + 1;\n    else\n      q <= q - 1;",
             "params": [],
             "ports": {
               "in": [
@@ -148,13 +148,6 @@
           "size": 3
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": -182,
-        "y": 66.5
-      },
-      "zoom": 1
     }
   },
   "dependencies": {}
