@@ -1,11 +1,11 @@
 $date
-	Thu Nov 15 16:51:31 2018
+	Thu Sep 30 20:05:22 2021
 $end
 $version
 	Icarus Verilog
 $end
 $timescale
-	1ns
+	1ps
 $end
 $scope module main_tb $end
 $var wire 1 ! out $end
@@ -31,24 +31,19 @@ b0 #
 0"
 1!
 $end
-#100
+#100000
 0!
 0%
 1$
 1"
-#200
+#200000
 1!
 1%
 0$
 0"
-#230
+#230000
 0!
 0%
 1$
 1"
-#250
-1!
-1%
-0$
-0"
-#3750
+#630000

@@ -12,7 +12,7 @@ module main_tb
 ;
  
  // Simulation time: 100ns (10 * 10ns)
- parameter DURATION = 10;
+ parameter DURATION = 40;
  
  // Input/Output
  reg in;
@@ -32,7 +32,11 @@ module main_tb
   // TODO: initialize the registers here
   // e.g. value = 1;
   // e.g. #2 value = 0;
-  in = 0;
+  in=0;         // señal in a 0
+  #10  in=1;    //a los 10 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 1
+  #10  in=0;    // a los 10 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 0
+  #3   in=1;    // a los 3 ciclos de reloj ( 10*10ns=100ns) in lo pongo a 1
+  
  
   #(DURATION) $display("End of simulation");
   $finish;

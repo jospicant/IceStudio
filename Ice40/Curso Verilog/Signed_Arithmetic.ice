@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -85,10 +85,22 @@
           }
         },
         {
+          "id": "07bbc574-f538-4273-bb8c-3b5191bee50b",
+          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
+          "position": {
+            "x": 144,
+            "y": 392
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
           "id": "54448033-5104-4dcf-a5b7-9127ca5b24cd",
           "type": "basic.code",
           "data": {
-            "code": "\n\nalways @(a or b)\n\nbegin:LABEL_A\n// A Sequential block requires a label if local\n//declarations are present\n\ninteger a1,b1,d; //integer 32 bits signed\na1 <= a;\nb1 <= b;\nd <= a+b;\n\nend",
+            "code": "\n\nalways @(a or b)\n\nbegin:LABEL\n// Un bloque always necesita definir una etiqueta\n// si se realiza una declaracion local ( a1,b1,c1)\n\ninteger a1,b1,d; //integer 32 bits signed\na1 = a;         //Inicialización\nb1 = b;\n\nd = a+b;        //Suma considerando signo\n\nend",
             "params": [],
             "ports": {
               "in": [
@@ -119,18 +131,6 @@
           "size": {
             "width": 512,
             "height": 320
-          }
-        },
-        {
-          "id": "07bbc574-f538-4273-bb8c-3b5191bee50b",
-          "type": "656d05d360d34a4625d8c3bde3788dd70399ca12",
-          "position": {
-            "x": 144,
-            "y": 392
-          },
-          "size": {
-            "width": 96,
-            "height": 64
           }
         }
       ],
@@ -195,13 +195,6 @@
           "size": 4
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 71,
-        "y": 81.5
-      },
-      "zoom": 1
     }
   },
   "dependencies": {
@@ -296,13 +289,6 @@
               "size": 4
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 0,
-            "y": 0
-          },
-          "zoom": 1
         }
       }
     }

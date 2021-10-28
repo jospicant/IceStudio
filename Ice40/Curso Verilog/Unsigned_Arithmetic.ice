@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "package": {
     "name": "",
     "version": "",
@@ -12,19 +12,38 @@
     "graph": {
       "blocks": [
         {
-          "id": "e69005d0-b80c-45e7-8bb2-5aa895bac57f",
-          "type": "basic.info",
+          "id": "a1af1ab1-11d8-4423-83e7-2e9b63b54748",
+          "type": "basic.output",
           "data": {
-            "info": "\n \"reg\" type is interpreted as an unsigned number and an \"integer\" type is interpreted as a signed number in Ca2.\n Then to synthesize an unsigned arithmetic operator, the reg type is used. To get a signed arithmetic operator, the \n integer type is used.\n ",
-            "readonly": false
+            "name": "out",
+            "range": "[3:0]",
+            "pins": [
+              {
+                "index": "3",
+                "name": "D4",
+                "value": "96"
+              },
+              {
+                "index": "2",
+                "name": "D3",
+                "value": "97"
+              },
+              {
+                "index": "1",
+                "name": "D2",
+                "value": "98"
+              },
+              {
+                "index": "0",
+                "name": "D1",
+                "value": "99"
+              }
+            ],
+            "virtual": false
           },
           "position": {
-            "x": 280,
-            "y": 56
-          },
-          "size": {
-            "width": 1024,
-            "height": 112
+            "x": 928,
+            "y": 288
           }
         },
         {
@@ -38,6 +57,35 @@
           "position": {
             "x": 104,
             "y": 120
+          }
+        },
+        {
+          "id": "8a00bb2d-e215-463a-a43a-e962bedda099",
+          "type": "basic.constant",
+          "data": {
+            "name": "num2",
+            "value": "1",
+            "local": false
+          },
+          "position": {
+            "x": 104,
+            "y": 328
+          }
+        },
+        {
+          "id": "e69005d0-b80c-45e7-8bb2-5aa895bac57f",
+          "type": "basic.info",
+          "data": {
+            "info": "\n \"reg\" type is interpreted as an unsigned number and an \"integer\" type is interpreted as a signed number in Ca2.\n Then to synthesize an unsigned arithmetic operator, the reg type is used. To get a signed arithmetic operator, the \n integer type is used.\n FALTARIA EL ACARREO Q NO SE HA CONSIDERADO. ESTARÍA INCOMPLETO",
+            "readonly": false
+          },
+          "position": {
+            "x": 280,
+            "y": 56
+          },
+          "size": {
+            "width": 1024,
+            "height": 112
           }
         },
         {
@@ -90,54 +138,6 @@
           "size": {
             "width": 336,
             "height": 160
-          }
-        },
-        {
-          "id": "a1af1ab1-11d8-4423-83e7-2e9b63b54748",
-          "type": "basic.output",
-          "data": {
-            "name": "out",
-            "range": "[3:0]",
-            "pins": [
-              {
-                "index": "3",
-                "name": "D4",
-                "value": "96"
-              },
-              {
-                "index": "2",
-                "name": "D3",
-                "value": "97"
-              },
-              {
-                "index": "1",
-                "name": "D2",
-                "value": "98"
-              },
-              {
-                "index": "0",
-                "name": "D1",
-                "value": "99"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": 928,
-            "y": 288
-          }
-        },
-        {
-          "id": "8a00bb2d-e215-463a-a43a-e962bedda099",
-          "type": "basic.constant",
-          "data": {
-            "name": "num2",
-            "value": "1",
-            "local": false
-          },
-          "position": {
-            "x": 104,
-            "y": 328
           }
         },
         {
@@ -242,13 +242,6 @@
           }
         }
       ]
-    },
-    "state": {
-      "pan": {
-        "x": 0,
-        "y": 0
-      },
-      "zoom": 1
     }
   },
   "dependencies": {
@@ -343,13 +336,6 @@
               "size": 4
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 0,
-            "y": 0
-          },
-          "zoom": 1
         }
       }
     },
@@ -438,13 +424,6 @@
               }
             }
           ]
-        },
-        "state": {
-          "pan": {
-            "x": 20,
-            "y": 0
-          },
-          "zoom": 1
         }
       }
     }

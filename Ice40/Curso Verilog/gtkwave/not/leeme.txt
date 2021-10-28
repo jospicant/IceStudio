@@ -22,7 +22,7 @@ Se realiza exportación:
 
   y desde donde tengo todos los ficheros ejecuto 
 
-  apio sim   
+  apio sim  ( se debe tener el path de apio configurado )
  
   se me habría el gtkwave con los resultados de la simulación que podré ir chequeando con el 
   zoom.
